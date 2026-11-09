@@ -1,0 +1,11 @@
+{
+  "git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "command": "python -m pytest -q",
+  "passed": 197,
+  "skipped": 3,
+  "skip_reason": "Historical audit applies to original 60da613; replacement tests are in the patched backend",
+  "warnings": 14,
+  "duration_s": 22.27,
+  "log": "agentkv-tests.log"
+}

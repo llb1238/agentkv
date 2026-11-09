@@ -1,0 +1,33 @@
+{
+  "git_commit": "8bc18babf4322c4027e3fdf2a3a2b768901c3414",
+  "reference_commit": "6afbaee",
+  "status": "complete",
+  "summary": {
+    "counts": {
+      "get": 1615984,
+      "on_store_miss": 2090,
+      "insert": 148401,
+      "mark_evictable": 363709,
+      "on_request_finished": 2259,
+      "mark_non_evictable": 215308,
+      "evict": 2005
+    },
+    "eviction_fingerprint": "09fc5af2fb5f632f3f98cf3ade5a9d6c70c09c27cdf256f2aa48222416216746",
+    "prefix_enumerations": 2259,
+    "prefix_cache_entries": 0,
+    "evict": {
+      "count": 2005,
+      "p50_us": 1463.611,
+      "p99_us": 2982.301560000001,
+      "maximum_us": 3980.858
+    }
+  },
+  "source": "results/m5-vllm-integration-20261104/smoke",
+  "source_sha256": {
+    "callbacks-135943-123727931667376.jsonl.gz": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad"
+  },
+  "files_sha256": {
+    "callbacks.parquet": "2fafc1991ffb633cd22dc95cdb49f3cfcd052cf3677535881826a7898bdada88",
+    "decisions.parquet": "6dbb56899147fc6409f445822c4bca3ef65e1950c6636595a2d5e9e7e7685346"
+  }
+}

@@ -1,0 +1,2025 @@
+{
+  "format": "agentkv-result-relocations-v1",
+  "original_commit": "7d787ef83738f5ba9bda09a671edef388040bd2a",
+  "directories": {
+    "results/m1-capacity-seed0": "results/archive/m1-capacity-seed0",
+    "results/m1-capacity-seed0-v2": "results/archive/m1-capacity-seed0-v2",
+    "results/m1-online-lru-seed0": "results/archive/m1-online-lru-seed0",
+    "results/m1-online-lru-seed0-rerun": "results/archive/m1-online-lru-seed0-rerun",
+    "results/m1-online-lru-seed0-final": "results/archive/m1-online-lru-seed0-final",
+    "results/m1-replay-fake-validation": "results/archive/m1-replay-fake-validation",
+    "results/m1-scheduler-tail-seed0": "results/archive/m1-scheduler-tail-seed0",
+    "results/m1-scheduler-tail-seed0-v2": "results/archive/m1-scheduler-tail-seed0-v2",
+    "results/m1-scheduler-tail-seed0-v3": "results/archive/m1-scheduler-tail-seed0-v3",
+    "results/m1-workload-seed0": "results/archive/m1-workload-seed0",
+    "results/m1-workload-seed0-repeat": "results/archive/m1-workload-seed0-repeat",
+    "results/m1-workload-seed0-v2": "results/archive/m1-workload-seed0-v2",
+    "results/m1-workload-seed0-v2-repeat": "results/archive/m1-workload-seed0-v2-repeat",
+    "results/m1-workload-seed0-v3-repeat": "results/archive/m1-workload-seed0-v3-repeat"
+  },
+  "presentation_changes": [
+    {
+      "original_path": "results/kv-hints-audit-20261102/README.md",
+      "path": "results/kv-hints-audit-20261102/README.md",
+      "original_sha256": "fa34ae6c504d75d80e1d864c72490429b27dcc850e91e40b94d2062d779ccea2",
+      "current_sha256": "051c7252131aaebc2c4fa14fa3b857ba26a258dd904823ad9a6e4858dfaa7432"
+    },
+    {
+      "original_path": "results/m0-lifecycle-20261102/README.md",
+      "path": "results/m0-lifecycle-20261102/README.md",
+      "original_sha256": "3fb01a05a1b24eec1007e12710cc0297a5a583287063e70c3228b3363e9fdf1d",
+      "current_sha256": "5dbf503aaef08b038fa1dee9f53b5d7392ae3f99da9d3b44beeab0aff276b654"
+    },
+    {
+      "original_path": "results/m1-capacity-seed0-v2/README.md",
+      "path": "results/archive/m1-capacity-seed0-v2/README.md",
+      "original_sha256": "4c05c996af0f306c6d319e85105c762989c22be9abb1e7ca89b5c4958d0a2c2a",
+      "current_sha256": "5ccafba10a01c03502ef894dfba2738ce669afe5cb810b76e605dbf836c130ec"
+    },
+    {
+      "original_path": "results/m1-capacity-seed0-v3/README.md",
+      "path": "results/m1-capacity-seed0-v3/README.md",
+      "original_sha256": "b0cb076faf2a1207c7ef927a60979291bc04dbce7b22aff4eed60e010ee56259",
+      "current_sha256": "a0decfc318954f8abd2aeea6435d2385b93b1c4e856d3b5202786cdeb0c2498f"
+    },
+    {
+      "original_path": "results/m1-online-lru-seed0-final/README.md",
+      "path": "results/archive/m1-online-lru-seed0-final/README.md",
+      "original_sha256": "3fda3b98b60d26b5a183bd8e685466efbc8436bef60c3a655d25657c73b3b0f2",
+      "current_sha256": "b3a12c58e9ee3298d1201b27a2e843cd3acd0c04958d780d19613c04c056c2e0"
+    },
+    {
+      "original_path": "results/m1-replay-fake-validation/README.md",
+      "path": "results/archive/m1-replay-fake-validation/README.md",
+      "original_sha256": "4e64f16acb206a4b54d99f31c6ba3229785ee498f819b80c7ed33167f2b0294e",
+      "current_sha256": "7add67ec1aab97e2f37421affd9b81ca5b996c1f52fb0f32c1bd7f63b263cf79"
+    },
+    {
+      "original_path": "results/m1-scheduler-tail-final/README.md",
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "original_sha256": "9b7dc5d24db7d18003c6e9241852aff4074e3139b14f5c24548f792b5b2ac6e8",
+      "current_sha256": "fed5cf7e624c91802f1f9919ed915afae3b688e4fee6ddb92ec0ff04b0f90c48"
+    },
+    {
+      "original_path": "results/m1-scheduler-tail-seed0-v2/README.md",
+      "path": "results/archive/m1-scheduler-tail-seed0-v2/README.md",
+      "original_sha256": "ad8c085f33c04dc4cf4869d72eb37668a02977093bb4d809c3dade43fe1b831b",
+      "current_sha256": "60cf9ac4e2e05a749183963d33e9f63d25e1473140e480122a2c5769a1d8cf67"
+    },
+    {
+      "original_path": "results/m1-scheduler-tail-seed0-v3/README.md",
+      "path": "results/archive/m1-scheduler-tail-seed0-v3/README.md",
+      "original_sha256": "e1b1bcb5809c11f6a3e7ca56b8ea260c5884f51990a4a50bb42a9f57815878f5",
+      "current_sha256": "a374b2173c1fb4dfa1f4f58f3c59086e68ea6f8c1575166f487a66e85eabf69f"
+    },
+    {
+      "original_path": "results/m1-scheduler-tail-seed0/README.md",
+      "path": "results/archive/m1-scheduler-tail-seed0/README.md",
+      "original_sha256": "451dff42ca18432b68b8ff9faafe416a2f6a0767c42e4be99463fab6774dfd70",
+      "current_sha256": "5d4f710028855a031368df29160b46bc2ddd8f6a7415f421579631c1178f8805"
+    },
+    {
+      "original_path": "results/m1-steady-state-seed0/README.md",
+      "path": "results/m1-steady-state-seed0/README.md",
+      "original_sha256": "adf01d1ed808cdf050db2c780d672cf0811cc39abcfbf1bb9ff3590f9e301126",
+      "current_sha256": "41acadcd6bd2a28f235c1a55f8f5e231b0dccce581f733713991c17e4e4979f5"
+    },
+    {
+      "original_path": "results/m1-workload-seed0-v2/README.md",
+      "path": "results/archive/m1-workload-seed0-v2/README.md",
+      "original_sha256": "3cd6bf8155ed4fd7c53afbcb9cc5ebb803d5befc6d832d4550b7182064321334",
+      "current_sha256": "d42cbb030b7fe555b9241794c4c021677f73457f56a79f19f791b8f324df9356"
+    },
+    {
+      "original_path": "results/m1-workload-seed0-v3-16k/README.md",
+      "path": "results/m1-workload-seed0-v3-16k/README.md",
+      "original_sha256": "0e18476e47459c00dd4c106cc696b157e682e644096c5431c60b1b4c8337ca51",
+      "current_sha256": "a72d44cffce2d549c10e49c7761fcb94437e8971181dba518c0a03538935b63d"
+    },
+    {
+      "original_path": "results/m1-workload-seed0-v3-repeat/README.md",
+      "path": "results/archive/m1-workload-seed0-v3-repeat/README.md",
+      "original_sha256": "69650d121edc55d75a44f6335a9b188377d744c64305cc6d89de2244c8594882",
+      "current_sha256": "e69156f92072adaeadd3defb1ab3810720a0f4c5c09cf5f3f7197b2c6ff1ba5d"
+    },
+    {
+      "original_path": "results/m1-workload-seed0-v3/README.md",
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "original_sha256": "7555c7ed1fcd7307bc8d21490c5f5ae86587c67aeeaaa54b269592088a04bcd6",
+      "current_sha256": "755f689910dded61a53eeee67e23d7ab2360c08e9d885c09a3712efa50559a33"
+    },
+    {
+      "original_path": "results/m1-workload-seed0/README.md",
+      "path": "results/archive/m1-workload-seed0/README.md",
+      "original_sha256": "294b117f952c04e69b9e915ab42098e1dbf7abb2cfdee9be6be67cc48c2bef93",
+      "current_sha256": "4d8e6c8efbe0fc00e5c4b73c9e34369d48dfb31d2806e9474c7ba02635e5a0a8"
+    },
+    {
+      "original_path": "results/week1-local-evidence/README.md",
+      "path": "results/week1-local-evidence/README.md",
+      "original_sha256": "9b504c0767f6d6329e6ed3f24e4d7d836b4a8fb02891df7c77c42c01eed19b19",
+      "current_sha256": "8397fb8faaafbb8274f560a0afcf04752555fb21757951a2f7477337d6a50c56"
+    },
+    {
+      "original_path": "results/m1-two-tier-seed0/README.md",
+      "path": "results/m1-two-tier-seed0/README.md",
+      "original_sha256": "86c8efd3510c7ec84590fa5379d2d5d9a7a12b6884ed06af9d43df10cf9d9aa9",
+      "current_sha256": "4f3fec89da8dc3a3684c042f03d516d1c7bebe4513f5bbdab06dbdbb0b95d4db"
+    },
+    {
+      "original_path": "results/archive/e1-gpu-config11-20261105-lost-on-reboot/README.md",
+      "path": "results/archive/e1-gpu-config11-20261105-lost-on-reboot/README.md",
+      "original_sha256": "d0d99382586aff84416d5e7cd34ac08739db261152589c8eff38317eab45f466",
+      "current_sha256": "af0149c7d5ccc66729909860972158c59c30773e03d5dab73ff9feaeae58568d"
+    },
+    {
+      "original_path": "results/archive/m1-capacity-seed0-v2/README.md",
+      "path": "results/archive/m1-capacity-seed0-v2/README.md",
+      "original_sha256": "672403e5bd14c5ec2f22cf60886f9a2c1bdb85d267f6570e61d103e90f5ff10e",
+      "current_sha256": "5ccafba10a01c03502ef894dfba2738ce669afe5cb810b76e605dbf836c130ec"
+    },
+    {
+      "original_path": "results/archive/m1-online-lru-seed0-final/README.md",
+      "path": "results/archive/m1-online-lru-seed0-final/README.md",
+      "original_sha256": "d4e8ce8247c15725b6ee7b2ef132b08024d712806eb07ce96f14a583f6e7524f",
+      "current_sha256": "b3a12c58e9ee3298d1201b27a2e843cd3acd0c04958d780d19613c04c056c2e0"
+    },
+    {
+      "original_path": "results/archive/m1-replay-fake-validation/README.md",
+      "path": "results/archive/m1-replay-fake-validation/README.md",
+      "original_sha256": "cf02d0364379031664a1f23ee67a81ba1f7129ca49c4edb6c2dc8e7a98c62704",
+      "current_sha256": "7add67ec1aab97e2f37421affd9b81ca5b996c1f52fb0f32c1bd7f63b263cf79"
+    },
+    {
+      "original_path": "results/archive/m1-workload-seed0-v2/README.md",
+      "path": "results/archive/m1-workload-seed0-v2/README.md",
+      "original_sha256": "e2f549112b453432f61f77eef1880eecd364a1f660d6fe69b2662712895a917c",
+      "current_sha256": "d42cbb030b7fe555b9241794c4c021677f73457f56a79f19f791b8f324df9356"
+    },
+    {
+      "original_path": "results/archive/m1-workload-seed0/README.md",
+      "path": "results/archive/m1-workload-seed0/README.md",
+      "original_sha256": "53ff2f96cc765ef35cc6cc4c79e3432623f1cb6fef14089aa89ef1868418af22",
+      "current_sha256": "4d8e6c8efbe0fc00e5c4b73c9e34369d48dfb31d2806e9474c7ba02635e5a0a8"
+    },
+    {
+      "original_path": "results/e1-gpu-config11-20261105/README.md",
+      "path": "results/e1-gpu-config11-20261105/README.md",
+      "original_sha256": "fffaa988426c12971486ea8bf152bf685ada8f5c08dbf2c43de8a7369d65657e",
+      "current_sha256": "003f06a68437b21c4a2eed6a829d1ca79ad039be9a9a99a6243c15b96b7510f6"
+    },
+    {
+      "original_path": "results/e1-gpu-stable-limit-12-20261107/README.md",
+      "path": "results/e1-gpu-stable-limit-12-20261107/README.md",
+      "original_sha256": "2de6463ff25d566f3f01564886d5de5a15a91e6205a0f2b55d2462aa17d6acd8",
+      "current_sha256": "bac8d19b76da600ac5fa5db7da65d11aa17970eaa715de9552eb8fc7ba52035f"
+    },
+    {
+      "original_path": "results/e1-gpu-v2-config11-20261106/README.md",
+      "path": "results/e1-gpu-v2-config11-20261106/README.md",
+      "original_sha256": "5b905a041f84302476955072c75ff28244b6108155b1b9f08da521840080f9fa",
+      "current_sha256": "86561674c8d3650afc67c926661415adf371399cd057529cf0e7a6e882aabfc2"
+    },
+    {
+      "original_path": "results/m0-lifecycle-20261102/README.md",
+      "path": "results/m0-lifecycle-20261102/README.md",
+      "original_sha256": "1fac47b83ad7e84ef3537e1389e8a33ec5d1941020f331896d872d440058bc8e",
+      "current_sha256": "5dbf503aaef08b038fa1dee9f53b5d7392ae3f99da9d3b44beeab0aff276b654"
+    },
+    {
+      "original_path": "results/m1-agentx-data-20261102/README.md",
+      "path": "results/m1-agentx-data-20261102/README.md",
+      "original_sha256": "7a0c9b9b9606952fc0b2bb3c151867080f86caed1ea121c1c97c48375e3f7c4f",
+      "current_sha256": "3adb7844ff9c97273927cdc424ace672dafce7286611de53aa086d0b76efa75e"
+    },
+    {
+      "original_path": "results/m1-e0-config11-20261103/README.md",
+      "path": "results/m1-e0-config11-20261103/README.md",
+      "original_sha256": "30f222f8467115482c3ba577dd17b46c201906545a6467e8e145b010c808513d",
+      "current_sha256": "63881bfa41205c88cd254a1acc83905f4b0471e195fd643388a05fb89307bd7b"
+    },
+    {
+      "original_path": "results/m1-oracle-seed0/README.md",
+      "path": "results/m1-oracle-seed0/README.md",
+      "original_sha256": "7a044fe8b612c800aa8b8c53c651ad7946f810ce1df0b5dabe876a49d843a54f",
+      "current_sha256": "2be56a1cb322ad3adaebd21c85053aed2922c9d3b653ec2cd4eb3ae0213380ee"
+    },
+    {
+      "original_path": "results/m1-scheduler-tail-final/README.md",
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "original_sha256": "fe33eaeef4d0af17d47cb9769c49718c40565acf7b1d9406a0f19444c5d377a3",
+      "current_sha256": "fed5cf7e624c91802f1f9919ed915afae3b688e4fee6ddb92ec0ff04b0f90c48"
+    },
+    {
+      "original_path": "results/m1-shared-pilot-seed0/README.md",
+      "path": "results/m1-shared-pilot-seed0/README.md",
+      "original_sha256": "7dedbebcd44ad7298d3e1d97464674b701e82d75e74015a8f5ccaa43ac9b376f",
+      "current_sha256": "2c787f9590c2d3148770909b31a18288a936c168465d9372955d3239f915c407"
+    },
+    {
+      "original_path": "results/m1-steady-state-seed0/README.md",
+      "path": "results/m1-steady-state-seed0/README.md",
+      "original_sha256": "fb390c8477dc11cd3a34a93bc98def5116967b6509855cad2a426dd42a8685de",
+      "current_sha256": "41acadcd6bd2a28f235c1a55f8f5e231b0dccce581f733713991c17e4e4979f5"
+    },
+    {
+      "original_path": "results/m1-two-tier-seed0/README.md",
+      "path": "results/m1-two-tier-seed0/README.md",
+      "original_sha256": "489d96bd59fc7c9e7e0935a2700e14ee7ba9fe3b1fae55fb32ce953cf53b3520",
+      "current_sha256": "4f3fec89da8dc3a3684c042f03d516d1c7bebe4513f5bbdab06dbdbb0b95d4db"
+    },
+    {
+      "original_path": "results/m1-workload-seed0-v3/README.md",
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "original_sha256": "3b78be38388955ee5aece98f59e4a04f02e26a56155f35dae1b7b32fa43fb896",
+      "current_sha256": "755f689910dded61a53eeee67e23d7ab2360c08e9d885c09a3712efa50559a33"
+    },
+    {
+      "original_path": "results/m5-chain-growth-20261107/README.md",
+      "path": "results/m5-chain-growth-20261107/README.md",
+      "original_sha256": "313963a33310b483f391d2ed1da310e4ab55aac7d7303af93382a6465e3c7ef5",
+      "current_sha256": "7c107a1ee3483625d27e4dabd7d1c60c0fd9f303d2a19f0a6e8977546052b5b4"
+    },
+    {
+      "original_path": "results/m5-chain-implementation-20261106/README.md",
+      "path": "results/m5-chain-implementation-20261106/README.md",
+      "original_sha256": "c532613f9aa9fd7f47671a5dead5fac4c5158f58f14a1c23b2feb42ebea08421",
+      "current_sha256": "95f3d872d6e935f8123ea1690e1d1153694bc323a92b8119f9546bfb82ebb458"
+    },
+    {
+      "original_path": "results/m5-chain-scoring-20261106/README.md",
+      "path": "results/m5-chain-scoring-20261106/README.md",
+      "original_sha256": "8a50186bb34097f45b78c6c68c054613b409025a1a95f4dbc569df1bf3ff3e52",
+      "current_sha256": "2e9ea0181a8da0114997c1c2e39f4e0557bf276f4555b2ad9ef4208ffe16af9b"
+    },
+    {
+      "original_path": "results/m5-e1-remaining-config11-20261104/README.md",
+      "path": "results/m5-e1-remaining-config11-20261104/README.md",
+      "original_sha256": "527ec0d5c38e69a8ef67c3dba5a551f4ad833bb55b65db0b9c56f40b038f427a",
+      "current_sha256": "cbd2d309d3499b79f5fd83347d8a5ca0d8ecba2907203dc4e727be331d75bbb6"
+    },
+    {
+      "original_path": "results/m5-e1-simulation-config11-20261104/README.md",
+      "path": "results/m5-e1-simulation-config11-20261104/README.md",
+      "original_sha256": "fd7626bd987c79a0aa09d5cb66148f2722d5c214ec706897b4780d2a50c8f180",
+      "current_sha256": "1e91ee8f2a1dbc088f6294615b2c63a3738e65d46a41fa816649699d6e98f9d9"
+    },
+    {
+      "original_path": "results/m5-policy-overhead-20261104/README.md",
+      "path": "results/m5-policy-overhead-20261104/README.md",
+      "original_sha256": "51540d70e6d6c10337597afdd46d00fa19db8719f12938f75493bc9e6188dab4",
+      "current_sha256": "e4d82cabac75b00a73a5657318161e7f6c286e708c1db4b8ae7fa965630ea30c"
+    },
+    {
+      "original_path": "results/m5-scoring-development-20261104/README.md",
+      "path": "results/m5-scoring-development-20261104/README.md",
+      "original_sha256": "84e448884848d74cc9fc9729d5e50488264de00821fdc80925dec53a25c89463",
+      "current_sha256": "a412e1b1be57d58f83868c93592289a21ba350fcec5f3b47ce2d2a8fa991964c"
+    },
+    {
+      "original_path": "results/m5-scoring-evaluation-20261104/README.md",
+      "path": "results/m5-scoring-evaluation-20261104/README.md",
+      "original_sha256": "ec0747b16019f778a28d6b9c3f4185f4bdf53d10c27fc7a6a0212fa0bd26fd50",
+      "current_sha256": "dc26983a77081d75b51c7320c815a1b815bfa7f199556c76f536dbce541f71b8"
+    },
+    {
+      "original_path": "results/m5-vllm-callback-probe-20261104/README.md",
+      "path": "results/m5-vllm-callback-probe-20261104/README.md",
+      "original_sha256": "00d3adff9340dea31a24af2808a54a7f2f4d3847ecb59ad41d02119d08bdf614",
+      "current_sha256": "8759a8785ae4c8c33640d700b151ec3270574f8cfaf5a032c3e8f50b11b447b9"
+    },
+    {
+      "original_path": "results/m5-vllm-integration-20261104/README.md",
+      "path": "results/m5-vllm-integration-20261104/README.md",
+      "original_sha256": "a5af1e89a64d345a10d054f1db3fde81363bee94edea75e4ae40a9cafe1712e7",
+      "current_sha256": "d9b2697ac4905eaed65d5aba00578e1d6addd6a8549998ecf6376cc334debadd"
+    },
+    {
+      "original_path": "results/m5-vllm-key-diagnosis-20261104/README.md",
+      "path": "results/m5-vllm-key-diagnosis-20261104/README.md",
+      "original_sha256": "922ef30ecc671692b029ea1626a8134bd37d724f431e9ab39cf6aaa26fed535f",
+      "current_sha256": "dd93198ace8972787c11ad93181deff94ffa7595ef5d0a470d35373a4ed5400c"
+    },
+    {
+      "original_path": "results/kv-hints-audit-20261102/README.md",
+      "path": "results/kv-hints-audit-20261102/README.md",
+      "original_sha256": "495ddcf150c96859e53b0015326aaf4a77a295631e750049da12f0d56fc17d7a",
+      "current_sha256": "051c7252131aaebc2c4fa14fa3b857ba26a258dd904823ad9a6e4858dfaa7432"
+    },
+    {
+      "original_path": "results/week1-local-evidence/README.md",
+      "path": "results/week1-local-evidence/README.md",
+      "original_sha256": "b54018ddc1753dc2eade385d1730a6134b98c9f512daf993e48c582c180e68f8",
+      "current_sha256": "8397fb8faaafbb8274f560a0afcf04752555fb21757951a2f7477337d6a50c56"
+    }
+  ],
+  "staging_publications": [
+    {
+      "source": "/tmp/agentkv-full-probe-20261104",
+      "destination": "results/archive/m5-vllm-full-probe-20261104-unclosed",
+      "status": "failed_complete_trace_validation",
+      "run_sha256": "2b525634b290e624dcfdb31480f697a3d6732e9c275cbd4f79cb4dcaa5ce6dbe"
+    },
+    {
+      "source": "/tmp/agentkv-full-probe-20261104-v2",
+      "destination": "results/m5-vllm-integration-20261104/probe",
+      "status": "validated_complete_trace",
+      "run_sha256": "9e09f1c4443b5a0acf7afd5b218c0dc000f333e366edab19631f1e539904be7d"
+    },
+    {
+      "source": "/tmp/agentkv-full-smoke-20261104",
+      "destination": "results/m5-vllm-integration-20261104/smoke",
+      "status": "validated_complete_trace",
+      "run_sha256": "28d054ecc4b0d0b7fe1e1cb9cd23db13ee4a2e898f41d1e734ac1bf415f46a29"
+    }
+  ],
+  "publication_document_updates": [
+    {
+      "path": "EXPERIMENT_LOG.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "04a927fe271b32fc57257152083b8eb979298e5508b4d4f5be357d3531fc5068",
+      "current_sha256": "50071c04c11d864a2de448c9280aba57ee5e1884e8009e93ae0d608dfbaec8c5",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "agentkv/bench/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "49a79d37bb6a5e3c35e32428413afe9108a153136ba5c042fae9f9e7c54e1741",
+      "current_sha256": "13fec1b9397259863d85c9075b469770bc2b343d4ca05afa0a407fece2182876",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "fa9f22ba2f7a83b47030a18f67e75798f522f8a8e578c3807e36b738f1be7681",
+      "current_sha256": "2ccf4ea63fb373d0ca8643e9b99599923539d7e367250376d7db928b66d723cd",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/e1_gpu_preregistration.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "9d9365c36fb10bc3131d4645a1d63aa4212cb2ccb48dcaee2d03d111e29bcd2b",
+      "current_sha256": "b292232d97ded205e59d6fef57ea1974df2590eb4f3455f55b0b693844ef8268",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/e1_v2_preregistration.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "f8078d5dd850cf640f32265164f10139af056d2ab9ac74d3b06469240d20c340",
+      "current_sha256": "3bfd9356b27589f933cdb5688110050616c0f2a3d71f8663d09e5d569c01807c",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/m0_ttft.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "ffb53da69e2e30dde477f77368dd8c278b5d92218689e1191385dea4812dfa5c",
+      "current_sha256": "1e2db643b36c5b7761fb2175efaff0ad8bcee3222b6884ea3636f642f3f7dd1a",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/m5_chain_scoring_design.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "1490b326d5d426bb0cfda9000a273f441c285b8792b8823475bb60266624d490",
+      "current_sha256": "199e63b22655de7d8d36738bf095e513b9780230f26716090ac99f384f182446",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/m5_policy_overhead_design.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "1d0776d9a0bf5a3ad6ef12a350fdc1a683fda9855981f8a9646561987227ad49",
+      "current_sha256": "12dab7504c3f9df43835fb19ad896f704531e680cd959477b5e1c1a611069581",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/m5_vllm_integration_validation.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "1ffa3ef2c2f20c24a908c787f362d28a93df0c491c573f0f2944653c0afdc28e",
+      "current_sha256": "5e66e7a78fbe52cc8a39809f206d60d66d35a86547bda983e23e94cd512f9ddf",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "docs/stable_limit_12_preregistration.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "2c5bd1fab48e19c5e86817d800ad1af76cc0964966fb7a89a5eca07f53d2d14b",
+      "current_sha256": "52bae5600a0010e58003d4d685470f3d1c4d35334ac84765e31a2812e944de1f",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/archive/e1-gpu-config11-20261105-lost-on-reboot/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "d0d99382586aff84416d5e7cd34ac08739db261152589c8eff38317eab45f466",
+      "current_sha256": "af0149c7d5ccc66729909860972158c59c30773e03d5dab73ff9feaeae58568d",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/archive/m1-capacity-seed0-v2/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "672403e5bd14c5ec2f22cf60886f9a2c1bdb85d267f6570e61d103e90f5ff10e",
+      "current_sha256": "5ccafba10a01c03502ef894dfba2738ce669afe5cb810b76e605dbf836c130ec",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/archive/m1-online-lru-seed0-final/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "d4e8ce8247c15725b6ee7b2ef132b08024d712806eb07ce96f14a583f6e7524f",
+      "current_sha256": "b3a12c58e9ee3298d1201b27a2e843cd3acd0c04958d780d19613c04c056c2e0",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/archive/m1-replay-fake-validation/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "cf02d0364379031664a1f23ee67a81ba1f7129ca49c4edb6c2dc8e7a98c62704",
+      "current_sha256": "7add67ec1aab97e2f37421affd9b81ca5b996c1f52fb0f32c1bd7f63b263cf79",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/archive/m1-workload-seed0-v2/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "e2f549112b453432f61f77eef1880eecd364a1f660d6fe69b2662712895a917c",
+      "current_sha256": "d42cbb030b7fe555b9241794c4c021677f73457f56a79f19f791b8f324df9356",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/archive/m1-workload-seed0/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "53ff2f96cc765ef35cc6cc4c79e3432623f1cb6fef14089aa89ef1868418af22",
+      "current_sha256": "4d8e6c8efbe0fc00e5c4b73c9e34369d48dfb31d2806e9474c7ba02635e5a0a8",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/e1-gpu-config11-20261105/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "fffaa988426c12971486ea8bf152bf685ada8f5c08dbf2c43de8a7369d65657e",
+      "current_sha256": "7f816b927b9f2968c1c07a905d663553bdc61ded47169996c98d363d08633a15",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/e1-gpu-stable-limit-12-20261107/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "2de6463ff25d566f3f01564886d5de5a15a91e6205a0f2b55d2462aa17d6acd8",
+      "current_sha256": "910404e7926efcb6bc73da6ac29ae26532ff4d7c80cab5cd04e432231879bff0",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/e1-gpu-v2-config11-20261106/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "5b905a041f84302476955072c75ff28244b6108155b1b9f08da521840080f9fa",
+      "current_sha256": "6e168fcb6643dbae36545f927f7d4f15940c3377d42d762c88b81f445bc72c2c",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m0-lifecycle-20261102/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "1fac47b83ad7e84ef3537e1389e8a33ec5d1941020f331896d872d440058bc8e",
+      "current_sha256": "5dbf503aaef08b038fa1dee9f53b5d7392ae3f99da9d3b44beeab0aff276b654",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-agentx-data-20261102/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "7a0c9b9b9606952fc0b2bb3c151867080f86caed1ea121c1c97c48375e3f7c4f",
+      "current_sha256": "3adb7844ff9c97273927cdc424ace672dafce7286611de53aa086d0b76efa75e",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-e0-config11-20261103/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "30f222f8467115482c3ba577dd17b46c201906545a6467e8e145b010c808513d",
+      "current_sha256": "63881bfa41205c88cd254a1acc83905f4b0471e195fd643388a05fb89307bd7b",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-oracle-seed0/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "7a044fe8b612c800aa8b8c53c651ad7946f810ce1df0b5dabe876a49d843a54f",
+      "current_sha256": "be37e1e6455926181fe7a4b5513da7fc22542645bc6e1f52af5d33c3c0a58036",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "fe33eaeef4d0af17d47cb9769c49718c40565acf7b1d9406a0f19444c5d377a3",
+      "current_sha256": "ddbb42109e8520f09ba82a5be6af48c70e1f5d234248ae11395ec34ede54bfef",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-shared-pilot-seed0/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "7dedbebcd44ad7298d3e1d97464674b701e82d75e74015a8f5ccaa43ac9b376f",
+      "current_sha256": "9228517f52516087f403dbd47c3a6953e145292c04393ac06f475af0a02a8bb1",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-steady-state-seed0/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "fb390c8477dc11cd3a34a93bc98def5116967b6509855cad2a426dd42a8685de",
+      "current_sha256": "3ddc7b12f83e9b458067cacbc18485d43cd1565346d58c621821d3c54a213ca9",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-two-tier-seed0/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "489d96bd59fc7c9e7e0935a2700e14ee7ba9fe3b1fae55fb32ce953cf53b3520",
+      "current_sha256": "18ff0118219b2783893d4e1168c16576c3e6fd69857532c6dfb304b98e230f5a",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "3b78be38388955ee5aece98f59e4a04f02e26a56155f35dae1b7b32fa43fb896",
+      "current_sha256": "66ce56759175d24f6a6be2369ee9dc53e36d5f6831cee154ce22c0ca0b02e3ed",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-chain-growth-20261107/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "313963a33310b483f391d2ed1da310e4ab55aac7d7303af93382a6465e3c7ef5",
+      "current_sha256": "7c107a1ee3483625d27e4dabd7d1c60c0fd9f303d2a19f0a6e8977546052b5b4",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-chain-implementation-20261106/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "c532613f9aa9fd7f47671a5dead5fac4c5158f58f14a1c23b2feb42ebea08421",
+      "current_sha256": "19bbd4c45ba2b6eb8ceb117a091e62c5d8889a65290ea3e129c6e9ac6a30d772",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-chain-scoring-20261106/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "8a50186bb34097f45b78c6c68c054613b409025a1a95f4dbc569df1bf3ff3e52",
+      "current_sha256": "0f609f098f0819e370adf03aca6288fe7c85faa1a6cc28db5b0f1b0a09854950",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-e1-remaining-config11-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "527ec0d5c38e69a8ef67c3dba5a551f4ad833bb55b65db0b9c56f40b038f427a",
+      "current_sha256": "cbd2d309d3499b79f5fd83347d8a5ca0d8ecba2907203dc4e727be331d75bbb6",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-e1-simulation-config11-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "fd7626bd987c79a0aa09d5cb66148f2722d5c214ec706897b4780d2a50c8f180",
+      "current_sha256": "1e91ee8f2a1dbc088f6294615b2c63a3738e65d46a41fa816649699d6e98f9d9",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-policy-overhead-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "51540d70e6d6c10337597afdd46d00fa19db8719f12938f75493bc9e6188dab4",
+      "current_sha256": "26c20bef5f0c2c1d9386d2aad3d76ddd1ab60f8397dee2b09198513191e1d23d",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-scoring-development-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "84e448884848d74cc9fc9729d5e50488264de00821fdc80925dec53a25c89463",
+      "current_sha256": "661b2ef865c2d13ff357d73de02532a92c83bc081c63ec85348adb8954a44c14",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-scoring-evaluation-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "ec0747b16019f778a28d6b9c3f4185f4bdf53d10c27fc7a6a0212fa0bd26fd50",
+      "current_sha256": "dc26983a77081d75b51c7320c815a1b815bfa7f199556c76f536dbce541f71b8",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-vllm-callback-probe-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "00d3adff9340dea31a24af2808a54a7f2f4d3847ecb59ad41d02119d08bdf614",
+      "current_sha256": "516d2d93e8171ae6a94492006f5f56b54054b065cef6727ea2a790c7619e76b8",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "a5af1e89a64d345a10d054f1db3fde81363bee94edea75e4ae40a9cafe1712e7",
+      "current_sha256": "cfe8b78c2680701c238a643dd816539c24b878746af3a82913d87edadafc4200",
+      "kind": "portable_path_presentation"
+    },
+    {
+      "path": "results/m5-vllm-key-diagnosis-20261104/README.md",
+      "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "original_sha256": "922ef30ecc671692b029ea1626a8134bd37d724f431e9ab39cf6aaa26fed535f",
+      "current_sha256": "068826cd1cd1f0abe39aa0e8dde8e55529844b0b485ab80e5021578d30d69f89",
+      "kind": "portable_path_presentation"
+    }
+  ],
+  "figure_changes": [
+    {
+      "path": "results/final-summary-20261108/summary.png",
+      "original_sha256": "beb6d1593cbb44fa66dc06b10539506f7d7e5538de7437591b0abf136fdcc0fb",
+      "current_sha256": "9cff612a203d09bbf585db93eb66a23343fbbf5d91dda7c02859c162800381e0",
+      "reason": "Move numeric labels above the upper whisker; summary JSON unchanged"
+    },
+    {
+      "path": "results/final-summary-20261108/summary.pdf",
+      "original_sha256": "7a57aa83f6f8e17dc7ef4b9c13fe090ec94e1cb7c4ba5e12875c1101005dc5ed",
+      "current_sha256": "2a7c88d53502c3314531bf535c9fa46f015152cc0187f82af7be53f919e72f78",
+      "reason": "Move numeric labels above the upper whisker; summary JSON unchanged"
+    }
+  ],
+  "files": {
+    "EXPERIMENT_LOG.md": "docs/EXPERIMENT_LOG.md"
+  },
+  "file_moves": [
+    {
+      "original_path": "EXPERIMENT_LOG.md",
+      "path": "docs/EXPERIMENT_LOG.md",
+      "original_sha256": "50071c04c11d864a2de448c9280aba57ee5e1884e8009e93ae0d608dfbaec8c5",
+      "current_sha256": "f3266e6db375928a543970bf805774173f537e133dffcacebb5a1cd54b8d6fbb",
+      "reason": "Move experiment log into docs and rebase Markdown links"
+    }
+  ],
+  "release_presentation_changes": [
+    {
+      "path": "agentkv/bench/README.md",
+      "target": "../../results/archive/m1-workload-seed0-v2/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "agentkv/bench/README.md",
+      "target": "../../results/archive/m1-workload-seed0/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "agentkv/bench/README.md",
+      "target": "../../results/archive/m1-replay-fake-validation/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "agentkv/bench/README.md",
+      "target": "../../results/archive/m1-online-lru-seed0-final/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "agentkv/bench/README.md",
+      "target": "../../results/archive/m1-capacity-seed0-v2/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "docs/DATASET.md",
+      "target": "../results/m1-agentx-data-20261102/source/dataset_README.md",
+      "replacement": "EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/five-step-baseline-20261101-105549/benchmark.json",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/five-step-baseline-20261101-105549/metrics-catalog.md",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/five-step-baseline-20261101-105549/prefix-experiment.json",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py:3169",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py:1132",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/worker/gpu/input_batch.py:374",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/worker/gpu/input_batch.py#L374",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/worker/gpu/input_batch.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/worker/gpu/model_runner.py:1556",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/worker/gpu/model_runner.py#L1556",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/worker/gpu/model_runner.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/attention/backends/flash_attn.py:1439",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/attention/backends/flash_attn.py#L1439",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/attention/backends/flash_attn.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/attention/backends/flash_attn.py:1275",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/attention/backends/flash_attn.py#L1275",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/attention/backends/flash_attn.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/vllm/v1/metrics/loggers.py:1312",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/metrics/loggers.py#L1312",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/metrics/loggers.py",
+      "source_target_exists": false,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/cpu-tail-block-probe-20261101-112321/events.jsonl",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/cpu-tail-block-probe-20261101-112321/summary.json",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/cpu-tail-block-probe-20261101-112321/probe.py",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/cpu-tail-block-probe-20261101-112321/probe.log",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/qwen3-8b-rate4-baseline-20261101-114437/result.json",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/qwen3-8b-rate4-baseline-20261101-114437/benchmark.log",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/qwen3-8b-rate4-baseline-20261101-114437/command.sh",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/kernels/benchmark_pinned_h2d.py",
+      "replacement": "patches/README.md#file-benchmarks-kernels-benchmark-pinned-h2d-py",
+      "target_kind": "patch_section",
+      "backend_source": "benchmarks/kernels/benchmark_pinned_h2d.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../../vllm/benchmarks/results/two-turn-hello-small-cache-20261101-122132/probe.py",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/EXPERIMENT_LOG.md",
+      "target": "../results/archive/m1-workload-seed0/README.md",
+      "replacement": "EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/five-step-baseline-20261101-105549",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/five-step-baseline-20261101-105549",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/qwen3-8b-rate4-baseline-20261101-114437",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/cpu-tail-block-probe-20261101-112321",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/pinned-h2d-prefill-20261101-115642",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/kernels/benchmark_pinned_h2d.py",
+      "replacement": "patches/README.md#file-benchmarks-kernels-benchmark-pinned-h2d-py",
+      "target_kind": "patch_section",
+      "backend_source": "benchmarks/kernels/benchmark_pinned_h2d.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/two-turn-hello-small-cache-20261101-122132",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/two-turn-controls-http-20261101-222611",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/WEEK1.md",
+      "target": "../../vllm/benchmarks/results/five-step-baseline-20261101-105549/metrics-catalog.md",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/e1_gpu_preregistration.md",
+      "target": "../results/archive/e1-gpu-config11-20261105-lost-on-reboot/",
+      "replacement": "EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "docs/kv_hints.md",
+      "target": "../../vllm/vllm/v1/kv_hints/protocol.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_hints/protocol.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_hints/protocol.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/kv_hints.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/policies/lru.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/cpu/policies/lru.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/cpu/policies/lru.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/kv_hints.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/policies/arc.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/cpu/policies/arc.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/cpu/policies/arc.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/kv_hints.md",
+      "target": "../../vllm/vllm/v1/kv_offload/tiering/kvcr/manager.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/tiering/kvcr/manager.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/tiering/kvcr/manager.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/request.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/request.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/request.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/kv_cache_utils.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/core/kv_cache_utils.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/core/kv_cache_utils.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/kv_cache_manager.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-kv-cache-manager-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/kv_cache_manager.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/block_pool.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-block-pool-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/block_pool.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/attention/backends/flash_attn.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/attention/backends/flash_attn.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/attention/backends/flash_attn.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-distributed-kv-transfer-kv-connector-v1-offloading-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py",
+      "replacement": "patches/README.md#file-vllm-distributed-kv-transfer-kv-connector-v1-offloading-worker-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/gpu_worker.py",
+      "replacement": "patches/README.md#file-vllm-v1-kv-offload-cpu-gpu-worker-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/kv_offload/cpu/gpu_worker.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/block_pool.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-block-pool-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/block_pool.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/block_pool.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-block-pool-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/block_pool.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/manager.py",
+      "replacement": "patches/README.md#file-vllm-v1-kv-offload-cpu-manager-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/kv_offload/cpu/manager.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/policies/lru.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/cpu/policies/lru.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/cpu/policies/lru.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-distributed-kv-transfer-kv-connector-v1-offloading-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/worker/gpu/kv_connector.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/worker/gpu/kv_connector.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/worker/gpu/kv_connector.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/worker/gpu_worker.py",
+      "replacement": "patches/README.md#file-vllm-v1-worker-gpu-worker-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/worker/gpu_worker.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/worker/gpu/model_runner.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/worker/gpu/model_runner.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/worker/gpu/model_runner.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/engine/output_processor.py",
+      "replacement": "patches/README.md#file-vllm-v1-engine-output-processor-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/engine/output_processor.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_lifecycle.md",
+      "target": "../../vllm/vllm/v1/kv_offload/trace.py",
+      "replacement": "patches/README.md#file-vllm-v1-kv-offload-trace-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/kv_offload/trace.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/core/sched/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-v1-core-sched-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/core/sched/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/worker/gpu/kv_connector.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/worker/gpu/kv_connector.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/worker/gpu/kv_connector.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/gpu_worker.py",
+      "replacement": "patches/README.md#file-vllm-v1-kv-offload-cpu-gpu-worker-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/kv_offload/cpu/gpu_worker.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/csrc/cache_kernels.cu",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/csrc/cache_kernels.cu",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "csrc/cache_kernels.cu",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/request.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/request.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/request.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/core/kv_cache_utils.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/core/kv_cache_utils.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/core/kv_cache_utils.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/policies/base.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/cpu/policies/base.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/cpu/policies/base.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/kv_offload/base.py",
+      "replacement": "patches/README.md#file-vllm-v1-kv-offload-base-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/v1/kv_offload/base.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/policies/factory.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/cpu/policies/factory.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/cpu/policies/factory.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/v1/kv_offload/cpu/spec.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/v1/kv_offload/cpu/spec.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/v1/kv_offload/cpu/spec.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "replacement": "patches/README.md#file-vllm-distributed-kv-transfer-kv-connector-v1-offloading-scheduler-py",
+      "target_kind": "patch_section",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_qa.md",
+      "target": "../../vllm/vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "replacement": "https://github.com/vllm-project/vllm/blob/5df63a7203cdb9328d824a27b682e77c7b9928be/vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "target_kind": "vllm_upstream_permalink",
+      "backend_source": "vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_ttft.md",
+      "target": "../../vllm/benchmarks/results/pinned-h2d-prefill-20261101-115642/BANDWIDTH_PREFILL_REPORT.md",
+      "replacement": "EVIDENCE.md#external-inputs",
+      "evidence_section": "external-inputs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": false
+    },
+    {
+      "path": "docs/m0_ttft.md",
+      "target": "../results/m0-lifecycle-20261102/run.sh",
+      "replacement": "EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "docs/m5_vllm_integration_validation.md",
+      "target": "../results/archive/m5-vllm-full-probe-20261104-unclosed/README.md",
+      "replacement": "EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m5-policy-overhead-attempt1-20261104/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m5-policy-overhead-diagnostics-20261104/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m5-chain-implementation-development-20261106/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/e1-gpu-config11-20261105-lost-on-reboot/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m5-vllm-full-probe-20261104-unclosed/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-capacity-seed0/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-capacity-seed0-v2/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-online-lru-seed0/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-online-lru-seed0-final/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-online-lru-seed0-rerun/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-online-lru-seed0-final/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-online-lru-seed0-final/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-replay-fake-validation/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-scheduler-tail-seed0/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-scheduler-tail-seed0-v2/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-scheduler-tail-seed0-v3/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-workload-seed0/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-workload-seed0-repeat/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-workload-seed0-v2/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-workload-seed0-v2-repeat/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/INDEX.md",
+      "target": "archive/m1-workload-seed0-v3-repeat/",
+      "replacement": "../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/e1-gpu-config11-20261105/README.md",
+      "target": "../archive/e1-gpu-config11-20261105-lost-on-reboot/",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/e1-gpu-stable-limit-12-20261107/README.md",
+      "target": "validation-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/e1-gpu-v2-config11-20261106/README.md",
+      "target": "tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-oracle-seed0/README.md",
+      "target": "postrun-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "target": "pytest.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "target": "validate_probe.py",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "target": "../archive/m1-scheduler-tail-seed0/failure.log",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "target": "../archive/m1-scheduler-tail-seed0-v2/validation.json",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "target": "../archive/m1-scheduler-tail-seed0-v3/validation.json",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-scheduler-tail-final/README.md",
+      "target": "pytest-before-test-fix.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-shared-pilot-seed0/README.md",
+      "target": "dmon.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-shared-pilot-seed0/README.md",
+      "target": "per_request_nominal.csv",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-steady-state-seed0/README.md",
+      "target": "schedule_estimate.parquet",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-steady-state-seed0/README.md",
+      "target": "unit-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-steady-state-seed0/README.md",
+      "target": "population-build.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-steady-state-seed0/README.md",
+      "target": "population-validation.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-steady-state-seed0/README.md",
+      "target": "population-timing.txt",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-two-tier-seed0/README.md",
+      "target": "pytest.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "../archive/m1-workload-seed0-v2/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "replay-estimates.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "../archive/m1-workload-seed0-v3-repeat/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "validation.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "position-check/scan.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "unit-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "requirements.txt",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "timing.txt",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "../archive/m1-workload-seed0-v3-repeat/timing.txt",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "validation-timing.txt",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3/README.md",
+      "target": "estimation-timing.txt",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3-16k/README.md",
+      "target": "../archive/m1-capacity-seed0/build-16k.log",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m1-workload-seed0-v3-16k/README.md",
+      "target": "../archive/m1-capacity-seed0-v2/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-chain-implementation-20261106/README.md",
+      "target": "../archive/m5-chain-implementation-development-20261106/",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-chain-implementation-20261106/README.md",
+      "target": "tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-chain-implementation-20261106/README.md",
+      "target": "v2-runner-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-chain-scoring-20261106/README.md",
+      "target": "online-trace/request-metadata.parquet",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-chain-scoring-20261106/README.md",
+      "target": "tests-final.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-policy-overhead-20261104/README.md",
+      "target": "../archive/m5-policy-overhead-attempt1-20261104/run.json",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-scoring-development-20261104/README.md",
+      "target": "calibration/horizon_probability_v1.json",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-callback-probe-20261104/README.md",
+      "target": "callback-coverage.parquet",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-callback-probe-20261104/README.md",
+      "target": "callback-context.parquet",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-callback-probe-20261104/README.md",
+      "target": "request-metadata.parquet",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/README.md",
+      "target": "../archive/m5-vllm-full-probe-20261104-unclosed/README.md",
+      "replacement": "../../docs/EVIDENCE.md#archives",
+      "evidence_section": "archives",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/backend-validation/README.md",
+      "target": "unit-tests.log",
+      "replacement": "../../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/backend-validation/README.md",
+      "target": "unit-tests.xml",
+      "replacement": "../../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/backend-validation/README.md",
+      "target": "baseline-comparison.log",
+      "replacement": "../../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/backend-validation/README.md",
+      "target": "pre-commit-and-commit.log",
+      "replacement": "../../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-key-diagnosis-20261104/README.md",
+      "target": "per-request.json",
+      "replacement": "../../docs/EVIDENCE.md#other-evidence",
+      "evidence_section": "other-evidence",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-key-diagnosis-20261104/README.md",
+      "target": "per-request.parquet",
+      "replacement": "../../docs/EVIDENCE.md#requests",
+      "evidence_section": "requests",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/m5-vllm-key-diagnosis-20261104/README.md",
+      "target": "witness-original-context.jsonl.gz",
+      "replacement": "../../docs/EVIDENCE.md#raw-traces",
+      "evidence_section": "raw-traces",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/repository-maintenance-20261103/README.md",
+      "target": "layout-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/repository-maintenance-20261103/README.md",
+      "target": "final-tests.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/repository-maintenance-20261103/README.md",
+      "target": "two-tier-audit.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/repository-maintenance-20261103/README.md",
+      "target": "scheduler-audit.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    },
+    {
+      "path": "results/repository-maintenance-20261103/README.md",
+      "target": "population-audit.log",
+      "replacement": "../../docs/EVIDENCE.md#runtime-logs",
+      "evidence_section": "runtime-logs",
+      "target_kind": "evidence",
+      "source_target_exists": true,
+      "source_target_inside_repository": true
+    }
+  ]
+}

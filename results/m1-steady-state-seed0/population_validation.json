@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "run": "population-seed0/lambda-0.5/empty/run.json",
+      "requests_checked": 1337,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-0.5/steady/run.json",
+      "requests_checked": 5218,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-1/empty/run.json",
+      "requests_checked": 4604,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-1/steady/run.json",
+      "requests_checked": 10823,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-2/empty/run.json",
+      "requests_checked": 7741,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-2/steady/run.json",
+      "requests_checked": 20806,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-4/empty/run.json",
+      "requests_checked": 11925,
+      "samples_checked": 181,
+      "passed": true
+    },
+    {
+      "run": "population-seed0/lambda-4/steady/run.json",
+      "requests_checked": 47165,
+      "samples_checked": 181,
+      "passed": true
+    }
+  ],
+  "requests_checked": 109619,
+  "checks": [
+    "source fingerprints",
+    "request completeness",
+    "tau selection",
+    "is_entry",
+    "paired new arrivals",
+    "time samples",
+    "prompt statistics",
+    "peak inflight"
+  ]
+}

@@ -1,0 +1,21 @@
+AgentKV
+Copyright 2026 AgentKV contributors
+
+AgentKV original code is licensed under the Apache License, Version 2.0.
+
+Third-party materials retain their original notices and licenses:
+
+- SemiAnalysisAI AgentX harness, revision
+  e4bb2f835ffedbbe6b76252ea5c93caec68c5faf (Apache-2.0).
+  Source snapshots: results/m1-agentx-data-20261102/source/.
+- SemiAnalysisAI cc-traces-weka-062126 dataset, revision
+  23f152f6f0f9399a85901b89a6458def0ef16729.
+  The pinned dataset card declares Apache-2.0. Original data are not bundled
+  in the current tracked tree. Derived statistics and synthetic workloads
+  are identified as AgentKV transformations in docs/DATASET.md.
+- vLLM project code and historical source excerpts (Apache-2.0).
+  Existing SPDX and copyright notices are retained. vLLM and model weights
+  are separate dependencies; their licenses are not replaced by this file.
+
+Provenance, transformations, fixed revisions, and license links:
+docs/DATASET.md

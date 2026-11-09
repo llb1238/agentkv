@@ -1,0 +1,7 @@
+{
+  "format": "agentkv.vllm_hint_policy.v1",
+  "hint_tier": "perfect",
+  "implementation": "chain",
+  "freeze_sha256": "41f6699fb5693450b22898c4fe62ac6280d2d2b1b66798943b914163936f005d",
+  "residual_table_path": "/home/llb/my_soft/agentkv/agentkv/policy/data/remaining_life_v1.json"
+}

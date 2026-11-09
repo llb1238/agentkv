@@ -1,0 +1,285 @@
+{
+  "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+  "status": "complete",
+  "name": "lambda-0.7-seed-2",
+  "rate": 0.7,
+  "seed": 2,
+  "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+  "cases": {
+    "lru": {
+      "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+      "status": "complete",
+      "label": "lru",
+      "tier": null,
+      "candidate": null,
+      "options": {},
+      "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+      "schedule_gpu_sha256": "51d4f1bd36d2d08adda09b71b6e85265d6a1b7e52ca8ca6634952552927a1ea2",
+      "summary": {
+        "requests": 7039,
+        "window_requests": 5462,
+        "window_prompt_tokens": 35064009,
+        "source_tokens": {
+          "gpu_hit": 26536096,
+          "cpu_hit": 2150320,
+          "recomputed": 6377593
+        },
+        "source_fractions": {
+          "gpu_hit": 0.7567901320125716,
+          "cpu_hit": 0.061325560348789554,
+          "recomputed": 0.1818843076386388
+        },
+        "gpu_evictions": 678014,
+        "cpu_evictions": 512346,
+        "cpu_store_skipped_requests": 0,
+        "peak_running": 8,
+        "peak_gpu_tokens": 182880,
+        "kv_blocked_checks": 0,
+        "queued_requests": 1,
+        "unsent_queued": 0
+      },
+      "elapsed_wall_s": 2.3003356049302965,
+      "requests_sha256": "c8ab35411d97b0d289c059ae084da1c27f82798d58d95e6ede601ca63f0eba07",
+      "policy_stats": null
+    },
+    "lru-final": {
+      "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+      "status": "complete",
+      "label": "lru-final",
+      "tier": "final",
+      "candidate": "lru_final",
+      "options": {
+        "scoring": "lru_final",
+        "tail_first": false,
+        "final_first": true,
+        "timeout_decay": false
+      },
+      "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+      "schedule_gpu_sha256": "51d4f1bd36d2d08adda09b71b6e85265d6a1b7e52ca8ca6634952552927a1ea2",
+      "summary": {
+        "requests": 7039,
+        "window_requests": 5462,
+        "window_prompt_tokens": 35064009,
+        "source_tokens": {
+          "gpu_hit": 26536096,
+          "cpu_hit": 2236864,
+          "recomputed": 6291049
+        },
+        "source_fractions": {
+          "gpu_hit": 0.7567901320125716,
+          "cpu_hit": 0.0637937321998748,
+          "recomputed": 0.17941613578755355
+        },
+        "gpu_evictions": 678014,
+        "cpu_evictions": 507921,
+        "cpu_store_skipped_requests": 0,
+        "peak_running": 8,
+        "peak_gpu_tokens": 182880,
+        "kv_blocked_checks": 0,
+        "queued_requests": 1,
+        "unsent_queued": 0
+      },
+      "elapsed_wall_s": 34.0784050389193,
+      "requests_sha256": "2fcf933d004323978054739fb634739d7f1cf9f792c52fec2d933e545e704bdc",
+      "policy_stats": {
+        "valid_hint_requests": 7039,
+        "invalid_hint_callbacks": 0,
+        "timeout_events": 0,
+        "evicted": 507921,
+        "life_refreshes": 0
+      }
+    },
+    "oracle": {
+      "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+      "status": "complete",
+      "label": "oracle",
+      "tier": null,
+      "candidate": null,
+      "options": {},
+      "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+      "schedule_gpu_sha256": "51d4f1bd36d2d08adda09b71b6e85265d6a1b7e52ca8ca6634952552927a1ea2",
+      "summary": {
+        "requests": 7039,
+        "window_requests": 5462,
+        "window_prompt_tokens": 35064009,
+        "source_tokens": {
+          "gpu_hit": 26536096,
+          "cpu_hit": 4904112,
+          "recomputed": 3623801
+        },
+        "source_fractions": {
+          "gpu_hit": 0.7567901320125716,
+          "cpu_hit": 0.1398617026364555,
+          "recomputed": 0.10334816535097284
+        },
+        "gpu_evictions": 678014,
+        "cpu_evictions": 302253,
+        "cpu_store_skipped_requests": 0,
+        "peak_running": 8,
+        "peak_gpu_tokens": 182880,
+        "kv_blocked_checks": 0,
+        "queued_requests": 1,
+        "unsent_queued": 0
+      },
+      "elapsed_wall_s": 11.043009382905439,
+      "requests_sha256": "530a95f38fd468fdd7d3181415a75dd6c0f4e043f2a675036e60d94940b9b0e9",
+      "policy_stats": null
+    },
+    "deadline-online": {
+      "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+      "status": "complete",
+      "label": "deadline-online",
+      "tier": "online",
+      "candidate": "deadline",
+      "options": {
+        "scoring": "deadline",
+        "tail_first": false,
+        "final_first": true,
+        "timeout_decay": true
+      },
+      "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+      "schedule_gpu_sha256": "51d4f1bd36d2d08adda09b71b6e85265d6a1b7e52ca8ca6634952552927a1ea2",
+      "summary": {
+        "requests": 7039,
+        "window_requests": 5462,
+        "window_prompt_tokens": 35064009,
+        "source_tokens": {
+          "gpu_hit": 26536096,
+          "cpu_hit": 3909536,
+          "recomputed": 4618377
+        },
+        "source_fractions": {
+          "gpu_hit": 0.7567901320125716,
+          "cpu_hit": 0.1114971194537396,
+          "recomputed": 0.13171274853368878
+        },
+        "gpu_evictions": 678014,
+        "cpu_evictions": 601107,
+        "cpu_store_skipped_requests": 0,
+        "peak_running": 8,
+        "peak_gpu_tokens": 182880,
+        "kv_blocked_checks": 0,
+        "queued_requests": 1,
+        "unsent_queued": 0
+      },
+      "elapsed_wall_s": 39.70367669290863,
+      "requests_sha256": "3385723a20d8fd7552e3b890f32f3b6324961dac666c5eb5caaa0c753065b1d7",
+      "policy_stats": {
+        "valid_hint_requests": 7039,
+        "invalid_hint_callbacks": 0,
+        "timeout_events": 484,
+        "evicted": 601107,
+        "life_refreshes": 0
+      }
+    },
+    "remaining-online": {
+      "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+      "status": "complete",
+      "label": "remaining-online",
+      "tier": "online",
+      "candidate": "remaining",
+      "options": {
+        "scoring": "remaining",
+        "tail_first": false,
+        "final_first": true,
+        "timeout_decay": false
+      },
+      "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+      "schedule_gpu_sha256": "51d4f1bd36d2d08adda09b71b6e85265d6a1b7e52ca8ca6634952552927a1ea2",
+      "summary": {
+        "requests": 7039,
+        "window_requests": 5462,
+        "window_prompt_tokens": 35064009,
+        "source_tokens": {
+          "gpu_hit": 26536096,
+          "cpu_hit": 3541488,
+          "recomputed": 4986425
+        },
+        "source_fractions": {
+          "gpu_hit": 0.7567901320125716,
+          "cpu_hit": 0.10100065853850311,
+          "recomputed": 0.14220920944892526
+        },
+        "gpu_evictions": 678014,
+        "cpu_evictions": 440728,
+        "cpu_store_skipped_requests": 0,
+        "peak_running": 8,
+        "peak_gpu_tokens": 182880,
+        "kv_blocked_checks": 0,
+        "queued_requests": 1,
+        "unsent_queued": 0
+      },
+      "elapsed_wall_s": 125.67003451590426,
+      "requests_sha256": "bda1ec54d0e8934a8e6c1fa3de3662d05f63b5380ac408c7502c271d571d3746",
+      "policy_stats": {
+        "valid_hint_requests": 7039,
+        "invalid_hint_callbacks": 0,
+        "timeout_events": 0,
+        "evicted": 440728,
+        "life_refreshes": 77326
+      }
+    },
+    "horizon-online": {
+      "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+      "status": "complete",
+      "label": "horizon-online",
+      "tier": "online",
+      "candidate": "horizon",
+      "options": {
+        "scoring": "horizon",
+        "tail_first": false,
+        "final_first": true,
+        "timeout_decay": false,
+        "horizon_initial_s": 1.0,
+        "horizon_window": 4096,
+        "horizon_period_s": 1.0,
+        "perfect_probability": false
+      },
+      "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+      "schedule_gpu_sha256": "51d4f1bd36d2d08adda09b71b6e85265d6a1b7e52ca8ca6634952552927a1ea2",
+      "summary": {
+        "requests": 7039,
+        "window_requests": 5462,
+        "window_prompt_tokens": 35064009,
+        "source_tokens": {
+          "gpu_hit": 26536096,
+          "cpu_hit": 2720112,
+          "recomputed": 5807801
+        },
+        "source_fractions": {
+          "gpu_hit": 0.7567901320125716,
+          "cpu_hit": 0.07757561321638949,
+          "recomputed": 0.16563425477103888
+        },
+        "gpu_evictions": 678014,
+        "cpu_evictions": 461677,
+        "cpu_store_skipped_requests": 0,
+        "peak_running": 8,
+        "peak_gpu_tokens": 182880,
+        "kv_blocked_checks": 0,
+        "queued_requests": 1,
+        "unsent_queued": 0
+      },
+      "elapsed_wall_s": 290.3931840560399,
+      "requests_sha256": "2aeba233313cf2ac8ee27a87a1122f87319dbcc7f9b70cbd56332ff18025c23e",
+      "policy_stats": {
+        "valid_hint_requests": 7039,
+        "invalid_hint_callbacks": 0,
+        "timeout_events": 0,
+        "evicted": 461677,
+        "life_refreshes": 0,
+        "horizon_updates": 2382,
+        "horizon_samples_seen": 461677,
+        "probability_refreshes": 77277
+      },
+      "horizon": {
+        "decisions": 6159,
+        "median_s": 38.42559891364564,
+        "p90_s": 51.253868647915766,
+        "final_s": 28.26286716083558,
+        "window_samples": 4096,
+        "sha256": "8aea105d446b0f1600f2a86b8073ce0b8d7346822989a4bf5ac0e1e56c55b3e4"
+      }
+    }
+  }
+}

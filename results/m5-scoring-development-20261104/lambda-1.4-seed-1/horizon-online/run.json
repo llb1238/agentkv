@@ -1,0 +1,62 @@
+{
+  "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+  "status": "complete",
+  "label": "horizon-online",
+  "tier": "online",
+  "candidate": "horizon",
+  "options": {
+    "scoring": "horizon",
+    "tail_first": false,
+    "final_first": true,
+    "timeout_decay": false,
+    "horizon_initial_s": 1.0,
+    "horizon_window": 4096,
+    "horizon_period_s": 1.0,
+    "perfect_probability": false
+  },
+  "population_sha256": "6704f9e7d14d981bedafefe0b915277ec49d0d84ca349d5ff216f286cbc180f6",
+  "schedule_gpu_sha256": "f090a0a0c7fc2150f9cf69902faaae8f2a05c69dccde91047dde1ad079219dd0",
+  "summary": {
+    "requests": 16357,
+    "window_requests": 12711,
+    "window_prompt_tokens": 82655941,
+    "source_tokens": {
+      "gpu_hit": 27574480,
+      "cpu_hit": 29411296,
+      "recomputed": 25670165
+    },
+    "source_fractions": {
+      "gpu_hit": 0.333605542038412,
+      "cpu_hit": 0.3558279736964098,
+      "recomputed": 0.31056648426517824
+    },
+    "gpu_evictions": 4232951,
+    "cpu_evictions": 2049869,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 8,
+    "peak_gpu_tokens": 182880,
+    "kv_blocked_checks": 0,
+    "queued_requests": 444,
+    "unsent_queued": 0
+  },
+  "elapsed_wall_s": 347.63293569581583,
+  "requests_sha256": "87d50af318c2e53e83b46c250649f4d1e11255586810d4061a41fdd6ced48fb2",
+  "policy_stats": {
+    "valid_hint_requests": 16357,
+    "invalid_hint_callbacks": 0,
+    "timeout_events": 0,
+    "evicted": 2049869,
+    "life_refreshes": 0,
+    "horizon_updates": 2400,
+    "horizon_samples_seen": 2049869,
+    "probability_refreshes": 80113
+  },
+  "horizon": {
+    "decisions": 14799,
+    "median_s": 8.59293664125805,
+    "p90_s": 14.144967109261074,
+    "final_s": 7.813545805335371,
+    "window_samples": 4096,
+    "sha256": "4c3967ebf9aedd5107bb739d22c365dbd819fd68d718035c185b01bc5011da99"
+  }
+}

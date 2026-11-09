@@ -1,0 +1,50 @@
+{
+  "format": "agentkv.key_diagnosis.v1",
+  "git_commit": "d344e7e9b1aa6d2eb27af7a0d22298724cf3f860",
+  "files": {
+    "per-request.json": {
+      "bytes": 1337832,
+      "sha256": "6673908ab650927d52593fd79ee171348d21a481f8ca0f91247e683d6ff0560f"
+    },
+    "per-request.parquet": {
+      "bytes": 651104,
+      "sha256": "715f2bf39ce89ae3c61bb1aa672292f3da86506b4efba492688a1c99b6edbfc9"
+    },
+    "analysis.log": {
+      "bytes": 1472,
+      "sha256": "d54755ba70803c585d97d5a03626366f146a977dd0638c30a915d6992d08b862"
+    },
+    "tests.json": {
+      "bytes": 161,
+      "sha256": "4f2e1ad374c21680b47a22b740aa72f3d4dd9f3aaf563cfa6666d0194a3e8c7a"
+    },
+    "witness-original-context.jsonl.gz": {
+      "bytes": 97970,
+      "sha256": "7fb2f2cf1045327b54faf540dcb620b2cdab1f352bf7bff8702ec2be316356b2"
+    },
+    "fixture.json": {
+      "bytes": 1085,
+      "sha256": "7b40df4e65fc86412dc21a7cc0eda9333d845771d951a443a3fa3ba66d74a206"
+    },
+    "tests.log": {
+      "bytes": 908,
+      "sha256": "a639366a291d27f39c8f24b8b43ead1127919882b34031c996b511df477e91fb"
+    },
+    "source-locations.json": {
+      "bytes": 1220,
+      "sha256": "6764fee54477c6e9a1587104eeef1a0fbaf6c57c1afe66709f1124eb43cb5a25"
+    },
+    "run.json": {
+      "bytes": 3661,
+      "sha256": "b48ee7558aa12a82a89c5342ef228cd8970b129de349a057421840a832296841"
+    },
+    "README.md": {
+      "bytes": 14790,
+      "sha256": "922ef30ecc671692b029ea1626a8134bd37d724f431e9ab39cf6aaa26fed535f"
+    },
+    "counterexample.json": {
+      "bytes": 2372,
+      "sha256": "b038df4824b25c66ef8da4cf8ba7b79409ee43b4170e1736493cc804a4f0d7a9"
+    }
+  }
+}

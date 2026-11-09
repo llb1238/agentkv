@@ -1,0 +1,29 @@
+{
+  "git_commit": "0ffd5d9dcf2230af56e05cc979ef4391769a0929",
+  "status": "complete",
+  "run_commits": {
+    "lru": "0ffd5d9dcf2230af56e05cc979ef4391769a0929",
+    "hint-none": "0ffd5d9dcf2230af56e05cc979ef4391769a0929"
+  },
+  "population_sha256": "0148c0ad961f0a7316d3592379be34d5fe559809674b70ed7a37c819dba181b0",
+  "ttft_difference": {
+    "p50": {
+      "absolute_ms": -0.5802370000000039,
+      "relative_percent": -1.168074050447765
+    },
+    "p99": {
+      "absolute_ms": -24.950815050000983,
+      "relative_percent": -3.483708204654057
+    }
+  },
+  "source_difference_pp": {
+    "gpu_hit": 0.06624091157629852,
+    "cpu_hit": 0.18932636503377204,
+    "recomputed": -0.2555672766100636
+  },
+  "e1_overhead_gate_passed": true,
+  "paired_runs_sha256": {
+    "lru": "0aa2e17d8d07b0d5374b1ba9e94aa753eddcabf261a9310b585b10ad5ae9cc20",
+    "hint-none": "6acf2c2bf91f76e4b7c389c4ada92c50de99ab62f9e7d4f4744e81339bd65e76"
+  }
+}

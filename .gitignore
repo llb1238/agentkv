@@ -1,0 +1,64 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Public AgentX source payload; tracked provenance records size and SHA256.
+/data/raw/agentx/
+
+# Rebuildable CSV duplicates; retain compact parquet and audit summaries.
+/results/m1-agentx-data-20261102/*.csv
+
+# Deterministic large workloads are rebuilt from code and tracked manifests.
+/results/m1-workload-*/workload.parquet
+/results/m1-workload-*/workload.parquet.partial
+
+# Online outputs retain full original prompts; keep large rebuildable payloads local.
+/results/m1-online-*/requests.parquet
+
+# Archived payloads retain the same large-file rules.
+/results/archive/m1-workload-*/workload.parquet
+/results/archive/m1-workload-*/workload.parquet.partial
+/results/archive/m1-online-*/requests.parquet
+
+# Shared-GPU replay retains original prompt arrays locally.
+/results/m1-shared-*/requests.parquet
+
+# E0 keeps original prompt payloads locally; compact metadata is tracked.
+/results/m1-e0-*/**/real/requests.parquet
+
+# CachePolicy feasibility probe retains complete prompt payload and raw log bytes locally.
+/results/m5-vllm-callback-probe-*/requests.parquet
+/results/m5-vllm-callback-probe-*/policy-observations/*.jsonl
+
+# Complete callback trials keep prompt arrays local.
+/results/m5-vllm-integration-*/probe/requests.parquet
+/results/m5-vllm-integration-*/smoke/requests.parquet
+
+/results/archive/m5-vllm-full-probe-*/requests.parquet
+
+# Policy-overhead trials keep original prompt arrays locally.
+/results/m5-policy-overhead-*/gpu/*/requests.parquet
+/results/archive/m5-policy-overhead-attempt*/**/requests.parquet
+
+# E1 CPU-model request metadata is tracked; online prompt arrays stay local.
+/results/e1-gpu-*/**/attempt-*/requests.parquet
+
+# Full online callback recording keeps original prompt arrays on persistent disk.
+/results/m5-chain-scoring-*/online-trace/requests.parquet
+
+# Paired chain implementation trials retain original prompt arrays persistently.
+/results/m5-chain-implementation-*/gpu/*/requests.parquet
+
+# Complete raw callback streams remain in external/local evidence storage.
+# Their sizes, SHA256 and original Git blobs are in docs/publication_payloads.json.
+/results/m5-vllm-integration-*/**/callback-traces/*.jsonl.gz
+/results/m5-chain-scoring-*/**/callback-traces/*.jsonl.gz
+/results/m5-vllm-callback-probe-*/policy-observations/*.jsonl.gz
+/results/archive/m5-vllm-full-probe-*/callback-traces/*.jsonl.gz

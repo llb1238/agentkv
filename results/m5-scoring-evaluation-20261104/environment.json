@@ -1,0 +1,10 @@
+{
+  "git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "numpy": "2.5.4",
+  "pyarrow": "26.0.0",
+  "matplotlib": "3.11.2",
+  "OMP_NUM_THREADS": "1",
+  "OPENBLAS_NUM_THREADS": "1",
+  "scope": "CPU-only simulation; no serving engine started"
+}

@@ -1,0 +1,21 @@
+{
+  "pytest_manager_worker": {
+    "passed": 68,
+    "log": "pytest-unit.log"
+  },
+  "pytest_scheduler": {
+    "passed": 403,
+    "offline": true,
+    "log": "pytest-scheduler.log"
+  },
+  "pytest_manager_trace_enabled": {
+    "passed": 51,
+    "log": "pytest-trace-enabled.log"
+  },
+  "pre_commit": "all applicable hooks passed; pre-commit.log",
+  "six_requests_additive_ttft": "all nonnegative, exact ns closure and agreement with measured client TTFT",
+  "model_functional_check": "all 9 sessions passed source partition, ID concatenation and length assertions; GPU/CPU restore output identical in this fixture",
+  "gpu0_after_mib": 0,
+  "existing_service_8000_health": 200,
+  "git_diff_check": "pass"
+}

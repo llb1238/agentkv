@@ -1,0 +1,34 @@
+{
+  "git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "mode": "exact LRU replay + candidate decision replay on recorded LRU states",
+  "callback_counts": {
+    "get": 822292,
+    "on_store_miss": 1215,
+    "touch": 1215,
+    "insert": 116679,
+    "mark_evictable": 194520,
+    "on_request_finished": 1284,
+    "mark_non_evictable": 77841,
+    "evict": 1128
+  },
+  "root_sequence_complete": true,
+  "close_footers": 1,
+  "valid_hint_requests": 1284,
+  "prefix_checked_requests": 1284,
+  "eviction_decisions": 1128,
+  "invariants": {
+    "no_unready_pinned_or_protected_victims": true,
+    "finished_chain_state": true,
+    "resident_prefix_membership_and_depth": true,
+    "ownership_measured_per_eviction": true,
+    "no_exceptions": true
+  },
+  "candidate_adapter_decisions_identical": true,
+  "limitations": [
+    "Candidate dry runs restore membership before recorded LRU victims are applied; not counterfactual hit rates."
+  ],
+  "trace_sha256": {
+    "callbacks-104291-133189492484976.jsonl.gz": "ad601e1a340010c03d2177c648923bc364ed2d45c04d1b06a3d022ecc139fbec"
+  }
+}

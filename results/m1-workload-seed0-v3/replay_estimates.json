@@ -1,0 +1,58 @@
+{
+  "workload_sha256": "38fe20ee8e3316124fc25cb4bb296f914cf3d8ee3cdc0fceac7d4f00854bd9e8",
+  "parameters": {
+    "seed": 0,
+    "num_roots": 100,
+    "context_budget": 32512,
+    "gap_cap": 120.0,
+    "gap_compress": 1.0,
+    "noise_seed": 0,
+    "ema_alpha": 0.5
+  },
+  "assumptions": {
+    "service": "every request takes exactly s seconds; original api_time is not replayed",
+    "concurrency": "unlimited concurrent requests; no server queue, network overhead or inflight limit",
+    "schedule": "anchor completion + start_delay_s at chain heads; previous completion + gap_after_s within chains; chain_offset_s ignored",
+    "window": "each root arrival is t=0; count actual request send times <= 1500 s",
+    "root_completion": "maximum request completion time within each root, without truncation at 25 minutes",
+    "quantiles": "equal root weights, linear interpolation; request fraction weights every request equally"
+  },
+  "estimates": [
+    {
+      "service_time_s": 0.2,
+      "root_completion_s": {
+        "n": 100,
+        "median": 1581.738500000004,
+        "p90": 8408.956899999956,
+        "maximum": 62166.30799999849
+      },
+      "requests_sent_within_1500s": 10547,
+      "total_requests": 28812,
+      "request_fraction_within_1500s": 0.3660627516312647
+    },
+    {
+      "service_time_s": 0.5,
+      "root_completion_s": {
+        "n": 100,
+        "median": 1602.4385000000016,
+        "p90": 8489.596899999979,
+        "maximum": 62570.1079999995
+      },
+      "requests_sent_within_1500s": 10388,
+      "total_requests": 28812,
+      "request_fraction_within_1500s": 0.36054421768707484
+    },
+    {
+      "service_time_s": 1.0,
+      "root_completion_s": {
+        "n": 100,
+        "median": 1633.3294999999987,
+        "p90": 8623.996899999978,
+        "maximum": 63243.1079999995
+      },
+      "requests_sent_within_1500s": 10162,
+      "total_requests": 28812,
+      "request_fraction_within_1500s": 0.352700263778981
+    }
+  ]
+}

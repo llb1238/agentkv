@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "layout_commit": "8eeb34f",
+  "original_result_commit": "7d787ef",
+  "unchanged_historical_files": 514,
+  "allowed_live_audit_script_updates": [
+    "results/m1-scheduler-tail-final/render_report.py",
+    "results/m1-scheduler-tail-final/validate_probe.py",
+    "results/m1-steady-state-seed0/validate_population.py",
+    "results/m1-two-tier-seed0/validate.py"
+  ],
+  "presentation_migrations": 17,
+  "archived_directories": 14,
+  "indexed_experiments": 27,
+  "local_markdown_files_checked": 37,
+  "broken_local_links": []
+}

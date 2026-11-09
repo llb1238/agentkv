@@ -1,0 +1,35 @@
+{
+  "git_commit": "18c1ad00397e90377fa4fc41900d3a20e8065871",
+  "reference_commit": "6afbaee",
+  "status": "complete",
+  "results": [
+    {
+      "source": "results/m5-chain-scoring-20261106/online-trace",
+      "evictions": 734,
+      "ordered_lists_identical": true,
+      "policy": "online",
+      "partial_capture": false
+    },
+    {
+      "source": "results/m5-vllm-integration-20261104/probe",
+      "evictions": 1128,
+      "ordered_lists_identical": true,
+      "policy": "native LRU",
+      "partial_capture": false
+    },
+    {
+      "source": "results/m5-vllm-integration-20261104/smoke",
+      "evictions": 2005,
+      "ordered_lists_identical": true,
+      "policy": "perfect",
+      "partial_capture": false
+    },
+    {
+      "source": "results/archive/m5-vllm-full-probe-20261104-unclosed",
+      "evictions": 1132,
+      "ordered_lists_identical": true,
+      "policy": "native LRU",
+      "partial_capture": true
+    }
+  ]
+}

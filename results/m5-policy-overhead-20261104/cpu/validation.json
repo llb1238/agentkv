@@ -1,0 +1,495 @@
+{
+  "eviction_checks": {
+    "optimized": 2005,
+    "vllm": 2005,
+    "none": 1128
+  },
+  "evict": {
+    "reference": {
+      "count": 2005,
+      "p50_us": 207.784,
+      "p99_us": 8432.839560000002,
+      "maximum_us": 19907.78
+    },
+    "optimized": {
+      "count": 2005,
+      "p50_us": 60.728,
+      "p99_us": 1424.0545200000001,
+      "maximum_us": 2071.746
+    },
+    "vllm": {
+      "count": 2005,
+      "p50_us": 68.318,
+      "p99_us": 1498.6066800000003,
+      "maximum_us": 2147.292
+    },
+    "none": {
+      "count": 1128,
+      "p50_us": 13.52,
+      "p99_us": 1745.35644,
+      "maximum_us": 6006.39
+    }
+  },
+  "prefix_profiles": {
+    "reference-profile": [
+      {
+        "file": "/home/llb/my_soft/vllm/vllm/v1/kv_offload/base.py",
+        "line": 121,
+        "name": "get_offload_prefix_keys",
+        "calls": 4349,
+        "self_s": 0.16483673100000001,
+        "cumulative_s": 0.8394377770000001
+      }
+    ],
+    "optimized-profile": [
+      {
+        "file": "/home/llb/my_soft/vllm/vllm/v1/kv_offload/base.py",
+        "line": 121,
+        "name": "get_offload_prefix_keys",
+        "calls": 2259,
+        "self_s": 0.08864311400000001,
+        "cumulative_s": 0.46668242200000004
+      }
+    ]
+  },
+  "callback_totals": {
+    "reference": [
+      {
+        "method": "get",
+        "elapsed_us_sum": 408810.7389999814,
+        "elapsed_us_mean": 0.2529794471974855,
+        "elapsed_us_max": 124.601
+      },
+      {
+        "method": "on_store_miss",
+        "elapsed_us_sum": 5552718.746999992,
+        "elapsed_us_mean": 2656.8032282296613,
+        "elapsed_us_max": 27069.343
+      },
+      {
+        "method": "insert",
+        "elapsed_us_sum": 725007.0499999956,
+        "elapsed_us_mean": 4.885459329788853,
+        "elapsed_us_max": 11437.481
+      },
+      {
+        "method": "mark_evictable",
+        "elapsed_us_sum": 1083226.7480000015,
+        "elapsed_us_mean": 2.9782786458404975,
+        "elapsed_us_max": 10016.303
+      },
+      {
+        "method": "on_request_finished",
+        "elapsed_us_sum": 11341467.772999987,
+        "elapsed_us_mean": 5020.570063302341,
+        "elapsed_us_max": 50269.307
+      },
+      {
+        "method": "mark_non_evictable",
+        "elapsed_us_sum": 685679.2649999901,
+        "elapsed_us_mean": 3.184643696471985,
+        "elapsed_us_max": 17010.069
+      },
+      {
+        "method": "evict",
+        "elapsed_us_sum": 2041095.3270000024,
+        "elapsed_us_mean": 1018.0026568578566,
+        "elapsed_us_max": 19907.78
+      }
+    ],
+    "optimized": [
+      {
+        "method": "get",
+        "elapsed_us_sum": 427083.4589999857,
+        "elapsed_us_mean": 0.26428693539044057,
+        "elapsed_us_max": 78.627
+      },
+      {
+        "method": "on_store_miss",
+        "elapsed_us_sum": 6558660.639999977,
+        "elapsed_us_mean": 3138.11513875597,
+        "elapsed_us_max": 12291.209
+      },
+      {
+        "method": "insert",
+        "elapsed_us_sum": 832388.7579999942,
+        "elapsed_us_mean": 5.609050868929415,
+        "elapsed_us_max": 2138.439
+      },
+      {
+        "method": "mark_evictable",
+        "elapsed_us_sum": 1560423.3360000027,
+        "elapsed_us_mean": 4.290307185139776,
+        "elapsed_us_max": 6569.419
+      },
+      {
+        "method": "on_request_finished",
+        "elapsed_us_sum": 14276561.175999997,
+        "elapsed_us_mean": 6319.858864984505,
+        "elapsed_us_max": 19848.327
+      },
+      {
+        "method": "mark_non_evictable",
+        "elapsed_us_sum": 848234.1960000014,
+        "elapsed_us_mean": 3.939631578947375,
+        "elapsed_us_max": 3335.096
+      },
+      {
+        "method": "evict",
+        "elapsed_us_sum": 432038.30700000055,
+        "elapsed_us_mean": 215.4804523690776,
+        "elapsed_us_max": 2071.746
+      }
+    ],
+    "vllm": [
+      {
+        "method": "get",
+        "elapsed_us_sum": 667856.3730000745,
+        "elapsed_us_mean": 0.413281550436189,
+        "elapsed_us_max": 115.662
+      },
+      {
+        "method": "on_store_miss",
+        "elapsed_us_sum": 6572265.174000006,
+        "elapsed_us_mean": 3144.624485167467,
+        "elapsed_us_max": 12262.32
+      },
+      {
+        "method": "insert",
+        "elapsed_us_sum": 875581.0219999988,
+        "elapsed_us_mean": 5.900101899582879,
+        "elapsed_us_max": 2456.77
+      },
+      {
+        "method": "mark_evictable",
+        "elapsed_us_sum": 1650769.2599999728,
+        "elapsed_us_mean": 4.538708857905559,
+        "elapsed_us_max": 6518.793
+      },
+      {
+        "method": "on_request_finished",
+        "elapsed_us_sum": 14371800.027000004,
+        "elapsed_us_mean": 6362.01860424967,
+        "elapsed_us_max": 19692.028
+      },
+      {
+        "method": "mark_non_evictable",
+        "elapsed_us_sum": 895536.3619999972,
+        "elapsed_us_mean": 4.159326927006879,
+        "elapsed_us_max": 3331.357
+      },
+      {
+        "method": "evict",
+        "elapsed_us_sum": 454013.50599999994,
+        "elapsed_us_mean": 226.44065137157105,
+        "elapsed_us_max": 2147.292
+      }
+    ]
+  },
+  "slowest": {
+    "reference": [
+      {
+        "call": 889124,
+        "n": 511,
+        "elapsed_us": 19907.78,
+        "victims_sha256": "9267071b59ad87ecc64e2056390bc15080d751b5d05fc987cc700b2c7f351c73",
+        "none": false
+      },
+      {
+        "call": 1136916,
+        "n": 511,
+        "elapsed_us": 18838.169,
+        "victims_sha256": "b8df644068d1ca0cad0656d960db644156d525c34042b9cc0addce0ac5b7718c",
+        "none": false
+      },
+      {
+        "call": 2131476,
+        "n": 2,
+        "elapsed_us": 17092.163,
+        "victims_sha256": "9bc1fb3fe49ecac4062b8172b86f52adeefa0e53cbaf6284c56736c44ffc50af",
+        "none": false
+      },
+      {
+        "call": 2034922,
+        "n": 34,
+        "elapsed_us": 16511.774,
+        "victims_sha256": "18cad13e7b2edb38b15352d949f5a6be3f69d941e7acaa0d081f132347be1aee",
+        "none": false
+      },
+      {
+        "call": 354911,
+        "n": 4,
+        "elapsed_us": 13847.497,
+        "victims_sha256": "bd65f80cbe5d4cfa722874a0b5a0666506e52cc858acd797fd20d9157fabc7a0",
+        "none": false
+      },
+      {
+        "call": 497793,
+        "n": 2,
+        "elapsed_us": 12884.802,
+        "victims_sha256": "407a12d78b97b548cbe013a6fd0c3e06a1506f1ba5642af907d9a6491da00912",
+        "none": false
+      },
+      {
+        "call": 1910144,
+        "n": 1,
+        "elapsed_us": 12805.287,
+        "victims_sha256": "d46539e11e12763c553b2e34704d6fa35401ac2128f6351ca706098306463859",
+        "none": false
+      },
+      {
+        "call": 1528598,
+        "n": 29,
+        "elapsed_us": 12532.551,
+        "victims_sha256": "ecc8e1b83592775f9f3334284d0f6f3a001b763d57f8bd0ebf5ddca7ee731027",
+        "none": false
+      },
+      {
+        "call": 1503611,
+        "n": 190,
+        "elapsed_us": 11893.118,
+        "victims_sha256": "b3ad408d9aa8e2319f7c637c2cb1b2d0dc93cd944bad67e4d2a6c5762fd315ea",
+        "none": false
+      },
+      {
+        "call": 1215503,
+        "n": 7,
+        "elapsed_us": 10738.444,
+        "victims_sha256": "e3b227c89c3982ee81f4e61612cc7bd0be08eb537d9817afd180aae59b9f5010",
+        "none": false
+      }
+    ],
+    "optimized": [
+      {
+        "call": 1949859,
+        "n": 719,
+        "elapsed_us": 2071.746,
+        "victims_sha256": "5afde38efe4b2a157b0a260799866dda4b73d2a818c80039c795fa061e3be905",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 1136916,
+        "n": 511,
+        "elapsed_us": 2025.316,
+        "victims_sha256": "b8df644068d1ca0cad0656d960db644156d525c34042b9cc0addce0ac5b7718c",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 1,
+        "ineligible": 0
+      },
+      {
+        "call": 2161881,
+        "n": 511,
+        "elapsed_us": 1710.57,
+        "victims_sha256": "83dde9582e015b90e907ff0e5aa20c10e65e062b7e4c5f04af2cfbb7e33fb930",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 1223041,
+        "n": 511,
+        "elapsed_us": 1692.839,
+        "victims_sha256": "ef44a2997949c63e721a8a7fcf394af252988548bdd2159db9da59058515040a",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 896220,
+        "n": 511,
+        "elapsed_us": 1621.882,
+        "victims_sha256": "a806c1dd2e0fa3da57ef8198fe1b375fd0d286b2c7858fe8f37b57a588f622ec",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 2336359,
+        "n": 512,
+        "elapsed_us": 1601.836,
+        "victims_sha256": "76a5e87643f298a7fc54d1b85757d5be8c3407080990f4203057329b1d5e631d",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 875187,
+        "n": 511,
+        "elapsed_us": 1597.509,
+        "victims_sha256": "f53a4fe56ff724521777ebec8c4d627ceecc8e36fb19deacc5d65043f5829762",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 951982,
+        "n": 511,
+        "elapsed_us": 1580.048,
+        "victims_sha256": "f45c9a714cced98e324a8439300e283958ab50a771a73726dc6346b58aca32fd",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 1224048,
+        "n": 494,
+        "elapsed_us": 1572.189,
+        "victims_sha256": "f75add8dba0aa0227e7d8140f3bebedd7d25106d77457d0d3e620025eed23aa4",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 568144,
+        "n": 491,
+        "elapsed_us": 1565.537,
+        "victims_sha256": "ed7fdb0b4dac43331976b4d7bf3afa6c54fd94967ee6ebb740022719c6d1c28c",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      }
+    ],
+    "vllm": [
+      {
+        "call": 1136916,
+        "n": 511,
+        "elapsed_us": 2147.292,
+        "victims_sha256": "b8df644068d1ca0cad0656d960db644156d525c34042b9cc0addce0ac5b7718c",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 1,
+        "ineligible": 0
+      },
+      {
+        "call": 1949859,
+        "n": 719,
+        "elapsed_us": 2089.539,
+        "victims_sha256": "5afde38efe4b2a157b0a260799866dda4b73d2a818c80039c795fa061e3be905",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 2336359,
+        "n": 512,
+        "elapsed_us": 1784.027,
+        "victims_sha256": "76a5e87643f298a7fc54d1b85757d5be8c3407080990f4203057329b1d5e631d",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 2161881,
+        "n": 511,
+        "elapsed_us": 1776.149,
+        "victims_sha256": "83dde9582e015b90e907ff0e5aa20c10e65e062b7e4c5f04af2cfbb7e33fb930",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 1223041,
+        "n": 511,
+        "elapsed_us": 1696.252,
+        "victims_sha256": "ef44a2997949c63e721a8a7fcf394af252988548bdd2159db9da59058515040a",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 875187,
+        "n": 511,
+        "elapsed_us": 1666.048,
+        "victims_sha256": "f53a4fe56ff724521777ebec8c4d627ceecc8e36fb19deacc5d65043f5829762",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 896220,
+        "n": 511,
+        "elapsed_us": 1634.906,
+        "victims_sha256": "a806c1dd2e0fa3da57ef8198fe1b375fd0d286b2c7858fe8f37b57a588f622ec",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 845033,
+        "n": 511,
+        "elapsed_us": 1629.66,
+        "victims_sha256": "a401ba7c6cef2174c439811ccd28eccd65d38c2fd30f4f91b4947bafa49297d6",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 846037,
+        "n": 491,
+        "elapsed_us": 1619.63,
+        "victims_sha256": "cf2b2ca479e71f4844f3cfcf59caa89387f3a47ab869ea0b491213b9847130a6",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      },
+      {
+        "call": 1351472,
+        "n": 511,
+        "elapsed_us": 1616.306,
+        "victims_sha256": "17a9fb435ddfd44613849d6aca292abdacc7ac53573fa273bc2b89f4dfcc5cff",
+        "none": false,
+        "events": 0,
+        "refreshes": 0,
+        "event_sweeps": 0,
+        "ineligible": 0
+      }
+    ]
+  },
+  "eviction_fingerprint": "09fc5af2fb5f632f3f98cf3ade5a9d6c70c09c27cdf256f2aa48222416216746",
+  "cpu_gate_passed": true,
+  "source_commits": {
+    "reference": "bd6b5c9c4a3ed86886bf297fffc9da7a56774885",
+    "optimized": "bd6b5c9c4a3ed86886bf297fffc9da7a56774885",
+    "vllm": "bd6b5c9c4a3ed86886bf297fffc9da7a56774885",
+    "none": "bd6b5c9c4a3ed86886bf297fffc9da7a56774885"
+  }
+}

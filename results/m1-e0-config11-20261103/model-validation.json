@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+  "model_pairs": 12,
+  "requests_checked": 181098,
+  "gap_blocks_checked": 14502840,
+  "input_manifest_sha256": "9262899c2ef78fea2feaf95d07b781674450d71dfd4c376d28fdc32ed1caa8bc",
+  "tests_passed": 119,
+  "input_manifest": "models-manifest.json"
+}

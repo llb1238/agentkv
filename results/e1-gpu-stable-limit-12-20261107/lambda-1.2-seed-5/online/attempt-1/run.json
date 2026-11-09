@@ -1,0 +1,1094 @@
+{
+  "parameters": {
+    "output_dir": "/home/llb/my_soft/agentkv-runs/stable-limit-12-20261107/lambda-1.2-seed-5/online/attempt-1",
+    "base_url": "http://127.0.0.1:8016",
+    "model": "Qwen/Qwen3-8B",
+    "run_id": "e1-lambda-1.2-seed-5",
+    "policy": "HintAwareCachePolicy",
+    "hint_tier": "online",
+    "arrival_rate": 1.2,
+    "population_seed": 5,
+    "steady_state": true,
+    "duration": 2400.0,
+    "warmup": 600.0,
+    "cooldown": 0.0,
+    "max_inflight": 128,
+    "request_timeout": 180.0,
+    "drain_timeout": 120.0,
+    "metrics_interval": 1,
+    "allow_dirty": false,
+    "observation_dir": "/home/llb/my_soft/agentkv-runs/stable-limit-12-20261107/lambda-1.2-seed-5/online/attempt-1/server-observations"
+  },
+  "git_commit": "daeb439b160a1d598495eda1ed2fea0c732f19b5",
+  "source": {
+    "workload_sha256": "a35eaf1eafcb9de245be86ac1f847de0314b7dcf806ecf4ebc5d079b6c5cffd2",
+    "schedule_sha256": "90823eab906f67d6bb5b37b17b49760a4616b91cb4805fb806cd0686624c6f20"
+  },
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "started_at": "2026-11-07T15:43:08.736419+00:00",
+  "status": "complete",
+  "M0": 77,
+  "instances": [
+    {
+      "root_id": "578354185933aedcdc6c17fbfbfcfb48876b",
+      "instance_id": 1,
+      "tau_s": 1177.0445565268114,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "ecd3ea07309dd8a6b62b2f90fd8c60fa92b2",
+      "instance_id": 3,
+      "tau_s": 510.8996412574983,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "43d1f727aec4d8b3f2aec42f816e7fabe193",
+      "instance_id": 5,
+      "tau_s": 9298.124790638365,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a40785d7169046c12bcab71edcfc4db9c2bf",
+      "instance_id": 7,
+      "tau_s": 3290.6099470443833,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "6a24d0277a28e652b9e10c05478a314fa2c2",
+      "instance_id": 9,
+      "tau_s": 3708.5792044704217,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 11,
+      "tau_s": 60482.94954972339,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 13,
+      "tau_s": 4035.216917122658,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 15,
+      "tau_s": 15028.254265803938,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "da7f35eb92538719bc0ea317a0b25bb25162",
+      "instance_id": 17,
+      "tau_s": 3879.4793617321006,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 19,
+      "tau_s": 32320.823980945537,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "cfad46925e9d22c6ffb3e0cc4bb925a8a5e3",
+      "instance_id": 21,
+      "tau_s": 5511.537031370974,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 23,
+      "tau_s": 843.8556430247802,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "b4c638cc16e89d17c18da83951a87fbc44dd",
+      "instance_id": 25,
+      "tau_s": 9096.363774988657,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "81fad784ca8c3f4136179dc73184409d21a2",
+      "instance_id": 27,
+      "tau_s": 385.3669748676146,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 29,
+      "tau_s": 3755.4632134969006,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 31,
+      "tau_s": 47952.4619849855,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 33,
+      "tau_s": 29402.02475476463,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "0b7f3ca692f15ae2651a310d9411d70794aa",
+      "instance_id": 35,
+      "tau_s": 2049.901148380035,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 37,
+      "tau_s": 3740.5658528966205,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 39,
+      "tau_s": 11828.141083574634,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 41,
+      "tau_s": 51391.05041590381,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "7b962f1dde638a046d1ce381c550fd26e664",
+      "instance_id": 43,
+      "tau_s": 503.5544953115155,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "da7f35eb92538719bc0ea317a0b25bb25162",
+      "instance_id": 45,
+      "tau_s": 3755.2338717314447,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "077ea9e6554f45bbad9c24a8462bae9a8512",
+      "instance_id": 47,
+      "tau_s": 896.598773680193,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 49,
+      "tau_s": 43122.672751754115,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "da7f35eb92538719bc0ea317a0b25bb25162",
+      "instance_id": 51,
+      "tau_s": 2648.494150779805,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "cfad46925e9d22c6ffb3e0cc4bb925a8a5e3",
+      "instance_id": 53,
+      "tau_s": 2700.5528989065465,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 55,
+      "tau_s": 41347.28101481614,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "786fc2864e590a1a8f57c01636868c677919",
+      "instance_id": 57,
+      "tau_s": 230.63092464458921,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "e094e1381d88f8aa6c9592279d51f97c5d87",
+      "instance_id": 59,
+      "tau_s": 2497.501184038841,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5d7e313e1d6839e48cc1f27d00f3ce9bae96",
+      "instance_id": 61,
+      "tau_s": 114.69187992785159,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5fc8495d01a2ad301e8ca7879579f2529029",
+      "instance_id": 63,
+      "tau_s": 802.6813649593827,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "cee6b94f31cc73d642e0aa58c95529429860",
+      "instance_id": 65,
+      "tau_s": 2635.7293977171985,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a9b39cbeb50c38260cc5a06b457f500586a2",
+      "instance_id": 67,
+      "tau_s": 2517.150522933945,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a40785d7169046c12bcab71edcfc4db9c2bf",
+      "instance_id": 69,
+      "tau_s": 4668.023489291258,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 71,
+      "tau_s": 14668.368775151712,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "b4c638cc16e89d17c18da83951a87fbc44dd",
+      "instance_id": 73,
+      "tau_s": 12290.652513069668,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "208d6e28928b0b3d3b33db3c690173d15be3",
+      "instance_id": 75,
+      "tau_s": 8899.414999253162,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "6f1e16774e85dcceb24661f4767c28659a78",
+      "instance_id": 77,
+      "tau_s": 311.6042814738347,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 79,
+      "tau_s": 33251.0051170724,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "706c0abaae61a8e9c2b182672a4527222b02",
+      "instance_id": 81,
+      "tau_s": 2740.458336446956,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5fc8495d01a2ad301e8ca7879579f2529029",
+      "instance_id": 83,
+      "tau_s": 6349.110067997163,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "81fad784ca8c3f4136179dc73184409d21a2",
+      "instance_id": 85,
+      "tau_s": 956.0951285419579,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 87,
+      "tau_s": 51675.11204807637,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 89,
+      "tau_s": 45923.58141553618,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "fc1b422d1b7a022e38072ff1e059e2eb718d",
+      "instance_id": 91,
+      "tau_s": 5583.424688740536,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5ed3de2b572d237576f034af300c1a1f65d3",
+      "instance_id": 93,
+      "tau_s": 1705.858812386712,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 95,
+      "tau_s": 34481.872373437145,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a195ca82a76d6c63b5683d5becb7097345a7",
+      "instance_id": 97,
+      "tau_s": 2039.5466843129357,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "0b7f3ca692f15ae2651a310d9411d70794aa",
+      "instance_id": 99,
+      "tau_s": 2216.0180358786015,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 101,
+      "tau_s": 35417.34426920181,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "fc1b422d1b7a022e38072ff1e059e2eb718d",
+      "instance_id": 103,
+      "tau_s": 6881.00740643551,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 105,
+      "tau_s": 37967.17365661305,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "002001296e8a8c38ad9d7cc436d691afc602",
+      "instance_id": 107,
+      "tau_s": 3506.9245535761947,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "81fad784ca8c3f4136179dc73184409d21a2",
+      "instance_id": 109,
+      "tau_s": 443.3278922985174,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 111,
+      "tau_s": 46883.57346479583,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "873df670bb4cc874c04b79732390b76504b7",
+      "instance_id": 113,
+      "tau_s": 57.741020154386604,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 115,
+      "tau_s": 2726.3120733404385,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a195ca82a76d6c63b5683d5becb7097345a7",
+      "instance_id": 117,
+      "tau_s": 481.68771368872353,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "873df670bb4cc874c04b79732390b76504b7",
+      "instance_id": 119,
+      "tau_s": 1633.0910867895127,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "cfad46925e9d22c6ffb3e0cc4bb925a8a5e3",
+      "instance_id": 121,
+      "tau_s": 531.0150856464672,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "785073384dac6cfe57bb3c8338f6c6b9a534",
+      "instance_id": 123,
+      "tau_s": 829.0790139727061,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "002001296e8a8c38ad9d7cc436d691afc602",
+      "instance_id": 125,
+      "tau_s": 46.887568535974125,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 127,
+      "tau_s": 29992.06135684748,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "4e687509d3c9c0afa7cc8b884d120eeb0d79",
+      "instance_id": 129,
+      "tau_s": 11139.880731253463,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 131,
+      "tau_s": 37524.78648452318,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 133,
+      "tau_s": 29599.113992097755,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 135,
+      "tau_s": 56147.03110782933,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "578354185933aedcdc6c17fbfbfcfb48876b",
+      "instance_id": 137,
+      "tau_s": 1891.815873636882,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 139,
+      "tau_s": 53360.57974049381,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "7577f2dd2a138934eb22250db3db75dfd622",
+      "instance_id": 141,
+      "tau_s": 526.4500251689859,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a9b39cbeb50c38260cc5a06b457f500586a2",
+      "instance_id": 143,
+      "tau_s": 1568.7423991180428,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "43d1f727aec4d8b3f2aec42f816e7fabe193",
+      "instance_id": 145,
+      "tau_s": 880.578300771856,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "f37e116e597376dfe147f03f3751a9dac2c4",
+      "instance_id": 147,
+      "tau_s": 245.63473692349623,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 149,
+      "tau_s": 45389.97088688856,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 151,
+      "tau_s": 8392.412149296848,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "421c59c8640de974ad4d7644b9ea88738998",
+      "instance_id": 153,
+      "tau_s": 954.9677470195265,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 0,
+      "tau_s": 0.0,
+      "start_s": 90.22156572757285,
+      "initial": false
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 2,
+      "tau_s": 0.0,
+      "start_s": 194.93301499452116,
+      "initial": false
+    },
+    {
+      "root_id": "a4b26361c3ccfc9b3478769097bb34565074",
+      "instance_id": 4,
+      "tau_s": 0.0,
+      "start_s": 269.1954253972743,
+      "initial": false
+    },
+    {
+      "root_id": "3e119fc3136975fe98cfc7fa73500d6574a0",
+      "instance_id": 6,
+      "tau_s": 0.0,
+      "start_s": 316.3575493552463,
+      "initial": false
+    },
+    {
+      "root_id": "578354185933aedcdc6c17fbfbfcfb48876b",
+      "instance_id": 8,
+      "tau_s": 0.0,
+      "start_s": 319.76336852655146,
+      "initial": false
+    },
+    {
+      "root_id": "208d6e28928b0b3d3b33db3c690173d15be3",
+      "instance_id": 10,
+      "tau_s": 0.0,
+      "start_s": 369.8675974962377,
+      "initial": false
+    },
+    {
+      "root_id": "c46ba0cc37132f9a7885c7d222ef104b68cc",
+      "instance_id": 12,
+      "tau_s": 0.0,
+      "start_s": 377.0488416895095,
+      "initial": false
+    },
+    {
+      "root_id": "12bd4c7c82ae413b035253cb800fc5312111",
+      "instance_id": 14,
+      "tau_s": 0.0,
+      "start_s": 409.7166076216012,
+      "initial": false
+    },
+    {
+      "root_id": "d876a71a07454e7499469e864f89cf6a3345",
+      "instance_id": 16,
+      "tau_s": 0.0,
+      "start_s": 417.6778073898142,
+      "initial": false
+    },
+    {
+      "root_id": "f6186ae5ee058ff54beafb57cd5cd4a45bdc",
+      "instance_id": 18,
+      "tau_s": 0.0,
+      "start_s": 607.8802534875165,
+      "initial": false
+    },
+    {
+      "root_id": "04dba6fe621301a1d01fd63b8d02c9645c48",
+      "instance_id": 20,
+      "tau_s": 0.0,
+      "start_s": 700.155882278026,
+      "initial": false
+    },
+    {
+      "root_id": "a3acb7e89fb41af79510cf1ecf36a703490f",
+      "instance_id": 22,
+      "tau_s": 0.0,
+      "start_s": 706.0398002366525,
+      "initial": false
+    },
+    {
+      "root_id": "ec18ce9c5b6375a3d4eb5ceaf9bdc19eb13d",
+      "instance_id": 24,
+      "tau_s": 0.0,
+      "start_s": 726.9676095575004,
+      "initial": false
+    },
+    {
+      "root_id": "515e43cbf9a646bb3e6489bd78f1bf1b361a",
+      "instance_id": 26,
+      "tau_s": 0.0,
+      "start_s": 758.3030494771489,
+      "initial": false
+    },
+    {
+      "root_id": "b5814dfafe18de379ec922b7754a5d4daff3",
+      "instance_id": 28,
+      "tau_s": 0.0,
+      "start_s": 845.7880551428849,
+      "initial": false
+    },
+    {
+      "root_id": "f204bbf87b0680d205fe8a14441fbde0ee71",
+      "instance_id": 30,
+      "tau_s": 0.0,
+      "start_s": 891.8240687547208,
+      "initial": false
+    },
+    {
+      "root_id": "006c98de37d819e95b0840e25426bb7ca99d",
+      "instance_id": 32,
+      "tau_s": 0.0,
+      "start_s": 945.8416277750235,
+      "initial": false
+    },
+    {
+      "root_id": "706c0abaae61a8e9c2b182672a4527222b02",
+      "instance_id": 34,
+      "tau_s": 0.0,
+      "start_s": 952.1106100881926,
+      "initial": false
+    },
+    {
+      "root_id": "d9145ae4fd8522682ca26948aa7218169b2f",
+      "instance_id": 36,
+      "tau_s": 0.0,
+      "start_s": 976.8141193440296,
+      "initial": false
+    },
+    {
+      "root_id": "9818ececb3adfe6094838a102661d831b228",
+      "instance_id": 38,
+      "tau_s": 0.0,
+      "start_s": 1002.2472594905573,
+      "initial": false
+    },
+    {
+      "root_id": "ae2b1a3146e2d951e1bc6ab2c3083c083c0a",
+      "instance_id": 40,
+      "tau_s": 0.0,
+      "start_s": 1072.139026407384,
+      "initial": false
+    },
+    {
+      "root_id": "6359dd402eb0e2361bf439699c52f5cfea38",
+      "instance_id": 42,
+      "tau_s": 0.0,
+      "start_s": 1099.4560180309854,
+      "initial": false
+    },
+    {
+      "root_id": "515e43cbf9a646bb3e6489bd78f1bf1b361a",
+      "instance_id": 44,
+      "tau_s": 0.0,
+      "start_s": 1155.1945447533667,
+      "initial": false
+    },
+    {
+      "root_id": "b896573ed9362f3dfd75d294c797be57bce0",
+      "instance_id": 46,
+      "tau_s": 0.0,
+      "start_s": 1171.7741315211376,
+      "initial": false
+    },
+    {
+      "root_id": "05f72f78a037cfa5cd4e4541960a574701d9",
+      "instance_id": 48,
+      "tau_s": 0.0,
+      "start_s": 1199.2623491307356,
+      "initial": false
+    },
+    {
+      "root_id": "786fc2864e590a1a8f57c01636868c677919",
+      "instance_id": 50,
+      "tau_s": 0.0,
+      "start_s": 1231.533070893695,
+      "initial": false
+    },
+    {
+      "root_id": "7577f2dd2a138934eb22250db3db75dfd622",
+      "instance_id": 52,
+      "tau_s": 0.0,
+      "start_s": 1261.6387467208656,
+      "initial": false
+    },
+    {
+      "root_id": "1007f04d2c64580308858bb42f292992929d",
+      "instance_id": 54,
+      "tau_s": 0.0,
+      "start_s": 1279.0957381680078,
+      "initial": false
+    },
+    {
+      "root_id": "fd58552cd561b0fd7d5490415dfe966e2e20",
+      "instance_id": 56,
+      "tau_s": 0.0,
+      "start_s": 1300.1130302756787,
+      "initial": false
+    },
+    {
+      "root_id": "dca1f974f0ca4ccb6bfca96f39fd07f70d17",
+      "instance_id": 58,
+      "tau_s": 0.0,
+      "start_s": 1339.8667073858217,
+      "initial": false
+    },
+    {
+      "root_id": "5fc8495d01a2ad301e8ca7879579f2529029",
+      "instance_id": 60,
+      "tau_s": 0.0,
+      "start_s": 1343.3320927597372,
+      "initial": false
+    },
+    {
+      "root_id": "208d6e28928b0b3d3b33db3c690173d15be3",
+      "instance_id": 62,
+      "tau_s": 0.0,
+      "start_s": 1547.380076586298,
+      "initial": false
+    },
+    {
+      "root_id": "557810b129b9cb3e7402235470567c4e4dc0",
+      "instance_id": 64,
+      "tau_s": 0.0,
+      "start_s": 1604.5624386928146,
+      "initial": false
+    },
+    {
+      "root_id": "a46aa506e8aef39ef68e80643d583a6e25e2",
+      "instance_id": 66,
+      "tau_s": 0.0,
+      "start_s": 1605.7746250104226,
+      "initial": false
+    },
+    {
+      "root_id": "d8f4acab90f50271074b6c75029412205e14",
+      "instance_id": 68,
+      "tau_s": 0.0,
+      "start_s": 1649.7592725624322,
+      "initial": false
+    },
+    {
+      "root_id": "077ea9e6554f45bbad9c24a8462bae9a8512",
+      "instance_id": 70,
+      "tau_s": 0.0,
+      "start_s": 1662.2484755767307,
+      "initial": false
+    },
+    {
+      "root_id": "12bd4c7c82ae413b035253cb800fc5312111",
+      "instance_id": 72,
+      "tau_s": 0.0,
+      "start_s": 1674.9135370267113,
+      "initial": false
+    },
+    {
+      "root_id": "3c1fbf5cf98484c7f9ef07f2d4b00e65d829",
+      "instance_id": 74,
+      "tau_s": 0.0,
+      "start_s": 1677.9866740222876,
+      "initial": false
+    },
+    {
+      "root_id": "43d1f727aec4d8b3f2aec42f816e7fabe193",
+      "instance_id": 76,
+      "tau_s": 0.0,
+      "start_s": 1681.6659537703183,
+      "initial": false
+    },
+    {
+      "root_id": "4b88101f5ed7507b73138a73dfbf55f972de",
+      "instance_id": 78,
+      "tau_s": 0.0,
+      "start_s": 1725.445158012704,
+      "initial": false
+    },
+    {
+      "root_id": "557810b129b9cb3e7402235470567c4e4dc0",
+      "instance_id": 80,
+      "tau_s": 0.0,
+      "start_s": 1733.7934770797087,
+      "initial": false
+    },
+    {
+      "root_id": "d8f4acab90f50271074b6c75029412205e14",
+      "instance_id": 82,
+      "tau_s": 0.0,
+      "start_s": 1780.135149008666,
+      "initial": false
+    },
+    {
+      "root_id": "ac8484a39348e8e6120d48d5143982d162a3",
+      "instance_id": 84,
+      "tau_s": 0.0,
+      "start_s": 1852.9313915804312,
+      "initial": false
+    },
+    {
+      "root_id": "a46aa506e8aef39ef68e80643d583a6e25e2",
+      "instance_id": 86,
+      "tau_s": 0.0,
+      "start_s": 1863.313185478996,
+      "initial": false
+    },
+    {
+      "root_id": "fd58552cd561b0fd7d5490415dfe966e2e20",
+      "instance_id": 88,
+      "tau_s": 0.0,
+      "start_s": 1920.324519218985,
+      "initial": false
+    },
+    {
+      "root_id": "fc1b422d1b7a022e38072ff1e059e2eb718d",
+      "instance_id": 90,
+      "tau_s": 0.0,
+      "start_s": 1937.7522718807425,
+      "initial": false
+    },
+    {
+      "root_id": "846f3b1d41d0bc5a85253fe29e3a22a3f8e8",
+      "instance_id": 92,
+      "tau_s": 0.0,
+      "start_s": 1950.4191768273029,
+      "initial": false
+    },
+    {
+      "root_id": "4e687509d3c9c0afa7cc8b884d120eeb0d79",
+      "instance_id": 94,
+      "tau_s": 0.0,
+      "start_s": 2118.933660974036,
+      "initial": false
+    },
+    {
+      "root_id": "b81f342ac55e378729c23959beac128c410e",
+      "instance_id": 96,
+      "tau_s": 0.0,
+      "start_s": 2184.814210799861,
+      "initial": false
+    },
+    {
+      "root_id": "768086c44de172b3719b40f29aec56303892",
+      "instance_id": 98,
+      "tau_s": 0.0,
+      "start_s": 2249.5353994545876,
+      "initial": false
+    },
+    {
+      "root_id": "7c3ee75e6c6f002866274113bf220386fecb",
+      "instance_id": 100,
+      "tau_s": 0.0,
+      "start_s": 2272.396143477553,
+      "initial": false
+    }
+  ],
+  "server": {
+    "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+    "agentkv_commit": "daeb439b160a1d598495eda1ed2fea0c732f19b5",
+    "model": "Qwen/Qwen3-8B",
+    "gpu_index": 1,
+    "gpu_cache_tokens": 182880,
+    "cpu_cache_tokens": 274320,
+    "gpu_cache_bytes": 26966753280,
+    "cpu_bytes": 40450129920,
+    "block_size": 16,
+    "gpu_blocks": 11430,
+    "policy": "HintAwareCachePolicy",
+    "hint_tier": "online",
+    "max_model_len": 16384,
+    "max_num_seqs": 8,
+    "max_num_batched_tokens": 8192,
+    "shared_gpu": true,
+    "command": [
+      "numactl",
+      "--cpunodebind=2",
+      "--preferred=2",
+      "/home/llb/my_soft/vllm/.venv/bin/vllm",
+      "serve",
+      "/data/models/Qwen3-8B",
+      "--served-model-name",
+      "Qwen/Qwen3-8B",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8016",
+      "--shutdown-timeout",
+      "120",
+      "--disable-uvicorn-access-log",
+      "--gpu-memory-utilization",
+      "0.38",
+      "--kv-cache-memory-bytes",
+      "26966753280",
+      "--num-gpu-blocks-override",
+      "11430",
+      "--block-size",
+      "16",
+      "--max-model-len",
+      "16384",
+      "--max-num-batched-tokens",
+      "8192",
+      "--max-num-seqs",
+      "8",
+      "--enable-prefix-caching",
+      "--kv-transfer-config",
+      "{\"kv_connector\":\"OffloadingConnector\",\"kv_role\":\"kv_both\",\"kv_connector_extra_config\":{\"cpu_bytes_to_use\":40450129920,\"offload_prompt_only\":true,\"eviction_policy\":\"HintAwareCachePolicy\",\"cache_policy_module_path\":\"agentkv.policy.vllm_plugin\"}}"
+    ],
+    "clock_pair": {
+      "wall_time_s": 1794066140.198585,
+      "monotonic_ns": 196683008253809
+    },
+    "duration_s": 2400,
+    "warmup_s": 600,
+    "rate_per_minute": 1.2,
+    "population_seed": 5,
+    "gpu_before": "Sat Nov  7 23:42:20 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA H200 NVL                On  |   00000000:98:00.0 Off |                    0 |\n| N/A   28C    P0             67W /  600W |       0MiB / 143771MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA H200 NVL                On  |   00000000:B8:00.0 Off |                    0 |\n| N/A   39C    P0             71W /  600W |       0MiB / 143771MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+\n"
+  },
+  "conventions": {
+    "prompt_token_ids": "original workload; sent token permutation recorded by seed and sha256",
+    "effective_cache_counts": "null unless observed; nominal external hits are CPU for CPU-only offload",
+    "http_retry": "none; failed requests block their dependent subtree"
+  },
+  "origin_ns": 196734184956671,
+  "cutoff_ns": 199134184956671,
+  "completed_at": "2026-11-07T16:23:16.031594+00:00",
+  "summary": {
+    "total_sent": 13555,
+    "window_sent": 10848,
+    "window_is_entry": 0,
+    "window_requests": 10848,
+    "window_success": 10848,
+    "window_failed": 0,
+    "ttft_ms": {
+      "n": 10848,
+      "p50": 327.7803775,
+      "p99": 13326.9575175,
+      "maximum": 16141.540851
+    },
+    "schedule_absolute_error_ms": {
+      "n": 10848,
+      "p50": 0.6481235000000001,
+      "p99": 4.506663180000105,
+      "maximum": 99.063167
+    },
+    "gap_absolute_error_ms": {
+      "n": 9502,
+      "p50": 0.6427219982138022,
+      "p99": 4.584938393698545,
+      "maximum": 99.06316700101847
+    },
+    "safety_valve_queued": 0,
+    "safety_valve_triggered": false,
+    "queued_ms": {
+      "n": 0,
+      "p50": null,
+      "p99": null,
+      "maximum": null
+    },
+    "unsent_queued": [],
+    "peak_inflight": 71,
+    "dependency_blocked": 0,
+    "cache_source_requests": 0,
+    "nominal_fraction_per_request": {
+      "gpu_hit": {
+        "n": 0,
+        "p50": null,
+        "p99": null,
+        "maximum": null
+      },
+      "cpu_hit": {
+        "n": 0,
+        "p50": null,
+        "p99": null,
+        "maximum": null
+      },
+      "recomputed": {
+        "n": 0,
+        "p50": null,
+        "p99": null,
+        "maximum": null
+      }
+    },
+    "nominal_token_weighted_fraction": {
+      "gpu_hit": null,
+      "cpu_hit": null,
+      "recomputed": null
+    },
+    "hint_sent": 13555,
+    "hint_received": 0,
+    "hint_counts_match": false,
+    "observation_join": {
+      "prefills_joined": 0,
+      "valid_hints_received": 0,
+      "observation_events": 0
+    },
+    "body_build_ms": {
+      "n": 10848,
+      "p50": 1.926191,
+      "p99": 5.9334159600000005,
+      "maximum": 22.215
+    },
+    "body_prepare_wait_ms": {
+      "n": 10848,
+      "p50": 0.37638249999999995,
+      "p99": 3.764895540000014,
+      "maximum": 197.671307
+    },
+    "event_loop_lag_ms": {
+      "n": 179735,
+      "p50": 0.790562,
+      "p99": 5.274533260000001,
+      "maximum": 187.561193
+    },
+    "event_loop_missed_checks": 312
+  },
+  "requests_sha256": "f673f4ae845bc87d19e2762b8cf0b36c4bad55ba460435ff61b965f73651b30d",
+  "loop_lag_sha256": "32307ec50a3a6b62e27531f51888bb24ee59efc56698ad0a093ab9f5a55113e8",
+  "token_store": {
+    "mode": "preloaded Arrow column before experiment clock",
+    "bytes": 796783060
+  }
+}

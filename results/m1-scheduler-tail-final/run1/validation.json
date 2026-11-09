@@ -1,0 +1,83 @@
+{
+  "before": {
+    "sent": 750,
+    "window_requests": 625,
+    "failed": 0,
+    "peak_client_inflight": 125,
+    "server_running": {
+      "n": 263,
+      "p50": 110.0,
+      "p99": 125.0,
+      "maximum": 125.0
+    },
+    "queued": 0,
+    "chain_gap_abs_error_ms": {
+      "n": 500,
+      "p50": 4.987548500000022,
+      "p99": 65.74553335000003,
+      "maximum": 82.08601199999998
+    },
+    "schedule_abs_error_ms": {
+      "n": 625,
+      "p50": 5.191168,
+      "p99": 69.30010528,
+      "maximum": 93.473327
+    },
+    "body_build_ms": {
+      "n": 625,
+      "p50": 53.883571,
+      "p99": 118.27292544,
+      "maximum": 142.86851
+    },
+    "loop_lag_ms": {
+      "n": 2700,
+      "p50": 0.689731,
+      "p99": 2.0564190099999977,
+      "maximum": 3.268549
+    },
+    "loop_missed_checks": 0
+  },
+  "after": {
+    "sent": 750,
+    "window_requests": 625,
+    "failed": 0,
+    "peak_client_inflight": 125,
+    "server_running": {
+      "n": 262,
+      "p50": 125.0,
+      "p99": 125.0,
+      "maximum": 125.0
+    },
+    "queued": 0,
+    "chain_gap_abs_error_ms": {
+      "n": 500,
+      "p50": 0.5851655000000122,
+      "p99": 1.729099010000024,
+      "maximum": 3.28498100000002
+    },
+    "schedule_abs_error_ms": {
+      "n": 625,
+      "p50": 0.58373,
+      "p99": 1.7348747599999998,
+      "maximum": 3.284981
+    },
+    "body_build_ms": {
+      "n": 625,
+      "p50": 3.225636,
+      "p99": 6.27700636,
+      "maximum": 7.826801
+    },
+    "loop_lag_ms": {
+      "n": 2700,
+      "p50": 0.998019,
+      "p99": 2.087674149999999,
+      "maximum": 3.88336
+    },
+    "loop_missed_checks": 0
+  },
+  "legacy_tail_reproduced": true,
+  "fixed_p99_below_50ms": true,
+  "concurrency_reached": true,
+  "fixture_sha256": "fb74d45d976a8961ed6bc68c0666a9e9b305973d1f17d28034b7d48628603b2f",
+  "passed": true
+}

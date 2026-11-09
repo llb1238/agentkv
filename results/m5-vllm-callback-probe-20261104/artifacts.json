@@ -1,0 +1,121 @@
+{
+  "format": "agentkv.callback_probe_artifacts.v1",
+  "measurement_git_commit": "a4a245634ec75e7db358386ad3554c4d4dfe7e7b",
+  "verification_git_commit": "b063dea249f39b57f0cd756b82f0a7d5b8ddb00e",
+  "tracked": {
+    "README.md": {
+      "bytes": 7312,
+      "sha256": "00d3adff9340dea31a24af2808a54a7f2f4d3847ecb59ad41d02119d08bdf614"
+    },
+    "callback-context.parquet": {
+      "bytes": 67422,
+      "sha256": "f8d09a21714f3094a5e06c932d26396523a0da567d7adb60d8c347f3524e4c7e"
+    },
+    "callback-coverage.parquet": {
+      "bytes": 102492,
+      "sha256": "de9265d667ba35b8ce35e9022c918090ac756dbd1ed35af1b3e1c55a2423194f"
+    },
+    "client-command.json": {
+      "bytes": 951,
+      "sha256": "1f301ff7cb01154174d558b009760bfb9cdb405f2a74d908bd233c94f80756e3"
+    },
+    "client.log": {
+      "bytes": 1968,
+      "sha256": "42ea30eb5a874c9998bd2e5d7a5bad1f9024f09f3ebc0b499ca2bfc611eb526a"
+    },
+    "dmon.log": {
+      "bytes": 96492,
+      "sha256": "c5c9b5a084d16bd9c6532df62c3816bf2cac2f36af91e21bf688f6ae3aaca80b"
+    },
+    "final-tests.json": {
+      "bytes": 167,
+      "sha256": "6c59ded8335774464e10fb210202675b35a58e2b63da5d6b05dac774249fc2a0"
+    },
+    "final-tests.log": {
+      "bytes": 908,
+      "sha256": "2fda44b6ffcab1ce433f555b60584807b366303b4485d1c6e6ed8697edc17d58"
+    },
+    "loop_lag.parquet": {
+      "bytes": 846444,
+      "sha256": "ea21db7ec1fd29582044ea42835b5b983c9df0dd96f15428b66cda885a7948bf"
+    },
+    "metrics.jsonl": {
+      "bytes": 78012,
+      "sha256": "ac982f4680b49d1a6b200046606b7af0b4aca8a00451ccb90afee242c6130cc1"
+    },
+    "pilot-status.json": {
+      "bytes": 325,
+      "sha256": "542667b13ad24dfbbbbc9781bd25679351271021d2f43a8f185b7b246f424bf0"
+    },
+    "policy-observations/policy-3699443-126242030712784.bin": {
+      "bytes": 10887417,
+      "sha256": "4bcab8f4a2995c1225a9c2e6470f95a3eff6241a487286614f63a3ecdb244baf"
+    },
+    "policy-observations/policy-3699443-126242030712784.jsonl.gz": {
+      "bytes": 23178554,
+      "sha256": "e8a91a636548eccd2c44fd3c4334459b877c7bf2275a0039fb5b533a9b82c4b8"
+    },
+    "probe-analysis.json": {
+      "bytes": 4218,
+      "sha256": "30101df45884d577eaa364253e3d271df3c7185acceb3625d955488945adabe9"
+    },
+    "probe-run.json": {
+      "bytes": 1004,
+      "sha256": "f5a0fbad81eab7c906d5b434b3a89eb644f51375cd04caecf083780d6e105cd4"
+    },
+    "request-metadata.parquet": {
+      "bytes": 397716,
+      "sha256": "6dace6e3ecc0cb71cd6c145e9fb6355178b36e73e086f0bdd749243a94c9f4f0"
+    },
+    "run.json": {
+      "bytes": 18181,
+      "sha256": "f71ea667c402d8ff6fa278a5d53b3e8b68cfd54f043f4c79686c14315d4b5ce9"
+    },
+    "server-manifest.json": {
+      "bytes": 3976,
+      "sha256": "a386aa63e5e15864766c1b33268b75731e9d22c6caa62b7a99805830a09574f0"
+    },
+    "server-observations/requests-3698827.jsonl": {
+      "bytes": 70,
+      "sha256": "6d594716c25889c37c597f0910771413d8781ed258294faa19551d7f1db7d592"
+    },
+    "server-observations/requests-3699443.jsonl": {
+      "bytes": 1766775,
+      "sha256": "cca93b5a4d936c14620b9b62fa8bb291c3247a43d3f650a4edd5290cc9b929e1"
+    },
+    "server.log": {
+      "bytes": 157359,
+      "sha256": "0188b07dfb6effb36647d044a503322c36d30f9451542433166af2054d3c820e"
+    },
+    "tests.json": {
+      "bytes": 161,
+      "sha256": "f57172cbf1007fdba7eea3ce16638a22b5c80833aa7fecf48293c62c2a48d96b"
+    },
+    "tests.log": {
+      "bytes": 908,
+      "sha256": "026d8b482830fba8abbb8bedd660c94b00f4c2840a5ea721b77bdeaf8603a545"
+    },
+    "verification.json": {
+      "bytes": 1390,
+      "sha256": "3b22d5d4d6773ce2b5546ffccf395a77321906972f82511ab44ceed3f04e00af"
+    }
+  },
+  "local_only": {
+    "policy-observations/policy-3699443-126242030712784.jsonl": {
+      "bytes": 49133270,
+      "sha256": "033b58d9257fac7d9aa8753075aa92ad0efad84adf3020db8d2cf344f10b80c9"
+    },
+    "requests.parquet": {
+      "bytes": 22400361,
+      "sha256": "3ef3e60383acfd1ea06e4b11339940aa6a1d494a5636842771bc473ba532efda"
+    }
+  },
+  "lossless_compression": {
+    "policy-observations/policy-3699443-126242030712784.jsonl.gz": {
+      "original": "policy-observations/policy-3699443-126242030712784.jsonl",
+      "uncompressed_bytes": 49133270,
+      "uncompressed_sha256": "033b58d9257fac7d9aa8753075aa92ad0efad84adf3020db8d2cf344f10b80c9"
+    }
+  },
+  "frozen_policy_and_simulator_unchanged": true
+}

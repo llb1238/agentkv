@@ -1,0 +1,31 @@
+{
+  "git_commit": "bd6b5c9c4a3ed86886bf297fffc9da7a56774885",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "implementation": "reference",
+  "mask_hints": false,
+  "cprofile": false,
+  "profile_calls": null,
+  "summary": {
+    "counts": {
+      "get": 1615984,
+      "on_store_miss": 2090,
+      "insert": 148401,
+      "mark_evictable": 363709,
+      "on_request_finished": 2259,
+      "mark_non_evictable": 215308,
+      "evict": 2005
+    },
+    "eviction_fingerprint": "09fc5af2fb5f632f3f98cf3ade5a9d6c70c09c27cdf256f2aa48222416216746",
+    "prefix_enumerations": null,
+    "prefix_cache_entries": 0,
+    "evict": {
+      "count": 2005,
+      "p50_us": 207.784,
+      "p99_us": 8432.839560000002,
+      "maximum_us": 19907.78
+    }
+  },
+  "trace_sha256": {
+    "callbacks-135943-123727931667376.jsonl.gz": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad"
+  }
+}

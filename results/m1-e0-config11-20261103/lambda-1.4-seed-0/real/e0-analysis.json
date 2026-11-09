@@ -1,0 +1,155 @@
+{
+  "git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+  "population_sha256": "16917326f5226fd708cc229e1cd84d314c247e12cda2c8c2f42ceade0f0f48c2",
+  "stability": {
+    "version": "e0-stability-v2",
+    "status": "unstable",
+    "stable": false,
+    "checks": {
+      "queue_distribution": false,
+      "fitted_growth_30min": false,
+      "ttft_half_ratio": true,
+      "conditional_kv_sizing": true
+    },
+    "details": {
+      "queue": {
+        "samples": 1750,
+        "zero_fraction": 0.0,
+        "p99": 85.0,
+        "maximum": 93.0
+      },
+      "regression": {
+        "slope_per_second": 0.014644797997319981,
+        "fitted_increase_30min": 26.360636395175966
+      },
+      "ttft": {
+        "first_half_requests": 3583,
+        "second_half_requests": 3644,
+        "first_half_median_ms": 13626.767951,
+        "second_half_median_ms": 17412.676959,
+        "ratio": 1.2778288308433527
+      },
+      "kv": {
+        "observed": true,
+        "blocking_events": 0,
+        "running_threshold": 7,
+        "below_threshold_events": 0,
+        "minimum_running_when_blocked": null
+      }
+    }
+  },
+  "recomputation": {
+    "version": "e0-prefix-source-v1",
+    "requests": 7227,
+    "prompt_blocks_tokens": 49501104,
+    "source_tokens": {
+      "unavoidable": 1307616,
+      "gap_eviction": 45748592,
+      "other_eviction": 172336
+    },
+    "source_fractions": {
+      "unavoidable": 0.026415895693962705,
+      "gap_eviction": 0.9241933674852989,
+      "other_eviction": 0.003481457706478627
+    },
+    "recomputed_fraction": 0.9540907208857402,
+    "tail_tokens": 52651,
+    "hit_exceeds_history_anomalies": 0,
+    "gap_share_of_avoidable": 0.9962471141698181,
+    "gap_requests": 6423,
+    "gap_queue_observed_requests": 6423,
+    "gap_requests_mean_queued_s": 15.344626854670716
+  },
+  "summary": {
+    "total_sent": 9670,
+    "window_sent": 7227,
+    "window_is_entry": 0,
+    "window_requests": 7227,
+    "window_success": 7227,
+    "window_failed": 0,
+    "ttft_ms": {
+      "n": 7227,
+      "p50": 15364.343626,
+      "p99": 22415.20043236,
+      "maximum": 24430.387245
+    },
+    "schedule_absolute_error_ms": {
+      "n": 7227,
+      "p50": 0.650587,
+      "p99": 4.778605779999993,
+      "maximum": 96.299953
+    },
+    "gap_absolute_error_ms": {
+      "n": 6341,
+      "p50": 0.6466249999852458,
+      "p99": 4.798001008954625,
+      "maximum": 37.361435995226344
+    },
+    "safety_valve_queued": 0,
+    "safety_valve_triggered": false,
+    "queued_ms": {
+      "n": 0,
+      "p50": null,
+      "p99": null,
+      "maximum": null
+    },
+    "unsent_queued": [],
+    "peak_inflight": 103,
+    "dependency_blocked": 0,
+    "cache_source_requests": 7227,
+    "nominal_fraction_per_request": {
+      "gpu_hit": {
+        "n": 7227,
+        "p50": 0.0,
+        "p99": 0.9742362152458673,
+        "maximum": 0.9999322906087075
+      },
+      "cpu_hit": {
+        "n": 7227,
+        "p50": 0.0,
+        "p99": 0.6959410202871648,
+        "maximum": 1.0
+      },
+      "recomputed": {
+        "n": 7227,
+        "p50": 1.0,
+        "p99": 1.0,
+        "maximum": 1.0
+      }
+    },
+    "nominal_token_weighted_fraction": {
+      "gpu_hit": 0.03256261811037327,
+      "cpu_hit": 0.013297882269466764,
+      "recomputed": 0.95413949962016
+    },
+    "hint_sent": 0,
+    "hint_received": 0,
+    "hint_counts_match": true,
+    "observation_join": {
+      "prefills_joined": 9670,
+      "valid_hints_received": 0,
+      "observation_events": 29021
+    },
+    "body_build_ms": {
+      "n": 7227,
+      "p50": 2.244932,
+      "p99": 6.119700319999998,
+      "maximum": 12.261734
+    },
+    "body_prepare_wait_ms": {
+      "n": 7227,
+      "p50": 0.400986,
+      "p99": 3.209499359999994,
+      "maximum": 17.919165
+    },
+    "event_loop_lag_ms": {
+      "n": 179782,
+      "p50": 0.917076,
+      "p99": 4.327780260000018,
+      "maximum": 138.510456
+    },
+    "event_loop_missed_checks": 273
+  },
+  "requests_sha256": "68226401da93aba611e198cfac9fa1d220e17d1d014a9acf242b7b0f2ca3cc19",
+  "recomputation_sha256": "32d8ec6da62f07073ad408573b99dd65a2c4aa5ff04f4823faa147236f6615a6"
+}

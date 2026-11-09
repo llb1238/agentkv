@@ -1,0 +1,144 @@
+{
+  "git_commit": "a4a245634ec75e7db358386ad3554c4d4dfe7e7b",
+  "stage": "callback-feasibility",
+  "algorithm": "unchanged installed LRU",
+  "client_sent_with_hint": 1292,
+  "sent_rows": 1292,
+  "successes": 1292,
+  "failures": 0,
+  "frontend_hint_received": 1292,
+  "plugin_unique_valid_any": 1292,
+  "plugin_unique_valid_finished": 1292,
+  "sent_equals_plugin_any": true,
+  "sent_equals_plugin_finished": true,
+  "foreign_plugin_hints": [],
+  "missing_plugin_hints": [],
+  "missing_finished_hints": [],
+  "hint_routes_callback_counts": {
+    "direct_present": 0,
+    "nested_present": 3736,
+    "direct_valid": 0,
+    "nested_valid": 3736
+  },
+  "key_order": {
+    "requests": 1292,
+    "groups": 1286,
+    "missing_positions": 0,
+    "nonmonotone_requests": 0,
+    "nonmonotone_flattened": 0,
+    "multi_group_requests": 0
+  },
+  "finished_chunk_states": {
+    "ready_unpinned": 544193,
+    "not_ready": 6082,
+    "absent": 1746
+  },
+  "store_miss_callbacks_per_request": {
+    "count": 1292,
+    "minimum": 0.0,
+    "p50": 1.0,
+    "p90": 1.0,
+    "p99": 2.0,
+    "maximum": 3.0
+  },
+  "requests_with_multiple_store_miss": 111,
+  "requests_without_store_miss": 184,
+  "requests_store_miss_keys_not_full_prompt": 1081,
+  "requests_store_before_generation_end": 1108,
+  "timings_ms": {
+    "first_store_miss_minus_server_start_ms": {
+      "count": 1108,
+      "minimum": 0.093224,
+      "p50": 0.659467,
+      "p90": 1.496310400000001,
+      "p99": 5.232325180000015,
+      "maximum": 23.088976
+    },
+    "first_store_miss_minus_server_end_ms": {
+      "count": 1108,
+      "minimum": -11949.275757,
+      "p50": -189.58209349999998,
+      "p90": -40.03564859999998,
+      "p99": -20.12020078999996,
+      "maximum": -15.373067
+    },
+    "first_store_miss_minus_client_end_ms": {
+      "count": 1108,
+      "minimum": -11952.389691,
+      "p50": -191.49605250000002,
+      "p90": -42.889816999999994,
+      "p99": -28.22208678999997,
+      "maximum": -19.324263
+    },
+    "last_store_miss_minus_server_start_ms": {
+      "count": 1108,
+      "minimum": 0.093224,
+      "p50": 0.690232,
+      "p90": 16.367874800000003,
+      "p99": 39.20779985000028,
+      "maximum": 529.099027
+    },
+    "last_store_miss_minus_server_end_ms": {
+      "count": 1108,
+      "minimum": -11949.275757,
+      "p50": -189.58209349999998,
+      "p90": -40.03564859999998,
+      "p99": -20.12020078999996,
+      "maximum": -15.373067
+    },
+    "last_store_miss_minus_client_end_ms": {
+      "count": 1108,
+      "minimum": -11952.389691,
+      "p50": -191.49605250000002,
+      "p90": -42.889816999999994,
+      "p99": -28.22208678999997,
+      "maximum": -19.324263
+    },
+    "policy_finished_minus_server_start_ms": {
+      "count": 1292,
+      "minimum": 12.051694,
+      "p50": 153.417595,
+      "p90": 996.6733706000001,
+      "p99": 4141.56635669998,
+      "maximum": 11953.461467
+    },
+    "policy_finished_minus_server_end_ms": {
+      "count": 1292,
+      "minimum": 0.249051,
+      "p50": 0.941053,
+      "p90": 2.445179700000001,
+      "p99": 8.421676609999931,
+      "maximum": 15.785264
+    },
+    "policy_finished_minus_client_end_ms": {
+      "count": 1292,
+      "minimum": -34.894838,
+      "p50": -1.4515565000000001,
+      "p90": 0.3061561000000001,
+      "p99": 3.026535499999973,
+      "maximum": 11.699649
+    }
+  },
+  "scalar_callbacks": 1209713,
+  "scalar_callback_counts": {
+    "get": 821981,
+    "on_store_miss": 1222,
+    "touch": 1222,
+    "insert": 115763,
+    "mark_evictable": 191431,
+    "on_request_finished": 1292,
+    "mark_non_evictable": 75668,
+    "evict": 1134
+  },
+  "closed_policy_logs": 0,
+  "policy_log_files": 1,
+  "source_run_sha256": "f71ea667c402d8ff6fa278a5d53b3e8b68cfd54f043f4c79686c14315d4b5ce9",
+  "significant_differences": [
+    "incremental on_store_miss rather than single full-prefix observation at admission",
+    "on_store_miss observes new store candidates rather than every full request block",
+    "store preparation occurs during request execution rather than only at completion",
+    "CPU chunks can still be not-ready at on_request_finished",
+    "policy stream was not finalized; observation completeness not established"
+  ],
+  "stop_before_hint_adapter": true
+}

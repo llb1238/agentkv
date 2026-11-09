@@ -1,0 +1,298 @@
+{
+  "git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "measurement_git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "stage": "evaluation",
+  "population_seeds": [
+    3,
+    4,
+    5
+  ],
+  "winner": "remaining",
+  "freeze_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "run_sha256": "5569fe17f2a9f5e8439564c6ab910a6e4664e1e0faa365053a8f5c1c448110fd",
+  "online_nonnegative_populations": 12,
+  "population_count": 12,
+  "minimum_online_reduction_pp": 0.8357795438822119,
+  "online_mean_oracle_capture": 0.3626404819352906,
+  "per_population": [
+    {
+      "name": "lambda-0.5-seed-3",
+      "rate": 0.5,
+      "seed": 3,
+      "reduction_pp": 4.348633660725894,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-0.5-seed-4",
+      "rate": 0.5,
+      "seed": 4,
+      "reduction_pp": 4.3440854678392204,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-0.5-seed-5",
+      "rate": 0.5,
+      "seed": 5,
+      "reduction_pp": 4.776252343189451,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-0.7-seed-3",
+      "rate": 0.7,
+      "seed": 3,
+      "reduction_pp": 2.2504804189825203,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-0.7-seed-4",
+      "rate": 0.7,
+      "seed": 4,
+      "reduction_pp": 2.160472621892456,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-0.7-seed-5",
+      "rate": 0.7,
+      "seed": 5,
+      "reduction_pp": 2.801084029252596,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-1-seed-3",
+      "rate": 1.0,
+      "seed": 3,
+      "reduction_pp": 1.3281683722756177,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-1-seed-4",
+      "rate": 1.0,
+      "seed": 4,
+      "reduction_pp": 2.310924126166572,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-1-seed-5",
+      "rate": 1.0,
+      "seed": 5,
+      "reduction_pp": 0.8357795438822119,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-1.4-seed-3",
+      "rate": 1.4,
+      "seed": 3,
+      "reduction_pp": 2.3108993445503714,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-1.4-seed-4",
+      "rate": 1.4,
+      "seed": 4,
+      "reduction_pp": 5.419934645000541,
+      "nonnegative": true
+    },
+    {
+      "name": "lambda-1.4-seed-5",
+      "rate": 1.4,
+      "seed": 5,
+      "reduction_pp": 3.0416014735081265,
+      "nonnegative": true
+    }
+  ],
+  "aggregates": [
+    {
+      "rate": 0.5,
+      "strategy": "lru-final",
+      "mean_recomputed": 0.09708471573827061,
+      "mean_pp": 1.9748428372948073,
+      "minimum_pp": 0.5403900589401489,
+      "maximum_pp": 3.9561898922168797,
+      "capture_mean": 0.32425680611817537,
+      "capture_min": 0.07562158258537077,
+      "capture_max": 0.7034825751114208,
+      "undefined": 0
+    },
+    {
+      "rate": 0.5,
+      "strategy": "remaining-perfect",
+      "mean_recomputed": 0.06101904281736764,
+      "mean_pp": 5.581410129385105,
+      "minimum_pp": 4.284250993934864,
+      "maximum_pp": 6.558173386682338,
+      "capture_mean": 0.8266655904906868,
+      "capture_min": 0.7618178105065891,
+      "capture_max": 0.9177434746724441,
+      "undefined": 0
+    },
+    {
+      "rate": 0.5,
+      "strategy": "remaining-noisy",
+      "mean_recomputed": 0.061350565747841874,
+      "mean_pp": 5.548257836337682,
+      "minimum_pp": 4.415110622029538,
+      "maximum_pp": 6.446022175609664,
+      "capture_mean": 0.8238484835119756,
+      "capture_min": 0.784409257003654,
+      "capture_max": 0.9020491591870423,
+      "undefined": 0
+    },
+    {
+      "rate": 0.5,
+      "strategy": "remaining-online",
+      "mean_recomputed": 0.07193657253870349,
+      "mean_pp": 4.489657157251521,
+      "minimum_pp": 4.3440854678392204,
+      "maximum_pp": 4.776252343189451,
+      "capture_mean": 0.6763181296795825,
+      "capture_min": 0.6079064789023007,
+      "capture_max": 0.7732662205831121,
+      "undefined": 0
+    },
+    {
+      "rate": 0.7,
+      "strategy": "lru-final",
+      "mean_recomputed": 0.17973609648577762,
+      "mean_pp": 0.43884981540518825,
+      "minimum_pp": 0.30573936191746753,
+      "maximum_pp": 0.6599284418065926,
+      "capture_mean": 0.06138936674326475,
+      "capture_min": 0.039355957686203896,
+      "capture_max": 0.08336397396771707,
+      "undefined": 0
+    },
+    {
+      "rate": 0.7,
+      "strategy": "remaining-perfect",
+      "mean_recomputed": 0.11673952147025803,
+      "mean_pp": 6.7385073169571506,
+      "minimum_pp": 5.471270398355016,
+      "maximum_pp": 7.560979675196358,
+      "capture_mean": 0.9459796422077783,
+      "capture_min": 0.9246586447989701,
+      "capture_max": 0.9581565549427237,
+      "undefined": 0
+    },
+    {
+      "rate": 0.7,
+      "strategy": "remaining-noisy",
+      "mean_recomputed": 0.12225186120014682,
+      "mean_pp": 6.187273343968272,
+      "minimum_pp": 5.013690857096677,
+      "maximum_pp": 6.959083313259737,
+      "capture_mean": 0.8684270000536743,
+      "capture_min": 0.8481675649913769,
+      "capture_max": 0.8790905246902232,
+      "undefined": 0
+    },
+    {
+      "rate": 0.7,
+      "strategy": "remaining-online",
+      "mean_recomputed": 0.16008447107273763,
+      "mean_pp": 2.4040123567091904,
+      "minimum_pp": 2.160472621892456,
+      "maximum_pp": 2.801084029252596,
+      "capture_mean": 0.3410687260066676,
+      "capture_min": 0.28428686987535384,
+      "capture_max": 0.378352896808561,
+      "undefined": 0
+    },
+    {
+      "rate": 1.0,
+      "strategy": "lru-final",
+      "mean_recomputed": 0.224634439288402,
+      "mean_pp": 0.4588300091897599,
+      "minimum_pp": 0.3317353605534007,
+      "maximum_pp": 0.5342200377870976,
+      "capture_mean": 0.05565510736937938,
+      "capture_min": 0.04921944571543871,
+      "capture_max": 0.06394222117634031,
+      "undefined": 0
+    },
+    {
+      "rate": 1.0,
+      "strategy": "remaining-perfect",
+      "mean_recomputed": 0.15196534168460687,
+      "mean_pp": 7.72573976956927,
+      "minimum_pp": 6.420889777556544,
+      "maximum_pp": 8.996072952584926,
+      "capture_mean": 0.9431929452238755,
+      "capture_min": 0.9288458077822843,
+      "capture_max": 0.9526649053150508,
+      "undefined": 0
+    },
+    {
+      "rate": 1.0,
+      "strategy": "remaining-noisy",
+      "mean_recomputed": 0.16130675935090508,
+      "mean_pp": 6.791598002939449,
+      "minimum_pp": 5.786832217666346,
+      "maximum_pp": 7.8966078914290305,
+      "capture_mean": 0.8305649836243464,
+      "capture_min": 0.800905995210476,
+      "capture_max": 0.8585900331114422,
+      "undefined": 0
+    },
+    {
+      "rate": 1.0,
+      "strategy": "remaining-online",
+      "mean_recomputed": 0.2143064992392182,
+      "mean_pp": 1.4916240141081338,
+      "minimum_pp": 0.8357795438822119,
+      "maximum_pp": 2.310924126166572,
+      "capture_mean": 0.18021253474223173,
+      "capture_min": 0.10003668277017207,
+      "capture_max": 0.24354109946127567,
+      "undefined": 0
+    },
+    {
+      "rate": 1.4,
+      "strategy": "lru-final",
+      "mean_recomputed": 0.3217464738739548,
+      "mean_pp": 1.5313898906299805,
+      "minimum_pp": 1.414558519928083,
+      "maximum_pp": 1.725285537736465,
+      "capture_mean": 0.11128131410989178,
+      "capture_min": 0.10179571621397972,
+      "capture_max": 0.12171923588028753,
+      "undefined": 0
+    },
+    {
+      "rate": 1.4,
+      "strategy": "remaining-perfect",
+      "mean_recomputed": 0.2068814930303909,
+      "mean_pp": 13.017887974986365,
+      "minimum_pp": 11.027454415375992,
+      "maximum_pp": 14.788963088733823,
+      "capture_mean": 0.9404191459567146,
+      "capture_min": 0.922938654187964,
+      "capture_max": 0.9525904804417701,
+      "undefined": 0
+    },
+    {
+      "rate": 1.4,
+      "strategy": "remaining-noisy",
+      "mean_recomputed": 0.2184806004647023,
+      "mean_pp": 11.857977231555225,
+      "minimum_pp": 9.924237043406837,
+      "maximum_pp": 13.691996533781303,
+      "capture_mean": 0.8555649973985705,
+      "capture_min": 0.8306052907290066,
+      "capture_max": 0.8755792121579499,
+      "undefined": 0
+    },
+    {
+      "rate": 1.4,
+      "strategy": "remaining-online",
+      "mean_recomputed": 0.30115225457005773,
+      "mean_pp": 3.5908118210196793,
+      "minimum_pp": 2.3108993445503714,
+      "maximum_pp": 5.419934645000541,
+      "capture_mean": 0.25296253731268054,
+      "capture_min": 0.19340985241791606,
+      "capture_max": 0.34659533361031086,
+      "undefined": 0
+    }
+  ],
+  "max_cpu_store_skips": 0
+}

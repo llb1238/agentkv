@@ -1,0 +1,97 @@
+{
+  "format": "agentkv.backend_patch_bundle.v1",
+  "patches": [
+    {
+      "path": "vllm-agentkv-final.patch",
+      "base_commit": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+      "target_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+      "bytes": 47281,
+      "sha256": "ead30a92f8295bf03a3f9697045a841ebc3f7bb101c4cea7925cd6f539b0b206",
+      "apply_check_passed": true,
+      "all_changed_files_match_target": true,
+      "changed_files": [
+        {
+          "path": ".gitignore",
+          "sha256": "236a024f2ab7a8995cd3cf830faa3613121e583a15d2c0388b954f7e672405ce"
+        },
+        {
+          "path": "benchmarks/kernels/benchmark_pinned_h2d.py",
+          "sha256": "5b24661d0f4bb52c47e19fa206fe0c4ae0028bc5ad9e9e39094b6833e4b0f54e"
+        },
+        {
+          "path": "tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py",
+          "sha256": "2d0f6714ba1f19f1da7f75d3cdc92857078368e6eeb095406ac988cc3782ea1b"
+        },
+        {
+          "path": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+          "sha256": "3e9234ffaef19d3c20a7811c703b8f5a6dc558fc97087568202b8556c70fbbaa"
+        },
+        {
+          "path": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py",
+          "sha256": "d5fb521bc5fa4f1e945559b7e4393eb276fa55f9e64557376cbe50c70d51dd85"
+        },
+        {
+          "path": "vllm/v1/core/block_pool.py",
+          "sha256": "33d1fbf1434a2527c361b7a529bd321d6c5c3650c314f44accf78556aaec2f88"
+        },
+        {
+          "path": "vllm/v1/core/kv_cache_manager.py",
+          "sha256": "86067338b694f34fb8f6844cc42805ad0bffb2dbbf6ceeb5aa2c4c4acebd8a84"
+        },
+        {
+          "path": "vllm/v1/core/sched/scheduler.py",
+          "sha256": "1a68f66808e2ceea975fe36bd009e5664dc9ff309c5bdd99a3e4136ec87b9177"
+        },
+        {
+          "path": "vllm/v1/engine/output_processor.py",
+          "sha256": "57d73f5f16edad501d9fcb238ff99038b20530f8293dabd73924f4f35f3cb331"
+        },
+        {
+          "path": "vllm/v1/kv_offload/base.py",
+          "sha256": "e64280ea0a1f138c7b645c9ff1a83a2fab1767254760376caacf634fb9003073"
+        },
+        {
+          "path": "vllm/v1/kv_offload/cpu/gpu_worker.py",
+          "sha256": "6104e56e1585a419f7e1d67360dea3f22dacdefe8d759f5e0f286cf8cb30e67a"
+        },
+        {
+          "path": "vllm/v1/kv_offload/cpu/manager.py",
+          "sha256": "94494fc4960c58071d724a1ede929132055f959b3ef2ccb2921b27a9b123a93a"
+        },
+        {
+          "path": "vllm/v1/kv_offload/trace.py",
+          "sha256": "63ea9711d1a65936c14437f200265b65e9a5aabe11bba061df8a26732435ad5d"
+        },
+        {
+          "path": "vllm/v1/worker/gpu_worker.py",
+          "sha256": "df29379cfc841abe0b803c37812b94511d8443e81460d1f8f2bc5dd2fd5320e1"
+        }
+      ]
+    },
+    {
+      "path": "vllm-prefix-metadata.patch",
+      "base_commit": "60da6135b0349fac50a051e9dcec2bd5b4514400",
+      "target_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+      "bytes": 12908,
+      "sha256": "7acf30cc716709576e7c1945e69ed0c91573cf468a94c6f51753c3de4f71b521",
+      "apply_check_passed": true,
+      "all_changed_files_match_target": true,
+      "changed_files": [
+        {
+          "path": "tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py",
+          "sha256": "2d0f6714ba1f19f1da7f75d3cdc92857078368e6eeb095406ac988cc3782ea1b"
+        },
+        {
+          "path": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+          "sha256": "3e9234ffaef19d3c20a7811c703b8f5a6dc558fc97087568202b8556c70fbbaa"
+        },
+        {
+          "path": "vllm/v1/kv_offload/base.py",
+          "sha256": "e64280ea0a1f138c7b645c9ff1a83a2fab1767254760376caacf634fb9003073"
+        }
+      ]
+    }
+  ],
+  "backend_worktree_modified": false,
+  "gpu_runs_started": 0
+}

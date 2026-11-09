@@ -1,0 +1,49 @@
+{
+  "git_commit": "d344e7e9b1aa6d2eb27af7a0d22298724cf3f860",
+  "measurement_git_commit": "a4a245634ec75e7db358386ad3554c4d4dfe7e7b",
+  "source_sha256": {
+    "/home/llb/my_soft/agentkv/results/m1-workload-seed0-v3-16k/workload.parquet": "a35eaf1eafcb9de245be86ac1f847de0314b7dcf806ecf4ebc5d079b6c5cffd2",
+    "/home/llb/my_soft/agentkv/results/m5-vllm-callback-probe-20261104/run.json": "f71ea667c402d8ff6fa278a5d53b3e8b68cfd54f043f4c79686c14315d4b5ce9",
+    "/home/llb/my_soft/agentkv/results/m5-vllm-callback-probe-20261104/request-metadata.parquet": "6dace6e3ecc0cb71cd6c145e9fb6355178b36e73e086f0bdd749243a94c9f4f0",
+    "/home/llb/my_soft/agentkv/results/m5-vllm-callback-probe-20261104/policy-observations/policy-3699443-126242030712784.jsonl.gz": "e8a91a636548eccd2c44fd3c4334459b877c7bf2275a0039fb5b533a9b82c4b8",
+    "/home/llb/my_soft/agentkv/results/m5-vllm-callback-probe-20261104/policy-observations/policy-3699443-126242030712784.bin": "4bcab8f4a2995c1225a9c2e6470f95a3eff6241a487286614f63a3ecdb244baf",
+    "/home/llb/my_soft/agentkv/results/m5-vllm-callback-probe-20261104/server-observations/requests-3698827.jsonl": "6d594716c25889c37c597f0910771413d8781ed258294faa19551d7f1db7d592",
+    "/home/llb/my_soft/agentkv/results/m5-vllm-callback-probe-20261104/server-observations/requests-3699443.jsonl": "cca93b5a4d936c14620b9b62fa8bb291c3247a43d3f650a4edd5290cc9b929e1"
+  },
+  "categories": {
+    "gpu_hit_prefix_skipped_by_connector": 40,
+    "prompt_shorter_than_block": 2
+  },
+  "incomplete_requests": 40,
+  "empty_incomplete_requests": 4,
+  "empty_requests": 6,
+  "omitted_blocks": 13692,
+  "previously_observed_in_same_chain_requests": 35,
+  "eventually_observed_in_same_chain_requests": 38,
+  "never_observed_in_same_chain_blocks": 620,
+  "final_sharing_witnesses": [
+    {
+      "waiting_request": "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:0/37",
+      "key": "b84754b41717bd232eb38a7ecefc448e789f9bd119e1e9c1bb709a22e0fafd4500000000",
+      "final_request": "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:5/0",
+      "all_observed_previous_chains_final": true
+    },
+    {
+      "waiting_request": "m5-callback-probe-seed0/b4c638cc16e89d17c18da83951a87fbc44dd#13/b4c638cc16e89d17c18da83951a87fbc44dd::root::inferred:6/0",
+      "key": "a0a48ced68346eeace84b062f3c24e67118b182d18f76cc10f1bfab3b15c2db200000000",
+      "final_request": "m5-callback-probe-seed0/b4c638cc16e89d17c18da83951a87fbc44dd#13/b4c638cc16e89d17c18da83951a87fbc44dd::root::inferred:3/128",
+      "all_observed_previous_chains_final": true
+    }
+  ],
+  "stop_before_adapter": true,
+  "frozen_policy_sha256": "df0bdcf857e902800587f681d01de8f36ccbda012717b14907f409f15b475b7e",
+  "frozen_config_sha256": "41f6699fb5693450b22898c4fe62ac6280d2d2b1b66798943b914163936f005d",
+  "correctness_risk": "GPU-hit shared prefix can retain final-only ownership despite a waiting reuser; omission changes eviction order",
+  "limitations": [
+    "Original scalar records contain time/method only, no key, ref_cnt or protected set.",
+    "on_store_miss/touch log positions but not keys; only finished log keys; hints contain a summary, not the complete envelope.",
+    "Prefix keys were resolved by within-instance prefix equality against actual recorded keys; original bytes unchanged.",
+    "Prior/ever callback observation is not proof of CPU residency or actual HintAware ownership. Original policy was LRU.",
+    "Exact full original-sequence replay and CPU residency at omitted-key times cannot be recovered from these logs."
+  ]
+}

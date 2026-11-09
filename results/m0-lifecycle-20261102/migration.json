@@ -1,0 +1,34 @@
+{
+  "source_root": "/home/llb/my_soft/vllm/benchmarks/results/m0-lifecycle-20261102",
+  "destination_root": "/home/llb/my_soft/agentkv/results/m0-lifecycle-20261102",
+  "file_moves": {
+    "/home/llb/my_soft/vllm/docs/m0_lifecycle.md": "/home/llb/my_soft/agentkv/doc/m0_lifecycle.md",
+    "/home/llb/my_soft/vllm/docs/m0_ttft.md": "/home/llb/my_soft/agentkv/doc/m0_ttft.md",
+    "/home/llb/my_soft/vllm/docs/m0_qa.md": "/home/llb/my_soft/agentkv/doc/m0_qa.md",
+    "/home/llb/my_soft/vllm/benchmarks/kv_offload/m0_trace_client.py": "/home/llb/my_soft/agentkv/agentkv/bench/m0_trace_client.py",
+    "/home/llb/my_soft/vllm/benchmarks/kv_offload/m0_analyze.py": "/home/llb/my_soft/agentkv/agentkv/analysis/m0_analyze.py"
+  },
+  "original_manifest_files_checked": 1404,
+  "unchanged_artifact_files": 1397,
+  "updated_artifact_files": [
+    "README.md",
+    "client-command.sh",
+    "environment.json",
+    "run.sh",
+    "server-command.sh",
+    "source-manifest.json",
+    "trace-off-server-command.sh"
+  ],
+  "raw_evidence": "Original logs, SSE, metrics, request data, measured patches, and all pilot data retained byte-for-byte.",
+  "link_count_checked": 63,
+  "offline_analysis": "Rebuilt from AgentKV root; 42163 events; six requests have exact ns TTFT closure; derived outputs match original SHA256.",
+  "lint": "ruff check/format, markdownlint-cli2 and shellcheck passed; bash -n passed",
+  "gpu_experiments_rerun": false,
+  "vllm_instrumentation": "Retained in adjacent vLLM worktree; captured source manifests verified.",
+  "historical_metadata": [
+    "manifest-before-migration.json",
+    "source-manifest-at-capture.json",
+    "environment-at-capture.json",
+    "*.before-migration"
+  ]
+}

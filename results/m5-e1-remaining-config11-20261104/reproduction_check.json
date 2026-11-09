@@ -1,0 +1,11 @@
+{
+  "git_commit": "8f63d8ecd63a8fbbcb00261375d325077c230a5c",
+  "passed": true,
+  "training_roots": 293,
+  "training_intervals": 62159,
+  "numerical_tables_identical": true,
+  "published_table_sha256": "1f21d5cc6ddead4fc9756c38a4a7b443c3d465899be251b294dccdf4e1df3fa3",
+  "rebuilt_table_sha256": "5d88dd871b8e6063c4dc50076fef0f2e392463d54f52f603c1140a8dc7ccb315",
+  "worker_loaded_supplied_table": true,
+  "note": "Re-fitting changes provenance tags; numerical calibration remains identical. This check does not rerun the 156-case matrix."
+}

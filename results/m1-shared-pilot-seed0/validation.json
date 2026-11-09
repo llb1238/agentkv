@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+  "simulated_configurations": 14,
+  "simulation_requests_checked": 290528,
+  "real_requests_checked": 5056,
+  "window_success": 3906,
+  "two_gpu_dmon_samples": 2580,
+  "target_oracle_reduction_pp": 8.943626266060923,
+  "noticeably_larger": [],
+  "actual": {
+    "gpu_hit": 0.5437339092294132,
+    "cpu_hit": 0.2251424086561604,
+    "recomputed": 0.23112368211442638
+  },
+  "checks": [
+    "input/source equality",
+    "paired send/GPU identity",
+    "all token sums",
+    "LRU baseline exact regression",
+    "oracle ranking arithmetic",
+    "clean commit-only provenance",
+    "exact resource configuration",
+    "window selection",
+    "two-GPU monitor coverage",
+    "queue and running statistics"
+  ]
+}

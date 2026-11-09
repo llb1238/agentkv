@@ -1,0 +1,33 @@
+{
+  "git_commit": "18c1ad00397e90377fa4fc41900d3a20e8065871",
+  "reference_commit": "6afbaee",
+  "status": "complete",
+  "summary": {
+    "counts": {
+      "get": 576912,
+      "on_store_miss": 792,
+      "insert": 111194,
+      "mark_evictable": 148297,
+      "on_request_finished": 779,
+      "mark_non_evictable": 37103,
+      "evict": 734
+    },
+    "eviction_fingerprint": "01fe734e2b2ea34b13800544feb8df8de5ec44bf521e6905dde72fb3ee357200",
+    "prefix_enumerations": 779,
+    "prefix_cache_entries": 0,
+    "evict": {
+      "count": 734,
+      "p50_us": 586.095,
+      "p99_us": 1932.9766299999983,
+      "maximum_us": 3719.303
+    }
+  },
+  "source": "results/m5-chain-scoring-20261106/online-trace",
+  "source_sha256": {
+    "callbacks-3394629-125947076632096.jsonl.gz": "bec1b3a4e8aa8aa57fd02af28e00b40557db863b62cc355d596bf840f9d4bc11"
+  },
+  "files_sha256": {
+    "callbacks.parquet": "34d05664e9334efbc9c38823ea2f2a9c27ecad0281097cbf459a4a8b53eede9e",
+    "decisions.parquet": "f183493b06bb43f6786198250053c1e6cbfd203fb4af793f93fb7e139078b4cd"
+  }
+}

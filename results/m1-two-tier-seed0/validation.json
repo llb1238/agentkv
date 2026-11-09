@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "screened_configurations": 54,
+  "simulated_configurations": 16,
+  "total_requests_checked": 166910,
+  "qualified": 14,
+  "priority_pilots": [
+    "config-08",
+    "config-11",
+    "config-13"
+  ],
+  "small_cpu_hit": 0.0,
+  "cases": [
+    {
+      "id": "config-00",
+      "requests_checked": 9780,
+      "recommend": true,
+      "prefill_tps": 8001.548852208776
+    },
+    {
+      "id": "config-01",
+      "requests_checked": 9780,
+      "recommend": true,
+      "prefill_tps": 7298.622369925631
+    },
+    {
+      "id": "config-02",
+      "requests_checked": 9780,
+      "recommend": true,
+      "prefill_tps": 6468.301267283301
+    },
+    {
+      "id": "config-03",
+      "requests_checked": 10823,
+      "recommend": false,
+      "prefill_tps": 16824.980148781488
+    },
+    {
+      "id": "config-04",
+      "requests_checked": 10823,
+      "recommend": false,
+      "prefill_tps": 15479.300940495787
+    },
+    {
+      "id": "config-05",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 14686.194016186217
+    },
+    {
+      "id": "config-06",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 11558.164006950119
+    },
+    {
+      "id": "config-07",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 10346.426676392903
+    },
+    {
+      "id": "config-08",
+      "requests_checked": 9780,
+      "recommend": true,
+      "prefill_tps": 4041.6809866327844
+    },
+    {
+      "id": "config-09",
+      "requests_checked": 9780,
+      "recommend": true,
+      "prefill_tps": 3688.1072153944133
+    },
+    {
+      "id": "config-10",
+      "requests_checked": 9780,
+      "recommend": true,
+      "prefill_tps": 3269.682113023932
+    },
+    {
+      "id": "config-11",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 8487.561612996495
+    },
+    {
+      "id": "config-12",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 7810.773910753266
+    },
+    {
+      "id": "config-13",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 7412.065778890622
+    },
+    {
+      "id": "config-14",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 5832.261755635081
+    },
+    {
+      "id": "config-15",
+      "requests_checked": 10823,
+      "recommend": true,
+      "prefill_tps": 5222.797572763826
+    }
+  ],
+  "checks": [
+    "source/artifact hashes",
+    "all capacity inequalities",
+    "all event dependencies",
+    "entry/window flags",
+    "token-source additivity",
+    "GPU pin capacity",
+    "unlimited controls",
+    "recomputed prefill throughput",
+    "strict recommendation gates"
+  ]
+}

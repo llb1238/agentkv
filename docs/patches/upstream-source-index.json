@@ -1,0 +1,91 @@
+{
+  "upstream_commit": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+  "verification": "Read-only git show in local pinned backend; external link checks make no network requests",
+  "files": {
+    "csrc/cache_kernels.cu": {
+      "sha256": "80887e374bfdc8141878b485cfd7690be01697decd2b8542f823c228c849c534",
+      "lines": 2054,
+      "exists_at_registered_commit": true
+    },
+    "vllm/distributed/kv_transfer/kv_connector/v1/base.py": {
+      "sha256": "6a70c2b50bf1fc89dec052f66873f64ffa358ec30077cd4a49be8c7cf9944760",
+      "lines": 790,
+      "exists_at_registered_commit": true
+    },
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py": {
+      "sha256": "fa748f6f40a76e83f7ece683e90d6cdede9a069c45438cfcdcdb70ff2dd901fe",
+      "lines": 271,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/attention/backends/flash_attn.py": {
+      "sha256": "e6637cb5a66c4284a32a634532a9c71c236249aa7f3dfefb34544984fc75663a",
+      "lines": 1874,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/core/kv_cache_utils.py": {
+      "sha256": "af4164bca819f1cdc416077522a7019936fd38a523a482283eb91b08dae0e57a",
+      "lines": 2796,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_hints/protocol.py": {
+      "sha256": "c07e24c41dd695bf92eac6740c86bf9fc4d2140d410035b57f2d42e2afd802a3",
+      "lines": 26,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_offload/cpu/policies/arc.py": {
+      "sha256": "c38c4f072bc23bc78471b98de4bf9b5c70206f2faca52e32e21bd4e23dbb3d5f",
+      "lines": 212,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_offload/cpu/policies/base.py": {
+      "sha256": "db2d40b47abf08bfcedeb4a283cf7d8569dba83e94cf4425ff29784b36c40541",
+      "lines": 142,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_offload/cpu/policies/factory.py": {
+      "sha256": "a0a220303b863538c948b26407918612369749972c50fc2a7d5c8acc3c537f3e",
+      "lines": 91,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_offload/cpu/policies/lru.py": {
+      "sha256": "1c4ca6e743947795a00b76623e896b974550f1c5c15943dfe33ce8d1840b5a70",
+      "lines": 173,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_offload/cpu/spec.py": {
+      "sha256": "12af986b9482049ea657218e31db262b372f0bfe4e73e383136bbd85533b508d",
+      "lines": 207,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/kv_offload/tiering/kvcr/manager.py": {
+      "sha256": "be59efb31386930c8f26a7eae3dd525bcb041813e2ea918499b08348760d009f",
+      "lines": 632,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/metrics/loggers.py": {
+      "sha256": "a17291f044251f1586457b6bd1542f98660724dd07a426d61ce852186b95b9e1",
+      "lines": 1453,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/request.py": {
+      "sha256": "dd7c30bf8b0894dc123a739c299c0133566f8cc075b081e45905f1c29506e69d",
+      "lines": 412,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/worker/gpu/input_batch.py": {
+      "sha256": "2e4c2ebdb2c1ce04026d15288f5408624d880f335735636985efa3a3209a56f2",
+      "lines": 728,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/worker/gpu/kv_connector.py": {
+      "sha256": "7d9fec7b8b81c09c0bd87e5b9b4e2b829b0231b5805e86111df6a1eef2b4fe97",
+      "lines": 179,
+      "exists_at_registered_commit": true
+    },
+    "vllm/v1/worker/gpu/model_runner.py": {
+      "sha256": "5240fe8d62d403e466a4aa07a28fb7af5c0f1e9b9c3bb08c4003185bde461f87",
+      "lines": 2447,
+      "exists_at_registered_commit": true
+    }
+  }
+}

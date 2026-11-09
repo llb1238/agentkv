@@ -1,0 +1,5 @@
+{
+  "started_wall_s": 1793703842.1583807,
+  "pmon_pid": 2768046,
+  "gpu_csv": "index, uuid, memory.free [MiB], utilization.gpu [%]\n0, GPU-48956eb2-4037-09c5-2e94-39989b4d2e0d, 9255 MiB, 0 %\n1, GPU-667cc66c-113c-1591-1ec1-f4762d255186, 64113 MiB, 0 %\n"
+}

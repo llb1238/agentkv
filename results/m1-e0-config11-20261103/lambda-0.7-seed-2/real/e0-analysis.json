@@ -1,0 +1,155 @@
+{
+  "git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+  "population_sha256": "814294b1145af9560652a5a6aff7b4c84680c4cc0df9c2f65b669410efc01afe",
+  "stability": {
+    "version": "e0-stability-v2",
+    "status": "stable",
+    "stable": true,
+    "checks": {
+      "queue_distribution": true,
+      "fitted_growth_30min": true,
+      "ttft_half_ratio": true,
+      "conditional_kv_sizing": true
+    },
+    "details": {
+      "queue": {
+        "samples": 1751,
+        "zero_fraction": 0.9874357509994289,
+        "p99": 1.0,
+        "maximum": 2.0
+      },
+      "regression": {
+        "slope_per_second": 1.0979844456218901e-05,
+        "fitted_increase_30min": 0.01976372002119402
+      },
+      "ttft": {
+        "first_half_requests": 2336,
+        "second_half_requests": 3148,
+        "first_half_median_ms": 43.8904835,
+        "second_half_median_ms": 46.0862885,
+        "ratio": 1.0500291822941528
+      },
+      "kv": {
+        "observed": true,
+        "blocking_events": 0,
+        "running_threshold": 7,
+        "below_threshold_events": 0,
+        "minimum_running_when_blocked": null
+      }
+    }
+  },
+  "recomputation": {
+    "version": "e0-prefix-source-v1",
+    "requests": 5484,
+    "prompt_blocks_tokens": 35214320,
+    "source_tokens": {
+      "unavoidable": 795968,
+      "gap_eviction": 5561744,
+      "other_eviction": 78336
+    },
+    "source_fractions": {
+      "unavoidable": 0.022603531745040085,
+      "gap_eviction": 0.15793983811131382,
+      "other_eviction": 0.0022245495582478947
+    },
+    "recomputed_fraction": 0.1827679194146018,
+    "tail_tokens": 41272,
+    "hit_exceeds_history_anomalies": 0,
+    "gap_share_of_avoidable": 0.9861108353073006,
+    "gap_requests": 631,
+    "gap_queue_observed_requests": 631,
+    "gap_requests_mean_queued_s": 0.015724876660855786
+  },
+  "summary": {
+    "total_sent": 7073,
+    "window_sent": 5484,
+    "window_is_entry": 0,
+    "window_requests": 5484,
+    "window_success": 5484,
+    "window_failed": 0,
+    "ttft_ms": {
+      "n": 5484,
+      "p50": 44.992102,
+      "p99": 589.7393497700001,
+      "maximum": 1134.539425
+    },
+    "schedule_absolute_error_ms": {
+      "n": 5484,
+      "p50": 0.6391565,
+      "p99": 3.2600414000000004,
+      "maximum": 15.268517
+    },
+    "gap_absolute_error_ms": {
+      "n": 4808,
+      "p50": 0.6324155000445586,
+      "p99": 3.34107022660586,
+      "maximum": 15.26851699970777
+    },
+    "safety_valve_queued": 0,
+    "safety_valve_triggered": false,
+    "queued_ms": {
+      "n": 0,
+      "p50": null,
+      "p99": null,
+      "maximum": null
+    },
+    "unsent_queued": [],
+    "peak_inflight": 13,
+    "dependency_blocked": 0,
+    "cache_source_requests": 5484,
+    "nominal_fraction_per_request": {
+      "gpu_hit": {
+        "n": 5484,
+        "p50": 0.9810699588477366,
+        "p99": 0.9995684074233924,
+        "maximum": 0.9999229405871928
+      },
+      "cpu_hit": {
+        "n": 5484,
+        "p50": 0.0,
+        "p99": 0.9952839888301829,
+        "maximum": 0.9997539975399754
+      },
+      "recomputed": {
+        "n": 5484,
+        "p50": 0.01598151415808209,
+        "p99": 1.0,
+        "maximum": 1.0
+      }
+    },
+    "nominal_token_weighted_fraction": {
+      "gpu_hit": 0.7592522627332424,
+      "cpu_hit": 0.05702312416140963,
+      "recomputed": 0.18372461310534793
+    },
+    "hint_sent": 0,
+    "hint_received": 0,
+    "hint_counts_match": true,
+    "observation_join": {
+      "prefills_joined": 7073,
+      "valid_hints_received": 0,
+      "observation_events": 21230
+    },
+    "body_build_ms": {
+      "n": 5484,
+      "p50": 1.7137674999999999,
+      "p99": 5.001582010000002,
+      "maximum": 16.826817
+    },
+    "body_prepare_wait_ms": {
+      "n": 5484,
+      "p50": 0.3446595,
+      "p99": 3.1562164300000055,
+      "maximum": 12.453694
+    },
+    "event_loop_lag_ms": {
+      "n": 179785,
+      "p50": 0.789089,
+      "p99": 4.4880386,
+      "maximum": 111.793685
+    },
+    "event_loop_missed_checks": 263
+  },
+  "requests_sha256": "312af1fd0f799d37804abcf3c4865e74f36d5d578e97d698645b1e228b3a40cb",
+  "recomputation_sha256": "c788ff9aa4645a36139ae77bf29c9b5f49b5be708e47ff5917ade5660045f2dd"
+}

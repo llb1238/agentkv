@@ -1,0 +1,265 @@
+{
+  "stability": {
+    "version": "e0-stability-v2",
+    "status": "unstable",
+    "stable": false,
+    "checks": {
+      "queue_distribution": false,
+      "fitted_growth_30min": false,
+      "ttft_half_ratio": false,
+      "conditional_kv_sizing": true
+    },
+    "details": {
+      "queue": {
+        "samples": 1750,
+        "zero_fraction": 0.21885714285714286,
+        "p99": 75.0,
+        "maximum": 79.0
+      },
+      "regression": {
+        "slope_per_second": 0.04246593026138927,
+        "fitted_increase_30min": 76.43867447050069
+      },
+      "ttft": {
+        "first_half_requests": 5400,
+        "second_half_requests": 4254,
+        "first_half_median_ms": 454.73901850000004,
+        "second_half_median_ms": 10236.4705035,
+        "ratio": 22.510649157105483
+      },
+      "kv": {
+        "observed": true,
+        "blocking_events": 0,
+        "running_threshold": 7,
+        "below_threshold_events": 0,
+        "minimum_running_when_blocked": null
+      }
+    }
+  },
+  "run_summary": {
+    "total_sent": 13262,
+    "window_sent": 9654,
+    "window_is_entry": 0,
+    "window_requests": 9654,
+    "window_success": 9654,
+    "window_failed": 0,
+    "ttft_ms": {
+      "n": 9654,
+      "p50": 2403.7610295000004,
+      "p99": 20637.59604568,
+      "maximum": 22012.1047
+    },
+    "schedule_absolute_error_ms": {
+      "n": 9654,
+      "p50": 0.642309,
+      "p99": 4.053013849999977,
+      "maximum": 172.946742
+    },
+    "gap_absolute_error_ms": {
+      "n": 8429,
+      "p50": 0.6389330015137418,
+      "p99": 3.8787125598682213,
+      "maximum": 172.9467420000077
+    },
+    "safety_valve_queued": 0,
+    "safety_valve_triggered": false,
+    "queued_ms": {
+      "n": 0,
+      "p50": null,
+      "p99": null,
+      "maximum": null
+    },
+    "unsent_queued": [],
+    "peak_inflight": 88,
+    "dependency_blocked": 0,
+    "cache_source_requests": 9654,
+    "nominal_fraction_per_request": {
+      "gpu_hit": {
+        "n": 9654,
+        "p50": 0.0,
+        "p99": 0.9986362964795592,
+        "maximum": 0.9998891966759003
+      },
+      "cpu_hit": {
+        "n": 9654,
+        "p50": 0.0,
+        "p99": 0.9989506820566632,
+        "maximum": 1.0
+      },
+      "recomputed": {
+        "n": 9654,
+        "p50": 1.0,
+        "p99": 1.0,
+        "maximum": 1.0
+      }
+    },
+    "nominal_token_weighted_fraction": {
+      "gpu_hit": 0.15702168327035115,
+      "cpu_hit": 0.19802039494065488,
+      "recomputed": 0.644957921788994
+    },
+    "hint_sent": 0,
+    "hint_received": 0,
+    "hint_counts_match": true,
+    "observation_join": {
+      "prefills_joined": 13262,
+      "valid_hints_received": 0,
+      "observation_events": 39797
+    },
+    "body_build_ms": {
+      "n": 9654,
+      "p50": 2.0348725,
+      "p99": 6.145428049999996,
+      "maximum": 20.392774
+    },
+    "body_prepare_wait_ms": {
+      "n": 9654,
+      "p50": 0.38305849999999997,
+      "p99": 3.0352992299999957,
+      "maximum": 14.764217
+    },
+    "event_loop_lag_ms": {
+      "n": 179712,
+      "p50": 0.8567454999999999,
+      "p99": 4.874063679999992,
+      "maximum": 174.513283
+    },
+    "event_loop_missed_checks": 390
+  },
+  "window_requests": 9654,
+  "success": 9654,
+  "failed": 0,
+  "ttft_ms": {
+    "n": 9654,
+    "p50": 2403.7610295000004,
+    "p99": 20637.59604568,
+    "maximum": 22012.1047
+  },
+  "server_waiting": {
+    "samples": 1750,
+    "n": 1750,
+    "p50": 30.5,
+    "p99": 75.0,
+    "maximum": 79.0,
+    "fraction_positive": 0.7811428571428571,
+    "linear_trend_requests_per_minute": 2.5479558156833564
+  },
+  "schedule_absolute_error_ms": {
+    "n": 9654,
+    "p50": 0.642309,
+    "p99": 4.053013849999977,
+    "maximum": 172.946742
+  },
+  "gap_absolute_error_ms": {
+    "n": 8429,
+    "p50": 0.6389330015137418,
+    "p99": 3.8787125598682213,
+    "maximum": 172.9467420000077
+  },
+  "unqueued_schedule_absolute_error_ms": {
+    "n": 9654,
+    "p50": 0.642309,
+    "p99": 4.053013849999977,
+    "maximum": 172.946742
+  },
+  "unqueued_gap_absolute_error_ms": {
+    "n": 8429,
+    "p50": 0.6389330015137418,
+    "p99": 3.8787125598682213,
+    "maximum": 172.9467420000077
+  },
+  "nominal_per_request_fraction": {
+    "gpu_hit": {
+      "mean": 0.22156096224536753,
+      "n": 9654,
+      "p50": 0.0,
+      "p99": 0.9986362964795592,
+      "maximum": 0.9998891966759003
+    },
+    "cpu_hit": {
+      "mean": 0.1662624815958622,
+      "n": 9654,
+      "p50": 0.0,
+      "p99": 0.9989506820566632,
+      "maximum": 1.0
+    },
+    "recomputed": {
+      "mean": 0.6121765561587702,
+      "n": 9654,
+      "p50": 1.0,
+      "p99": 1.0,
+      "maximum": 1.0
+    }
+  },
+  "nominal_join_success": 9654,
+  "nominal_join_missing": 0,
+  "failures": [],
+  "source": {
+    "requests_sha256": "befc6ac088d86816dcdce071d98ad20aa1a3046936d86732b46c37077d754462",
+    "git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+    "server": {
+      "vllm_commit": "60da6135b0349fac50a051e9dcec2bd5b4514400",
+      "agentkv_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+      "model": "Qwen/Qwen3-8B",
+      "gpu_index": 1,
+      "gpu_cache_tokens": 182880,
+      "cpu_cache_tokens": 274320,
+      "gpu_cache_bytes": 26966753280,
+      "cpu_bytes": 40450129920,
+      "block_size": 16,
+      "gpu_blocks": 11430,
+      "policy": "lru",
+      "hint_tier": "none",
+      "max_model_len": 16384,
+      "max_num_seqs": 8,
+      "max_num_batched_tokens": 8192,
+      "shared_gpu": true,
+      "command": [
+        "numactl",
+        "--cpunodebind=2",
+        "--preferred=2",
+        "/home/llb/my_soft/vllm/.venv/bin/vllm",
+        "serve",
+        "/data/models/Qwen3-8B",
+        "--served-model-name",
+        "Qwen/Qwen3-8B",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8012",
+        "--shutdown-timeout",
+        "30",
+        "--gpu-memory-utilization",
+        "0.38",
+        "--kv-cache-memory-bytes",
+        "26966753280",
+        "--num-gpu-blocks-override",
+        "11430",
+        "--block-size",
+        "16",
+        "--max-model-len",
+        "16384",
+        "--max-num-batched-tokens",
+        "8192",
+        "--max-num-seqs",
+        "8",
+        "--enable-prefix-caching",
+        "--kv-transfer-config",
+        "{\"kv_connector\":\"OffloadingConnector\",\"kv_role\":\"kv_both\",\"kv_connector_extra_config\":{\"cpu_bytes_to_use\":40450129920,\"offload_prompt_only\":true,\"eviction_policy\":\"lru\"}}"
+      ],
+      "clock_pair": {
+        "wall_time_s": 1793729825.107966,
+        "monotonic_ns": 1615592324470150
+      },
+      "duration_s": 2400,
+      "warmup_s": 600,
+      "rate_per_minute": 1.4,
+      "population_seed": 1,
+      "gpu_before": "Wed Nov  4 02:17:05 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA H200 NVL                On  |   00000000:98:00.0 Off |                    0 |\n| N/A   29C    P0             93W /  600W |  133902MiB / 143771MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA H200 NVL                On  |   00000000:B8:00.0 Off |                    0 |\n| N/A   41C    P0            100W /  600W |   79043MiB / 143771MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A         <redacted: other user's process> C 612MiB |\n|    0   N/A  N/A         <redacted: other user's process> C 13327... |\n|    1   N/A  N/A           <redacted: other user's process> C 43150MiB |\n|    1   N/A  N/A         <redacted: other user's process> C 35762MiB |\n+-----------------------------------------------------------------------------------------+\n"
+    }
+  },
+  "queue_plot_sha256": {
+    "server_queue.png": "8586b3f6bb21c5571db4a036e5cca37848da26535fadd8a23e545d0054cdb6bc",
+    "server_queue.pdf": "fe1212cecde100f8e5f9b4688b6a00f558cc2b7c1c4fcfbc6ca1283d346dbb61"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "wall_time_s": 1793714904.175107,
+  "gpus": "0, GPU-48956eb2-4037-09c5-2e94-39989b4d2e0d, NVIDIA H200 NVL, 143771, 9255, 0\n1, GPU-667cc66c-113c-1591-1ec1-f4762d255186, NVIDIA H200 NVL, 143771, 64113, 0\n",
+  "processes": "GPU-48956eb2-4037-09c5-2e94-39989b4d2e0d, <redacted: other user's process>, <redacted: other user's process>, 612\nGPU-48956eb2-4037-09c5-2e94-39989b4d2e0d, <redacted: other user's process>, <redacted: other user's process>, 133274\nGPU-667cc66c-113c-1591-1ec1-f4762d255186, <redacted: other user's process>, <redacted: other user's process>, 43150\nGPU-667cc66c-113c-1591-1ec1-f4762d255186, <redacted: other user's process>, <redacted: other user's process>, 35762\n"
+}

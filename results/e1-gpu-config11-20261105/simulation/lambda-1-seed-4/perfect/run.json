@@ -1,0 +1,36 @@
+{
+  "git_commit": "0800a144cc18b8ef73663b33c8d1dcddb8124779",
+  "status": "complete",
+  "group": "lambda-1-seed-4",
+  "rate": 1.0,
+  "seed": 4,
+  "policy": "perfect",
+  "population_sha256": "f4094a0779171e806fa7e9a831d668241f379736772091b3defaa01eae8ff799",
+  "schedule_gpu_sha256": "710d48df2d250cefbfc135fce6da4864ae10f663841e84bc33809be9b988c05e",
+  "predicted_effective_recompute": 0.17245799054672697,
+  "terminal_token_correction": 11,
+  "summary": {
+    "requests": 8311,
+    "window_requests": 6026,
+    "window_prompt_tokens": 46573922,
+    "source_tokens": {
+      "gpu_hit": 27681200,
+      "cpu_hit": 10860688,
+      "recomputed": 8032034
+    },
+    "source_fractions": {
+      "gpu_hit": 0.5943497736780682,
+      "cpu_hit": 0.23319247195887863,
+      "recomputed": 0.17245775436305322
+    },
+    "gpu_evictions": 1499756,
+    "cpu_evictions": 664310,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 8,
+    "peak_gpu_tokens": 182880,
+    "kv_blocked_checks": 0,
+    "queued_requests": 1,
+    "unsent_queued": 0
+  },
+  "requests_sha256": "2caa8d4c93b2086198674df0d8ee0f66bcd57a5e0391b007204fd14d93aa09b0"
+}

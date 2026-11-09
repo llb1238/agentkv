@@ -1,0 +1,66 @@
+{
+  "commit": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+  "versions": {
+    "vllm": "0.32.0+precompiled",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.19.0",
+    "pytest": "9.2.0",
+    "pre-commit": "4.7.0"
+  },
+  "timing": "monotonic_ns across host processes; existing CUDA events after query; no added GPU synchronization",
+  "gpu": "index, name, uuid, driver_version\n0, NVIDIA H200 NVL, GPU-48956eb2-4037-09c5-2e94-39989b4d2e0d, 580.178.04\n1, NVIDIA H200 NVL, GPU-667cc66c-113c-1591-1ec1-f4762d255186, 580.178.04\n",
+  "model_config": {
+    "architectures": [
+      "Qwen3ForCausalLM"
+    ],
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 4096,
+    "initializer_range": 0.02,
+    "intermediate_size": 12288,
+    "max_position_embeddings": 40960,
+    "max_window_layers": 36,
+    "model_type": "qwen3",
+    "num_attention_heads": 32,
+    "num_hidden_layers": 36,
+    "num_key_value_heads": 8,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": null,
+    "rope_theta": 1000000,
+    "sliding_window": null,
+    "tie_word_embeddings": false,
+    "torch_dtype": "bfloat16",
+    "transformers_version": "4.51.0",
+    "use_cache": true,
+    "use_sliding_window": false,
+    "vocab_size": 151936
+  },
+  "cpu_numa": 2,
+  "trace": "AGENTKV_TRACE=1",
+  "gpu_blocks": 512,
+  "block_tokens": 16,
+  "cpu_bytes": 4000000000,
+  "cpu_chunks": 1695,
+  "fixture_source": "../two-turn-controls-http-20261101-222611/fixture.json",
+  "plugin_source": "../two-turn-controls-http-20261101-222611/plugin",
+  "notes": "3 repeats each; prior pilot and pilot-v2-check excluded from final analysis. General plugin reused from Week1.",
+  "buffer_events_per_process": 65536,
+  "serialization": "buffered objects; explicit scheduler/worker shutdown flush plus atexit fallback",
+  "final_event_count": 42163,
+  "final_pids": {
+    "scheduler_pid": 1330768,
+    "worker_pid": 1330768,
+    "frontend_pid": 1330220
+  },
+  "excluded_runs": [
+    "pilot",
+    "pilot-v2-check",
+    "pilot-serialized",
+    "pilot-buffer-no-flush"
+  ],
+  "post_measurement_changes": "A type annotation fix in trace_span, extra offline analyzer assertions, and report/replay scripts only; measured source preserved in instrumentation-measured.patch."
+}

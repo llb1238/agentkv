@@ -1,0 +1,51 @@
+{
+  "git_commit": "14fecfaefffc421f84e63cf8bfdddc56f6587663",
+  "measurement_git_commit": "5a4618278ed8d8069c1b8e5761c252f468c90e0a",
+  "passed": true,
+  "case_count": 180,
+  "population_count": 12,
+  "requests_checked": 1816230,
+  "none_lru_identical_populations": 12,
+  "e0_regression_populations": 12,
+  "source_run_sha256": "171e83bb1c5711ea6d94815f16c46bf84dbc8038fef1e989d0aa857975eaa2c4",
+  "mean_reduction_pp": {
+    "perfect": 9.256483961230346,
+    "noisy": 8.757673659496206,
+    "online": 1.3813982786702796
+  },
+  "mean_oracle_capture": {
+    "perfect": 0.9349775046345865,
+    "noisy": 0.8817143266716868,
+    "online": 0.2279880553036857
+  },
+  "mean_ablation_effect_pp": {
+    "no-tail": {
+      "perfect": -0.023248624050539096,
+      "noisy": -0.024183997016270428,
+      "online": -0.014931778656912068
+    },
+    "no-final": {
+      "perfect": 1.270156157864901,
+      "noisy": 1.2913542757857057,
+      "online": 0.6918608200484817
+    },
+    "no-timeout": {
+      "perfect": -0.06757258444127709,
+      "noisy": -0.025063223951194563,
+      "online": 0.4673266389077366
+    }
+  },
+  "max_cpu_store_skips": 0,
+  "checks": [
+    "all source/output hashes",
+    "12 paired E0 populations",
+    "all token sums",
+    "unchanged request/schedule/GPU paths",
+    "LRU/Oracle E0 regression",
+    "none-adapter byte-identical requests",
+    "paired percentage points and unclipped Oracle capture",
+    "three-seed means and ranges",
+    "three independent component ablations",
+    "hint and timeout callback counts"
+  ]
+}

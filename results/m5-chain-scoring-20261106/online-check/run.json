@@ -1,0 +1,69 @@
+{
+  "git_commit": "86814f7db31e377b6e24a46fa3cc6b09101797c7",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "status": "complete",
+  "hint_tier": "online",
+  "implementation": "Unchanged indexed scorer with read-only inspection before removal",
+  "timing_is_performance_measurement": false,
+  "frozen_replay_all_evictions_identical": true,
+  "eviction_fingerprint": "01fe734e2b2ea34b13800544feb8df8de5ec44bf521e6905dde72fb3ee357200",
+  "callback_counts": {
+    "get": 576912,
+    "on_store_miss": 792,
+    "insert": 111194,
+    "mark_evictable": 148297,
+    "on_request_finished": 779,
+    "mark_non_evictable": 37103,
+    "evict": 734
+  },
+  "evictions": 734,
+  "depth_tail_incompatibility_witness": {
+    "now_s": 70637.416918647,
+    "frozen_selected": {
+      "key_hex": "66a84d078cbe1935ae359fe0cb9f4cfd20b77e2e478b6641bf94d29efb890a6b00000000",
+      "rank": 44903,
+      "ref_cnt": 0,
+      "protected": false,
+      "owners": [
+        {
+          "instance": "da7f35eb92538719bc0ea317a0b25bb25162#67",
+          "chain": "da7f35eb92538719bc0ea317a0b25bb25162#67/da7f35eb92538719bc0ea317a0b25bb25162::root::inferred:9",
+          "depth": 5440
+        }
+      ]
+    },
+    "eligible_deeper": {
+      "key_hex": "a7d7484c993f26154558bea71a29bbee590c64190abffecaf2135c32c9ece9fe00000000",
+      "rank": 65645,
+      "ref_cnt": 0,
+      "protected": false,
+      "owners": [
+        {
+          "instance": "da7f35eb92538719bc0ea317a0b25bb25162#67",
+          "chain": "da7f35eb92538719bc0ea317a0b25bb25162#67/da7f35eb92538719bc0ea317a0b25bb25162::root::inferred:9",
+          "depth": 5456
+        }
+      ]
+    },
+    "identical_owner_sets": true,
+    "identical_score_lines": true,
+    "score_lines": [
+      [
+        1,
+        62.88686901763237
+      ]
+    ],
+    "implication": "A strict depth-tail rule must select a deeper eligible block before the recorded shallow victim.",
+    "call": 196992,
+    "eviction_index": 106,
+    "requested_blocks": 283,
+    "protected_blocks": 283
+  },
+  "strict_depth_tail_order_compatible": false,
+  "not_a_chain_queue_implementation": true,
+  "trace_sha256": {
+    "callbacks-3394629-125947076632096.jsonl.gz": "bec1b3a4e8aa8aa57fd02af28e00b40557db863b62cc355d596bf840f9d4bc11"
+  },
+  "trial_sha256": "512b0f62bbe138a9e5d249a94ec4718ffaf8deb62ccd93113f27a4237449dc39",
+  "decisions_sha256": "f183493b06bb43f6786198250053c1e6cbfd203fb4af793f93fb7e139078b4cd"
+}

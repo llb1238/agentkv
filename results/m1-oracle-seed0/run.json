@@ -1,0 +1,1496 @@
+{
+  "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+  "source": {
+    "baseline_sha256": "dc91b4668d53f6bd465cd2021fd6aeef4fbdf878b673817f1553534d007f53d6",
+    "capacity_sha256": "eae8a39b2f01447554db9603ee4a97988f84d8bb2f502ad6da9ece39769b14be"
+  },
+  "parameters": {
+    "duration_s": 2400,
+    "warmup_s": 600,
+    "service_s": 0.5,
+    "block_size": 16,
+    "target": "config-11",
+    "noticeably_larger_threshold_pp": 2.0
+  },
+  "oracle": {
+    "access": "all requests in each sampled remaining instance lifetime, including after T",
+    "deadline": "instance_start + est_send_s - tau; remove issued IDs only; overdue queued requests remain",
+    "eviction": "farthest next unissued expected deadline; never-used first; larger block ID breaks ties",
+    "limits": "block Belady with forced duplicate writes and chained prefix hits; not claimed globally optimal"
+  },
+  "results": [
+    {
+      "id": "config-13",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 8,
+        "gpu_tokens": 182880,
+        "cpu_tokens": 365760,
+        "cpu_gpu_ratio": 2.0,
+        "gpu_kv_gib": 25.11474609375,
+        "cpu_kv_gib": 50.2294921875,
+        "scheduled_kv_p90": 34864.0,
+        "saturated_kv_p90": 73152.0,
+        "sizing_kv_p90": 73152.0,
+        "working_set_p50": 764289.5,
+        "working_set_p90": 832029.3,
+        "working_set_gib": 104.95919036865234,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 16913.452333333327,
+        "raw_prefill_tps": 33194.49216666666,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 182880.0,
+          "cpu_working_set_max": 611431.6,
+          "cpu_ratio_min": 274320.0,
+          "cpu_ratio_max": 365760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 34480288,
+              "cpu_hit": 12896848,
+              "recomputed": 13620225
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5652750780480487,
+              "cpu_hit": 0.21143288477676928,
+              "recomputed": 0.22329203717518206
+            },
+            "gpu_evictions": 2086847,
+            "cpu_evictions": 1040604,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "100ca8be840768a9139d7d4e9f0d9eebd3a3ce0d151f7093fc18b6ba1ede0a84"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 34480288,
+              "cpu_hit": 18563568,
+              "recomputed": 7953505
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5652750780480487,
+              "cpu_hit": 0.3043339530705271,
+              "recomputed": 0.13039096888142424
+            },
+            "gpu_evictions": 2086847,
+            "cpu_evictions": 648294,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "4443a851e3787d464ce4138dbfb2d9a5acffded678337ece89af4d4737cc986c"
+        }
+      },
+      "lru_recomputed_fraction": 0.22329203717518206,
+      "oracle_recomputed_fraction": 0.13039096888142424,
+      "recompute_reduction_pp": 9.290106829375782
+    },
+    {
+      "id": "config-05",
+      "candidate": {
+        "context_budget": 32512,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 8,
+        "gpu_tokens": 362720,
+        "cpu_tokens": 725440,
+        "cpu_gpu_ratio": 2.0,
+        "gpu_kv_gib": 49.81201171875,
+        "cpu_kv_gib": 99.6240234375,
+        "scheduled_kv_p90": 69152.0,
+        "saturated_kv_p90": 145088.0,
+        "sizing_kv_p90": 145088.0,
+        "working_set_p50": 1516675.5,
+        "working_set_p90": 1651105.3,
+        "working_set_gib": 208.28368377685547,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 33563.907,
+        "raw_prefill_tps": 65872.723,
+        "upper_hit_rate": 0.9809467266139886,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 362720.0,
+          "cpu_working_set_max": 1213340.4000000001,
+          "cpu_ratio_min": 544080.0,
+          "cpu_ratio_max": 725440,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 121045948,
+            "source_tokens": {
+              "gpu_hit": 68404864,
+              "cpu_hit": 25654128,
+              "recomputed": 26986956
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5651148603503853,
+              "cpu_hit": 0.21193710672578647,
+              "recomputed": 0.22294803292382823
+            },
+            "gpu_evictions": 4148024,
+            "cpu_evictions": 2066750,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "d6d44574422d21ca7d6b8c4b9f7c9755f3f211de6f5020ebc3ad59d6e142ecf7"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 121045948,
+            "source_tokens": {
+              "gpu_hit": 68404864,
+              "cpu_hit": 36898704,
+              "recomputed": 15742380
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5651148603503853,
+              "cpu_hit": 0.30483221131863086,
+              "recomputed": 0.13005292833098386
+            },
+            "gpu_evictions": 4148024,
+            "cpu_evictions": 1288378,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "17ce55957b572a65bdee08894a619394e6aa2dad45279c2868f68426e8572227"
+        }
+      },
+      "lru_recomputed_fraction": 0.22294803292382823,
+      "oracle_recomputed_fraction": 0.13005292833098386,
+      "recompute_reduction_pp": 9.289510459284436
+    },
+    {
+      "id": "config-07",
+      "candidate": {
+        "context_budget": 32512,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 16,
+        "gpu_tokens": 672880,
+        "cpu_tokens": 1177552,
+        "cpu_gpu_ratio": 1.7500178337890857,
+        "gpu_kv_gib": 92.406005859375,
+        "cpu_kv_gib": 161.712158203125,
+        "scheduled_kv_p90": 69312.0,
+        "saturated_kv_p90": 269152.0,
+        "sizing_kv_p90": 269152.0,
+        "working_set_p50": 1516675.5,
+        "working_set_p90": 1651105.3,
+        "working_set_gib": 208.28368377685547,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 33563.907,
+        "raw_prefill_tps": 65872.723,
+        "upper_hit_rate": 0.9809467266139886,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 672880.0,
+          "cpu_working_set_max": 1213340.4000000001,
+          "cpu_ratio_min": 1009320.0,
+          "cpu_ratio_max": 1345760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 121045948,
+            "source_tokens": {
+              "gpu_hit": 93054592,
+              "cpu_hit": 8979040,
+              "recomputed": 19012316
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7687542915521633,
+              "cpu_hit": 0.07417877383223105,
+              "recomputed": 0.15706693461560564
+            },
+            "gpu_evictions": 2146128,
+            "cpu_evictions": 1377730,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 672880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "2c500ac252e4df1ac6ccd80bee93c67823ad4696f2fa41d526af2a617deb6c54"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 121045948,
+            "source_tokens": {
+              "gpu_hit": 93054592,
+              "cpu_hit": 20062016,
+              "recomputed": 7929340
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7687542915521633,
+              "cpu_hit": 0.16573884819341494,
+              "recomputed": 0.06550686025442173
+            },
+            "gpu_evictions": 2146128,
+            "cpu_evictions": 595790,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 672880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "5e27dd3d2f17f4c285036453a2bef9937a00a1b7f84130dd4bc76f1cc329944b"
+        }
+      },
+      "lru_recomputed_fraction": 0.15706693461560564,
+      "oracle_recomputed_fraction": 0.06550686025442173,
+      "recompute_reduction_pp": 9.15600743611839
+    },
+    {
+      "id": "config-15",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 16,
+        "gpu_tokens": 339280,
+        "cpu_tokens": 593744,
+        "cpu_gpu_ratio": 1.7500117896722471,
+        "gpu_kv_gib": 46.593017578125,
+        "cpu_kv_gib": 81.538330078125,
+        "scheduled_kv_p90": 34944.0,
+        "saturated_kv_p90": 135712.0,
+        "sizing_kv_p90": 135712.0,
+        "working_set_p50": 764289.5,
+        "working_set_p90": 832029.3,
+        "working_set_gib": 104.95919036865234,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 16913.452333333327,
+        "raw_prefill_tps": 33194.49216666666,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 339280.0,
+          "cpu_working_set_max": 611431.6,
+          "cpu_ratio_min": 508920.0,
+          "cpu_ratio_max": 678560,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 46871920,
+              "cpu_hit": 4528160,
+              "recomputed": 9597281
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7684253749928623,
+              "cpu_hit": 0.07423534273884407,
+              "recomputed": 0.15733928226829355
+            },
+            "gpu_evictions": 1080539,
+            "cpu_evictions": 693257,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 339280,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "bf46be453967c0b5daf6be882e51010db9fb7228aae816566b5d6093c95ca7a7"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 46871920,
+              "cpu_hit": 10109248,
+              "recomputed": 4016193
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7684253749928623,
+              "cpu_hit": 0.16573254701953416,
+              "recomputed": 0.06584207798760343
+            },
+            "gpu_evictions": 1080539,
+            "cpu_evictions": 299180,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 339280,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "616dfdbd4eda71f0f91cb4e51997cf3d90fe04fae5580ac92a896f7c69ee732c"
+        }
+      },
+      "lru_recomputed_fraction": 0.15733928226829355,
+      "oracle_recomputed_fraction": 0.06584207798760343,
+      "recompute_reduction_pp": 9.149720428069012
+    },
+    {
+      "id": "config-11",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 8,
+        "gpu_tokens": 182880,
+        "cpu_tokens": 274320,
+        "cpu_gpu_ratio": 1.5,
+        "gpu_kv_gib": 25.11474609375,
+        "cpu_kv_gib": 37.672119140625,
+        "scheduled_kv_p90": 34864.0,
+        "saturated_kv_p90": 73152.0,
+        "sizing_kv_p90": 73152.0,
+        "working_set_p50": 764289.5,
+        "working_set_p90": 832029.3,
+        "working_set_gib": 104.95919036865234,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 16913.452333333327,
+        "raw_prefill_tps": 33194.49216666666,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 182880.0,
+          "cpu_working_set_max": 611431.6,
+          "cpu_ratio_min": 274320.0,
+          "cpu_ratio_max": 365760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 34480288,
+              "cpu_hit": 10920544,
+              "recomputed": 15596529
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5652750780480487,
+              "cpu_hit": 0.179033056856345,
+              "recomputed": 0.2556918650956064
+            },
+            "gpu_evictions": 2086847,
+            "cpu_evictions": 1215306,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "bee650807ae1874fd34f03cc3b1a0b95ae5c5494ab2d57492b033f49ca795165"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 34480288,
+              "cpu_hit": 16375920,
+              "recomputed": 10141153
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5652750780480487,
+              "cpu_hit": 0.2684693195169542,
+              "recomputed": 0.16625560243499715
+            },
+            "gpu_evictions": 2086847,
+            "cpu_evictions": 843919,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "019a905bf2b450f15390690d6dc7c939e2aadbb2af9e5bd6659e97a09b842690"
+        }
+      },
+      "lru_recomputed_fraction": 0.2556918650956064,
+      "oracle_recomputed_fraction": 0.16625560243499715,
+      "recompute_reduction_pp": 8.943626266060923
+    },
+    {
+      "id": "config-12",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 8,
+        "gpu_tokens": 182880,
+        "cpu_tokens": 320048,
+        "cpu_gpu_ratio": 1.7500437445319335,
+        "gpu_kv_gib": 25.11474609375,
+        "cpu_kv_gib": 43.951904296875,
+        "scheduled_kv_p90": 34864.0,
+        "saturated_kv_p90": 73152.0,
+        "sizing_kv_p90": 73152.0,
+        "working_set_p50": 764289.5,
+        "working_set_p90": 832029.3,
+        "working_set_gib": 104.95919036865234,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 16913.452333333327,
+        "raw_prefill_tps": 33194.49216666666,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 182880.0,
+          "cpu_working_set_max": 611431.6,
+          "cpu_ratio_min": 274320.0,
+          "cpu_ratio_max": 365760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 34480288,
+              "cpu_hit": 12164192,
+              "recomputed": 14352881
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5652750780480487,
+              "cpu_hit": 0.19942161104314005,
+              "recomputed": 0.2353033109088113
+            },
+            "gpu_evictions": 2086847,
+            "cpu_evictions": 1111816,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "8247646b20cd155396937cbcc5dc3fe05411bf7ae08c3681c2482719aeb1bb51"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 34480288,
+              "cpu_hit": 17561376,
+              "recomputed": 8955697
+            },
+            "source_fractions": {
+              "gpu_hit": 0.5652750780480487,
+              "cpu_hit": 0.2879038652180379,
+              "recomputed": 0.14682105673391346
+            },
+            "gpu_evictions": 2086847,
+            "cpu_evictions": 737998,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 29,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "ece55c9ff219c1193ba5e4102b5221592af3b484a9822af99e11089aa3116b20"
+        }
+      },
+      "lru_recomputed_fraction": 0.2353033109088113,
+      "oracle_recomputed_fraction": 0.14682105673391346,
+      "recompute_reduction_pp": 8.848225417489783
+    },
+    {
+      "id": "config-06",
+      "candidate": {
+        "context_budget": 32512,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 16,
+        "gpu_tokens": 672880,
+        "cpu_tokens": 1009328,
+        "cpu_gpu_ratio": 1.5000118891927239,
+        "gpu_kv_gib": 92.406005859375,
+        "cpu_kv_gib": 138.610107421875,
+        "scheduled_kv_p90": 69312.0,
+        "saturated_kv_p90": 269152.0,
+        "sizing_kv_p90": 269152.0,
+        "working_set_p50": 1516675.5,
+        "working_set_p90": 1651105.3,
+        "working_set_gib": 208.28368377685547,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 33563.907,
+        "raw_prefill_tps": 65872.723,
+        "upper_hit_rate": 0.9809467266139886,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 672880.0,
+          "cpu_working_set_max": 1213340.4000000001,
+          "cpu_ratio_min": 1009320.0,
+          "cpu_ratio_max": 1345760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 121045948,
+            "source_tokens": {
+              "gpu_hit": 93054592,
+              "cpu_hit": 6752384,
+              "recomputed": 21238972
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7687542915521633,
+              "cpu_hit": 0.055783643414482574,
+              "recomputed": 0.1754620650333541
+            },
+            "gpu_evictions": 2146128,
+            "cpu_evictions": 1583823,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 672880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "31348fda183dd1d5a02d78e183bf69aeac64579acaa1d26ec3523095a952efd1"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 121045948,
+            "source_tokens": {
+              "gpu_hit": 93054592,
+              "cpu_hit": 17352224,
+              "recomputed": 10639132
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7687542915521633,
+              "cpu_hit": 0.14335237392663486,
+              "recomputed": 0.08789333452120182
+            },
+            "gpu_evictions": 2146128,
+            "cpu_evictions": 844766,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 672880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "1add3935c95a4295b8d5dc506797bace9912a29fe122a1d6008609b8a0b16fd9"
+        }
+      },
+      "lru_recomputed_fraction": 0.1754620650333541,
+      "oracle_recomputed_fraction": 0.08789333452120182,
+      "recompute_reduction_pp": 8.756873051215228
+    },
+    {
+      "id": "config-14",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 1.0,
+        "max_num_seqs": 16,
+        "gpu_tokens": 339280,
+        "cpu_tokens": 508928,
+        "cpu_gpu_ratio": 1.5000235793444943,
+        "gpu_kv_gib": 46.593017578125,
+        "cpu_kv_gib": 69.890625,
+        "scheduled_kv_p90": 34944.0,
+        "saturated_kv_p90": 135712.0,
+        "sizing_kv_p90": 135712.0,
+        "working_set_p50": 764289.5,
+        "working_set_p90": 832029.3,
+        "working_set_gib": 104.95919036865234,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 16913.452333333327,
+        "raw_prefill_tps": 33194.49216666666,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 339280.0,
+          "cpu_working_set_max": 611431.6,
+          "cpu_ratio_min": 508920.0,
+          "cpu_ratio_max": 678560,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 46871920,
+              "cpu_hit": 3408224,
+              "recomputed": 10717217
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7684253749928623,
+              "cpu_hit": 0.055874941868386735,
+              "recomputed": 0.17569968313875087
+            },
+            "gpu_evictions": 1080539,
+            "cpu_evictions": 796721,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 339280,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "2ac1e722bfe1446be8fe78ca9d8baa634272727072d5c3056d028b6fabf39356"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 10823,
+            "window_requests": 8610,
+            "window_prompt_tokens": 60997361,
+            "source_tokens": {
+              "gpu_hit": 46871920,
+              "cpu_hit": 8744160,
+              "recomputed": 5381281
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7684253749928623,
+              "cpu_hit": 0.14335308702945362,
+              "recomputed": 0.08822153797768399
+            },
+            "gpu_evictions": 1080539,
+            "cpu_evictions": 424625,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 11,
+            "peak_gpu_tokens": 339280,
+            "kv_blocked_checks": 0,
+            "queued_requests": 0,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "237accab2182f89c429f473c0ddc362885c1c65d56760e82c90b3e6604af719f"
+        }
+      },
+      "lru_recomputed_fraction": 0.17569968313875087,
+      "oracle_recomputed_fraction": 0.08822153797768399,
+      "recompute_reduction_pp": 8.747814516106688
+    },
+    {
+      "id": "config-01",
+      "candidate": {
+        "context_budget": 32512,
+        "rate_per_minute": 0.7,
+        "max_num_seqs": 8,
+        "gpu_tokens": 362720,
+        "cpu_tokens": 634768,
+        "cpu_gpu_ratio": 1.7500220555800619,
+        "gpu_kv_gib": 49.81201171875,
+        "cpu_kv_gib": 87.172119140625,
+        "scheduled_kv_p90": 55696.0,
+        "saturated_kv_p90": 145088.0,
+        "sizing_kv_p90": 145088.0,
+        "working_set_p50": 1005533.0,
+        "working_set_p90": 1069408.2,
+        "working_set_gib": 138.0889434814453,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 23494.734899999996,
+        "raw_prefill_tps": 46110.90609999999,
+        "upper_hit_rate": 0.9809467266139886,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 362720.0,
+          "cpu_working_set_max": 804426.4,
+          "cpu_ratio_min": 544080.0,
+          "cpu_ratio_max": 725440,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 93036482,
+            "source_tokens": {
+              "gpu_hit": 70677328,
+              "cpu_hit": 7632960,
+              "recomputed": 14726194
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7596732645157412,
+              "cpu_hit": 0.08204265505224069,
+              "recomputed": 0.15828408043201805
+            },
+            "gpu_evictions": 2003373,
+            "cpu_evictions": 1257421,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "47905e65e90bbd92f905e640aaf03d3b7e7146df5f4e9895146ea9bb392fa854"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 93036482,
+            "source_tokens": {
+              "gpu_hit": 70677328,
+              "cpu_hit": 14670912,
+              "recomputed": 7688242
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7596732645157412,
+              "cpu_hit": 0.15768988341584111,
+              "recomputed": 0.08263685206841763
+            },
+            "gpu_evictions": 2003373,
+            "cpu_evictions": 728299,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "76f88cd678977b411dcb526f2a091053e0928e3fe5fd51a5069a0e7580efed82"
+        }
+      },
+      "lru_recomputed_fraction": 0.15828408043201805,
+      "oracle_recomputed_fraction": 0.08263685206841763,
+      "recompute_reduction_pp": 7.564722836360042
+    },
+    {
+      "id": "config-09",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 0.7,
+        "max_num_seqs": 8,
+        "gpu_tokens": 182880,
+        "cpu_tokens": 320048,
+        "cpu_gpu_ratio": 1.7500437445319335,
+        "gpu_kv_gib": 25.11474609375,
+        "cpu_kv_gib": 43.951904296875,
+        "scheduled_kv_p90": 28080.0,
+        "saturated_kv_p90": 73152.0,
+        "sizing_kv_p90": 73152.0,
+        "working_set_p50": 506708.5,
+        "working_set_p90": 538898.0,
+        "working_set_gib": 69.58582305908203,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 11839.41663333333,
+        "raw_prefill_tps": 23236.144516666664,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 182880.0,
+          "cpu_working_set_max": 405366.80000000005,
+          "cpu_ratio_min": 274320.0,
+          "cpu_ratio_max": 365760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 46882662,
+            "source_tokens": {
+              "gpu_hit": 35603376,
+              "cpu_hit": 3837936,
+              "recomputed": 7441350
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7594145571341491,
+              "cpu_hit": 0.08186258706896805,
+              "recomputed": 0.15872285579688286
+            },
+            "gpu_evictions": 1007910,
+            "cpu_evictions": 632874,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "c32c4e657668fc3c4fec0de97b733553d998e523877628a37642cfa8fc47aa2c"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 46882662,
+            "source_tokens": {
+              "gpu_hit": 35603376,
+              "cpu_hit": 7384336,
+              "recomputed": 3894950
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7594145571341491,
+              "cpu_hit": 0.15750675590903945,
+              "recomputed": 0.08307868695681145
+            },
+            "gpu_evictions": 1007910,
+            "cpu_evictions": 366372,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "53c7ffb8244a9880c62cae998f7c6a3c5b5c9088905d39fd44de93e439a7d142"
+        }
+      },
+      "lru_recomputed_fraction": 0.15872285579688286,
+      "oracle_recomputed_fraction": 0.08307868695681145,
+      "recompute_reduction_pp": 7.564416884007141
+    },
+    {
+      "id": "config-10",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 0.7,
+        "max_num_seqs": 8,
+        "gpu_tokens": 182880,
+        "cpu_tokens": 365760,
+        "cpu_gpu_ratio": 2.0,
+        "gpu_kv_gib": 25.11474609375,
+        "cpu_kv_gib": 50.2294921875,
+        "scheduled_kv_p90": 28080.0,
+        "saturated_kv_p90": 73152.0,
+        "sizing_kv_p90": 73152.0,
+        "working_set_p50": 506708.5,
+        "working_set_p90": 538898.0,
+        "working_set_gib": 69.58582305908203,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 11839.41663333333,
+        "raw_prefill_tps": 23236.144516666664,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 182880.0,
+          "cpu_working_set_max": 405366.80000000005,
+          "cpu_ratio_min": 274320.0,
+          "cpu_ratio_max": 365760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 46882662,
+            "source_tokens": {
+              "gpu_hit": 35603376,
+              "cpu_hit": 4682176,
+              "recomputed": 6597110
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7594145571341491,
+              "cpu_hit": 0.09987009696676354,
+              "recomputed": 0.14071534589908738
+            },
+            "gpu_evictions": 1007910,
+            "cpu_evictions": 562019,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "cc71baa04a722d5b0f079a04a22f7356c2cfedd22b139ac91bb6e3b7be8f0ffb"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 46882662,
+            "source_tokens": {
+              "gpu_hit": 35603376,
+              "cpu_hit": 8180048,
+              "recomputed": 3099238
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7594145571341491,
+              "cpu_hit": 0.1744791709992918,
+              "recomputed": 0.06610627186655911
+            },
+            "gpu_evictions": 1007910,
+            "cpu_evictions": 295849,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "a48169bd1da9715f8f39c2b9ea6dec79483b64415a75f50ec5a0ba3eda354e4c"
+        }
+      },
+      "lru_recomputed_fraction": 0.14071534589908738,
+      "oracle_recomputed_fraction": 0.06610627186655911,
+      "recompute_reduction_pp": 7.460907403252827
+    },
+    {
+      "id": "config-02",
+      "candidate": {
+        "context_budget": 32512,
+        "rate_per_minute": 0.7,
+        "max_num_seqs": 8,
+        "gpu_tokens": 362720,
+        "cpu_tokens": 725440,
+        "cpu_gpu_ratio": 2.0,
+        "gpu_kv_gib": 49.81201171875,
+        "cpu_kv_gib": 99.6240234375,
+        "scheduled_kv_p90": 55696.0,
+        "saturated_kv_p90": 145088.0,
+        "sizing_kv_p90": 145088.0,
+        "working_set_p50": 1005533.0,
+        "working_set_p90": 1069408.2,
+        "working_set_gib": 138.0889434814453,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 23494.734899999996,
+        "raw_prefill_tps": 46110.90609999999,
+        "upper_hit_rate": 0.9809467266139886,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 362720.0,
+          "cpu_working_set_max": 804426.4,
+          "cpu_ratio_min": 544080.0,
+          "cpu_ratio_max": 725440,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 93036482,
+            "source_tokens": {
+              "gpu_hit": 70677328,
+              "cpu_hit": 9308272,
+              "recomputed": 13050882
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7596732645157412,
+              "cpu_hit": 0.10004969878375237,
+              "recomputed": 0.14027703670050637
+            },
+            "gpu_evictions": 2003373,
+            "cpu_evictions": 1116693,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "ea60bcabb6dd80621089a816d039179f5ad6ff31c4dd944f24bfce978557b1ae"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 93036482,
+            "source_tokens": {
+              "gpu_hit": 70677328,
+              "cpu_hit": 16249520,
+              "recomputed": 6109634
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7596732645157412,
+              "cpu_hit": 0.1746575069336779,
+              "recomputed": 0.06566922855058084
+            },
+            "gpu_evictions": 2003373,
+            "cpu_evictions": 588372,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "60625433e2c89ccad7381f02a9c07755e056e94cb35ab56413d90e9107104b18"
+        }
+      },
+      "lru_recomputed_fraction": 0.14027703670050637,
+      "oracle_recomputed_fraction": 0.06566922855058084,
+      "recompute_reduction_pp": 7.460780814992553
+    },
+    {
+      "id": "config-00",
+      "candidate": {
+        "context_budget": 32512,
+        "rate_per_minute": 0.7,
+        "max_num_seqs": 8,
+        "gpu_tokens": 362720,
+        "cpu_tokens": 544080,
+        "cpu_gpu_ratio": 1.5,
+        "gpu_kv_gib": 49.81201171875,
+        "cpu_kv_gib": 74.718017578125,
+        "scheduled_kv_p90": 55696.0,
+        "saturated_kv_p90": 145088.0,
+        "sizing_kv_p90": 145088.0,
+        "working_set_p50": 1005533.0,
+        "working_set_p90": 1069408.2,
+        "working_set_gib": 138.0889434814453,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 23494.734899999996,
+        "raw_prefill_tps": 46110.90609999999,
+        "upper_hit_rate": 0.9809467266139886,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 362720.0,
+          "cpu_working_set_max": 804426.4,
+          "cpu_ratio_min": 544080.0,
+          "cpu_ratio_max": 725440,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 93036482,
+            "source_tokens": {
+              "gpu_hit": 70677328,
+              "cpu_hit": 6214688,
+              "recomputed": 16144466
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7596732645157412,
+              "cpu_hit": 0.06679839850350318,
+              "recomputed": 0.17352833698075557
+            },
+            "gpu_evictions": 2003373,
+            "cpu_evictions": 1384217,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "5c4de651070eed14c1907fdad57f2758c61143a9f17f231fba0f2e528dd12de3"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 93036482,
+            "source_tokens": {
+              "gpu_hit": 70677328,
+              "cpu_hit": 12975280,
+              "recomputed": 9383874
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7596732645157412,
+              "cpu_hit": 0.13946443073804102,
+              "recomputed": 0.10086230474621773
+            },
+            "gpu_evictions": 2003373,
+            "cpu_evictions": 881568,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 362720,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "bfcb7e4a5fc755c47490ab9e53525ed072d9e9863776f431dc3efdaaf01c65f8"
+        }
+      },
+      "lru_recomputed_fraction": 0.17352833698075557,
+      "oracle_recomputed_fraction": 0.10086230474621773,
+      "recompute_reduction_pp": 7.266603223453784
+    },
+    {
+      "id": "config-08",
+      "candidate": {
+        "context_budget": 16384,
+        "rate_per_minute": 0.7,
+        "max_num_seqs": 8,
+        "gpu_tokens": 182880,
+        "cpu_tokens": 274320,
+        "cpu_gpu_ratio": 1.5,
+        "gpu_kv_gib": 25.11474609375,
+        "cpu_kv_gib": 37.672119140625,
+        "scheduled_kv_p90": 28080.0,
+        "saturated_kv_p90": 73152.0,
+        "sizing_kv_p90": 73152.0,
+        "working_set_p50": 506708.5,
+        "working_set_p90": 538898.0,
+        "working_set_gib": 69.58582305908203,
+        "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+        "half_upper_prefill_tps": 11839.41663333333,
+        "raw_prefill_tps": 23236.144516666664,
+        "upper_hit_rate": 0.9809482700676754,
+        "constraints": {
+          "gpu_safety": true,
+          "gpu_lt_cpu": true,
+          "cpu_le_80pct_working_set": true,
+          "cpu_gpu_ratio_min": true,
+          "cpu_gpu_ratio_max": true,
+          "gpu_fits": true,
+          "cpu_fits": true
+        },
+        "violations_tokens": {},
+        "limits": {
+          "gpu_safety_min": 182880.0,
+          "cpu_working_set_max": 405366.80000000005,
+          "cpu_ratio_min": 274320.0,
+          "cpu_ratio_max": 365760,
+          "gpu_memory_max": 803918.2222222222,
+          "cpu_memory_max": 1499127.173611111
+        },
+        "constraint_distance": 0
+      },
+      "policies": {
+        "lru": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "lru",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 46882662,
+            "source_tokens": {
+              "gpu_hit": 35603376,
+              "cpu_hit": 3124544,
+              "recomputed": 8154742
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7594145571341491,
+              "cpu_hit": 0.06664604497073993,
+              "recomputed": 0.17393939789511098
+            },
+            "gpu_evictions": 1007910,
+            "cpu_evictions": 696798,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "fe72e15bf8422776982e3b53c1720031c915e8210e1ec7663602abff935605d0"
+        },
+        "oracle": {
+          "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+          "policy": "oracle",
+          "summary": {
+            "requests": 9780,
+            "window_requests": 7519,
+            "window_prompt_tokens": 46882662,
+            "source_tokens": {
+              "gpu_hit": 35603376,
+              "cpu_hit": 6529872,
+              "recomputed": 4749414
+            },
+            "source_fractions": {
+              "gpu_hit": 0.7594145571341491,
+              "cpu_hit": 0.13928116965713253,
+              "recomputed": 0.10130427320871839
+            },
+            "gpu_evictions": 1007910,
+            "cpu_evictions": 443564,
+            "cpu_store_skipped_requests": 0,
+            "peak_running": 8,
+            "peak_gpu_tokens": 182880,
+            "kv_blocked_checks": 0,
+            "queued_requests": 341,
+            "unsent_queued": 0
+          },
+          "requests_sha256": "c20f09353b8c641b2b84107e8ce699fb093a6ac3f27a8ad45430411836454e5b"
+        }
+      },
+      "lru_recomputed_fraction": 0.17393939789511098,
+      "oracle_recomputed_fraction": 0.10130427320871839,
+      "recompute_reduction_pp": 7.263512468639259
+    }
+  ],
+  "status": "complete",
+  "target_matched_window": {
+    "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+    "duration_s": 1200,
+    "warmup_s": 300,
+    "summary": {
+      "requests": 5044,
+      "window_requests": 3890,
+      "window_prompt_tokens": 29675214,
+      "source_tokens": {
+        "gpu_hit": 16950432,
+        "cpu_hit": 6287744,
+        "recomputed": 6437038
+      },
+      "source_fractions": {
+        "gpu_hit": 0.5711983071124609,
+        "cpu_hit": 0.21188538016945724,
+        "recomputed": 0.21691631271808184
+      },
+      "gpu_evictions": 990339,
+      "cpu_evictions": 523329,
+      "cpu_store_skipped_requests": 0,
+      "peak_running": 8,
+      "peak_gpu_tokens": 182880,
+      "kv_blocked_checks": 0,
+      "queued_requests": 15,
+      "unsent_queued": 0
+    },
+    "requests_sha256": "de3a86a91dac337c28598cc938029b07f17f0a81d5ff5f61a2f43feaa0ef01cb"
+  },
+  "noticeably_larger_than_target": []
+}

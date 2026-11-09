@@ -1,0 +1,65 @@
+{
+  "repository": "vllm",
+  "git_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "parent_commit": "60da6135b0349fac50a051e9dcec2bd5b4514400",
+  "branch": "agentkv",
+  "remote": "https://github.com/llb1238/vllm.git",
+  "passed": 1395,
+  "skipped": 10,
+  "failed": 0,
+  "duration_s": 241.71,
+  "scope": [
+    "tests/v1/kv_connector/unit/offloading_connector",
+    "tests/v1/kv_offload",
+    "tests/v1/simple_kv_offload"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "AGENTKV_TRACE": "0"
+  },
+  "additional_integration": {
+    "status": "blocked by missing model snapshot",
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "failed": 1,
+    "log": "extra-model-integration-failure.log"
+  },
+  "files": {
+    "unit-tests.log": {
+      "bytes": 9237,
+      "sha256": "863c8ee84cb6109117788d9f58f0e96de9f635d0558e46057c40bfbf2b74f6ef"
+    },
+    "unit-tests.xml": {
+      "bytes": 218455,
+      "sha256": "366f30bfc008fac11cdfdcd18d5590e336fce5faf0e1ea97ec059328d063aac4"
+    },
+    "baseline-comparison.log": {
+      "bytes": 1219,
+      "sha256": "8b2fc67d5a9b8c40059cfe8789c1b62ee7037e5b6898ea14748b4d7916d7c8e5"
+    },
+    "focused-tests.log": {
+      "bytes": 1219,
+      "sha256": "bcc28475cf0c355a8ed5ee49139aa7db5daec57f7f6800be2d0c24881fc0bdb6"
+    },
+    "pre-commit-and-commit.log": {
+      "bytes": 4176,
+      "sha256": "d2387e07cbc4b598a346ab21a33dc89380ec0e936b72fdea4da742e73310b53a"
+    },
+    "initial-network-failure.log": {
+      "bytes": 22436,
+      "sha256": "cdebc03f8a675255654241e394e323ed225a8dbdae81544a31667e45ff9c054b"
+    },
+    "extra-model-integration-failure.log": {
+      "bytes": 28964,
+      "sha256": "c71b1e54e581d0b175a7c056a7852d159b53412bd09e1d4988ea650b52e9efed"
+    },
+    "extra-model-integration-tests.xml": {
+      "bytes": 238276,
+      "sha256": "1e705bddc0b58dc7b0840e566c216819720caa6b26c780a9dd2ce4a71d10f420"
+    }
+  }
+}

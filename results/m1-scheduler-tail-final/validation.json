@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "trial": "run1",
+      "mode": "before",
+      "requests_checked": 750,
+      "transmitted_hashes_checked": 750,
+      "gap_p99_ms": 65.74553335000003
+    },
+    {
+      "trial": "run1",
+      "mode": "after",
+      "requests_checked": 750,
+      "transmitted_hashes_checked": 750,
+      "gap_p99_ms": 1.729099010000024
+    },
+    {
+      "trial": "run2",
+      "mode": "before",
+      "requests_checked": 750,
+      "transmitted_hashes_checked": 750,
+      "gap_p99_ms": 58.95242463999998
+    },
+    {
+      "trial": "run2",
+      "mode": "after",
+      "requests_checked": 750,
+      "transmitted_hashes_checked": 750,
+      "gap_p99_ms": 1.624089650000016
+    }
+  ],
+  "identical_fixture_across_trials": true,
+  "note": "all timings and all token hashes independently checked; no safe-valve queuing; full archived helper pinned"
+}

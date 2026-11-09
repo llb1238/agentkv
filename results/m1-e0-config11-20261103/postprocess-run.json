@@ -1,0 +1,183 @@
+{
+  "git_commit": "fd60b42044fabfad6fa954e7de3f6779834daf31",
+  "measurement_git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+  "passed": true,
+  "measurement_run_sha256": "f693f3cb177a66fe6e16c17a1a1081406e1524922d87c9d5086fef1c561dcafd",
+  "model_requests_checked": 181098,
+  "gap_blocks_checked": 14502840,
+  "real_window_requests": 80258,
+  "backend_commits": [
+    "60da6135b0349fac50a051e9dcec2bd5b4514400"
+  ],
+  "stable_runs": 8,
+  "failed_requests": 0,
+  "payloads": [
+    {
+      "path": "lambda-0.5-seed-0/real/requests.parquet",
+      "sha256": "e1681a68018a7b473704e0336e06151c3a7325968e4e86e16cabbf38d38e4f35",
+      "metadata_path": "lambda-0.5-seed-0/real/requests-metadata.parquet",
+      "metadata_sha256": "17eb313e5d2e5c447ad405b8fda64d9fd161df88301daafb104f3bd8062f1097",
+      "rows": 5215,
+      "rounding": {
+        "classified_recomputed_tokens": 4592400,
+        "prompt_tail_tokens": 26198,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 4618598
+      }
+    },
+    {
+      "path": "lambda-0.5-seed-1/real/requests.parquet",
+      "sha256": "7d601d8472b3caecb129f18b740b268162d072e3ebdba98b13b3f1b0651e7afc",
+      "metadata_path": "lambda-0.5-seed-1/real/requests-metadata.parquet",
+      "metadata_sha256": "375c9875aba4e792a693aa0c4305b38ab375380f0260f61b0dbe778c16a531c6",
+      "rows": 5103,
+      "rounding": {
+        "classified_recomputed_tokens": 3090704,
+        "prompt_tail_tokens": 25865,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 3116569
+      }
+    },
+    {
+      "path": "lambda-0.5-seed-2/real/requests.parquet",
+      "sha256": "028d5702aab48ca5e8f61932745c06d06076a693a615c28791aab85aa04d6d38",
+      "metadata_path": "lambda-0.5-seed-2/real/requests-metadata.parquet",
+      "metadata_sha256": "89c0090050d03c70cd40dd254772b4ca8b611c8ab185a40a6a082f2828f51f6a",
+      "rows": 6393,
+      "rounding": {
+        "classified_recomputed_tokens": 5624464,
+        "prompt_tail_tokens": 35758,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 5660222
+      }
+    },
+    {
+      "path": "lambda-0.7-seed-0/real/requests.parquet",
+      "sha256": "71aa001d89a1fe481645671a1d58428dd14cfbe6c465fd5db2ca00bb2d5f6b8b",
+      "metadata_path": "lambda-0.7-seed-0/real/requests-metadata.parquet",
+      "metadata_sha256": "cb3a27be779d4123690d75f1b6c3923acecdc65eb54c0c7400d77c69c0cabce7",
+      "rows": 9924,
+      "rounding": {
+        "classified_recomputed_tokens": 8097248,
+        "prompt_tail_tokens": 57252,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 8154500
+      }
+    },
+    {
+      "path": "lambda-0.7-seed-1/real/requests.parquet",
+      "sha256": "dfbcacae0fcd0de4ca27e527fbfc049dae6924b3eb01ce28f8da91921e6472a2",
+      "metadata_path": "lambda-0.7-seed-1/real/requests-metadata.parquet",
+      "metadata_sha256": "c5e0e752c6a22a84b72c52b4e80434b74e999394d4c4d203b3a7535b2be41c61",
+      "rows": 9042,
+      "rounding": {
+        "classified_recomputed_tokens": 8920208,
+        "prompt_tail_tokens": 47403,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 8967611
+      }
+    },
+    {
+      "path": "lambda-0.7-seed-2/real/requests.parquet",
+      "sha256": "312af1fd0f799d37804abcf3c4865e74f36d5d578e97d698645b1e228b3a40cb",
+      "metadata_path": "lambda-0.7-seed-2/real/requests-metadata.parquet",
+      "metadata_sha256": "25c61770dcb2cc9796d94859646c3a7345f910eea57f6c5034ebb57e985e69ea",
+      "rows": 7073,
+      "rounding": {
+        "classified_recomputed_tokens": 6436048,
+        "prompt_tail_tokens": 41272,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 6477320
+      }
+    },
+    {
+      "path": "lambda-1-seed-0/real/requests.parquet",
+      "sha256": "a5f1b2b3c3db599bc87f77457ccb5d9806da58b9b9d7d41eadb7f0994f9c93b3",
+      "metadata_path": "lambda-1-seed-0/real/requests-metadata.parquet",
+      "metadata_sha256": "73cf17e796732da2d7573ee95cb06966e8bdfc30ba1c103662f65a2c3c0561c1",
+      "rows": 10742,
+      "rounding": {
+        "classified_recomputed_tokens": 16231824,
+        "prompt_tail_tokens": 64027,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 16295851
+      }
+    },
+    {
+      "path": "lambda-1-seed-1/real/requests.parquet",
+      "sha256": "d82e07421de6da70d0e520972c5105a08c0b4e7b0c6858cb957160413276031d",
+      "metadata_path": "lambda-1-seed-1/real/requests-metadata.parquet",
+      "metadata_sha256": "df0270409cd30f4c531ce7e045a5ea94b7885a04c84d0ef32e3dffe59e80df2a",
+      "rows": 8986,
+      "rounding": {
+        "classified_recomputed_tokens": 18718736,
+        "prompt_tail_tokens": 47470,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 18766206
+      }
+    },
+    {
+      "path": "lambda-1-seed-2/real/requests.parquet",
+      "sha256": "8fffce46a6d11ce9b171bc5a16c3a1fa577e0b04594f1adb4f2b4b859ba0314e",
+      "metadata_path": "lambda-1-seed-2/real/requests-metadata.parquet",
+      "metadata_sha256": "b2f76c8b30b15116eafe4a1b01681596bacd767e9d2b5f6b1464c4606819d059",
+      "rows": 11094,
+      "rounding": {
+        "classified_recomputed_tokens": 11224224,
+        "prompt_tail_tokens": 61369,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 11285593
+      }
+    },
+    {
+      "path": "lambda-1.4-seed-0/real/requests.parquet",
+      "sha256": "68226401da93aba611e198cfac9fa1d220e17d1d014a9acf242b7b0f2ca3cc19",
+      "metadata_path": "lambda-1.4-seed-0/real/requests-metadata.parquet",
+      "metadata_sha256": "ef28ec929aeaf0da724e94c1ca5ccad4f0b03f7dcb1ad72a7ddd0c3078f1bc99",
+      "rows": 9670,
+      "rounding": {
+        "classified_recomputed_tokens": 47228544,
+        "prompt_tail_tokens": 52651,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 47281195
+      }
+    },
+    {
+      "path": "lambda-1.4-seed-1/real/requests.parquet",
+      "sha256": "befc6ac088d86816dcdce071d98ad20aa1a3046936d86732b46c37077d754462",
+      "metadata_path": "lambda-1.4-seed-1/real/requests-metadata.parquet",
+      "metadata_sha256": "7b4b2a184448202cc50b71e27b18bae0b1153c3dc3c50d29550063c6c725e57e",
+      "rows": 13262,
+      "rounding": {
+        "classified_recomputed_tokens": 39559440,
+        "prompt_tail_tokens": 71292,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 39630732
+      }
+    },
+    {
+      "path": "lambda-1.4-seed-2/real/requests.parquet",
+      "sha256": "ef2c5919c9148cf30b24e6043e84d2ad3ab05dc801f613550a08f2e53f74e64d",
+      "metadata_path": "lambda-1.4-seed-2/real/requests-metadata.parquet",
+      "metadata_sha256": "a721b28f17745f4febfb0b5d7567ba3c79197a8bd3e93a162bed11250ee1ee37",
+      "rows": 12254,
+      "rounding": {
+        "classified_recomputed_tokens": 45052832,
+        "prompt_tail_tokens": 66353,
+        "hit_tail_tokens": 0,
+        "nominal_recomputed_tokens": 45119185
+      }
+    }
+  ],
+  "checks": [
+    "all 12 registered populations",
+    "source and output SHA256",
+    "exact capacities and slots",
+    "unchanged LRU baseline nominal counts",
+    "rounded token conservation",
+    "queue timing coverage",
+    "independent OLS/quantiles/TTFT stability",
+    "two-card dmon coverage",
+    "gap-block loss-time consistency"
+  ]
+}

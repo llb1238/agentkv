@@ -1,0 +1,111 @@
+{
+  "git_commit": "d753fd8a241f3a2fc8de83c02c4ed8b369e17b94",
+  "actual_token_weighted_fraction": {
+    "gpu_hit": 0.5437339092294132,
+    "cpu_hit": 0.2251424086561604,
+    "recomputed": 0.23112368211442638
+  },
+  "simulation_fraction": {
+    "gpu_hit": 0.5652750780480487,
+    "cpu_hit": 0.179033056856345,
+    "recomputed": 0.2556918650956064
+  },
+  "difference_pp": {
+    "gpu_hit": -2.1541168818635437,
+    "cpu_hit": 4.61093517998154,
+    "recomputed": -2.4568182981179993
+  },
+  "running": {
+    "p50": 2.0,
+    "p90": 5.0,
+    "maximum": 8.0,
+    "mean": 2.008,
+    "fraction_at_8": 0.018285714285714287
+  },
+  "waiting": {
+    "samples": 875,
+    "n": 875,
+    "p50": 0.0,
+    "p99": 2.0,
+    "maximum": 5.0,
+    "fraction_positive": 0.07428571428571429,
+    "linear_trend_requests_per_minute": 0.006514618718035466,
+    "first_five_minutes_mean": 0.041237113402061855,
+    "last_five_minutes_mean": 0.11643835616438356
+  },
+  "queue_stability_pass": false,
+  "dmon": {
+    "samples": 2580,
+    "sampled_gpus": [
+      0,
+      1
+    ]
+  },
+  "dmon_sha256": "6298b1f3a59fa3243182e6cc475a37ca6c5c84e2bdb1a32672c9f8eebe372534",
+  "comparison_baseline_sha256": "dc91b4668d53f6bd465cd2021fd6aeef4fbdf878b673817f1553534d007f53d6",
+  "oracle_comparison_status": "complete",
+  "noticeably_larger_oracle_configurations": [],
+  "oracle_ranking": [
+    {
+      "id": "config-13",
+      "reduction_pp": 9.290106829375782
+    },
+    {
+      "id": "config-05",
+      "reduction_pp": 9.289510459284436
+    },
+    {
+      "id": "config-07",
+      "reduction_pp": 9.15600743611839
+    },
+    {
+      "id": "config-15",
+      "reduction_pp": 9.149720428069012
+    },
+    {
+      "id": "config-11",
+      "reduction_pp": 8.943626266060923
+    },
+    {
+      "id": "config-12",
+      "reduction_pp": 8.848225417489783
+    },
+    {
+      "id": "config-06",
+      "reduction_pp": 8.756873051215228
+    },
+    {
+      "id": "config-14",
+      "reduction_pp": 8.747814516106688
+    },
+    {
+      "id": "config-01",
+      "reduction_pp": 7.564722836360042
+    },
+    {
+      "id": "config-09",
+      "reduction_pp": 7.564416884007141
+    },
+    {
+      "id": "config-10",
+      "reduction_pp": 7.460907403252827
+    },
+    {
+      "id": "config-02",
+      "reduction_pp": 7.460780814992553
+    },
+    {
+      "id": "config-00",
+      "reduction_pp": 7.266603223453784
+    },
+    {
+      "id": "config-08",
+      "reduction_pp": 7.263512468639259
+    }
+  ],
+  "matched_window_simulation": {
+    "gpu_hit": 0.5711983071124609,
+    "cpu_hit": 0.21188538016945724,
+    "recomputed": 0.21691631271808184
+  }
+}

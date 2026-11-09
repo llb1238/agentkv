@@ -1,0 +1,25 @@
+[project]
+name = "agentkv"
+version = "0.1.0"
+description = "Hint-aware CPU KV cache eviction, trace replay and two-tier cache simulation for agent workloads"
+license = "Apache-2.0"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["sortedcontainers==2.4.0"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["agentkv*"]
+
+[project.optional-dependencies]
+offline = ["numpy>=2.0", "pyarrow>=20", "transformers>=4.51"]
+replay = ["numpy>=2.0", "pyarrow>=20", "transformers>=4.51", "aiohttp>=3.9", "prometheus-client>=0.20"]
+test = ["pytest>=8"]
+cpu = ["numpy>=2.0", "pyarrow>=20", "matplotlib>=3.9", "aiohttp>=3.9", "prometheus-client>=0.20", "pytest>=8"]
+simulation = ["numpy>=2.0", "pyarrow>=20", "matplotlib>=3.9"]
+
+[tool.setuptools.package-data]
+"agentkv.policy" = ["data/*.json"]

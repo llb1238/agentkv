@@ -1,0 +1,89 @@
+{
+  "mode": "after",
+  "summary": {
+    "sent": 750,
+    "window_requests": 625,
+    "failed": 0,
+    "peak_client_inflight": 125,
+    "server_running": {
+      "n": 263,
+      "p50": 125.0,
+      "p99": 125.0,
+      "maximum": 125.0
+    },
+    "queued": 0,
+    "chain_gap_abs_error_ms": {
+      "n": 500,
+      "p50": 0.5689525000000251,
+      "p99": 1.624089650000016,
+      "maximum": 2.4896690000000277
+    },
+    "schedule_abs_error_ms": {
+      "n": 625,
+      "p50": 0.569523,
+      "p99": 1.5712109999999995,
+      "maximum": 2.489669
+    },
+    "body_build_ms": {
+      "n": 625,
+      "p50": 3.034762,
+      "p99": 5.710113,
+      "maximum": 8.040836
+    },
+    "loop_lag_ms": {
+      "n": 2700,
+      "p50": 0.9934639999999999,
+      "p99": 2.050483849999997,
+      "maximum": 3.159379
+    },
+    "loop_missed_checks": 0
+  },
+  "git": {
+    "commit": "6cbdc69517542a10d91bbee34747017bfe005d7b",
+    "dirty": true,
+    "status": [
+      " M bench/README.md",
+      " M bench/replay.py",
+      " M bench/steady_state.py",
+      " M docs/m1_replayer_design.md",
+      " M tests/test_replay.py",
+      "?? bench/capacity.py",
+      "?? bench/scheduler_probe.py",
+      "?? results/m1-capacity-seed0-v2/",
+      "?? results/m1-capacity-seed0/",
+      "?? results/m1-scheduler-tail-final/",
+      "?? results/m1-scheduler-tail-seed0-v2/",
+      "?? results/m1-scheduler-tail-seed0-v3/",
+      "?? results/m1-scheduler-tail-seed0/",
+      "?? results/m1-workload-seed0-v3-16k/",
+      "?? tests/test_capacity.py"
+    ],
+    "diff_sha256": "b9b3657d3e9bee876d5bd0a39f10cf93e7d4c38f848cb9867c0388006b8e412a"
+  },
+  "parameters": {
+    "workload": "/home/llb/my_soft/agentkv/results/m1-workload-seed0-v3/workload.parquet",
+    "legacy": "/home/llb/my_soft/agentkv/results/m1-online-lru-seed0-final/implementation/replay.py",
+    "output_dir": "results/m1-scheduler-tail-final/run2",
+    "concurrency": 125,
+    "turns": 6,
+    "prompt_len": 12000,
+    "service_time": 4,
+    "gap": 0.3,
+    "stagger": 0.002,
+    "duration": 30,
+    "warmup": 3,
+    "seed": 0
+  },
+  "source": {
+    "workload_sha256": "38fe20ee8e3316124fc25cb4bb296f914cf3d8ee3cdc0fceac7d4f00854bd9e8",
+    "replay_sha256": "feab3afb3a254098cdd7fcec9fcdab30f311adfdadc7e744700d98ddadf8138a",
+    "probe_sha256": "94d8126f1317c2fe1b846a47f59a15238e05e914112067ead794e3816be1e599",
+    "fake_server_sha256": "8e2a27aa96b5f3c7e87c4b9593f5f15e827ef87d9c2dcf28ab6af6fde06f0803",
+    "steady_state_sha256": "d2e4f68205329da4c338cff31ec521bddbfccb7f5f85f082e4e22240ae044037"
+  },
+  "artifacts_sha256": {
+    "timing.parquet": "9db0ac30eaa490110806816628b1c30eb1c7f6d0ea12bd84a4c5b18f71746910",
+    "loop_lag.parquet": "1fe6f6444cab769b43d9e9ca50c7b99f5843b11282ae05ecdfb1b0e62518103e",
+    "loop_probe.parquet": "ebac2d21e0ef47e8936f06dd15884b143dcb66174192cb8abe0a4f6e815100df"
+  }
+}

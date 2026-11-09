@@ -1,0 +1,12 @@
+{
+  "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+  "measurement_git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+  "stage": "development",
+  "passed": true,
+  "populations": 12,
+  "cases": 72,
+  "requests_checked": 726492,
+  "run_sha256": "47df093ad02038262b4969de7cbe4866c8d61467ef015fbed80213cf5c5a347a",
+  "all_fingerprints_passed": true,
+  "development_regression_cases": 60
+}

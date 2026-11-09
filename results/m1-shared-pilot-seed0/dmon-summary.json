@@ -1,0 +1,17 @@
+{
+  "window": "[300,1200] seconds",
+  "per_gpu_sm_percent": {
+    "0": {
+      "samples": 892,
+      "mean": 0.0,
+      "median": 0.0,
+      "maximum": 0.0
+    },
+    "1": {
+      "samples": 892,
+      "mean": 78.62556053811659,
+      "median": 100.0,
+      "maximum": 100.0
+    }
+  }
+}

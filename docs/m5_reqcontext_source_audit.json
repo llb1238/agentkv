@@ -1,0 +1,22 @@
+{
+  "vllm_commit": "60da6135b0349fac50a051e9dcec2bd5b4514400",
+  "source_sha256": {
+    "vllm/v1/kv_offload/base.py": "8dea4e6cf774b15aa0fe0f9399f5ae53d32d976489f3251cf8d5620fe9e059dd",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py": "11c16279c3c5821d703d44fbc795ec437522b3af10b879a07e53c128b72735e8",
+    "vllm/v1/core/sched/scheduler.py": "1a68f66808e2ceea975fe36bd009e5664dc9ff309c5bdd99a3e4136ec87b9177",
+    "vllm/v1/request.py": "dd7c30bf8b0894dc123a739c299c0133566f8cc075b081e45905f1c29506e69d",
+    "vllm/v1/kv_offload/cpu/manager.py": "94494fc4960c58071d724a1ede929132055f959b3ef2ccb2921b27a9b123a93a"
+  },
+  "proposal_sha256": "38c0f645cb1e3569f53f303a36beac3c3a669c3209f2017052e816aa8fda153a",
+  "proposal_applied": false,
+  "proposal_parse_passed": true,
+  "proposal_git_apply_check_passed": true,
+  "tests": {
+    "passed": 190,
+    "third_party_warnings": 14,
+    "duration_s": 23.44,
+    "log": "validation/m5_reqcontext_audit_tests.log",
+    "log_sha256": "919724840425255a89185eb3570ec51f6f1f1522685c7acfbf34f75c99f6e4b0",
+    "test_source_sha256": "5d4fd53f3553610673d2270e2f8a00d44ea591b767611aa886920b2e9074c501"
+  }
+}

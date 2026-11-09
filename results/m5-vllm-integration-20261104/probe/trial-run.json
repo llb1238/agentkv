@@ -1,0 +1,34 @@
+{
+  "git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "kind": "probe",
+  "configuration": {
+    "format": "agentkv.vllm_hint_policy.v1",
+    "hint_tier": "perfect",
+    "freeze_sha256": "41f6699fb5693450b22898c4fe62ac6280d2d2b1b66798943b914163936f005d"
+  },
+  "policy_config_sha256": "b250fb8b993e76b50d0b89fbdf1d4753c2454df68e032f9ab26537c25051bde2",
+  "duration_s": 300,
+  "create_req_context_us": {
+    "count": 1284,
+    "p50": 241.058,
+    "p99": 1278.7330400000003,
+    "maximum": 1657.693
+  },
+  "evictions": 0,
+  "core_evict_us": {
+    "count": 0
+  },
+  "adapter_evict_us": {
+    "count": 0
+  },
+  "ownership": {
+    "count": 0
+  },
+  "valid_hint_counts": null,
+  "trace_sha256": {
+    "callbacks-104291-133189492484976.jsonl.gz": "ad601e1a340010c03d2177c648923bc364ed2d45c04d1b06a3d022ecc139fbec"
+  },
+  "source_run_sha256": "9e09f1c4443b5a0acf7afd5b218c0dc000f333e366edab19631f1e539904be7d",
+  "status": "complete"
+}

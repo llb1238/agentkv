@@ -1,0 +1,195 @@
+{
+  "format": "agentkv.scoring_freeze.v1",
+  "preregistration_commit": "a41033c",
+  "freeze_code_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+  "development_run_sha256": "47df093ad02038262b4969de7cbe4866c8d61467ef015fbed80213cf5c5a347a",
+  "development_validation_sha256": "00d06ef7952b75234948bea04694fbcd684e8c98bad80a52b7565002b64f41a0",
+  "selection": {
+    "winner": "remaining",
+    "candidates": [
+      {
+        "candidate": "deadline",
+        "eligible": false,
+        "failed_populations": [
+          "lambda-1-seed-0",
+          "lambda-1-seed-1",
+          "lambda-1.4-seed-0",
+          "lambda-1.4-seed-1",
+          "lambda-1.4-seed-2"
+        ],
+        "mean_oracle_capture": 0.22986872147319826,
+        "defined": 12,
+        "undefined": 0
+      },
+      {
+        "candidate": "remaining",
+        "eligible": true,
+        "failed_populations": [],
+        "mean_oracle_capture": 0.3935231159868721,
+        "defined": 12,
+        "undefined": 0
+      },
+      {
+        "candidate": "horizon",
+        "eligible": true,
+        "failed_populations": [],
+        "mean_oracle_capture": 0.2641309432325492,
+        "defined": 12,
+        "undefined": 0
+      }
+    ],
+    "rule": "integer noninferiority at all 12 populations, then mean paired Oracle capture; fixed order breaks exact ties"
+  },
+  "development_seeds": [
+    0,
+    1,
+    2
+  ],
+  "evaluation_seeds": [
+    3,
+    4,
+    5
+  ],
+  "rates": [
+    0.5,
+    0.7,
+    1.0,
+    1.4
+  ],
+  "parameters": {
+    "rates": [
+      0.5,
+      0.7,
+      1.0,
+      1.4
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "gpu_tokens": 182880,
+    "cpu_tokens": 274320,
+    "slots": 8,
+    "block_size": 16,
+    "duration_s": 2400,
+    "warmup_s": 600,
+    "service_s": 0.5,
+    "workers": 4,
+    "strategies": [
+      "lru",
+      "lru-final",
+      "oracle",
+      "deadline-online",
+      "remaining-online",
+      "horizon-online"
+    ]
+  },
+  "input_sha256": {
+    "workload_sha256": "a35eaf1eafcb9de245be86ac1f847de0314b7dcf806ecf4ebc5d079b6c5cffd2",
+    "schedule_sha256": "90823eab906f67d6bb5b37b17b49760a4616b91cb4805fb806cd0686624c6f20",
+    "remaining_sha256": "1f21d5cc6ddead4fc9756c38a4a7b443c3d465899be251b294dccdf4e1df3fa3",
+    "horizon_sha256": "9fdeae4cc828548869686c75d86e0f7a19f94e681f4a004aac1bab4da475f301"
+  },
+  "source_hashes": {
+    "agentkv/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "agentkv/analysis/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "agentkv/analysis/analyze_agentx_data.py": "fb14997a9c8365b89644c7820950d7a5a452d736d142620eb2e854f0b7387bd7",
+    "agentkv/analysis/finalize_e0.py": "4c8441f85847305f86a83f4e4aa97cda1b6737aa0b942949c01cb831be71a639",
+    "agentkv/analysis/m0_analyze.py": "e15af4975013054a3e4eed79caddf1e379d041375c7591c1edcf12af801f91af",
+    "agentkv/analysis/plot_week1_cache_residency.py": "26c8309b90befd83b6617943172f9dfbcb2f1f35d98d995dec1c96031ecc7d46",
+    "agentkv/analysis/recomputation.py": "ee817a97ebf964520320bea5224c7fa8da3ba0ca3a46ad5f20b46fb2d02eb716",
+    "agentkv/analysis/stability.py": "ecb598968a7c42cfe8ee48a25cbec2187a400572c0d91e8535675f6157b5efaa",
+    "agentkv/analysis/validate_e1_simulation.py": "1e3cd842c5ac1f9cf428044f25fc2390b272a2d75b8b26f4bbfa1001409e0b80",
+    "agentkv/analysis/validate_oracle_pilot.py": "f8b39b88b7f5cb04411141189f972d47bbf57871b900a47b402c6e51e9acb70a",
+    "agentkv/artifacts.py": "c248fa3d237d0453114ec83b45f00c5be4fc9df84d6880b221a3cec14499801d",
+    "agentkv/bench/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "agentkv/bench/analyze_replay.py": "df10e97fb99664b087289503167d1fa5abc66dc9c62d0dab12c5537b3a0ea7b3",
+    "agentkv/bench/calibrate_horizon.py": "c70791beaaf75c311d89caa8cb292612ba5b0f94b4b4834c90034918f4488f9f",
+    "agentkv/bench/calibrate_remaining_life.py": "e7677de564c46090c782e58e2571bcbd59cb1eb9004e2130f1665c656023650f",
+    "agentkv/bench/capacity.py": "3b27b2b7ac606399d99ce24560656b5c0d90ff80b65ddef7a39a6283aa391a6c",
+    "agentkv/bench/compare_oracle.py": "1bada85ebcc3f219def195725a7ae8b548f9ea71667f5130b300c3d4da208bc2",
+    "agentkv/bench/e0.py": "afece94e5d4f538e5d62dc27229481a67c89bf249aaa714d10d0ec22e8e3668c",
+    "agentkv/bench/e1_remaining.py": "41a0157a807035fdaa49059b7bb3860e7a1acbff66555c0478c2defa75da1b02",
+    "agentkv/bench/e1_selection.py": "19a78311cfe93977cb32daa9555be798a8fa12314f08fee3ce665ce41157ed39",
+    "agentkv/bench/e1_simulation.py": "73c9ef17e3ab2a25515d942ff343b807cb26be9da767cdf168a00204e44690fb",
+    "agentkv/bench/estimate_replay.py": "ad182b58ae08a5094f7712a57a7b2e7e6126e5258553f20a02ec18e68a06ccdd",
+    "agentkv/bench/estimate_steady_state.py": "e3ad1e45e6c9e67f93a4600da58dfcfa3e6f3aa2644204374055a6c5fb8d9edf",
+    "agentkv/bench/fake_server.py": "ca31c285d9ee02c47b9b5e011dddb2e129f663e7bf3f617c1dfee774d87e4d19",
+    "agentkv/bench/m0_trace_client.py": "bbcd854c5bfe43eab92c22562945daf2cd2d48cf401247e97d8b10a1771a1572",
+    "agentkv/bench/observability_plugin.py": "781699e876cd1ce0873eb75244abd1688918ca6e89a00dea37f621115a305dd2",
+    "agentkv/bench/replay.py": "6749f6961a8fec888faca4e08ad665118d4ea9622ed63c91df6fda631e0fa53b",
+    "agentkv/bench/report_two_tier.py": "dbb493820503bb623698868f4d4b21c6efac917c1fe9c6cdc9ef1785181e206a",
+    "agentkv/bench/scheduler_probe.py": "eb56d2ce4ddf498281645e027e0e6294647b636321c35a7860df2e9d568157cc",
+    "agentkv/bench/shared_pilot.py": "686b514ce81c85bbc56b5ba408ed7fb4782e78e6844410e0d8e66c01e3f1432f",
+    "agentkv/bench/steady_state.py": "d2e4f68205329da4c338cff31ec521bddbfccb7f5f85f082e4e22240ae044037",
+    "agentkv/bench/subset.py": "08f3cba2366050e2f9d0edadc29e88f422749fd13e216a223e6c2de4deaa20d0",
+    "agentkv/bench/synth.py": "f94bb42172c23dd6fcda12b635a21e9811988798555885a51052ab549cc47242",
+    "agentkv/bench/trace_loader.py": "5cbbba9b3917962ab1e2ee44cf2da3f4a20783712fb9f6735e17fc40f841ae04",
+    "agentkv/bench/workload.py": "175055aa3ed8447d4caf8486027de80367b6b5d575100e97672b80003e0306d7",
+    "agentkv/hints/__init__.py": "c4a5d6cd3573f053291a7dc52aedfbf2031ae98583e173d7ce9ddf5273cf4ef4",
+    "agentkv/hints/protocol.py": "eb47c0b46637942ab23e7adfd6aa699d13e85aa69e0c00c8ffdab0d95e27a414",
+    "agentkv/policy/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "agentkv/policy/hint_aware.py": "df0bdcf857e902800587f681d01de8f36ccbda012717b14907f409f15b475b7e",
+    "agentkv/policy/horizon.py": "2d06e282333087765bdf46f5fa55b18da60a8ed3f01618ca308b5fd9a1f12849",
+    "agentkv/policy/horizon_aware.py": "af6610a07aca6156d522807aeaf4f57a310075705cbbbf1c3f6d80cfc2ef3810",
+    "agentkv/policy/remaining_life.py": "bdab9dc091d24694c1538393cc9918fd46e11f496ec8ce9578d80b1541cbe3a4",
+    "agentkv/predictor/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "agentkv/provenance.py": "c5a198f2bf1d3ef3034b3e85ae9a651564150f59b9e17708e1cf86212d86b6eb",
+    "agentkv/sim/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "agentkv/sim/hint_adapter.py": "f1c8d7dea6aff1b277b59d7f3cd0ca4115ed73911e7745b7917b01ad5131579a",
+    "agentkv/sim/two_tier.py": "0d681e33bafb7451fdcc8676ed8c12bf994010dd5d7899e13692b0681b9f4adb"
+  },
+  "remaining_sha256": "1f21d5cc6ddead4fc9756c38a4a7b443c3d465899be251b294dccdf4e1df3fa3",
+  "horizon_sha256": "9fdeae4cc828548869686c75d86e0f7a19f94e681f4a004aac1bab4da475f301",
+  "selected_options": {
+    "perfect": {
+      "scoring": "deadline",
+      "tail_first": false,
+      "final_first": true,
+      "timeout_decay": true
+    },
+    "noisy": {
+      "scoring": "remaining",
+      "tail_first": false,
+      "final_first": true,
+      "timeout_decay": false
+    },
+    "online": {
+      "scoring": "remaining",
+      "tail_first": false,
+      "final_first": true,
+      "timeout_decay": false
+    }
+  },
+  "evaluation_parameters": {
+    "rates": [
+      0.5,
+      0.7,
+      1.0,
+      1.4
+    ],
+    "seeds": [
+      3,
+      4,
+      5
+    ],
+    "gpu_tokens": 182880,
+    "cpu_tokens": 274320,
+    "slots": 8,
+    "block_size": 16,
+    "duration_s": 2400,
+    "warmup_s": 600,
+    "service_s": 0.5,
+    "workers": 4,
+    "strategies": [
+      "lru",
+      "lru-final",
+      "oracle",
+      "remaining-perfect",
+      "remaining-noisy",
+      "remaining-online"
+    ],
+    "context_budget": 16384
+  }
+}

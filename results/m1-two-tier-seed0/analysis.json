@@ -1,0 +1,54 @@
+{
+  "source": {
+    "capacity_sha256": "eae8a39b2f01447554db9603ee4a97988f84d8bb2f502ad6da9ece39769b14be",
+    "simulation_sha256": "dc91b4668d53f6bd465cd2021fd6aeef4fbdf878b673817f1553534d007f53d6",
+    "reporter_sha256": "5dafbb452ce01b8b8020a14dfe1fc33f5c844f2b585ae3b129f0cc622cd57ff4"
+  },
+  "threshold": {
+    "minimum_hit_gap_percentage_points": 10,
+    "maximum_prefill_tps": 15400,
+    "require_window_rate_also": true,
+    "non_kv_gpu_reserve_gib": 30
+  },
+  "simulation_qualified": [
+    "config-00",
+    "config-01",
+    "config-02",
+    "config-05",
+    "config-06",
+    "config-07",
+    "config-08",
+    "config-09",
+    "config-10",
+    "config-11",
+    "config-12",
+    "config-13",
+    "config-14",
+    "config-15"
+  ],
+  "current_shared_memory_fit": [
+    "config-08",
+    "config-09",
+    "config-10",
+    "config-11",
+    "config-12",
+    "config-13"
+  ],
+  "priority_pilots": [
+    "config-08",
+    "config-11",
+    "config-13"
+  ],
+  "gpu_snapshot_sha256": "25b92a6daf379a44d83e57397960c4d48554961265a03a71d78f561a732d64aa",
+  "gpu_trials_executed": false,
+  "report_artifacts_sha256": {
+    "pilot-plan.json": "22a9ea04d6e790272e07b45f4d73405fdc584b0de888c8891f35b52cbc5de45f",
+    "lru_sources.png": "75279186778e95e5689611436310638b63f1071aefb23bb60584eefe1be87f70",
+    "lru_sources.pdf": "80fee0681651c9bbfa3ad0662b925e83539a445c33384e9fe632bfaae38ab23d",
+    "lru_prefill.pdf": "4da69f9d58a14e9b6923a5e945eaccc7874c69cb4909720fe96ebc69ef3b1cf6",
+    "reporter.py": "5dafbb452ce01b8b8020a14dfe1fc33f5c844f2b585ae3b129f0cc622cd57ff4",
+    "README.md": "86c8efd3510c7ec84590fa5379d2d5d9a7a12b6884ed06af9d43df10cf9d9aa9",
+    "lru_prefill.png": "6374c1b795e20c8d190af400b6e946bb0461824e1289467633c1b7955193e29d"
+  },
+  "screening_csv_sha256": "e293bbde117e9f0315ccf0488ee1eb7c6eed748f9ac10a22f24e55018403798c"
+}

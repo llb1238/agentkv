@@ -1,0 +1,72 @@
+{
+  "checked_at_utc": "2026-11-02T03:09:45.323961+00:00",
+  "commit": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+  "introducing_commit": [
+    "986e217158a9ed54eca8307c6bb9abac7c5b2278 [Feature] Add first-class KV hints request envelope for programmatic KV management (#53423)"
+  ],
+  "python_http": {
+    "completion_declares_kv_hints": false,
+    "chat_declares_kv_hints": false,
+    "extra_field_accepted": true,
+    "sampling_extra_args": null,
+    "interpretation": "Undeclared extra field accepted by Pydantic, but not forwarded to AsyncLLM.generate by these serving handlers."
+  },
+  "upstream_sdk": {
+    "version": "3.37.0",
+    "field_present": {
+      "completion_create_params.py": false,
+      "chat/completion_create_params.py": false,
+      "responses/response_create_params.py": false
+    }
+  },
+  "entrypoint_generate_keywords": {
+    "vllm/entrypoints/openai/completion/serving.py": [
+      {
+        "line": 203,
+        "call": "self.engine_client.generate",
+        "keywords": [
+          "lora_request",
+          "trace_headers",
+          "priority",
+          "data_parallel_rank",
+          "session_id"
+        ]
+      }
+    ],
+    "vllm/entrypoints/openai/chat_completion/serving.py": [
+      {
+        "line": 389,
+        "call": "self.engine_client.generate",
+        "keywords": [
+          "lora_request",
+          "trace_headers",
+          "priority",
+          "data_parallel_rank",
+          "session_id",
+          null
+        ]
+      }
+    ]
+  },
+  "source_sha256": {
+    "vllm/v1/kv_hints/protocol.py": "c07e24c41dd695bf92eac6740c86bf9fc4d2140d410035b57f2d42e2afd802a3",
+    "vllm/v1/engine/async_llm.py": "3491dde64ef226b9f65e4341c944615cf6ebd23de3210293dc66767c4c18365c",
+    "vllm/v1/engine/input_processor.py": "97f66659814177d3f7b72b959f09201cbdd1794de21ec1542fe8970f18a1a2b6",
+    "vllm/v1/request.py": "dd7c30bf8b0894dc123a739c299c0133566f8cc075b081e45905f1c29506e69d",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py": "11c16279c3c5821d703d44fbc795ec437522b3af10b879a07e53c128b72735e8",
+    "vllm/v1/kv_offload/base.py": "8dea4e6cf774b15aa0fe0f9399f5ae53d32d976489f3251cf8d5620fe9e059dd",
+    "vllm/v1/kv_offload/cpu/policies/base.py": "db2d40b47abf08bfcedeb4a283cf7d8569dba83e94cf4425ff29784b36c40541",
+    "vllm/v1/kv_offload/cpu/policies/lru.py": "1c4ca6e743947795a00b76623e896b974550f1c5c15943dfe33ce8d1840b5a70",
+    "vllm/v1/kv_offload/cpu/policies/arc.py": "c38c4f072bc23bc78471b98de4bf9b5c70206f2faca52e32e21bd4e23dbb3d5f",
+    "vllm/v1/kv_offload/tiering/kvcr/manager.py": "be59efb31386930c8f26a7eae3dd525bcb041813e2ea918499b08348760d009f",
+    "vllm/entrypoints/openai/completion/protocol.py": "b52f1211a6b9e3fef69653949d3cee2cfabd387a6601d7c81f73569fa81c2987",
+    "vllm/entrypoints/openai/completion/serving.py": "bf3a2167da91e1e70d55b86345e9debdb5bd936837a583c318302457a27a9d88",
+    "vllm/entrypoints/openai/chat_completion/protocol.py": "8744d5e2004b2d376e34cf17de51c919bca6d81b0cc8392da138db1ef05a7c61",
+    "vllm/entrypoints/openai/chat_completion/serving.py": "5e619c0a6866758a247c76e7b8c472f6e008ddbc720f7efe47cc6776cb986d4f",
+    "rust/src/server/src/grpc/convert.rs": "5e601a657fdbe3b88fb253701ced76e4cc796b818b18010fd720d2a3bcfe6289",
+    "rust/src/server/src/routes/inference/generate/convert.rs": "f00ce2246775cb52921d76c222ae3f597fca87d9b73e070a218ebef34789fff0",
+    "rust/src/server/src/routes/openai/completions/convert.rs": "ebf9a9cdc4ec52a01c93243c63abeb0a9676a3141e2a4b62243f54f96abc1054",
+    "rust/proto/inference.proto": "a3f653aeadd4fd92b0bc5f9ff6dd12cb8c199b73fbb255099294dd1b9b12a717"
+  },
+  "builtin_lru_arc_reads_kv_hints": false
+}

@@ -1,0 +1,13 @@
+{
+  "trace_off_medians_ms": {
+    "gpu_quiet": 30.35428188741207,
+    "cpu_keep": 52.43576690554619
+  },
+  "trace_on_medians_ms": {
+    "gpu_quiet": 29.954711,
+    "cpu_keep": 52.926117
+  },
+  "trace_off_extra_ms": 22.081485018134117,
+  "trace_on_extra_ms": 22.971405999999998,
+  "note": "Separate process runs, 3 trials each; differences include runtime variability, not an exact causal estimate of tracing overhead."
+}

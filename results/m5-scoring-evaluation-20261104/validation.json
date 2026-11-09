@@ -1,0 +1,12 @@
+{
+  "git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "measurement_git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "stage": "evaluation",
+  "passed": true,
+  "populations": 12,
+  "cases": 72,
+  "requests_checked": 700710,
+  "run_sha256": "5569fe17f2a9f5e8439564c6ab910a6e4664e1e0faa365053a8f5c1c448110fd",
+  "all_fingerprints_passed": true,
+  "development_regression_cases": 0
+}

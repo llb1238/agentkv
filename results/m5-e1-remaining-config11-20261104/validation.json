@@ -1,0 +1,16 @@
+{
+  "git_commit": "8f63d8ecd63a8fbbcb00261375d325077c230a5c",
+  "measurement_git_commit": "c9027f5afcd04d62f3ae03264efdc575f84789e1",
+  "integrity_passed": true,
+  "cases": 156,
+  "populations": 12,
+  "requests_checked": 1574066,
+  "legacy_regression_cases": 72,
+  "online_acceptance": {
+    "passed": true,
+    "nonnegative_populations": 12,
+    "failed_populations": []
+  },
+  "max_cpu_store_skips": 0,
+  "table_sha256": "1f21d5cc6ddead4fc9756c38a4a7b443c3d465899be251b294dccdf4e1df3fa3"
+}

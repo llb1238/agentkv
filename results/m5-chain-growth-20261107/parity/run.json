@@ -1,0 +1,7 @@
+{
+  "git_commit": "4b654a356573b5ea5d434841456092c3ba3ea74a",
+  "status": "decision_mismatch",
+  "source": "/home/llb/my_soft/agentkv/results/m5-vllm-integration-20261104/probe",
+  "implementation": "before",
+  "error": "('Eviction changed', 81092)"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "session_id": "002001296e8a8c38ad9d7cc436d691afc602",
+    "first_request": {
+      "t": 0.0,
+      "type": "s",
+      "input_tokens": 640,
+      "output_tokens": 20,
+      "hash_ids_head": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hash_blocks": 10,
+      "api_time": 1.979
+    },
+    "subagent": {
+      "agent_id": "subagent_001_f552fe6f",
+      "spawn_t": 86541.149,
+      "duration_ms": 108127,
+      "request_count": 7
+    }
+  },
+  {
+    "session_id": "00ca01c4aaeccee751ae6285beb54dea262f",
+    "first_request": {
+      "t": 0.0,
+      "type": "s",
+      "input_tokens": 640,
+      "output_tokens": 24,
+      "hash_ids_head": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "hash_blocks": 10,
+      "api_time": 5.396
+    },
+    "subagent": {
+      "agent_id": "subagent_001_bd16facd",
+      "spawn_t": 80.759,
+      "duration_ms": 48905,
+      "request_count": 2
+    }
+  }
+]

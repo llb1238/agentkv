@@ -1,0 +1,43 @@
+{
+  "harness_commit": "e4bb2f835ffedbbe6b76252ea5c93caec68c5faf",
+  "dataset": "semianalysisai/cc-traces-weka-062126",
+  "dataset_revision": "23f152f6f0f9399a85901b89a6458def0ef16729",
+  "raw_size": 1847151435,
+  "raw_sha256": "29b6a19e751ff5230771519aab755f80a0f43a4ba9cf96b72d3a6a437ec99276",
+  "sources": {
+    "src/aiperf/dataset/loader/weka_trace_models.py": {
+      "git_blob_sha": "e65a4452421d41f0a9d0460037934d9f00dafb76",
+      "url": "https://github.com/SemiAnalysisAI/agentx-harness/blob/e4bb2f835ffedbbe6b76252ea5c93caec68c5faf/src/aiperf/dataset/loader/weka_trace_models.py",
+      "local_path": "results/m1-agentx-data-20261102/source/weka_trace_models.py",
+      "sha256": "e64c1474f9148c8a53a1a54ab5f99af5b9718908ab975ebda887d19f672d19d0"
+    },
+    "src/aiperf/dataset/loader/weka_agent_chains.py": {
+      "git_blob_sha": "4afa16a815f7b230b44d5a1ec7864601d365e515",
+      "url": "https://github.com/SemiAnalysisAI/agentx-harness/blob/e4bb2f835ffedbbe6b76252ea5c93caec68c5faf/src/aiperf/dataset/loader/weka_agent_chains.py",
+      "local_path": "results/m1-agentx-data-20261102/source/weka_agent_chains.py",
+      "sha256": "2476c52ec0b371172bed68a91d4983588a1b6d08e6b47d223a1435cc4200384a"
+    },
+    "src/aiperf/dataset/loader/semianalysis_cc_traces_weka.py": {
+      "git_blob_sha": "1c0f8f75c7578d67eea1edaa5c37bf6f38b43176",
+      "url": "https://github.com/SemiAnalysisAI/agentx-harness/blob/e4bb2f835ffedbbe6b76252ea5c93caec68c5faf/src/aiperf/dataset/loader/semianalysis_cc_traces_weka.py",
+      "local_path": "results/m1-agentx-data-20261102/source/semianalysis_cc_traces_weka.py",
+      "sha256": "71e7eea573008a1ea380e2c80255b6431b0b1366af92c65b0c3f992f332de5bc"
+    },
+    "docs/tutorials/weka-trace.md": {
+      "git_blob_sha": "1a5cecbb18ebaada72b8e3784ae92b872cc76efc",
+      "url": "https://github.com/SemiAnalysisAI/agentx-harness/blob/e4bb2f835ffedbbe6b76252ea5c93caec68c5faf/docs/tutorials/weka-trace.md",
+      "local_path": "results/m1-agentx-data-20261102/source/weka-trace.md",
+      "sha256": "6e849027400f2fd6f84f6c441d3c28540f051a26d2f830836654de8f466edcc6"
+    },
+    "weka_trace_timing_excerpt.py": {
+      "url": "https://github.com/SemiAnalysisAI/agentx-harness/blob/e4bb2f835ffedbbe6b76252ea5c93caec68c5faf/src/aiperf/dataset/loader/weka_trace.py",
+      "start_line": 99,
+      "local_path": "results/m1-agentx-data-20261102/source/weka_trace_timing_excerpt.py",
+      "sha256": "9d8cf2651ec00418223e64995ae99de3053eec4414e7d0650014b965de15fa68"
+    }
+  },
+  "raw_local_path": "data/raw/agentx/cc-traces-weka-062126/traces.jsonl",
+  "analyzed_on": "2026-11-02",
+  "dataset_card_local_path": "results/m1-agentx-data-20261102/source/dataset_README.md",
+  "dataset_card_url": "https://huggingface.co/datasets/semianalysisai/cc-traces-weka-062126/blob/23f152f6f0f9399a85901b89a6458def0ef16729/README.md"
+}

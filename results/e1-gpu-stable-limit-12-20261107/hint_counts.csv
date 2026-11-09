@@ -1,0 +1,10 @@
+rate,seed,policy,sent,transport_received,match,policy_valid_any,policy_valid_finished
+1.2,3,lru,14174,14174,True,,
+1.2,3,online,14184,14184,True,14184,14184
+1.2,3,perfect,14279,14279,True,14279,14279
+1.2,4,perfect,14281,14281,True,14281,14281
+1.2,4,lru,10126,10126,True,,
+1.2,4,online,9803,9803,True,9803,9803
+1.2,5,perfect,14233,14233,True,14233,14233
+1.2,5,online,13555,13555,True,13555,13555
+1.2,5,lru,13033,13033,True,,

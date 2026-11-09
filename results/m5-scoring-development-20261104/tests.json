@@ -1,0 +1,7 @@
+{
+  "git_commit": "23c2d6d909e87c1b5a7e1aa1bd11bbd84f0708db",
+  "command": "python -m pytest -q",
+  "passed": 173,
+  "duration_s": 15.28,
+  "log": "tests.log"
+}

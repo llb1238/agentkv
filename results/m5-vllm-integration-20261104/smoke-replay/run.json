@@ -1,0 +1,31 @@
+{
+  "git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "mode": "exact HintAware call/clock replay",
+  "callback_counts": {
+    "get": 1615984,
+    "on_store_miss": 2090,
+    "insert": 148401,
+    "mark_evictable": 363709,
+    "on_request_finished": 2259,
+    "mark_non_evictable": 215308,
+    "evict": 2005
+  },
+  "root_sequence_complete": true,
+  "close_footers": 1,
+  "valid_hint_requests": 2259,
+  "prefix_checked_requests": 2259,
+  "eviction_decisions": 2005,
+  "invariants": {
+    "no_unready_pinned_or_protected_victims": true,
+    "finished_chain_state": true,
+    "resident_prefix_membership_and_depth": true,
+    "ownership_measured_per_eviction": true,
+    "no_exceptions": true
+  },
+  "candidate_adapter_decisions_identical": true,
+  "limitations": [],
+  "trace_sha256": {
+    "callbacks-135943-123727931667376.jsonl.gz": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad"
+  }
+}

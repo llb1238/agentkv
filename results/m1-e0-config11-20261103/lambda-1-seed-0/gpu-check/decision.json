@@ -1,0 +1,5 @@
+{
+  "gpu_index": 1,
+  "mode": "显存共享、算力共享",
+  "reason": "GPU0 free memory <60 GB"
+}

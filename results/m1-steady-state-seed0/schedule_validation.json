@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "original_workload_unchanged": "passed",
+    "existing_json_csv_byte_identical": "passed",
+    "request_identity_complete": "passed",
+    "fixed_service_0_5_s": "passed",
+    "root_durations_match_v3_estimate": "passed",
+    "estimator_fingerprint": "passed"
+  },
+  "requests": 28812,
+  "roots": 100,
+  "service_time_s": 0.5,
+  "workload_sha256": "38fe20ee8e3316124fc25cb4bb296f914cf3d8ee3cdc0fceac7d4f00854bd9e8",
+  "schedule_sha256": "6f465acdb8d2c2bf1224a30ec2115c6c772b3a8471ecc17daf7f1dc9f2b1a514",
+  "schedule_bytes": 240266,
+  "estimator_sha256": "ad182b58ae08a5094f7712a57a7b2e7e6126e5258553f20a02ec18e68a06ccdd"
+}

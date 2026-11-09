@@ -1,0 +1,101 @@
+--- a/vllm/v1/kv_offload/base.py
++++ b/vllm/v1/kv_offload/base.py
+@@ -93,6 +93,8 @@
+     kv_transfer_params: dict[str, Any] | None = None
+     kv_hints: KvHintsEnvelope | None = None
+     load_tier_filter: TierFilter = TierFilter.ALL
++    # Prompt boundary for policies; None for legacy/manual contexts.
++    num_prompt_tokens: int | None = None
+     # Per-request scratch space keyed by value type, so a tier can parse
+     # kv_transfer_params and kv_hints once (in on_new_request) and read the
+     # result back on later calls for the same request.
+@@ -115,6 +117,21 @@
+ 
+     def get_offload_key_position(self, key: OffloadKey) -> int | None:
+         return self._offload_key_positions.get(key)
++
++    def get_offload_prefix_keys(self) -> tuple[OffloadKey, ...]:
++        """Registered prompt keys in depth order, excluding generated tokens.
++
++        This is ownership metadata, not a CPU hit or a resident-key list.
++        Partial-boundary keys and multiple groups retain their actual positions.
++        """
++        if self.num_prompt_tokens is None:
++            raise ValueError("Prompt boundary is unavailable in this ReqContext")
++        positions = self._offload_key_positions
++        return tuple(
++            key
++            for key in sorted(positions, key=lambda k: (positions[k], k))
++            if 0 < positions[key] <= self.num_prompt_tokens
++        )
+ 
+ 
+ class LookupResult(Enum):
+--- a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
++++ b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
+@@ -419,6 +419,7 @@
+             )
+ 
+     def update_offload_keys(self) -> None:
++        self.req_context.num_prompt_tokens = self.req.num_prompt_tokens
+         for group_config, group_state in zip(
+             self.config.kv_group_configs, self.group_states
+         ):
+@@ -546,19 +547,37 @@
+     return TierFilter(matchers=tuple(matchers))
+ 
+ 
+-def _create_req_context(req: Request) -> ReqContext:
++def _create_req_context(
++    req: Request, group_configs: Sequence[GroupOffloadConfig] = ()
++) -> ReqContext:
+     params = req.kv_transfer_params
+     load_filter = TierFilter.ALL
+     if params:
+         raw = params.get(KV_LOAD_TIERS_KEY)
+         if raw is not None:
+             load_filter = _parse_tier_filter(raw)
+-    return ReqContext(
++    context = ReqContext(
+         req_id=req.request_id,
+         kv_transfer_params=params,
+         kv_hints=req.kv_hints,
+         load_tier_filter=load_filter,
++        num_prompt_tokens=req.num_prompt_tokens,
+     )
++    # Include GPU-hit prompt keys even if no offloading state was started.
++    # Only metadata is populated: no allocation, lookup, touch, or store.
++    for group in group_configs:
++        hashes = islice(
++            req.block_hashes, group.hashes_per_chunk - 1, None,
++            group.hashes_per_chunk,
++        )
++        for index, block_hash in enumerate(hashes, 1):
++            end_token = index * group.tokens_per_chunk
++            if end_token > req.num_prompt_tokens:
++                break
++            context.set_offload_key_position(
++                make_offload_key(block_hash, group.group_idx), end_token
++            )
++    return context
+ 
+ 
+ class OffloadingConnectorScheduler:
+@@ -1033,7 +1052,7 @@
+ 
+     def on_new_request(self, request: Request) -> None:
+         """Called when a new request is added to the scheduler."""
+-        req_context = _create_req_context(request)
++        req_context = _create_req_context(request, self.config.kv_group_configs)
+         offloading_context = self.manager.on_new_request(req_context)
+         req_status = RequestOffloadState(
+             config=self.config,
+@@ -2050,7 +2069,7 @@
+         if req_status is None:
+             # Untracked request (offloading never started): no in-flight jobs,
+             # nothing was deferred, so finalize immediately.
+-            req_context = _create_req_context(request)
++            req_context = _create_req_context(request, self.config.kv_group_configs)
+             self.manager.on_new_request(req_context)
+             self.manager.on_request_finished(req_context)
+             return False, None

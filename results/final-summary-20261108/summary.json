@@ -1,0 +1,180 @@
+{
+  "primary": {
+    "lru": {
+      "recompute": 0.2355487744126772,
+      "predicted": 0.229222882021468,
+      "recompute_min": 0.19186395003656428,
+      "recompute_max": 0.2671488204703987,
+      "ttft_p50_ms": 66.67148383333333,
+      "ttft_p99_ms": 1072.666146356665,
+      "prediction_error_pp": {
+        "mean": 0.6325892391209176,
+        "minimum": 0.456103474503855,
+        "maximum": 0.9686477617037337
+      },
+      "recompute_delta": 0.0,
+      "recompute_relative_percent": 0.0,
+      "ttft_p50_ms_delta": 0.0,
+      "ttft_p50_ms_relative_percent": 0.0,
+      "ttft_p99_ms_delta": 0.0,
+      "ttft_p99_ms_relative_percent": 0.0
+    },
+    "online": {
+      "recompute": 0.2200825642483112,
+      "predicted": 0.2143066421290777,
+      "recompute_min": 0.17801005016289806,
+      "recompute_max": 0.2472472537471852,
+      "ttft_p50_ms": 68.57048483333334,
+      "ttft_p99_ms": 951.1729345799998,
+      "prediction_error_pp": {
+        "mean": 0.5775922119233501,
+        "minimum": 0.39888393192984706,
+        "maximum": 0.79378178787608
+      },
+      "recompute_delta": -0.015466210164365973,
+      "recompute_relative_percent": -6.566032959810464,
+      "ttft_p50_ms_delta": 1.8990010000000126,
+      "ttft_p50_ms_relative_percent": 2.8482956892742495,
+      "ttft_p99_ms_delta": -121.49321177666513,
+      "ttft_p99_ms_relative_percent": -11.326283782640068
+    },
+    "perfect": {
+      "recompute": 0.15364946439725832,
+      "predicted": 0.15196550579701837,
+      "recompute_min": 0.12314842214219322,
+      "recompute_max": 0.17538802752712904,
+      "ttft_p50_ms": 63.5468665,
+      "ttft_p99_ms": 772.5919433233342,
+      "prediction_error_pp": {
+        "mean": 0.16839586002399495,
+        "minimum": 0.005440462623292064,
+        "maximum": 0.2930036980402062
+      },
+      "recompute_delta": -0.08189931001541886,
+      "recompute_relative_percent": -34.76957594860279,
+      "ttft_p50_ms_delta": -3.124617333333326,
+      "ttft_p50_ms_relative_percent": -4.686587358913908,
+      "ttft_p99_ms_delta": -300.0742030333307,
+      "ttft_p99_ms_relative_percent": -27.974612982104407
+    }
+  },
+  "stability": [
+    {
+      "rate": 1.0,
+      "counts": {
+        "lru": 3,
+        "online": 3,
+        "perfect": 3
+      }
+    },
+    {
+      "rate": 1.2,
+      "counts": {
+        "lru": 0,
+        "online": 0,
+        "perfect": 2
+      }
+    },
+    {
+      "rate": 1.4,
+      "counts": {
+        "lru": 0,
+        "online": 0,
+        "perfect": 0
+      }
+    }
+  ],
+  "e0_gap_share_total": [
+    {
+      "rate": 0.5,
+      "stable_populations": 3,
+      "gap_fraction": 0.13216030268682102,
+      "total_recompute": 0.15204582746517858,
+      "gap_share_total": 0.8692136107259391
+    },
+    {
+      "rate": 0.7,
+      "stable_populations": 3,
+      "gap_fraction": 0.16370367957049253,
+      "total_recompute": 0.18363816927737472,
+      "gap_share_total": 0.8914469155005988
+    },
+    {
+      "rate": 1.0,
+      "stable_populations": 2,
+      "gap_fraction": 0.22145083493914625,
+      "total_recompute": 0.24168081581282375,
+      "gap_share_total": 0.916294635113508
+    }
+  ],
+  "completion": {
+    "lru": {
+      "mean": 9412.666666666666,
+      "by_seed": {
+        "3": 10397,
+        "4": 7523,
+        "5": 10318
+      },
+      "delta_vs_lru": 0.0,
+      "relative_percent_vs_lru": 0.0
+    },
+    "online": {
+      "mean": 9449.333333333334,
+      "by_seed": {
+        "3": 10396,
+        "4": 7107,
+        "5": 10845
+      },
+      "delta_vs_lru": 36.66666666666788,
+      "relative_percent_vs_lru": 0.389546001841512
+    },
+    "perfect": {
+      "mean": 10546.666666666666,
+      "by_seed": {
+        "3": 10436,
+        "4": 9693,
+        "5": 11511
+      },
+      "delta_vs_lru": 1134.0,
+      "relative_percent_vs_lru": 12.047595438770454
+    }
+  },
+  "cpu_oracle_capture": {
+    "remaining-online": {
+      "mean_recompute": 0.21430649923921824,
+      "ratio_of_means": 0.18202744423772876,
+      "original_mean_of_ratios": 0.1802125347422317
+    },
+    "remaining-noisy": {
+      "mean_recompute": 0.16130675935090508,
+      "ratio_of_means": 0.8287994930842603,
+      "original_mean_of_ratios": 0.8305649836243464
+    },
+    "remaining-perfect": {
+      "mean_recompute": 0.15196534168460685,
+      "ratio_of_means": 0.9427956722333422,
+      "original_mean_of_ratios": 0.9431929452238756
+    }
+  },
+  "cpu_mean_recompute": {
+    "lru": 0.22922273938029958,
+    "oracle": 0.14727773266141903,
+    "remaining-online": 0.21430649923921824,
+    "remaining-noisy": 0.16130675935090508,
+    "remaining-perfect": 0.15196534168460685
+  },
+  "sources_sha256": {
+    "e1-gpu-v2-config11-20261106/summary.json": "45da4505643da9933126e032dbc51b62540e7245b1b94848e9520e08a7cb7d30",
+    "e1-gpu-v2-config11-20261106/README.md": "6e168fcb6643dbae36545f927f7d4f15940c3377d42d762c88b81f445bc72c2c",
+    "e1-gpu-stable-limit-12-20261107/summary.json": "8f71269003d8d5e82af85f4db116b6781e55f703d1991bfd1c54de2b8641f733",
+    "e1-gpu-stable-limit-12-20261107/README.md": "910404e7926efcb6bc73da6ac29ae26532ff4d7c80cab5cd04e432231879bff0",
+    "m1-e0-config11-20261103/run.json": "f693f3cb177a66fe6e16c17a1a1081406e1524922d87c9d5086fef1c561dcafd",
+    "m1-e0-config11-20261103/README.md": "63881bfa41205c88cd254a1acc83905f4b0471e195fd643388a05fb89307bd7b",
+    "m5-scoring-evaluation-20261104/README.md": "dc26983a77081d75b51c7320c815a1b815bfa7f199556c76f536dbce541f71b8",
+    "m5-scoring-evaluation-20261104/lambda-1-seed-3/run.json": "8e554f3e1d4fe6dfff8858a28cc8351fcdd4e934c58d99ba76fbbfc5f0178349",
+    "m5-scoring-evaluation-20261104/lambda-1-seed-4/run.json": "e1d0f5fcb4378bdb90149425c678f3b3c1903f47d0e2e4e6848d9250f7a40345",
+    "m5-scoring-evaluation-20261104/lambda-1-seed-5/run.json": "ebf46c5520bb6a3e4687ab2aad666f50b5ab259199ff5ef4b7661261b77c5667"
+  },
+  "relative_percent_formula": "100 * (mean(policy) / mean(LRU) - 1)",
+  "e0_fraction_formula": "mean(gap fraction) / mean(total recompute fraction); stable populations only"
+}

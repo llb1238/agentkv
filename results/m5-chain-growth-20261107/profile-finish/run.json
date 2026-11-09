@@ -1,0 +1,28 @@
+{
+  "git_commit": "24a36ec1ece7ae1fa15e709e29a591a57f55cf35",
+  "status": "complete",
+  "profiling": true,
+  "not_latency_qualification": true,
+  "ordered_recorded_victims_identical": true,
+  "summary": {
+    "counts": {
+      "get": 576912,
+      "on_store_miss": 792,
+      "insert": 111194,
+      "mark_evictable": 148297,
+      "on_request_finished": 779,
+      "mark_non_evictable": 37103,
+      "evict": 734
+    },
+    "eviction_fingerprint": "01fe734e2b2ea34b13800544feb8df8de5ec44bf521e6905dde72fb3ee357200",
+    "prefix_enumerations": 779,
+    "prefix_cache_entries": 0
+  },
+  "source_sha256": {
+    "callbacks-3394629-125947076632096.jsonl.gz": "bec1b3a4e8aa8aa57fd02af28e00b40557db863b62cc355d596bf840f9d4bc11"
+  },
+  "files_sha256": {
+    "profile.pstats": "624aefc8d4193121d4cafd61f10f90efd7249552eb5e19128679304a5d8902e2",
+    "profile.txt": "c9ef432af6f3c11705f3e30fa58c1155aef405447eefcc491f1b3ffebb52b012"
+  }
+}

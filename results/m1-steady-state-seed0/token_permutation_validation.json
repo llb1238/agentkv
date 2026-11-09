@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "vocabulary_size": 151655,
+  "eligible_ids_sha256": "b239ef34162a7ed4ebfd90c2e6c9a1e4894f54faeaff42dd29416057f449c9d3",
+  "excluded_special_ids": [
+    151643,
+    151644,
+    151645,
+    151646,
+    151647,
+    151648,
+    151649,
+    151650,
+    151651,
+    151652,
+    151653,
+    151654,
+    151655,
+    151656
+  ],
+  "root_id": "002001296e8a8c38ad9d7cc436d691afc602",
+  "real_prompts_checked": 16,
+  "lcp_pairs_checked": 256,
+  "instance_ids": [
+    0,
+    1
+  ],
+  "seeds": [
+    5453757064654652072,
+    14536673258219413310
+  ],
+  "permutation_sha256": [
+    "718d5574e0867557af6055ed41a3472df2d9e7e4d9339a0206beb4e4c3aab212",
+    "4597e1a9ccbc97410467466c479a4b932f6e289c5d8cc0f7bfa04e203bb798b6"
+  ],
+  "implementation_sha256": "69bbae8c0c0922779d9efa1562ef775204677e291a7aa40405eb1ade4ef60cad"
+}

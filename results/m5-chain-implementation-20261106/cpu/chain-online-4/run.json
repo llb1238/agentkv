@@ -1,0 +1,81 @@
+{
+  "git_commit": "45bb4ddc062e74a70bfc9920c183d2633097f421",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "hint_tier": "online",
+  "implementation": "chain",
+  "trace_sha256": {
+    "callbacks-3394629-125947076632096.jsonl.gz": "bec1b3a4e8aa8aa57fd02af28e00b40557db863b62cc355d596bf840f9d4bc11"
+  },
+  "baseline_run_sha256": "6c902e874fa38ca1ce4e48a57141d0c99450d8d6f3a84e262f6801feeed802d9",
+  "status": "complete",
+  "summary": {
+    "counts": {
+      "get": 576912,
+      "on_store_miss": 792,
+      "insert": 111194,
+      "mark_evictable": 148297,
+      "on_request_finished": 779,
+      "mark_non_evictable": 37103,
+      "evict": 734
+    },
+    "eviction_fingerprint": "01fe734e2b2ea34b13800544feb8df8de5ec44bf521e6905dde72fb3ee357200",
+    "prefix_enumerations": 779,
+    "prefix_cache_entries": 0,
+    "evict": {
+      "count": 734,
+      "p50_us": 586.322,
+      "p99_us": 1917.771389999999,
+      "maximum_us": 3577.814
+    }
+  },
+  "callbacks": {
+    "get": {
+      "count": 576912,
+      "p50_us": 0.237,
+      "p99_us": 0.518,
+      "maximum_us": 201.875
+    },
+    "on_store_miss": {
+      "count": 792,
+      "p50_us": 322.216,
+      "p99_us": 1073.779580000001,
+      "maximum_us": 1724.702
+    },
+    "insert": {
+      "count": 111194,
+      "p50_us": 3.378,
+      "p99_us": 9.480769999999918,
+      "maximum_us": 2954.666
+    },
+    "mark_evictable": {
+      "count": 148297,
+      "p50_us": 1.231,
+      "p99_us": 7.729080000000017,
+      "maximum_us": 363.659
+    },
+    "on_request_finished": {
+      "count": 779,
+      "p50_us": 466.199,
+      "p99_us": 1072.6227600000002,
+      "maximum_us": 1649.511
+    },
+    "mark_non_evictable": {
+      "count": 37103,
+      "p50_us": 1.222,
+      "p99_us": 8.375980000000002,
+      "maximum_us": 3103.86
+    },
+    "evict": {
+      "count": 734,
+      "p50_us": 586.322,
+      "p99_us": 1917.771389999999,
+      "maximum_us": 3577.814
+    }
+  },
+  "all_recorded_ordered_keys_identical": true,
+  "all_baseline_ordered_keys_identical": true,
+  "instrumentation": "off; decode outside callback timing; no cProfile",
+  "latency_gate_2ms": true,
+  "callbacks_sha256": "1c49f52f4556a4e27068fcad33c97463ce2b1ec26c1e44e8b2c92d7b4a333c9f",
+  "decisions_sha256": "f183493b06bb43f6786198250053c1e6cbfd203fb4af793f93fb7e139078b4cd"
+}

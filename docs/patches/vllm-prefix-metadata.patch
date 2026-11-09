@@ -1,0 +1,316 @@
+diff --git a/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py b/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py
+index e71c3dbf18d477eb70823a9a94940afd44a513a1..6156ad49df0e6e9c9589e8ecf3c6e299be412253 100644
+--- a/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py
++++ b/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py
+@@ -248,6 +248,170 @@ def test_create_req_context_preserves_kv_hints():
+     assert _create_req_context(request).kv_hints is kv_hints
+ 
+ 
++@pytest.mark.parametrize("hashes_per_chunk", [1, 2])
++def test_context_creation_and_updates_have_identical_positions(hashes_per_chunk):
++    """GPU hits, incremental updates and decode preserve the same key depths."""
++    from vllm.distributed.kv_transfer.kv_connector.v1.offloading.scheduler import (
++        RequestGroupState,
++    )
++
++    group = SimpleNamespace(
++        group_idx=0,
++        hashes_per_chunk=hashes_per_chunk,
++        tokens_per_chunk=16 * hashes_per_chunk,
++    )
++    request = SimpleNamespace(
++        request_id="prefix",
++        num_prompt_tokens=64,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[bytes([i]) * 32 for i in range(4)],
++    )
++    context = _create_req_context(request, [group])
++    state = object.__new__(RequestOffloadState)
++    state.config = SimpleNamespace(kv_group_configs=[group])
++    state.req = request
++    state.req_context = context
++    state.group_states = (RequestGroupState(next_stored_chunk_idx=4),)
++    prompt_keys = context.get_offload_prefix_keys()
++    assert len(prompt_keys) == 4 // hashes_per_chunk
++    for i in range(4, 8):
++        state.update_offload_keys()
++        state.update_offload_keys()
++        request.block_hashes.append(bytes([i]) * 32)
++    state.update_offload_keys()
++    recreated = _create_req_context(request, [group])
++    assert context._offload_key_positions == recreated._offload_key_positions
++    assert context.get_offload_prefix_keys() == prompt_keys
++    assert len(context._offload_key_positions) == 8 // hashes_per_chunk
++    context.num_prompt_tokens = 128
++    assert len(context.get_offload_prefix_keys()) == 8 // hashes_per_chunk
++
++
++@pytest.mark.parametrize("hashes_per_chunk", [1, 2])
++def test_final_positions_match_unpatched_version(hashes_per_chunk):
++    """Compare the actual old function with patched creation and updates."""
++    import ast
++    import subprocess
++    from pathlib import Path
++
++    from vllm.distributed.kv_transfer.kv_connector.v1.offloading import scheduler
++
++    try:
++        source = subprocess.check_output(
++            [
++                "git",
++                "show",
++                "60da6135b0349fac50a051e9dcec2bd5b4514400:"
++                "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
++            ],
++            cwd=Path(__file__).parent,
++            text=True,
++            stderr=subprocess.PIPE,
++        )
++    except subprocess.CalledProcessError:
++        pytest.skip("Pinned unpatched commit is unavailable")
++    tree = ast.parse(source)
++    old_class = next(
++        n
++        for n in tree.body
++        if isinstance(n, ast.ClassDef) and n.name == "RequestOffloadState"
++    )
++    old_update = next(
++        n
++        for n in old_class.body
++        if isinstance(n, ast.FunctionDef) and n.name == "update_offload_keys"
++    )
++    namespace = dict(vars(scheduler))
++    exec(
++        compile(
++            ast.Module(body=[old_update], type_ignores=[]),
++            "<pinned-unpatched-update>",
++            "exec",
++        ),
++        namespace,
++    )
++    legacy_update = namespace["update_offload_keys"]
++    group = SimpleNamespace(
++        group_idx=0,
++        hashes_per_chunk=hashes_per_chunk,
++        tokens_per_chunk=16 * hashes_per_chunk,
++    )
++    request = SimpleNamespace(
++        request_id="compat",
++        num_prompt_tokens=64,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[bytes([i]) * 32 for i in range(4)],
++    )
++
++    def state(context):
++        result = object.__new__(RequestOffloadState)
++        result.config = SimpleNamespace(kv_group_configs=[group])
++        result.req = request
++        result.req_context = context
++        result.group_states = (scheduler.RequestGroupState(),)
++        return result
++
++    patched = state(_create_req_context(request, [group]))
++    legacy = state(ReqContext(request.request_id))
++    for i in range(4, 10):
++        patched.update_offload_keys()
++        legacy_update(legacy)
++        patched.update_offload_keys()
++        legacy_update(legacy)
++        assert patched.req_context._offload_key_positions == (
++            legacy.req_context._offload_key_positions
++        )
++        request.block_hashes.append(bytes([i]) * 32)
++    patched.update_offload_keys()
++    legacy_update(legacy)
++    assert patched.req_context._offload_key_positions == (
++        legacy.req_context._offload_key_positions
++    )
++    assert len(patched.req_context.get_offload_prefix_keys()) == 4 // hashes_per_chunk
++
++
++def test_untracked_finished_context_includes_gpu_prefix():
++    """Even without an offload state, finalization exposes all prompt keys."""
++    group = SimpleNamespace(group_idx=0, hashes_per_chunk=1, tokens_per_chunk=16)
++    request = SimpleNamespace(
++        request_id="untracked",
++        num_prompt_tokens=32,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[b"a" * 32, b"b" * 32, b"c" * 32],
++    )
++    manager = MagicMock()
++    scheduler = SimpleNamespace(
++        _req_status={},
++        manager=manager,
++        config=SimpleNamespace(kv_group_configs=[group]),
++    )
++    assert OffloadingConnectorScheduler.request_finished(scheduler, request) == (
++        False,
++        None,
++    )
++    context = manager.on_request_finished.call_args.args[0]
++    assert len(context.get_offload_prefix_keys()) == 2
++    assert len(context._offload_key_positions) == 3
++
++
++def test_prefix_context_short_prompt_and_missing_boundary():
++    """No full chunk is valid for a short prompt; legacy contexts fail closed."""
++    group = SimpleNamespace(group_idx=0, hashes_per_chunk=1, tokens_per_chunk=16)
++    request = SimpleNamespace(
++        request_id="short",
++        num_prompt_tokens=10,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[],
++    )
++    assert _create_req_context(request, [group]).get_offload_prefix_keys() == ()
++    with pytest.raises(ValueError, match="Prompt boundary"):
++        ReqContext("legacy").get_offload_prefix_keys()
++
++
+ def _reduce_kv_connector_stats(runner):
+     reduced: dict[str, int | float] = {}
+     for payload in runner.kv_connector_stats:
+diff --git a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
+index 367b4ecfab1bee1c705774b4a155e7b883a85511..5a92494c32c7a43d8237ebc9ff6a0232249ed5a6 100644
+--- a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
++++ b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
+@@ -345,6 +345,24 @@ class SchedulerOffloadConfig(NamedTuple):
+         )
+ 
+ 
++def _iter_offload_keys(
++    block_hashes: Sequence[bytes],
++    group: GroupOffloadConfig,
++    start_chunk: int = 0,
++) -> Iterable[tuple[OffloadKey, int]]:
++    hashes = islice(
++        block_hashes,
++        group.hashes_per_chunk * start_chunk + group.hashes_per_chunk - 1,
++        None,
++        group.hashes_per_chunk,
++    )
++    for index, block_hash in enumerate(hashes, start_chunk + 1):
++        yield (
++            make_offload_key(block_hash, group.group_idx),
++            index * group.tokens_per_chunk,
++        )
++
++
+ @dataclass
+ class RequestGroupState:
+     offload_keys: list[OffloadKey] = field(default_factory=list)
+@@ -419,23 +437,15 @@ class RequestOffloadState:
+             )
+ 
+     def update_offload_keys(self) -> None:
++        self.req_context.num_prompt_tokens = self.req.num_prompt_tokens
+         for group_config, group_state in zip(
+             self.config.kv_group_configs, self.group_states
+         ):
+-            for req_block_hash in islice(
+-                self.req.block_hashes,
+-                group_config.hashes_per_chunk * len(group_state.offload_keys)
+-                + group_config.hashes_per_chunk
+-                - 1,
+-                None,
+-                group_config.hashes_per_chunk,
++            for key, end_token in _iter_offload_keys(
++                self.req.block_hashes, group_config, len(group_state.offload_keys)
+             ):
+-                key = make_offload_key(req_block_hash, group_config.group_idx)
+                 group_state.offload_keys.append(key)
+-                self.req_context.set_offload_key_position(
+-                    key,
+-                    len(group_state.offload_keys) * group_config.tokens_per_chunk,
+-                )
++                self.req_context.set_offload_key_position(key, end_token)
+ 
+     def update_block_id_groups(
+         self, new_block_id_groups: tuple[list[int], ...] | None
+@@ -546,19 +556,28 @@ def _parse_tier_filter(raw: Any) -> TierFilter:
+     return TierFilter(matchers=tuple(matchers))
+ 
+ 
+-def _create_req_context(req: Request) -> ReqContext:
++def _create_req_context(
++    req: Request, group_configs: Sequence[GroupOffloadConfig] = ()
++) -> ReqContext:
+     params = req.kv_transfer_params
+     load_filter = TierFilter.ALL
+     if params:
+         raw = params.get(KV_LOAD_TIERS_KEY)
+         if raw is not None:
+             load_filter = _parse_tier_filter(raw)
+-    return ReqContext(
++    context = ReqContext(
+         req_id=req.request_id,
+         kv_transfer_params=params,
+         kv_hints=req.kv_hints,
+         load_tier_filter=load_filter,
++        num_prompt_tokens=req.num_prompt_tokens,
+     )
++    # Include GPU-hit prompt keys even if no offloading state was started.
++    # Only metadata is populated: no allocation, lookup, touch, or store.
++    for group in group_configs:
++        for key, end_token in _iter_offload_keys(req.block_hashes, group):
++            context.set_offload_key_position(key, end_token)
++    return context
+ 
+ 
+ class OffloadingConnectorScheduler:
+@@ -1033,7 +1052,7 @@ class OffloadingConnectorScheduler:
+ 
+     def on_new_request(self, request: Request) -> None:
+         """Called when a new request is added to the scheduler."""
+-        req_context = _create_req_context(request)
++        req_context = _create_req_context(request, self.config.kv_group_configs)
+         offloading_context = self.manager.on_new_request(req_context)
+         req_status = RequestOffloadState(
+             config=self.config,
+@@ -2050,7 +2069,7 @@ class OffloadingConnectorScheduler:
+         if req_status is None:
+             # Untracked request (offloading never started): no in-flight jobs,
+             # nothing was deferred, so finalize immediately.
+-            req_context = _create_req_context(request)
++            req_context = _create_req_context(request, self.config.kv_group_configs)
+             self.manager.on_new_request(req_context)
+             self.manager.on_request_finished(req_context)
+             return False, None
+diff --git a/vllm/v1/kv_offload/base.py b/vllm/v1/kv_offload/base.py
+index 398bc269e6f2c977d42f11ebbd8a6490496c0577..cd58e3bbcc5415d067251edd8f5075604ddb8e12 100644
+--- a/vllm/v1/kv_offload/base.py
++++ b/vllm/v1/kv_offload/base.py
+@@ -93,6 +93,8 @@ class ReqContext:
+     kv_transfer_params: dict[str, Any] | None = None
+     kv_hints: KvHintsEnvelope | None = None
+     load_tier_filter: TierFilter = TierFilter.ALL
++    # Prompt boundary for policies; None for legacy/manual contexts.
++    num_prompt_tokens: int | None = None
+     # Per-request scratch space keyed by value type, so a tier can parse
+     # kv_transfer_params and kv_hints once (in on_new_request) and read the
+     # result back on later calls for the same request.
+@@ -116,6 +118,21 @@ class ReqContext:
+     def get_offload_key_position(self, key: OffloadKey) -> int | None:
+         return self._offload_key_positions.get(key)
+ 
++    def get_offload_prefix_keys(self) -> tuple[OffloadKey, ...]:
++        """Registered prompt keys in depth order, excluding generated tokens.
++
++        This is ownership metadata, not a CPU hit or a resident-key list.
++        Partial-boundary keys and multiple groups retain their actual positions.
++        """
++        if self.num_prompt_tokens is None:
++            raise ValueError("Prompt boundary is unavailable in this ReqContext")
++        positions = self._offload_key_positions
++        return tuple(
++            key
++            for key in sorted(positions, key=lambda k: (positions[k], k))
++            if 0 < positions[key] <= self.num_prompt_tokens
++        )
++
+ 
+ class LookupResult(Enum):
+     """Result of OffloadingManager.lookup()."""

@@ -1,0 +1,145 @@
+{
+  "base_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+  "tests": {
+    "passed": 258,
+    "skipped": 3,
+    "log_sha256": "4687f090b8eedcd0f2370b83df74e84fa0d152cdfd1dbffb75062ca8396adc3d",
+    "log_path": "../agentkv-runs/closure-20261108/final-tests.log"
+  },
+  "manifest_tests": {
+    "passed": 8,
+    "log_sha256": "415fea310855ad97e6f3f49098392f93c895ed478b8f07f6b118cc5130c715be"
+  },
+  "cpu_report_rebuild": {
+    "gpu_runs_started": 0,
+    "comparisons": {
+      "v1": {
+        "runs": 24,
+        "all_summary_values_identical": true
+      },
+      "v2": {
+        "runs": 18,
+        "all_summary_values_identical": true
+      },
+      "limit12": {
+        "runs": 9,
+        "all_summary_values_identical": true
+      }
+    },
+    "run_sha256": "340570e4627813e078df67087658067007f047fdc9c8d64d0a95b4c392307645",
+    "run_path": "../agentkv-runs/report-review-20261108/run.json"
+  },
+  "source_sha256": {
+    "agentkv/analysis/final_report.py": "cebfeb48f98299cc259965ddc6fa6cb655dd2eb115c2d2c6878d003a49eee33e",
+    "agentkv/analysis/publication_audit.py": "e79109ae7f77feea86bda4b0e8b5c0bd9412c3582732a94592bf754e8347f74e",
+    "tests/test_publication.py": "993c9d06b9c2e987a64291c438a4d537c4630fc9e42b7421228e61d6f1343638"
+  },
+  "headline_cells_verified": [
+    [
+      "e1-gpu-config11-20261105",
+      "online",
+      "effective_recompute",
+      "22.1853"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "online",
+      "paired_recompute_pp",
+      "1.3856"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "online",
+      "paired_ttft_p50_ms",
+      "51.8313"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "online",
+      "paired_ttft_p99_ms",
+      "124.9003"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "perfect",
+      "effective_recompute",
+      "15.4169"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "perfect",
+      "paired_recompute_pp",
+      "8.1540"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "perfect",
+      "paired_ttft_p50_ms",
+      "6.1002"
+    ],
+    [
+      "e1-gpu-config11-20261105",
+      "perfect",
+      "paired_ttft_p99_ms",
+      "172.1177"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "online",
+      "effective_recompute",
+      "22.0083"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "online",
+      "paired_recompute_pp",
+      "1.5466"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "online",
+      "paired_ttft_p50_ms",
+      "1.8990"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "online",
+      "paired_ttft_p99_ms",
+      "121.4932"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "perfect",
+      "effective_recompute",
+      "15.3649"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "perfect",
+      "paired_recompute_pp",
+      "8.1899"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "perfect",
+      "paired_ttft_p50_ms",
+      "3.1246"
+    ],
+    [
+      "e1-gpu-v2-config11-20261106",
+      "perfect",
+      "paired_ttft_p99_ms",
+      "300.0742"
+    ]
+  ],
+  "figure_dpi": 300,
+  "review_status": "Awaiting user review; repository remains private",
+  "display_links": {
+    "checked": 621,
+    "missing": []
+  },
+  "audit_files_sha256": {
+    "docs/publication_audit.json": "ba21c8bf4c2b21c435734f8ddd75138fa0edb7c2bf77062c3861770e46a236cd",
+    "docs/publication_payloads.json": "c3c17d59a865460a9be62674bb0713e7c51d8bc3c09740661840bdcbd8b6cafc"
+  }
+}

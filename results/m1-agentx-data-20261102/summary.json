@@ -1,0 +1,281 @@
+{
+  "dataset_sha256": "29b6a19e751ff5230771519aab755f80a0f43a4ba9cf96b72d3a6a437ec99276",
+  "dataset_bytes": 1847151435,
+  "root_sessions": 393,
+  "main_requests": 56798,
+  "subagent_groups": 1697,
+  "subagent_inner_requests": 42029,
+  "model_requests": 98827,
+  "explicit_containers": 2090,
+  "inferred_chains": 10130,
+  "inferred_forks": 8040,
+  "sessions_with_subagents": 175,
+  "chain_continuations": {
+    "previous_input_is_prefix": 84889,
+    "previous_input_is_not_prefix": 3808,
+    "tool_output_inclusion_not_testable": true
+  },
+  "recorded_think_time_comparison": {
+    "paired": 88697,
+    "equal_within_1ms": 65877,
+    "absolute_difference_s": {
+      "n": 88697,
+      "median": 1.4566126083082054e-12,
+      "p90": 3.6913999999999225,
+      "maximum": 262577.392,
+      "minimum": 0.0
+    }
+  },
+  "per_root_scaling": {
+    "factor_distribution": {
+      "n": 393,
+      "median": 0.14365817555177518,
+      "p90": 0.33125096872725324,
+      "maximum": 0.7381038866690882,
+      "minimum": 0.032623605353915744
+    },
+    "input_tokens": {
+      "n": 98827,
+      "median": 10616.0,
+      "p90": 27774.0,
+      "maximum": 32511.0,
+      "minimum": 5.0
+    },
+    "output_tokens": {
+      "n": 98827,
+      "median": 30.0,
+      "p90": 183.0,
+      "maximum": 18949.0,
+      "minimum": 0.0
+    },
+    "changes_cross_root_length_ratios": true
+  },
+  "coverage": {
+    "trace_keys": {
+      "id": 393,
+      "models": 393,
+      "block_size": 393,
+      "hash_id_scope": 393,
+      "requests": 393
+    },
+    "marker_keys": {
+      "t": 1697,
+      "type": 1697,
+      "agent_id": 1697,
+      "subagent_type": 1697,
+      "duration_ms": 1697,
+      "total_tokens": 1697,
+      "tool_use_count": 1697,
+      "status": 1697,
+      "requests": 1697,
+      "models": 1697
+    },
+    "marker_status": {
+      "completed": 1697
+    },
+    "marker_type": {
+      "Subagent": 1697
+    },
+    "request_keys": {
+      "t": 98827,
+      "model": 98827,
+      "in": 98827,
+      "out": 98827,
+      "hash_ids": 98827,
+      "api_time": 98827,
+      "type": 98827,
+      "ttft": 56432,
+      "think_time": 98434
+    },
+    "non_null_keys": {
+      "t": 98827,
+      "model": 98827,
+      "in": 98827,
+      "out": 98827,
+      "hash_ids": 98827,
+      "api_time": 98827,
+      "type": 98827,
+      "ttft": 56432,
+      "think_time": 98434
+    },
+    "request_type": {
+      "s": 56432,
+      "n": 42395
+    },
+    "stop": {
+      "<missing>": 98827
+    },
+    "input_type": {}
+  },
+  "quality": {
+    "input_hash_count_mismatch": 0,
+    "empty_hash_requests": 0,
+    "negative_api_time": 0,
+    "containers_not_in_timestamp_order": 0,
+    "detected_seams_merged": 3808,
+    "unclassified_empty_hash": 0
+  },
+  "statistics": {
+    "requests_per_root": {
+      "n": 393,
+      "median": 86.0,
+      "p90": 617.6,
+      "maximum": 4114.0,
+      "minimum": 20.0
+    },
+    "top_level_requests_per_root": {
+      "n": 393,
+      "median": 65.0,
+      "p90": 330.20000000000005,
+      "maximum": 2977.0,
+      "minimum": 2.0
+    },
+    "requests_per_inferred_chain": {
+      "n": 10130,
+      "median": 1.0,
+      "p90": 22.0,
+      "maximum": 851.0,
+      "minimum": 1.0
+    },
+    "subagents_per_root": {
+      "n": 393,
+      "median": 0.0,
+      "p90": 8.0,
+      "maximum": 153.0,
+      "minimum": 0.0
+    },
+    "input_tokens": {
+      "n": 98827,
+      "median": 142016.0,
+      "p90": 549504.0,
+      "maximum": 989824.0,
+      "minimum": 128.0
+    },
+    "output_tokens": {
+      "n": 98827,
+      "median": 444.0,
+      "p90": 2659.0,
+      "maximum": 59903.0,
+      "minimum": 0.0
+    },
+    "context_tokens": {
+      "n": 98827,
+      "median": 143030.0,
+      "p90": 551498.8,
+      "maximum": 996579.0,
+      "minimum": 144.0
+    },
+    "api_time_s": {
+      "n": 98827,
+      "median": 6.652,
+      "p90": 26.319,
+      "maximum": 720.213,
+      "minimum": 0.656
+    },
+    "inferred_chain_idle_s": {
+      "n": 88697,
+      "median": 3.7329999999997816,
+      "p90": 67.63399999999928,
+      "maximum": 355531.762,
+      "minimum": 0.003999999999983572
+    },
+    "raw_container_adjacent_idle_s": {
+      "n": 96737,
+      "median": 2.948000000000233,
+      "p90": 48.651000000000444,
+      "maximum": 491921.51200000005,
+      "minimum": -384.36599999999595
+    },
+    "recorded_think_time_s": {
+      "n": 98434,
+      "median": 2.2840000000001055,
+      "p90": 37.55020000000748,
+      "maximum": 491921.512,
+      "minimum": 0.0
+    },
+    "confirmed_tool_idle_s": {
+      "n": 0,
+      "median": null,
+      "p90": null,
+      "maximum": null,
+      "minimum": null
+    },
+    "previous_chain_lcp_tokens": {
+      "n": 88697,
+      "median": 158144.0,
+      "p90": 567488.0,
+      "maximum": 988288.0,
+      "minimum": 64.0
+    },
+    "scaled_input_tokens": {
+      "n": 98827,
+      "median": 4633.0,
+      "p90": 17926.0,
+      "maximum": 32291.0,
+      "minimum": 4.0
+    },
+    "scaled_output_tokens": {
+      "n": 98827,
+      "median": 15.0,
+      "p90": 87.0,
+      "maximum": 1955.0,
+      "minimum": 0.0
+    }
+  },
+  "gaps": {
+    "total_inferred_pairs": 88697,
+    "valid_nonnegative": 88697,
+    "negative": 0,
+    "missing_duration": 0,
+    "raw_container_pairs": 96737,
+    "raw_negative": 6409,
+    "confirmed_tool_pairs": 0
+  },
+  "scaling": {
+    "context_limit": 32768,
+    "reserve": 256,
+    "alpha": 0.032623605353915744,
+    "original_peak_context": 996579,
+    "scaled_peak_context": 32512,
+    "source_hash_block_tokens": 64,
+    "minimum_scaled_block_width": 2,
+    "target_kv_block_tokens": 16,
+    "logical_turns_and_branches_dropped": 0,
+    "positive_shared_pairs": 88697,
+    "positive_shared_pairs_lost_at_gpu_block_boundary": 20,
+    "positive_shared_forks": 692,
+    "positive_shared_forks_lost_at_gpu_block_boundary": 30
+  },
+  "upstream_helper_adaptation": {
+    "models_removed_imports": [
+      "aiperf.common.models"
+    ],
+    "detector_removed_imports": [
+      "aiperf.dataset.loader.weka_trace_models"
+    ],
+    "source_semantics": "Unmodified helper bodies; replace only AIPerf base-class/type imports with injected data types."
+  },
+  "figures": [
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_corpus_counts.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_corpus_counts.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_corpus_counts.pdf",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_turns_per_session.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_turns_per_session.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_turns_per_session.pdf",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_input_tokens.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_input_tokens.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_input_tokens.pdf",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_output_tokens.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_output_tokens.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_output_tokens.pdf",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_idle_gaps.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_idle_gaps.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_idle_gaps.pdf",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_subagents_per_session.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_subagents_per_session.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_subagents_per_session.pdf",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_prefix_fraction.png",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_prefix_fraction.svg",
+    "/home/llb/my_soft/agentkv/docs/figures/m1_agentx_prefix_fraction.pdf"
+  ]
+}

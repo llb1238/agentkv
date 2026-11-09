@@ -1,0 +1,8 @@
+{
+  "git_commit": "14fecfaefffc421f84e63cf8bfdddc56f6587663",
+  "command": "python -m pytest -q",
+  "passed": 142,
+  "duration_s": 14.17,
+  "log": "tests.log",
+  "scope": "full repository test suite; no GPU used"
+}

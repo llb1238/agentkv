@@ -1,0 +1,30 @@
+{
+  "online": {
+    "intervals": 26538,
+    "positive_actual_intervals": 26538,
+    "zero_actual_intervals": 0,
+    "zero_actual_predicted_zero": 0,
+    "quantiles": {
+      "p10": 0.3434583445696831,
+      "p50": 1.0817681977159157,
+      "p90": 8.310447132847779,
+      "p99": 35.112833240951105
+    },
+    "within_half_double_count": 15275,
+    "within_half_double_fraction": 0.5755897204009345
+  },
+  "noisy": {
+    "intervals": 26538,
+    "positive_actual_intervals": 26538,
+    "zero_actual_intervals": 0,
+    "zero_actual_predicted_zero": 0,
+    "quantiles": {
+      "p10": 0.5746390138915054,
+      "p50": 1.0080257677496782,
+      "p90": 1.7467421964618122,
+      "p99": 1.97263637169243
+    },
+    "within_half_double_count": 26538,
+    "within_half_double_fraction": 1.0
+  }
+}

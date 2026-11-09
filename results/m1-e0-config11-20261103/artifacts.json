@@ -1,0 +1,1421 @@
+{
+  "git_commit": "fd60b42044fabfad6fa954e7de3f6779834daf31",
+  "files": {
+    "README.md": {
+      "bytes": 7580,
+      "sha256": "30f222f8467115482c3ba577dd17b46c201906545a6467e8e145b010c808513d"
+    },
+    "availability-initial/README.md": {
+      "bytes": 485,
+      "sha256": "c9fa5bf1d22a776c0f9c48c4e5c16e05adf3de4772b70be7f3c26eae151d04f0"
+    },
+    "availability-initial/gpu-check.json": {
+      "bytes": 257,
+      "sha256": "5a777dc4db6dcb662f91c00c6e6bf14c1e3c1de311384b1d28dbcec023253276"
+    },
+    "availability-initial/gpu0-pmon.log": {
+      "bytes": 12309,
+      "sha256": "e1fb63ad43ae8c47a9067fcff921890fc1069dec0582bc5ff7e4f7edb0772d34"
+    },
+    "batch-process.json": {
+      "bytes": 70,
+      "sha256": "fb30be1fcf795dfd875704e5285d6f52250eca1be670ed4b4f0d8eeddd374fe9"
+    },
+    "batch.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "criteria.csv": {
+      "bytes": 1420,
+      "sha256": "2f6fce6935a1e2129d3ab83ac70c045a1f7e8574fa3c54b5f1c0ea8da46334ed"
+    },
+    "lambda-0.5-seed-0/gpu-check/before.json": {
+      "bytes": 571,
+      "sha256": "c37310812f313bbeea4ab37605b5a0551d71eec28c546cd2910627b066944b83"
+    },
+    "lambda-0.5-seed-0/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-0.5-seed-0/models/lru/recomputation.parquet": {
+      "bytes": 72687,
+      "sha256": "372d425a9340acb47be183f3dbd816a2db52a48614c9cb19a5fc7a71ae4dceab"
+    },
+    "lambda-0.5-seed-0/models/lru/requests.parquet": {
+      "bytes": 233271,
+      "sha256": "31bcab54007ee69aeb04b0d81ceb5fe16ef76f581639998731bfbb33570d8deb"
+    },
+    "lambda-0.5-seed-0/models/lru/run.json": {
+      "bytes": 11169,
+      "sha256": "410196ff3be972586530cf402b10a50ad6c2b975dc0e2cb34ffe1fa54b5e9169"
+    },
+    "lambda-0.5-seed-0/models/oracle/recomputation.parquet": {
+      "bytes": 72131,
+      "sha256": "c70ac4dc69a9e0c9882c3c09434f1d895c85fc5eedbe263d7138e64379fc9572"
+    },
+    "lambda-0.5-seed-0/models/oracle/requests.parquet": {
+      "bytes": 233455,
+      "sha256": "e0d7a85e32ce7385adde5bc3aef8da60952e365d48d056f6b8f356a0d3eab79e"
+    },
+    "lambda-0.5-seed-0/models/oracle/run.json": {
+      "bytes": 11170,
+      "sha256": "834310bc205fd71f677db8506a8b8d384cf8f9cdedf3824cf14ac20c5964c93a"
+    },
+    "lambda-0.5-seed-0/real/analysis.json": {
+      "bytes": 9215,
+      "sha256": "f463f82b1f82c12e8b1f311cc5bdad474b881492fa1a71b1140a4d4e17a40cf0"
+    },
+    "lambda-0.5-seed-0/real/analysis.log": {
+      "bytes": 4879,
+      "sha256": "7adca5347289f1b6ed50228f30592348a7e0ec98d3e9322be4c3d32f238e4cb0"
+    },
+    "lambda-0.5-seed-0/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "2c23096af09779b897bfc19e57ecfd358f5cc20c8bbe0901572fc636bf55c39a"
+    },
+    "lambda-0.5-seed-0/real/client.log": {
+      "bytes": 1942,
+      "sha256": "63aa120a2ecd8ecb7328ea4aafdf2dd441ae370142f0b47f472b2a98f83c97d0"
+    },
+    "lambda-0.5-seed-0/real/dmon.log": {
+      "bytes": 660480,
+      "sha256": "4b3881ddab97196146cd1a425e77406944bec9a6007041fd5806cc290ce1a415"
+    },
+    "lambda-0.5-seed-0/real/e0-analysis.json": {
+      "bytes": 4146,
+      "sha256": "c7b10eedf01d4585999b17125d8f24bc0841acc907a564ccb304c91f8cf0fa11"
+    },
+    "lambda-0.5-seed-0/real/loop_lag.parquet": {
+      "bytes": 6728980,
+      "sha256": "6e9dbc857d3f33dc7a87ab8aff4b50af60f0dded588175a6b075c90f0433c123"
+    },
+    "lambda-0.5-seed-0/real/metrics.jsonl": {
+      "bytes": 617757,
+      "sha256": "fc1940e0bd63eb45520b3f70413773429bedff083775653b7d75daff2af7531e"
+    },
+    "lambda-0.5-seed-0/real/per_request_nominal.csv": {
+      "bytes": 1000159,
+      "sha256": "8104013aa51a914b674dfbd004c015acc2868c8d1b27702a837e5a0a69964392"
+    },
+    "lambda-0.5-seed-0/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "a9ca3be04e47be7fff27c332a654d066dd96b0cd7cee249e2491dc624b48528e"
+    },
+    "lambda-0.5-seed-0/real/recomputation.parquet": {
+      "bytes": 160386,
+      "sha256": "776cc0d85cc8850cfaf99d50d7d4feea4f10f7635d9579a3bea07da788c875e8"
+    },
+    "lambda-0.5-seed-0/real/requests-metadata.parquet": {
+      "bytes": 1557050,
+      "sha256": "17eb313e5d2e5c447ad405b8fda64d9fd161df88301daafb104f3bd8062f1097"
+    },
+    "lambda-0.5-seed-0/real/requests.parquet": {
+      "bytes": 94094213,
+      "sha256": "e1681a68018a7b473704e0336e06151c3a7325968e4e86e16cabbf38d38e4f35"
+    },
+    "lambda-0.5-seed-0/real/run.json": {
+      "bytes": 17245,
+      "sha256": "ba63e16a67178aa9d17cb4c4fcd830e3f67c2d23dc6b496065e2225fc823966c"
+    },
+    "lambda-0.5-seed-0/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "9d31f9c63f5f4541193b65a5106cfd4b4a946ba97f0e11e280b06baff8eb3e5c"
+    },
+    "lambda-0.5-seed-0/real/server-observations/requests-2835578.jsonl": {
+      "bytes": 70,
+      "sha256": "35f3b470ad2a20ecaa1d827eecce16fb6b031b3b33901cc23332553e22b62809"
+    },
+    "lambda-0.5-seed-0/real/server-observations/requests-2836108.jsonl": {
+      "bytes": 3922042,
+      "sha256": "07d0c5236f9915721ac4c316e87190853fe4f2ecf705d7356a161084a4b6bd86"
+    },
+    "lambda-0.5-seed-0/real/server.log": {
+      "bytes": 742154,
+      "sha256": "b694ac520cec28359cb675439a5ca7628177fec732c33ebf9bc9f112af4108ec"
+    },
+    "lambda-0.5-seed-0/real/server_queue.pdf": {
+      "bytes": 23427,
+      "sha256": "568a9ff32b5919fe818cd4bb033133f65d248c6ec1f796098ed128e68fd532ab"
+    },
+    "lambda-0.5-seed-0/real/server_queue.png": {
+      "bytes": 166583,
+      "sha256": "fe59006002cd1770b61c236d615010c59475daf1dff2c8586e013d8f459e8d93"
+    },
+    "lambda-0.5-seed-1/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "7f13f9fb6506ab2bce6cbc3f6eef9ab42744623f40212a9c85e7ad45fd0d5ee1"
+    },
+    "lambda-0.5-seed-1/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-0.5-seed-1/models/lru/recomputation.parquet": {
+      "bytes": 70510,
+      "sha256": "ac36afdad29e5a5c4259e2aec81c5dbf28649da9cbd1cc1103e6cf4b0cfb720e"
+    },
+    "lambda-0.5-seed-1/models/lru/requests.parquet": {
+      "bytes": 220307,
+      "sha256": "a2d4124062b3584a46133ec195ce8e6b0913255d223dc26b3893d84503e068e6"
+    },
+    "lambda-0.5-seed-1/models/lru/run.json": {
+      "bytes": 8907,
+      "sha256": "8863de2f122cadec97c07a684be805f954d0404b1e464d199e6cd745fd23da70"
+    },
+    "lambda-0.5-seed-1/models/oracle/recomputation.parquet": {
+      "bytes": 69874,
+      "sha256": "f8c876064c6fd71d02738b9343ad19119ab7564ee7181cab4a7e17611794539f"
+    },
+    "lambda-0.5-seed-1/models/oracle/requests.parquet": {
+      "bytes": 221143,
+      "sha256": "0d07fd39d1f4db5383a12e480977632f938540730d3e1452b154556fdfbc62db"
+    },
+    "lambda-0.5-seed-1/models/oracle/run.json": {
+      "bytes": 8906,
+      "sha256": "d0922d705a9f9b3eb8112215b2f5b90b351b734b512bbfaac3574b4c7fe3fe70"
+    },
+    "lambda-0.5-seed-1/real/analysis.json": {
+      "bytes": 9276,
+      "sha256": "b513eff18a795c3da50211ee272cfb00f1803b82334fb246e931a18792567c77"
+    },
+    "lambda-0.5-seed-1/real/analysis.log": {
+      "bytes": 4941,
+      "sha256": "fc84263ae6e05ac1866eb6f3201fe4ff1df8a70ac362dad3d859c4c6e70282ec"
+    },
+    "lambda-0.5-seed-1/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "93141d4144d65ff7e93242745032701a7a357d1bee1bcd3772421634607b557b"
+    },
+    "lambda-0.5-seed-1/real/client.log": {
+      "bytes": 1981,
+      "sha256": "e4db89006af9f12dda665d3e48de03407298e74b28c14db5965e95d4e64e48c0"
+    },
+    "lambda-0.5-seed-1/real/dmon.log": {
+      "bytes": 659448,
+      "sha256": "8d0936a3fc914e53bf40e4f8cc862247dffc21b72f12e1e132fe0ba5cc2011e9"
+    },
+    "lambda-0.5-seed-1/real/e0-analysis.json": {
+      "bytes": 4173,
+      "sha256": "c445978295e994786faf7ab6f77677881eb1dfbe192faca251b9a71216074f98"
+    },
+    "lambda-0.5-seed-1/real/loop_lag.parquet": {
+      "bytes": 6734355,
+      "sha256": "bedf56a9e8776122cebf60f6c206ca7168eda7781b922828f0e43bee5debda13"
+    },
+    "lambda-0.5-seed-1/real/metrics.jsonl": {
+      "bytes": 616666,
+      "sha256": "96a5b99353c519b0a9cf240fd9e06cda6a52428a16513764df67740c3fe3b921"
+    },
+    "lambda-0.5-seed-1/real/per_request_nominal.csv": {
+      "bytes": 980545,
+      "sha256": "5853bff328a942599b3fe586caddd37a7cf8b09b6521b0bdcde91264b445b6fb"
+    },
+    "lambda-0.5-seed-1/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "49c494422d2cc726c90306e4c31c51e0dae20ecfbfdb8473e972f89e26e023eb"
+    },
+    "lambda-0.5-seed-1/real/recomputation.parquet": {
+      "bytes": 160548,
+      "sha256": "cbad73ea5d73a52c21daeff296cfbf4b465821338d2a7eb3d860c8fe6ff4cbcf"
+    },
+    "lambda-0.5-seed-1/real/requests-metadata.parquet": {
+      "bytes": 1521398,
+      "sha256": "375c9875aba4e792a693aa0c4305b38ab375380f0260f61b0dbe778c16a531c6"
+    },
+    "lambda-0.5-seed-1/real/requests.parquet": {
+      "bytes": 85546629,
+      "sha256": "7d601d8472b3caecb129f18b740b268162d072e3ebdba98b13b3f1b0651e7afc"
+    },
+    "lambda-0.5-seed-1/real/run.json": {
+      "bytes": 15021,
+      "sha256": "fe413f15afbe51a64f3f2f8697cea145e50929405fb1f2ede8597595660e0c8b"
+    },
+    "lambda-0.5-seed-1/real/server-manifest.json": {
+      "bytes": 3895,
+      "sha256": "ec9071528fcdcaf03fcebff941f083a6d5fdb637939eb819f8b60f23d0cf58f3"
+    },
+    "lambda-0.5-seed-1/real/server-observations/requests-2971387.jsonl": {
+      "bytes": 70,
+      "sha256": "3882a56f303eefb41b515d45143d9b1209adb5763a3781e8e372e90a1d4fdc89"
+    },
+    "lambda-0.5-seed-1/real/server-observations/requests-2971866.jsonl": {
+      "bytes": 3813357,
+      "sha256": "58d336c4701cf36f505877b137e90d4ced9787cc42e31a0c23a0ad5b0b5a2e73"
+    },
+    "lambda-0.5-seed-1/real/server.log": {
+      "bytes": 734171,
+      "sha256": "69514eefd641b8eb3b5491719b42e28f44fcda143dd1a16cefc1fce73596bd39"
+    },
+    "lambda-0.5-seed-1/real/server_queue.pdf": {
+      "bytes": 22593,
+      "sha256": "c64ed6491b5fa0e1f12f7c9c8a3dc22eac4a089bf126ecaa60a0b4dd189ba4f4"
+    },
+    "lambda-0.5-seed-1/real/server_queue.png": {
+      "bytes": 176462,
+      "sha256": "9ef4039b8a2b4b190c9f9cbf9fbdd8c7640ef7fd1839cf51e7f67d21ca537d79"
+    },
+    "lambda-0.5-seed-2/gpu-check/before.json": {
+      "bytes": 571,
+      "sha256": "47a8035aa8a6ad42030efd02e1d842306260779eff91374b1344462bb144bc00"
+    },
+    "lambda-0.5-seed-2/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-0.5-seed-2/models/lru/recomputation.parquet": {
+      "bytes": 92912,
+      "sha256": "c0a0201265dae9411717df2e82d4618df53f8d74d21a1dc096eb6442e58480f7"
+    },
+    "lambda-0.5-seed-2/models/lru/requests.parquet": {
+      "bytes": 277875,
+      "sha256": "ecd857b7ba85bda0f39770caf300253ca76ed34e9d63167a62815508acf1bfe4"
+    },
+    "lambda-0.5-seed-2/models/lru/run.json": {
+      "bytes": 11508,
+      "sha256": "ce1d56478523cbf2c834ec3dcb8896ce8ee0bb9dbafe93b5fd0bdea3df5ab6af"
+    },
+    "lambda-0.5-seed-2/models/oracle/recomputation.parquet": {
+      "bytes": 92439,
+      "sha256": "2ba87332cdd1c49c1fd2cb93ba4188151b561c1b28a77c3ad608764369f0fef0"
+    },
+    "lambda-0.5-seed-2/models/oracle/requests.parquet": {
+      "bytes": 278262,
+      "sha256": "04a61197930d326dc55a0277e9d4d93ff6099eeb3387f1e04216064b00009aff"
+    },
+    "lambda-0.5-seed-2/models/oracle/run.json": {
+      "bytes": 11513,
+      "sha256": "8875f5284f1d508dedf5cd794b0e9eb757d4246a508419f5c4d7c15aa07e7713"
+    },
+    "lambda-0.5-seed-2/real/analysis.json": {
+      "bytes": 9242,
+      "sha256": "165cd46a35fdee4a7943815a83b313de73254c41508c44f33ca4c0b9a4e5846a"
+    },
+    "lambda-0.5-seed-2/real/analysis.log": {
+      "bytes": 4907,
+      "sha256": "2afb27ab8dbe9bdf84a811579e46562b7fe059df644fc58e4c15dbce8d090407"
+    },
+    "lambda-0.5-seed-2/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "e11d129fdd71720acd5cf39b6a5e23be1f22165e77fe49d4850433dc3bf40385"
+    },
+    "lambda-0.5-seed-2/real/client.log": {
+      "bytes": 1965,
+      "sha256": "30481afb0ad4e2695a29c9e6efdac89e1e36bc76f8aaeb1c74c80d5779207fdd"
+    },
+    "lambda-0.5-seed-2/real/dmon.log": {
+      "bytes": 660996,
+      "sha256": "b46e5b7d9117d88a3fb60afca645f9ece871713a784cb3b3c662b638667b9a9d"
+    },
+    "lambda-0.5-seed-2/real/e0-analysis.json": {
+      "bytes": 4158,
+      "sha256": "c2526ab204263a245f69cb1dccf401b15972c199c5326883ae18c4d5edf50b6a"
+    },
+    "lambda-0.5-seed-2/real/loop_lag.parquet": {
+      "bytes": 6728932,
+      "sha256": "9150219466e89543096937b5b6454fe953982aa29a1ced634d9e12674b65a956"
+    },
+    "lambda-0.5-seed-2/real/metrics.jsonl": {
+      "bytes": 619230,
+      "sha256": "9484cf61076a530af755854fa6e7297d1e1ad62cf160b368c1cfca0e33b33089"
+    },
+    "lambda-0.5-seed-2/real/per_request_nominal.csv": {
+      "bytes": 1217836,
+      "sha256": "20801d9040e00c28f26d17c6c27a59ce67accbc65aee0ffea2bebfe9034828a9"
+    },
+    "lambda-0.5-seed-2/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "33b4743a05f1d2cbf000e176964baf8b768a4c85429ee572470e9bcf719bdd30"
+    },
+    "lambda-0.5-seed-2/real/recomputation.parquet": {
+      "bytes": 220846,
+      "sha256": "ef876263dc0ba2c7bce9b347cf3aa81e935a0400c77f1ce44e71d851bc236f6c"
+    },
+    "lambda-0.5-seed-2/real/requests-metadata.parquet": {
+      "bytes": 1869294,
+      "sha256": "89c0090050d03c70cd40dd254772b4ca8b611c8ab185a40a6a082f2828f51f6a"
+    },
+    "lambda-0.5-seed-2/real/requests.parquet": {
+      "bytes": 98838534,
+      "sha256": "028d5702aab48ca5e8f61932745c06d06076a693a615c28791aab85aa04d6d38"
+    },
+    "lambda-0.5-seed-2/real/run.json": {
+      "bytes": 17607,
+      "sha256": "e517f48ca366d2b5619d9b904bc588d5149ed089d00ec4966ed9e0cbc4a3b9c4"
+    },
+    "lambda-0.5-seed-2/real/server-manifest.json": {
+      "bytes": 3895,
+      "sha256": "de970744de6ff5aaabca60c5f56bdae8d8db5bee94f4a36cc2070c8372fdf2c1"
+    },
+    "lambda-0.5-seed-2/real/server-observations/requests-3126829.jsonl": {
+      "bytes": 70,
+      "sha256": "1f5ae07b9812d32c1f72cf9a4f2557dfb73f8dfa17303024e135a75a5ed3dad8"
+    },
+    "lambda-0.5-seed-2/real/server-observations/requests-3127518.jsonl": {
+      "bytes": 4801093,
+      "sha256": "0ed7ce6bdba0f042fa77c60d55f03c9a7b52c21d298904f1dc1807cc5b1d5a3e"
+    },
+    "lambda-0.5-seed-2/real/server.log": {
+      "bytes": 830481,
+      "sha256": "a18d613137ef384ae13157d99a693e058e370d92427b152b31a55b876af6ab3a"
+    },
+    "lambda-0.5-seed-2/real/server_queue.pdf": {
+      "bytes": 24160,
+      "sha256": "9472ed2ace2eee5ea80eb72c44e649185ce8bf46c2988032ce03b32228084c95"
+    },
+    "lambda-0.5-seed-2/real/server_queue.png": {
+      "bytes": 177600,
+      "sha256": "96359c09cf51c25f6fabda960d1c4a1562743d40a7a5a652c18ebc138e8e26f6"
+    },
+    "lambda-0.7-seed-0/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "fabdb2d6f437929c31d9edfd61bf622a449575a6ef0245985248ab9a03a1e49f"
+    },
+    "lambda-0.7-seed-0/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-0.7-seed-0/models/lru/recomputation.parquet": {
+      "bytes": 155021,
+      "sha256": "a60cefc384289f205777fc2fb38b48f8127407f6f8c304dfda879f6e47489e91"
+    },
+    "lambda-0.7-seed-0/models/lru/requests.parquet": {
+      "bytes": 433407,
+      "sha256": "fe72e15bf8422776982e3b53c1720031c915e8210e1ec7663602abff935605d0"
+    },
+    "lambda-0.7-seed-0/models/lru/run.json": {
+      "bytes": 16752,
+      "sha256": "f58391c2f9f7098bdaf7c0fa9990b14887049a485a2f237152865921dfefa73b"
+    },
+    "lambda-0.7-seed-0/models/oracle/recomputation.parquet": {
+      "bytes": 153956,
+      "sha256": "d8e5887c871156a0a73807df974edc38fb5b80c36b88ec157d54912dadae9990"
+    },
+    "lambda-0.7-seed-0/models/oracle/requests.parquet": {
+      "bytes": 434306,
+      "sha256": "c20f09353b8c641b2b84107e8ce699fb093a6ac3f27a8ad45430411836454e5b"
+    },
+    "lambda-0.7-seed-0/models/oracle/run.json": {
+      "bytes": 16756,
+      "sha256": "3fc50bc03a898e48dcdc6a4ad505627faba3d318d7188171b9dc7eff649cf8db"
+    },
+    "lambda-0.7-seed-0/real/analysis.json": {
+      "bytes": 9263,
+      "sha256": "a7ae169e166eb39acf9dc8e299fdc24615399e13a7e5e4ad73d6c0167502b8d7"
+    },
+    "lambda-0.7-seed-0/real/analysis.log": {
+      "bytes": 4927,
+      "sha256": "89ea33ec830beb7968edb3fa6fe414c6d4457dcd03f8e75dfe22c593d2e78377"
+    },
+    "lambda-0.7-seed-0/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "8a525e6ba736a8cc1239217e2ca85b50164cfdb304b980905e9733a60b5cd2ac"
+    },
+    "lambda-0.7-seed-0/real/client.log": {
+      "bytes": 1967,
+      "sha256": "2bcceb56e0d136b9dbd111248c8cb5d88ad94e6832dc32255e43526093744699"
+    },
+    "lambda-0.7-seed-0/real/dmon.log": {
+      "bytes": 662802,
+      "sha256": "3714618123f697f0a84ea7464153511eec99bcc036e886b4ec91ce6c85ff368c"
+    },
+    "lambda-0.7-seed-0/real/e0-analysis.json": {
+      "bytes": 4172,
+      "sha256": "577bc79667a1fe0877c9c91535258c5efc8119631a0e669e702e203fcae25989"
+    },
+    "lambda-0.7-seed-0/real/loop_lag.parquet": {
+      "bytes": 6729895,
+      "sha256": "e9e4f64b6db2eff89e060b33507c0675f1cc3f84a96d261e22fafa1536723b97"
+    },
+    "lambda-0.7-seed-0/real/metrics.jsonl": {
+      "bytes": 622540,
+      "sha256": "54cd7fdbc4d3266ce7d51e826cbf96a641599ffadcd273cc75a25d6e8c587406"
+    },
+    "lambda-0.7-seed-0/real/per_request_nominal.csv": {
+      "bytes": 1909037,
+      "sha256": "95fd609b17d20a408bc9db5643134036195a6f6e9c33e280f834d7de839414b3"
+    },
+    "lambda-0.7-seed-0/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "cbfebd236c9fe6e7c5dec2ef4ccecb67b5a054cf9429824a6f0933e4f05ab177"
+    },
+    "lambda-0.7-seed-0/real/recomputation.parquet": {
+      "bytes": 353655,
+      "sha256": "95af9b950c457b1e87694eb2d0f2d03125b348b352a01a75162fdc1b1a91ce4b"
+    },
+    "lambda-0.7-seed-0/real/requests-metadata.parquet": {
+      "bytes": 2981001,
+      "sha256": "cb3a27be779d4123690d75f1b6c3923acecdc65eb54c0c7400d77c69c0cabce7"
+    },
+    "lambda-0.7-seed-0/real/requests.parquet": {
+      "bytes": 157961574,
+      "sha256": "71aa001d89a1fe481645671a1d58428dd14cfbe6c465fd5db2ca00bb2d5f6b8b"
+    },
+    "lambda-0.7-seed-0/real/run.json": {
+      "bytes": 22832,
+      "sha256": "71fdf51b7bfd49c1c70c7df81aac88a5a64bb41c8e3a5749ef21e1330f0060a7"
+    },
+    "lambda-0.7-seed-0/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "2f44f61af9d79ef0e8be4f40c6e2596fccc6182e2876fce4c8f3a830de7802ee"
+    },
+    "lambda-0.7-seed-0/real/server-observations/requests-3281246.jsonl": {
+      "bytes": 70,
+      "sha256": "9173f60462abcd630bf14ae676182afcd38895edfc79b6bc28a954ea93ce64b0"
+    },
+    "lambda-0.7-seed-0/real/server-observations/requests-3281940.jsonl": {
+      "bytes": 7443920,
+      "sha256": "d4efd7a6655b1044987f013935c086faee3a1cfb1279cd1bf6b57c1cda6debcc"
+    },
+    "lambda-0.7-seed-0/real/server.log": {
+      "bytes": 1072335,
+      "sha256": "1f21ac7e761789cf3cbc5b7b7219757153bde75e944e69486b195ac497660a78"
+    },
+    "lambda-0.7-seed-0/real/server_queue.pdf": {
+      "bytes": 25672,
+      "sha256": "4f0f8169e2be2efcdf474c41df75fa13fab7b720cf312ce1cd0186e2efdf24ee"
+    },
+    "lambda-0.7-seed-0/real/server_queue.png": {
+      "bytes": 207883,
+      "sha256": "71c9b1dc6fbb25b64452cef68e73d179fe8af1a064ddd97520764e36498bc1e4"
+    },
+    "lambda-0.7-seed-1/gpu-check/before.json": {
+      "bytes": 571,
+      "sha256": "fa55f71b34e01f0919e441397aa653d13af5f4f8f3a77fad81bc3474d164151e"
+    },
+    "lambda-0.7-seed-1/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-0.7-seed-1/models/lru/recomputation.parquet": {
+      "bytes": 130791,
+      "sha256": "1f97c33dd653a9f125320e0836375fbee01d20a8f4247a257dd50485b3be4735"
+    },
+    "lambda-0.7-seed-1/models/lru/requests.parquet": {
+      "bytes": 402701,
+      "sha256": "c11d5cfb118a49c5c0145bd0fee167759292693a1bc1419ad9725dc93a30a4b8"
+    },
+    "lambda-0.7-seed-1/models/lru/run.json": {
+      "bytes": 14846,
+      "sha256": "d45f0a63afcc06ba86a4b12bee47a998c0562a58aee92cfdb4a5709f4e7d9f1c"
+    },
+    "lambda-0.7-seed-1/models/oracle/recomputation.parquet": {
+      "bytes": 129628,
+      "sha256": "3315c48b2719fee514dcd8bb8a3e63b84e0b08c358e1318ccb789d1987750d24"
+    },
+    "lambda-0.7-seed-1/models/oracle/requests.parquet": {
+      "bytes": 403395,
+      "sha256": "0c8488fbe2514b591d3a6df3140443d69eb945a5b8a1671ab1c368c990163b3b"
+    },
+    "lambda-0.7-seed-1/models/oracle/run.json": {
+      "bytes": 14850,
+      "sha256": "7f3ea95a6efa295b3f7b1a718decac5da873393d0a96306057cffbc583ea29dc"
+    },
+    "lambda-0.7-seed-1/real/analysis.json": {
+      "bytes": 9271,
+      "sha256": "8c796ba0937853e7affe5199c6a1db627ca15d35f24c3765c31242859a74292e"
+    },
+    "lambda-0.7-seed-1/real/analysis.log": {
+      "bytes": 4935,
+      "sha256": "17a2313286d1f1d00f869e771fa338fd0a511f8a101f993868392f6f43625965"
+    },
+    "lambda-0.7-seed-1/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "9790bb77ae9995fcd1b1a46c064639eae1fcdf1c53a20e347d84c8b085540747"
+    },
+    "lambda-0.7-seed-1/real/client.log": {
+      "bytes": 1976,
+      "sha256": "6fc4ae5bbc854b7c028f9149963340ffaeed81303e9269cbb4d51319237b433f"
+    },
+    "lambda-0.7-seed-1/real/dmon.log": {
+      "bytes": 662286,
+      "sha256": "fc363eb61b844f0e71a96587ef3d3f4d2050e2918e432d4742a33cb56161c6e8"
+    },
+    "lambda-0.7-seed-1/real/e0-analysis.json": {
+      "bytes": 4170,
+      "sha256": "3a324cbf84c5e95806e24ce8d1223ff931921dfe160dcd73b80328dad456bfea"
+    },
+    "lambda-0.7-seed-1/real/loop_lag.parquet": {
+      "bytes": 6729782,
+      "sha256": "4f89605754e9ba754cf725c7260e2829d772da9a524660704e32e6617d0ffaf6"
+    },
+    "lambda-0.7-seed-1/real/metrics.jsonl": {
+      "bytes": 623280,
+      "sha256": "187425af0cda14b6fec35ce47e6d8f4efc1f7cb517f2be1374fb2e86ec945459"
+    },
+    "lambda-0.7-seed-1/real/per_request_nominal.csv": {
+      "bytes": 1751460,
+      "sha256": "8a9b28f345d2b254ec185c9873fd518cb156a5fa538120501cb338f587bdd68a"
+    },
+    "lambda-0.7-seed-1/real/pilot-status.json": {
+      "bytes": 322,
+      "sha256": "194191012f0d1c1ba8e146cf65f62522952e5278e2b565e6246382b7ac091904"
+    },
+    "lambda-0.7-seed-1/real/recomputation.parquet": {
+      "bytes": 302679,
+      "sha256": "e2dca9cf2a451425849d535bade2c8183ed4e71df4e1284d618169160f121b9b"
+    },
+    "lambda-0.7-seed-1/real/requests-metadata.parquet": {
+      "bytes": 2709460,
+      "sha256": "c5e0e752c6a22a84b72c52b4e80434b74e999394d4c4d203b3a7535b2be41c61"
+    },
+    "lambda-0.7-seed-1/real/requests.parquet": {
+      "bytes": 156888638,
+      "sha256": "dfbcacae0fcd0de4ca27e527fbfc049dae6924b3eb01ce28f8da91921e6472a2"
+    },
+    "lambda-0.7-seed-1/real/run.json": {
+      "bytes": 20938,
+      "sha256": "304202bdeee78464bcf69533731d5b7d3f5d7df4a79b0c56897da79dac91924f"
+    },
+    "lambda-0.7-seed-1/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "5e1292eea9cd58042da4cf61fe2df9df8ea07a01fdbf95e77f2a4c11e8f23862"
+    },
+    "lambda-0.7-seed-1/real/server-observations/requests-814880.jsonl": {
+      "bytes": 69,
+      "sha256": "0e5a8315a77683cceb73dec21e28b48a760a388d30a628ca6f4a753e9aa851b6"
+    },
+    "lambda-0.7-seed-1/real/server-observations/requests-815427.jsonl": {
+      "bytes": 6880951,
+      "sha256": "53cae39529dadb598458995d640f62c071d358e6cb58da410a5104c22c626286"
+    },
+    "lambda-0.7-seed-1/real/server.log": {
+      "bytes": 1014530,
+      "sha256": "c0d86d8f75c4472f7452348bd517c77febeda8187a9962aecef63e6757ff3eb7"
+    },
+    "lambda-0.7-seed-1/real/server_queue.pdf": {
+      "bytes": 25697,
+      "sha256": "cdbf49c3eff6d05aefdc87dc701f33cf9ad134c4dcaf2fafbb72e85a14cbb313"
+    },
+    "lambda-0.7-seed-1/real/server_queue.png": {
+      "bytes": 204336,
+      "sha256": "f8a0d29fef03b02c1b2432716e977ae37e7a7455e4aa65e295407bc5bd3ba837"
+    },
+    "lambda-0.7-seed-2/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "44811a01a729fccc731d92bebba108d5f58f3d91c8541dbce64fdab9017bfdf3"
+    },
+    "lambda-0.7-seed-2/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-0.7-seed-2/models/lru/recomputation.parquet": {
+      "bytes": 107243,
+      "sha256": "f05e4b3608afae27b6d4e2a0e4717153e229521684f562cdf2f46a5ff12d104c"
+    },
+    "lambda-0.7-seed-2/models/lru/requests.parquet": {
+      "bytes": 307643,
+      "sha256": "c8ab35411d97b0d289c059ae084da1c27f82798d58d95e6ede601ca63f0eba07"
+    },
+    "lambda-0.7-seed-2/models/lru/run.json": {
+      "bytes": 13957,
+      "sha256": "3e6f38e09a337d96f1bf50d5976ee8b5bceef7aa40c2fbc249de4dc6c0ddef33"
+    },
+    "lambda-0.7-seed-2/models/oracle/recomputation.parquet": {
+      "bytes": 106586,
+      "sha256": "e2cd203f4746813a687ff58c9f0cbd3856d9b551deeb97d31826ccecc216ae7d"
+    },
+    "lambda-0.7-seed-2/models/oracle/requests.parquet": {
+      "bytes": 308776,
+      "sha256": "530a95f38fd468fdd7d3181415a75dd6c0f4e043f2a675036e60d94940b9b0e9"
+    },
+    "lambda-0.7-seed-2/models/oracle/run.json": {
+      "bytes": 13958,
+      "sha256": "be08b76eafc691e4b0d091da6533f8ca6fff28b7436af797e3f4f3ff2366d922"
+    },
+    "lambda-0.7-seed-2/real/analysis.json": {
+      "bytes": 9246,
+      "sha256": "9ab9aa2a0d270c6c881a633b748efdd6d715ad57b57da54bfe0f4cd9eeafc698"
+    },
+    "lambda-0.7-seed-2/real/analysis.log": {
+      "bytes": 4910,
+      "sha256": "31ad0c4f61177823f22180febd4da0efaa6998c88da9000e07fd896ad875943d"
+    },
+    "lambda-0.7-seed-2/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "5957c443afe0edfd472dc6b18bc0c9eb1b58be8e0bc9e0b9bf6091f35a528be0"
+    },
+    "lambda-0.7-seed-2/real/client.log": {
+      "bytes": 1967,
+      "sha256": "4ebee83261e6099202ea25d7f385b9a36fb9538ce1005182471cb76acaa86993"
+    },
+    "lambda-0.7-seed-2/real/dmon.log": {
+      "bytes": 661770,
+      "sha256": "2bf0747d2e27db161367447e39adfa5fec4aab240a64a3ef7c4e12de61ddef19"
+    },
+    "lambda-0.7-seed-2/real/e0-analysis.json": {
+      "bytes": 4162,
+      "sha256": "b6792aeacf525187d7fa84ee0fb75cd7a9a2a426cf05de2fd85e0c8711d702cb"
+    },
+    "lambda-0.7-seed-2/real/loop_lag.parquet": {
+      "bytes": 6733802,
+      "sha256": "964ffc6ff7f299368c20d073c6535d963dd71eb1b48f0df99bd14bfa6c39f3f0"
+    },
+    "lambda-0.7-seed-2/real/metrics.jsonl": {
+      "bytes": 619098,
+      "sha256": "af37514a70a0408417b8cbea4675c84fbc2adde4a24e642d3b87824a36dda598"
+    },
+    "lambda-0.7-seed-2/real/per_request_nominal.csv": {
+      "bytes": 1342796,
+      "sha256": "78fa4628bf9133deb7ea50e1ef4b2c2ca09745da92f8672526dd9eed31f67bd8"
+    },
+    "lambda-0.7-seed-2/real/pilot-status.json": {
+      "bytes": 322,
+      "sha256": "c6e1fb617868168eac85760c07b0c1d2749c5f6f53adfd950629b62098452295"
+    },
+    "lambda-0.7-seed-2/real/recomputation.parquet": {
+      "bytes": 253312,
+      "sha256": "c788ff9aa4645a36139ae77bf29c9b5f49b5be708e47ff5917ade5660045f2dd"
+    },
+    "lambda-0.7-seed-2/real/requests-metadata.parquet": {
+      "bytes": 2091300,
+      "sha256": "25c61770dcb2cc9796d94859646c3a7345f910eea57f6c5034ebb57e985e69ea"
+    },
+    "lambda-0.7-seed-2/real/requests.parquet": {
+      "bytes": 111180155,
+      "sha256": "312af1fd0f799d37804abcf3c4865e74f36d5d578e97d698645b1e228b3a40cb"
+    },
+    "lambda-0.7-seed-2/real/run.json": {
+      "bytes": 20059,
+      "sha256": "1f1a5c62c1ee1c6f378d396aa8c3577d6404f27b23d25bf7f51d1698f147afc1"
+    },
+    "lambda-0.7-seed-2/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "7a8870d698213bb41c93a5979c131c8ba13ed803cbf1ef614b64d04c01889d28"
+    },
+    "lambda-0.7-seed-2/real/server-observations/requests-975749.jsonl": {
+      "bytes": 69,
+      "sha256": "0859c1c07159c9f77c88f5e50faa049245e51512cf78826e064ebe134f8ca934"
+    },
+    "lambda-0.7-seed-2/real/server-observations/requests-976591.jsonl": {
+      "bytes": 5296911,
+      "sha256": "9595e2367365a0dcfa6e01d4ac50e408c299cf5b84d924258ad62249b1319c11"
+    },
+    "lambda-0.7-seed-2/real/server.log": {
+      "bytes": 876015,
+      "sha256": "045d127f86c5c11b8860d860b35069173497618df81bb9ecbf11ca8ecaba57bf"
+    },
+    "lambda-0.7-seed-2/real/server_queue.pdf": {
+      "bytes": 24468,
+      "sha256": "c41ce8a5f3c73e7c62ecea9b2de70042138b7aa36cf6b63075c87e64fa6df229"
+    },
+    "lambda-0.7-seed-2/real/server_queue.png": {
+      "bytes": 168505,
+      "sha256": "d60203a9a7409cd520b311405ad49e0e079c6ca9bb0d7868b0e2fe15b75336a5"
+    },
+    "lambda-1-seed-0/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "c874ae2399673ff572a4d5b6d140956f272e3248a9cef341a515e9db5972aefe"
+    },
+    "lambda-1-seed-0/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-1-seed-0/models/lru/recomputation.parquet": {
+      "bytes": 166492,
+      "sha256": "a40711b28fbbb55a54332f1e0a81b92494591abd3930a1987c93ce103d101318"
+    },
+    "lambda-1-seed-0/models/lru/requests.parquet": {
+      "bytes": 480097,
+      "sha256": "bee650807ae1874fd34f03cc3b1a0b95ae5c5494ab2d57492b033f49ca795165"
+    },
+    "lambda-1-seed-0/models/lru/run.json": {
+      "bytes": 21469,
+      "sha256": "5cbb8fab038268405819b8a22c37997fc20591e7866e24a427a151e37366f00f"
+    },
+    "lambda-1-seed-0/models/oracle/recomputation.parquet": {
+      "bytes": 164968,
+      "sha256": "43ab7af6a3668d6dc3c8010f130cfed12cc691173d05b536e7d8b81998e7113b"
+    },
+    "lambda-1-seed-0/models/oracle/requests.parquet": {
+      "bytes": 480437,
+      "sha256": "019a905bf2b450f15390690d6dc7c939e2aadbb2af9e5bd6659e97a09b842690"
+    },
+    "lambda-1-seed-0/models/oracle/run.json": {
+      "bytes": 21469,
+      "sha256": "b4647918097aace36bb3b45f4b6cef1c24665e8661bbb2045babd150ded7d3e1"
+    },
+    "lambda-1-seed-0/real/analysis.json": {
+      "bytes": 9224,
+      "sha256": "ed63e00e8f5d5dfd58a7944bcd4a6ea383864a7faa378ee343fc1433ff094995"
+    },
+    "lambda-1-seed-0/real/analysis.log": {
+      "bytes": 4888,
+      "sha256": "6c0d747bd863a7ab50b717e2082c61c109001442a61a6a79a756d658a4e2ccbc"
+    },
+    "lambda-1-seed-0/real/client-command.json": {
+      "bytes": 989,
+      "sha256": "34f816d587120ada021fd2171c7fc467708e51b08f6cf23ec091d935c164af66"
+    },
+    "lambda-1-seed-0/real/client.log": {
+      "bytes": 1962,
+      "sha256": "446a986560b2c697574e3ab7eac706d28dbcf34e096318cdc3b6ce7a2efccbc7"
+    },
+    "lambda-1-seed-0/real/dmon.log": {
+      "bytes": 665382,
+      "sha256": "ee59639e58f80208354a6a7931a83fc299fccce7ec28ea836bc81728d0962e4e"
+    },
+    "lambda-1-seed-0/real/e0-analysis.json": {
+      "bytes": 4155,
+      "sha256": "75e626f14ffa1a53a964ddc2c972d7d58768867a289ec492c9d44d13fe7fa711"
+    },
+    "lambda-1-seed-0/real/loop_lag.parquet": {
+      "bytes": 6727517,
+      "sha256": "51539db98d5f3fc0b89b270558e116df2fc35b77e34540b18d98cb17205146b8"
+    },
+    "lambda-1-seed-0/real/metrics.jsonl": {
+      "bytes": 629696,
+      "sha256": "288287244afa4a1ad5cfa7a195de71b88ad5c6d5455f5633cd0ea48acaf84916"
+    },
+    "lambda-1-seed-0/real/per_request_nominal.csv": {
+      "bytes": 1946683,
+      "sha256": "76fc6b9b3d975775e8755879d5df8ed59da1960eac36540c0f9b3ee79cd560b8"
+    },
+    "lambda-1-seed-0/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "e947e39927d13beb3d12f2c42aa25601e5636acc14c2a3ed92be57e41ef0be5b"
+    },
+    "lambda-1-seed-0/real/recomputation.parquet": {
+      "bytes": 395192,
+      "sha256": "e97ca0aea432f66a3e89134c1c6684d204f77cb99f793bba90b6671e16c7689f"
+    },
+    "lambda-1-seed-0/real/requests-metadata.parquet": {
+      "bytes": 3189729,
+      "sha256": "73cf17e796732da2d7573ee95cb06966e8bdfc30ba1c103662f65a2c3c0561c1"
+    },
+    "lambda-1-seed-0/real/requests.parquet": {
+      "bytes": 195048523,
+      "sha256": "a5f1b2b3c3db599bc87f77457ccb5d9806da58b9b9d7d41eadb7f0994f9c93b3"
+    },
+    "lambda-1-seed-0/real/run.json": {
+      "bytes": 27534,
+      "sha256": "a4d647bb2d890ae1f319f6f7221bb2d4ac74bdfff7d028d26508b11f02c2c61e"
+    },
+    "lambda-1-seed-0/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "665de5756084a49d5befe2bc44768459d2a81096d062f08af4ed9067c462868f"
+    },
+    "lambda-1-seed-0/real/server-observations/requests-1113618.jsonl": {
+      "bytes": 70,
+      "sha256": "4861fd037aeda70447d1bc21e8500ef69f389c3854881a3e5ed8f3f6f7889b3c"
+    },
+    "lambda-1-seed-0/real/server-observations/requests-1114297.jsonl": {
+      "bytes": 7808682,
+      "sha256": "bd6a39b8f6925197f27c0d3f2dc2d21d6d794babc2511ef394724e4359e966da"
+    },
+    "lambda-1-seed-0/real/server.log": {
+      "bytes": 1135429,
+      "sha256": "cf3a25a7b52e9d3d68028d1051de4908a2c737e00b04fd06711616de59a9bda3"
+    },
+    "lambda-1-seed-0/real/server_queue.pdf": {
+      "bytes": 28567,
+      "sha256": "93fc897179c661af6162205da0d68782e8bd0100d67b87deef13e8c7b4b9e658"
+    },
+    "lambda-1-seed-0/real/server_queue.png": {
+      "bytes": 290100,
+      "sha256": "be73c64cfb8dea8875172b853dfb98f75c2362b637dc44e8f8328b47a0a2f76f"
+    },
+    "lambda-1-seed-1/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "56536b4344de88daded9ce767026c44bb9d065117883165c182363599c57a4d4"
+    },
+    "lambda-1-seed-1/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-1-seed-1/models/lru/recomputation.parquet": {
+      "bytes": 126598,
+      "sha256": "f9809f83b5ef529ced3322b5bef1fe1223d54aa9102c94666be4b2c8723af1b8"
+    },
+    "lambda-1-seed-1/models/lru/requests.parquet": {
+      "bytes": 399772,
+      "sha256": "40f53305ae509615857f99022c7f21f7e415d6b376a410a864159df0e510008d"
+    },
+    "lambda-1-seed-1/models/lru/run.json": {
+      "bytes": 20594,
+      "sha256": "3c41baaf1c173cdbd8f5230102613a4cb88071fc41f0b2609130fe4c8ddd67c5"
+    },
+    "lambda-1-seed-1/models/oracle/recomputation.parquet": {
+      "bytes": 125495,
+      "sha256": "801f55ddda87b4f416dfb65a4ebeeb2c162a8644e9217d5384228bee444deca2"
+    },
+    "lambda-1-seed-1/models/oracle/requests.parquet": {
+      "bytes": 399897,
+      "sha256": "bddc9f5802c6763fd8e53309d29c829e37e87a9ae67a62f1c56a38d12b708deb"
+    },
+    "lambda-1-seed-1/models/oracle/run.json": {
+      "bytes": 20576,
+      "sha256": "c72c30a8e1744c0e3ec6f272bdfd002a5928fdd33f0b58b2605d2fc41b5fb77e"
+    },
+    "lambda-1-seed-1/real/analysis.json": {
+      "bytes": 9255,
+      "sha256": "0c858201de891c193526392ff2c07aa310a527c6ac26b2920fb126a15fed242b"
+    },
+    "lambda-1-seed-1/real/analysis.log": {
+      "bytes": 4919,
+      "sha256": "2a849022d547cecf21425119fb7c40c21b55e3dd255bc186e1f99bd85373157d"
+    },
+    "lambda-1-seed-1/real/client-command.json": {
+      "bytes": 989,
+      "sha256": "91f094ef06ae4033e2b4f478088bf8cb08cd89f909a87aaf243f18cbf434d63a"
+    },
+    "lambda-1-seed-1/real/client.log": {
+      "bytes": 1964,
+      "sha256": "3a988eccd40718065a2d78429b258a9dddcb7a4b9a704ff6d2117269ac78296d"
+    },
+    "lambda-1-seed-1/real/dmon.log": {
+      "bytes": 662544,
+      "sha256": "d5dd2ce5bc9f861d0aac0187d53bae7ded20c1d874b013d52bf690c411057b34"
+    },
+    "lambda-1-seed-1/real/e0-analysis.json": {
+      "bytes": 4163,
+      "sha256": "568107b403abeb409d2f48d6303e70eea68535d857e396209fd14120d2fa5c4f"
+    },
+    "lambda-1-seed-1/real/loop_lag.parquet": {
+      "bytes": 6730644,
+      "sha256": "c81a8ac9b48db40ae6eeec21e5221ea5d9e4ae4a61b22e3806fb798ae1819003"
+    },
+    "lambda-1-seed-1/real/metrics.jsonl": {
+      "bytes": 628852,
+      "sha256": "97cae0b9352b69c6691e495b1f87647aaeb22da6aef98227f32c0e2d32eae9f3"
+    },
+    "lambda-1-seed-1/real/per_request_nominal.csv": {
+      "bytes": 1640969,
+      "sha256": "19d36444b8a4a0c8ba843cf91101c194103aca04a0d5a50214b3d8d6443137a4"
+    },
+    "lambda-1-seed-1/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "d2a4a98f41e95c0238ef540af01d1c2f186c05043f2f9d10d01b672aa9dae9fc"
+    },
+    "lambda-1-seed-1/real/recomputation.parquet": {
+      "bytes": 293990,
+      "sha256": "1f0633658ac8dd02167dbfea25335e1d9fe3f0f444250aa7b6ef0878ddb7b973"
+    },
+    "lambda-1-seed-1/real/requests-metadata.parquet": {
+      "bytes": 2667991,
+      "sha256": "df0270409cd30f4c531ce7e045a5ea94b7885a04c84d0ef32e3dffe59e80df2a"
+    },
+    "lambda-1-seed-1/real/requests.parquet": {
+      "bytes": 190576154,
+      "sha256": "d82e07421de6da70d0e520972c5105a08c0b4e7b0c6858cb957160413276031d"
+    },
+    "lambda-1-seed-1/real/run.json": {
+      "bytes": 26657,
+      "sha256": "f8e9787792fd7eeaf15b3aedeaa4c8c2f0c000956f844db3fa05b59e4deaba01"
+    },
+    "lambda-1-seed-1/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "835b9ba2311648fe168700fd853360ae28709000e999ac85c0d0df5f9d012024"
+    },
+    "lambda-1-seed-1/real/server-observations/requests-1252785.jsonl": {
+      "bytes": 70,
+      "sha256": "1a97cedccdb5ef8855b76593c54e76ac5de0081eef18b9360ffb42cfab89dfd2"
+    },
+    "lambda-1-seed-1/real/server-observations/requests-1253467.jsonl": {
+      "bytes": 6575027,
+      "sha256": "bec54c09ed6fac524fd84c73ce2beb1c445efe4951cec148896c6e55bd014d30"
+    },
+    "lambda-1-seed-1/real/server.log": {
+      "bytes": 1018210,
+      "sha256": "71aaf784579ccd6a3b629f87cedca18a2586894b96762dee4a26d7c0c4411daa"
+    },
+    "lambda-1-seed-1/real/server_queue.pdf": {
+      "bytes": 27760,
+      "sha256": "48180c2801441f037eb5d525b5914ae4c8649c77be542f4b3ae9fd4230a8db67"
+    },
+    "lambda-1-seed-1/real/server_queue.png": {
+      "bytes": 234476,
+      "sha256": "9bbac90d42ce5206da06c99147d2b5136150322d3b3c426a067977af3345f9cc"
+    },
+    "lambda-1-seed-2/gpu-check/before.json": {
+      "bytes": 571,
+      "sha256": "93ac8644614caccd26ce5da6015423d2b5c8e31aba7ac68d76450add72d0dd18"
+    },
+    "lambda-1-seed-2/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-1-seed-2/models/lru/recomputation.parquet": {
+      "bytes": 168341,
+      "sha256": "48f6b8905a63ae1be05abeedfe154df97a2f96896278ce8444dfb496807116c9"
+    },
+    "lambda-1-seed-2/models/lru/requests.parquet": {
+      "bytes": 486444,
+      "sha256": "704506e2ad25a922f5eedaab4a1e16c16a0608684243c766fa2342ba929c4194"
+    },
+    "lambda-1-seed-2/models/lru/run.json": {
+      "bytes": 16773,
+      "sha256": "6962a4313b252b1dd394d1f3ae6130931f856f16bb9b3f73ad434a66f33daad1"
+    },
+    "lambda-1-seed-2/models/oracle/recomputation.parquet": {
+      "bytes": 167024,
+      "sha256": "3aa56f578dc61a41b122564e31ab5744760aee2cb94a876a907dbd08ef085e6e"
+    },
+    "lambda-1-seed-2/models/oracle/requests.parquet": {
+      "bytes": 486429,
+      "sha256": "d5b3328f4bb01ca7355b7e4a97e338724b912076165a94b9b95dd7a1497511fd"
+    },
+    "lambda-1-seed-2/models/oracle/run.json": {
+      "bytes": 16773,
+      "sha256": "fb285cc5651833bff0c68430c4acb3573a30a68c76047ccd9c83c0035f18eede"
+    },
+    "lambda-1-seed-2/real/analysis.json": {
+      "bytes": 9237,
+      "sha256": "df3c281f5cdded75ce54cfe1519a8d8ce5a2e0ecfa4ec2fed32695fbc9ccc4b9"
+    },
+    "lambda-1-seed-2/real/analysis.log": {
+      "bytes": 4901,
+      "sha256": "365a5a3b600bf5bd4f9fc7077fb072ab29655ef91a67cbfb4ac982097bc2aa49"
+    },
+    "lambda-1-seed-2/real/client-command.json": {
+      "bytes": 989,
+      "sha256": "bd7c68ce21200551b9b65a68d1244b97b816d907cfb31c1b5c93ce8ec82f9677"
+    },
+    "lambda-1-seed-2/real/client.log": {
+      "bytes": 1962,
+      "sha256": "87fcaf8bebc5e91eb0c14947e1b36fb9df253357a675923c04ad89a22aac2139"
+    },
+    "lambda-1-seed-2/real/dmon.log": {
+      "bytes": 664092,
+      "sha256": "10594512b5f03f8acf60bf183cc574ac41581125b171ccc06c6f919e3e722e53"
+    },
+    "lambda-1-seed-2/real/e0-analysis.json": {
+      "bytes": 4158,
+      "sha256": "d6ec7d235b0af577c0f88cd6387f96da895e8e8883098dc87734b2a1c6dda34a"
+    },
+    "lambda-1-seed-2/real/loop_lag.parquet": {
+      "bytes": 6728175,
+      "sha256": "45457f2c0304369c89c471e30ee9e6e0d614dde6a5b18697bcdbde033780be76"
+    },
+    "lambda-1-seed-2/real/metrics.jsonl": {
+      "bytes": 623646,
+      "sha256": "cb44d616ae1d121e22c22861e5872be65633fc6ba264c3f5e714d111d87c4143"
+    },
+    "lambda-1-seed-2/real/per_request_nominal.csv": {
+      "bytes": 2109096,
+      "sha256": "0179c9db7b6311d1dbca2f196db63429dbce69291e77f7b4aaf21b936782ecde"
+    },
+    "lambda-1-seed-2/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "544ddd12474e412016eae1ce91c23ee465ee40b0cbb6af826f406ebd4248a841"
+    },
+    "lambda-1-seed-2/real/recomputation.parquet": {
+      "bytes": 384123,
+      "sha256": "bed428ecea52984ea98bbe609b764e23ec71d2e1c7bcda6f59b4bbd4c0595875"
+    },
+    "lambda-1-seed-2/real/requests-metadata.parquet": {
+      "bytes": 3267500,
+      "sha256": "b2f76c8b30b15116eafe4a1b01681596bacd767e9d2b5f6b1464c4606819d059"
+    },
+    "lambda-1-seed-2/real/requests.parquet": {
+      "bytes": 176989403,
+      "sha256": "8fffce46a6d11ce9b171bc5a16c3a1fa577e0b04594f1adb4f2b4b859ba0314e"
+    },
+    "lambda-1-seed-2/real/run.json": {
+      "bytes": 22839,
+      "sha256": "3fd4634e4a3d1d922ed7a2d22f9c2a4088d7f85d7c9dd72caa8f2ef425067128"
+    },
+    "lambda-1-seed-2/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "f7ae29052c68c5fb25689bdfefab219a9c42bce737753eeaeeabadb5486e7cce"
+    },
+    "lambda-1-seed-2/real/server-observations/requests-1386332.jsonl": {
+      "bytes": 70,
+      "sha256": "e198b6c27cb1a1b0ae27f0b2ae1f37fd92b9bc034c23e325274734cbf497fc73"
+    },
+    "lambda-1-seed-2/real/server-observations/requests-1386969.jsonl": {
+      "bytes": 8292624,
+      "sha256": "b0cc5c2cc1aff326f6cc74c70b9eec3ede5d42434a5346d10f67f2ed7a79e684"
+    },
+    "lambda-1-seed-2/real/server.log": {
+      "bytes": 1155532,
+      "sha256": "67e44c926f878dd7c482377d475429cdd8a8f28f30bcac72ba3d656ab5c0d724"
+    },
+    "lambda-1-seed-2/real/server_queue.pdf": {
+      "bytes": 26556,
+      "sha256": "a93c16029e8eb7a7a6740cc1e5c7955720b6e3d78ba2f3a94fa1ab974f33593c"
+    },
+    "lambda-1-seed-2/real/server_queue.png": {
+      "bytes": 228672,
+      "sha256": "3570940b19fded6975eddf3cb61bb3cb7c08298bfc8b4b9d84075ec4db3bca3c"
+    },
+    "lambda-1.4-seed-0/gpu-check/before.json": {
+      "bytes": 571,
+      "sha256": "7216fc9cdb275a27af055718b70aec19f6c5d6bfa324fd1e727890a6272a8a2a"
+    },
+    "lambda-1.4-seed-0/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-1.4-seed-0/models/lru/recomputation.parquet": {
+      "bytes": 229858,
+      "sha256": "6c98427e23359a36c32d9ba10dea780c59e2d79ed124026507ebaf6dfc617bea"
+    },
+    "lambda-1.4-seed-0/models/lru/requests.parquet": {
+      "bytes": 681438,
+      "sha256": "bb58ec815bf0a76386394fed8245cc6c9c57ee53b594f4d18fceb7695ecbf2cc"
+    },
+    "lambda-1.4-seed-0/models/lru/run.json": {
+      "bytes": 28994,
+      "sha256": "7f05fbaba580c75d13a5bf7f775416d8ee165a4451d17c0b01ca0ecf3f745a83"
+    },
+    "lambda-1.4-seed-0/models/oracle/recomputation.parquet": {
+      "bytes": 227444,
+      "sha256": "a85eed6178fc0dd23446f84b9d89505358f94f4fc8c55d686fad80fcd07c3670"
+    },
+    "lambda-1.4-seed-0/models/oracle/requests.parquet": {
+      "bytes": 680675,
+      "sha256": "8682ad0cd2d08a4d246e51c16c6bae2f203771599207a45162aa55cebd32c4cc"
+    },
+    "lambda-1.4-seed-0/models/oracle/run.json": {
+      "bytes": 28994,
+      "sha256": "feedb6072957d51a26d205ff0171deb2683aef76ea87bd4c0a4a8d78afacb708"
+    },
+    "lambda-1.4-seed-0/real/analysis.json": {
+      "bytes": 9129,
+      "sha256": "ad938fd28e7b005b6dad2c58e7ff87499c6e1daec181bf9c9d83481d116638ba"
+    },
+    "lambda-1.4-seed-0/real/analysis.log": {
+      "bytes": 4793,
+      "sha256": "3f98e59fdb153ce2b6ec7be1ba44e8b51748a3c8d3a562dbdf1198b0b48a0df2"
+    },
+    "lambda-1.4-seed-0/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "945b914113186b8e62033cbc34b4a3388f4b36dc2759919d85921eb245fbcc20"
+    },
+    "lambda-1.4-seed-0/real/client.log": {
+      "bytes": 1918,
+      "sha256": "b19e77e585dbfcabcf14dc8cedd34e9b3a7a14845f487a57c1f6cff32820fe6b"
+    },
+    "lambda-1.4-seed-0/real/dmon.log": {
+      "bytes": 669252,
+      "sha256": "2e63958b9f94d1313ae2ce44421120543ef75a736a69a87fcad4bbedea5c178d"
+    },
+    "lambda-1.4-seed-0/real/e0-analysis.json": {
+      "bytes": 4107,
+      "sha256": "b7a4d7974b527e4a5761cd2d0d24420f684c7562ffeebc9987ecc7294ff6fd60"
+    },
+    "lambda-1.4-seed-0/real/loop_lag.parquet": {
+      "bytes": 6797770,
+      "sha256": "16d3768b6b429a8dc86c574abe3303616acf360123436e0626f71cd63041fd56"
+    },
+    "lambda-1.4-seed-0/real/metrics.jsonl": {
+      "bytes": 641982,
+      "sha256": "7ed65030008b65e17df03e0bf51b61b5f0a1f7529806ad1565903be86dce7bc5"
+    },
+    "lambda-1.4-seed-0/real/per_request_nominal.csv": {
+      "bytes": 1603227,
+      "sha256": "9a4192e049254db09b30d0d03651a6fa547aa208ccf37b7160dd353c02b0ce6b"
+    },
+    "lambda-1.4-seed-0/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "6cceff86f6947d17fe74b2a3d6021560186810478411d8ccd22c59450c4f4f9b"
+    },
+    "lambda-1.4-seed-0/real/recomputation.parquet": {
+      "bytes": 347348,
+      "sha256": "32d8ec6da62f07073ad408573b99dd65a2c4aa5ff04f4823faa147236f6615a6"
+    },
+    "lambda-1.4-seed-0/real/requests-metadata.parquet": {
+      "bytes": 2828066,
+      "sha256": "ef28ec929aeaf0da724e94c1ca5ccad4f0b03f7dcb1ad72a7ddd0c3078f1bc99"
+    },
+    "lambda-1.4-seed-0/real/requests.parquet": {
+      "bytes": 185921343,
+      "sha256": "68226401da93aba611e198cfac9fa1d220e17d1d014a9acf242b7b0f2ca3cc19"
+    },
+    "lambda-1.4-seed-0/real/run.json": {
+      "bytes": 35013,
+      "sha256": "0ac488a1781b10c05d9a8d92856b8203ee87f53030b2b9471595f9ef3a5a4c62"
+    },
+    "lambda-1.4-seed-0/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "648ddd523fbcfc402b7aaaab8f3bdcb921417a69e5bc02e5f439e867faf4277a"
+    },
+    "lambda-1.4-seed-0/real/server-observations/requests-1506764.jsonl": {
+      "bytes": 70,
+      "sha256": "8b164cd30acdce114a9c5d559a447c894efbec29ff8d1058820d3a136ce639a6"
+    },
+    "lambda-1.4-seed-0/real/server-observations/requests-1507187.jsonl": {
+      "bytes": 7140915,
+      "sha256": "75b4ed6ee86d56e2fccc80d7b2f7bb9e95dd90e873c13b8c77f98a15d7d0ea1a"
+    },
+    "lambda-1.4-seed-0/real/server.log": {
+      "bytes": 1066739,
+      "sha256": "3aaa3766032898cafbb5d9859d5936142eb503c5a2ed480bcc2ca96af94ba9db"
+    },
+    "lambda-1.4-seed-0/real/server_queue.pdf": {
+      "bytes": 33622,
+      "sha256": "806ed2a109a6511ebbe2f4092b9f53ccd7ac55a001cab9a1763bdf77c56f9486"
+    },
+    "lambda-1.4-seed-0/real/server_queue.png": {
+      "bytes": 178108,
+      "sha256": "2b6a40de2eca0642beef8c4490e38d331c016bbe1767baa683a46a1b985ab5d1"
+    },
+    "lambda-1.4-seed-1/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "854c042c38e4d7d363a660067fd0f3f3f7d9da9d9406ecda976e1007a13cd691"
+    },
+    "lambda-1.4-seed-1/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-1.4-seed-1/models/lru/recomputation.parquet": {
+      "bytes": 244325,
+      "sha256": "630c81db408aa1322a0be43c5544922ad0cde54e7ecefd327d794a7d3e7080d5"
+    },
+    "lambda-1.4-seed-1/models/lru/requests.parquet": {
+      "bytes": 714058,
+      "sha256": "cd38dc9e035966a7c3b5744c5bf60401fbe271ce0db591b2419721bbf94f5c26"
+    },
+    "lambda-1.4-seed-1/models/lru/run.json": {
+      "bytes": 28976,
+      "sha256": "3be271d364d267c9ca78874b959ff303fbd0ede7041ebffeba9b2a5e9dff8095"
+    },
+    "lambda-1.4-seed-1/models/oracle/recomputation.parquet": {
+      "bytes": 241976,
+      "sha256": "78423ed07fca75fb02a6d01a32fa7941fd45a65c8d676e7dc1b143ae09d534d8"
+    },
+    "lambda-1.4-seed-1/models/oracle/requests.parquet": {
+      "bytes": 713719,
+      "sha256": "1f3281eb0138eb3e960e94345082fba695645d9e413b35ad0119c61bd0707bb2"
+    },
+    "lambda-1.4-seed-1/models/oracle/run.json": {
+      "bytes": 28981,
+      "sha256": "84fedfc39ac78617fdf6644d241052472ac9dc2c6df48dc49e5ca56f2120b485"
+    },
+    "lambda-1.4-seed-1/real/analysis.json": {
+      "bytes": 9199,
+      "sha256": "f8a08f6e3a4fdb456f4477a6c6f7dc5aa443cf6df6b4c458471b7e2e8d331e80"
+    },
+    "lambda-1.4-seed-1/real/analysis.log": {
+      "bytes": 4864,
+      "sha256": "6c0647797b0fec726845639bf2cb0dfed5f8960706ed04a85911b2488ad44cbc"
+    },
+    "lambda-1.4-seed-1/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "cd7e51437a096f78772f3dacafa35f42f06a36bf6257b663085d990a8326c0df"
+    },
+    "lambda-1.4-seed-1/real/client.log": {
+      "bytes": 1947,
+      "sha256": "621550d5c17faa575e82ceb4c58d51f1cfdc0b5a211a9da38bfdbf6e5420c537"
+    },
+    "lambda-1.4-seed-1/real/dmon.log": {
+      "bytes": 673122,
+      "sha256": "437f25e7163b2394928bacac8f36c9eb72e954bfd3c4d19cd4764c42f297e0da"
+    },
+    "lambda-1.4-seed-1/real/e0-analysis.json": {
+      "bytes": 4157,
+      "sha256": "ba15353697d04defef5bdf86dae5037de8dba6eb2a2ecfbdff34dabbdff621b3"
+    },
+    "lambda-1.4-seed-1/real/loop_lag.parquet": {
+      "bytes": 6797849,
+      "sha256": "3701ac2ab2a1aeb198585f5ac78f3a1edd3ac40ec0a492b33c190f0d5b2dcf6f"
+    },
+    "lambda-1.4-seed-1/real/metrics.jsonl": {
+      "bytes": 641930,
+      "sha256": "c7c14512b1d8ee88e3c6203c34b3392d5a699b90e50028d07438c77de81fe3dd"
+    },
+    "lambda-1.4-seed-1/real/per_request_nominal.csv": {
+      "bytes": 2381907,
+      "sha256": "35fc6c289e0c6a345704247e50471022e31a3243c485cb51573fca95c64f253d"
+    },
+    "lambda-1.4-seed-1/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "a3340b196f028a3b3c2dbe6326bb0ed7f4f761300affa7a25cf1a91000c6bfc0"
+    },
+    "lambda-1.4-seed-1/real/recomputation.parquet": {
+      "bytes": 457656,
+      "sha256": "7023f29408008c4abee9027ef7a451e33521e0d0032629ca9080d3a2077eb238"
+    },
+    "lambda-1.4-seed-1/real/requests-metadata.parquet": {
+      "bytes": 3875119,
+      "sha256": "7b4b2a184448202cc50b71e27b18bae0b1153c3dc3c50d29550063c6c725e57e"
+    },
+    "lambda-1.4-seed-1/real/requests.parquet": {
+      "bytes": 226471581,
+      "sha256": "befc6ac088d86816dcdce071d98ad20aa1a3046936d86732b46c37077d754462"
+    },
+    "lambda-1.4-seed-1/real/run.json": {
+      "bytes": 35027,
+      "sha256": "636a92a7edff6a12743b00e8cef82b3a2a0515ceb262fac81b9dfece9c5479e4"
+    },
+    "lambda-1.4-seed-1/real/server-manifest.json": {
+      "bytes": 3895,
+      "sha256": "6f0cc78f9140f03b6ad194c2a7b20541107d9c83ad84ad6b54e45d35c4e68afc"
+    },
+    "lambda-1.4-seed-1/real/server-observations/requests-1618929.jsonl": {
+      "bytes": 70,
+      "sha256": "758c4de73f4ce03e3f69783208e4070a9aa5c14e92d196c21a8bce4c1273e974"
+    },
+    "lambda-1.4-seed-1/real/server-observations/requests-1619401.jsonl": {
+      "bytes": 9882107,
+      "sha256": "1d92d3b51857e30c1061ad936f7bf61b325b29f690ba82b25ca05148bb4f5c78"
+    },
+    "lambda-1.4-seed-1/real/server.log": {
+      "bytes": 1314344,
+      "sha256": "7e0e921868c39e209dc4c3dc48f9343c57ca044dc144d8564a183b9369c53891"
+    },
+    "lambda-1.4-seed-1/real/server_queue.pdf": {
+      "bytes": 34119,
+      "sha256": "fe1212cecde100f8e5f9b4688b6a00f558cc2b7c1c4fcfbc6ca1283d346dbb61"
+    },
+    "lambda-1.4-seed-1/real/server_queue.png": {
+      "bytes": 186992,
+      "sha256": "8586b3f6bb21c5571db4a036e5cca37848da26535fadd8a23e545d0054cdb6bc"
+    },
+    "lambda-1.4-seed-2/gpu-check/before.json": {
+      "bytes": 572,
+      "sha256": "512608b76672f4509802fa6710a135b118b407b7573d3718f30bde446411705c"
+    },
+    "lambda-1.4-seed-2/gpu-check/decision.json": {
+      "bytes": 101,
+      "sha256": "7bd29eb3b8bb9022b91d2bfcf78ec424575d3e7e569929077528d43a2a3a3101"
+    },
+    "lambda-1.4-seed-2/models/lru/recomputation.parquet": {
+      "bytes": 231579,
+      "sha256": "163ac822dab22864a481391b051cf878503b08598b4110169ba26ccbfc0ef741"
+    },
+    "lambda-1.4-seed-2/models/lru/requests.parquet": {
+      "bytes": 695784,
+      "sha256": "1792de167093538df60d6d0ad257d982b5a0b546cfd6ad017a9e0aaca4bc0a7d"
+    },
+    "lambda-1.4-seed-2/models/lru/run.json": {
+      "bytes": 27757,
+      "sha256": "28262f5e319698dc2e74b11c1e4696c6222aa4295039a4c197590d2ffaa671fc"
+    },
+    "lambda-1.4-seed-2/models/oracle/recomputation.parquet": {
+      "bytes": 229384,
+      "sha256": "cced297e9b067378d53816f5c84aace5b23b37201a9c944c5be5120fb383c439"
+    },
+    "lambda-1.4-seed-2/models/oracle/requests.parquet": {
+      "bytes": 694748,
+      "sha256": "b82ccc4e08010aa9053182f3a8d846c90fb5cd0de43873a913fc426e089b3523"
+    },
+    "lambda-1.4-seed-2/models/oracle/run.json": {
+      "bytes": 27757,
+      "sha256": "b19d0cb0ee3728d08c110b6c731eb83324962d92e185c0d816d761ae770dad8a"
+    },
+    "lambda-1.4-seed-2/real/analysis.json": {
+      "bytes": 9162,
+      "sha256": "c1acc9533e373d2e72fdce1b77850cdf2698af02e08ff7432d677e9766390100"
+    },
+    "lambda-1.4-seed-2/real/analysis.log": {
+      "bytes": 4826,
+      "sha256": "de4ccfd82d49438918a95168183304d2891cd83799aff2ef4f41fa2d34bf35bb"
+    },
+    "lambda-1.4-seed-2/real/client-command.json": {
+      "bytes": 997,
+      "sha256": "4299a1013140800db7d8a3e01010d8a724943abf8bf77779cc5464852955ce5b"
+    },
+    "lambda-1.4-seed-2/real/client.log": {
+      "bytes": 1920,
+      "sha256": "ae18b411618b9cb8ee02b35dd2cd13fb388520be471ae74287ebc5d1d78efeef"
+    },
+    "lambda-1.4-seed-2/real/dmon.log": {
+      "bytes": 668736,
+      "sha256": "39b01cca2424832c9ee92c8ad44ac3aac7585804924d26fd23ade74549669df8"
+    },
+    "lambda-1.4-seed-2/real/e0-analysis.json": {
+      "bytes": 4123,
+      "sha256": "1b234edbc9ec30ddc5d46fd8ab9f76d4413dbac91213201661e83fa0bc0a05c5"
+    },
+    "lambda-1.4-seed-2/real/loop_lag.parquet": {
+      "bytes": 6768465,
+      "sha256": "1bb57a87cf50b08311e6cc3ddb6c682d45a319bb22178a696b2b843eaaa2a721"
+    },
+    "lambda-1.4-seed-2/real/metrics.jsonl": {
+      "bytes": 639088,
+      "sha256": "ebf56fed89f320b4e9c34112c344a8ad650a637873376a6a1d57a37987180a32"
+    },
+    "lambda-1.4-seed-2/real/per_request_nominal.csv": {
+      "bytes": 2176581,
+      "sha256": "7aeb141fc046d1f77b400108572a26fd3da09eceeeb9b344d32bb11a3f64c93d"
+    },
+    "lambda-1.4-seed-2/real/pilot-status.json": {
+      "bytes": 325,
+      "sha256": "87bb734e5fc7b6d3e4f6cbaa776b7ec06e325a26cce7cb028e30c5c64459d322"
+    },
+    "lambda-1.4-seed-2/real/recomputation.parquet": {
+      "bytes": 426714,
+      "sha256": "24019de47a160e83f0033df7b2b11fd182619235ea4da44345b926632902ecbd"
+    },
+    "lambda-1.4-seed-2/real/requests-metadata.parquet": {
+      "bytes": 3585845,
+      "sha256": "a721b28f17745f4febfb0b5d7567ba3c79197a8bd3e93a162bed11250ee1ee37"
+    },
+    "lambda-1.4-seed-2/real/requests.parquet": {
+      "bytes": 216870998,
+      "sha256": "ef2c5919c9148cf30b24e6043e84d2ad3ab05dc801f613550a08f2e53f74e64d"
+    },
+    "lambda-1.4-seed-2/real/run.json": {
+      "bytes": 33780,
+      "sha256": "1043ca02f78f1ebc8b049a5b2e0780e6c8bd1fba157fb4dc8920fd156220a389"
+    },
+    "lambda-1.4-seed-2/real/server-manifest.json": {
+      "bytes": 3896,
+      "sha256": "a4fe72dc8112f6dcc87ce2c0f3a406b0a264b2410c75eb7d6a32286fd191d11a"
+    },
+    "lambda-1.4-seed-2/real/server-observations/requests-1730676.jsonl": {
+      "bytes": 70,
+      "sha256": "4ae7fd34ca944786606f67512724bfe13758a48e7b28318ecb6621b3c24bd8d4"
+    },
+    "lambda-1.4-seed-2/real/server-observations/requests-1731148.jsonl": {
+      "bytes": 9185424,
+      "sha256": "58c4e063ddb9f30a8017141e6bdcb649804558206b69be9ed67c5cf3b7cd40b1"
+    },
+    "lambda-1.4-seed-2/real/server.log": {
+      "bytes": 1248419,
+      "sha256": "e80b4cbf6084c4c5903f51a1912a2595b4276a79e02dfca83b0a5d47da17fc22"
+    },
+    "lambda-1.4-seed-2/real/server_queue.pdf": {
+      "bytes": 34445,
+      "sha256": "19de85223673c614f4f33893f657a131b6fbfca8c48fdffc0486b2e6d052f0be"
+    },
+    "lambda-1.4-seed-2/real/server_queue.png": {
+      "bytes": 204188,
+      "sha256": "4feba76ddb9506fcc0dd130c772e08263fb400824238288d6978373d135337d2"
+    },
+    "model-validation.json": {
+      "bytes": 328,
+      "sha256": "835572d59f1add441efee4bd45980dc859cd3ee4a8276d00536cf938c540eda6"
+    },
+    "models-manifest.json": {
+      "bytes": 587791,
+      "sha256": "9262899c2ef78fea2feaf95d07b781674450d71dfd4c376d28fdc32ed1caa8bc"
+    },
+    "postprocess-run.json": {
+      "bytes": 7213,
+      "sha256": "d48066f7141c249ecd9b140debb4240be94fb3e6f27334a7ccdf1fcc7d96f250"
+    },
+    "recomputation.pdf": {
+      "bytes": 18583,
+      "sha256": "43bc75067ac03dd0ca07bfd77f7b7cbf387b26a338c9dd443da100c4d89e23a2"
+    },
+    "recomputation.png": {
+      "bytes": 114799,
+      "sha256": "341b97b97e5a35aa4dbf63b616047118d800de71d0fbf25cfeb619e7df2e7102"
+    },
+    "run.json": {
+      "bytes": 650480,
+      "sha256": "f693f3cb177a66fe6e16c17a1a1081406e1524922d87c9d5086fef1c561dcafd"
+    },
+    "runs.csv": {
+      "bytes": 4766,
+      "sha256": "a72238e08ed4f316af8a8f6f04e629bb4fd235416af443a5b98a12104f2a0dad"
+    },
+    "tests.json": {
+      "bytes": 153,
+      "sha256": "1a1710bbd82ee99cf13915c198e0bca163771d3333ec3db37dbc663c80390a27"
+    },
+    "tests.log": {
+      "bytes": 828,
+      "sha256": "474402186c49a610c88a41b4aaad27502f9ec7b162b807cb5fda8d361301ed3f"
+    },
+    "waiting_queues.pdf": {
+      "bytes": 55616,
+      "sha256": "c4198bf3697fb949c6a5e398157c9e31a7926d91af3b4e9f9dd5781027f86392"
+    },
+    "waiting_queues.png": {
+      "bytes": 333176,
+      "sha256": "e83b5ced603244eaeccbd088345be2a76b8ffab675bd514f439309c072fa50b4"
+    }
+  }
+}

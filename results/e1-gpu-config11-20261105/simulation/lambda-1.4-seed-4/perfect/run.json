@@ -1,0 +1,36 @@
+{
+  "git_commit": "0800a144cc18b8ef73663b33c8d1dcddb8124779",
+  "status": "complete",
+  "group": "lambda-1.4-seed-4",
+  "rate": 1.4,
+  "seed": 4,
+  "policy": "perfect",
+  "population_sha256": "a9d0a5443d41e817bfe922ec77ad7fdf697d2a9493d4cb7647bd55de4c4c7a5c",
+  "schedule_gpu_sha256": "43c1005241da2b315113f36d4c618e4b063fdeaf924d123e21f7628c382f3bc1",
+  "predicted_effective_recompute": 0.204114958134682,
+  "terminal_token_correction": 15,
+  "summary": {
+    "requests": 19189,
+    "window_requests": 13730,
+    "window_prompt_tokens": 90135109,
+    "source_tokens": {
+      "gpu_hit": 33820480,
+      "cpu_hit": 37916720,
+      "recomputed": 18397909
+    },
+    "source_fractions": {
+      "gpu_hit": 0.37521982693780287,
+      "cpu_hit": 0.42066538134435494,
+      "recomputed": 0.20411479171784216
+    },
+    "gpu_evictions": 4931134,
+    "cpu_evictions": 1596677,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 8,
+    "peak_gpu_tokens": 182880,
+    "kv_blocked_checks": 0,
+    "queued_requests": 1202,
+    "unsent_queued": 0
+  },
+  "requests_sha256": "c8d021ec21fed0f2914685d1d6f8626796138be9824410ea4df6632c1c9b8868"
+}

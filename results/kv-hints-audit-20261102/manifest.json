@@ -1,0 +1,100 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 1640,
+      "sha256": "fa34ae6c504d75d80e1d864c72490429b27dcc850e91e40b94d2062d779ccea2"
+    },
+    "local-audit.json": {
+      "bytes": 3649,
+      "sha256": "5fe5422d925c35df324bbcc9e547f5a29fe2cd2748b02fdc8fe613965431bda4"
+    },
+    "local-audit.py": {
+      "bytes": 4115,
+      "sha256": "59c08bec0030cc6407c1df9010b5ed8493c1dee77feeeaa11faf9730c1654c0f"
+    },
+    "local-source-search.txt": {
+      "bytes": 4549,
+      "sha256": "50cb4d90bd3b6cafa4535defb9768fe8a495785a69cc5329cbd9d3d14690b7ce"
+    },
+    "pr53423.json": {
+      "bytes": 3475,
+      "sha256": "99af2e945c15d87a6d271592a051257666121312b72355a2170017b49a68f44b"
+    },
+    "pr53423_discussion.json": {
+      "bytes": 6877,
+      "sha256": "028f686799af6319c216ab40240cf19e935a0f20c70611fd58a921b4e94b02ea"
+    },
+    "pr53624.json": {
+      "bytes": 3397,
+      "sha256": "e4655648ae4129feec0ba33de3dc6468a53e5c8ad2510e0a82f2e01cf743650b"
+    },
+    "pr58198.json": {
+      "bytes": 7962,
+      "sha256": "f4f664c8e9cbb1cbae69151d038c7c72ccca41ff636b525a09504ad57b784408"
+    },
+    "pr59714.json": {
+      "bytes": 5690,
+      "sha256": "3287b2425015267b1d9aec369f9ccc7ed960394750ee67b15c8e7b47b7536262"
+    },
+    "pr62382.json": {
+      "bytes": 8205,
+      "sha256": "9a5f5739a6435ae5067a671375719964486233a82bf55fed5e7ef7b56066c60c"
+    },
+    "pytest-kvcr-optional.log": {
+      "bytes": 1266,
+      "sha256": "7686693bc3fc989dc7def99887ce87bcd5516220ad3d97687e3f88dbfbecf61e"
+    },
+    "pytest.log": {
+      "bytes": 1203,
+      "sha256": "cd48fa7c7a072481e2b43ca5288dc0bf3078caf86a70e9521fadfb6415c2787d"
+    },
+    "rfc51428.json": {
+      "bytes": 16484,
+      "sha256": "c1c732af03da46907d0f9b64b7ceb179c7195765a6abc817d21e52b96f2293ad"
+    },
+    "rfc52113.json": {
+      "bytes": 25738,
+      "sha256": "e5a120747d05a17a29e63b76f754c853cfb790aabb0471b932f9a158df4a1e01"
+    },
+    "rfc53421.json": {
+      "bytes": 7649,
+      "sha256": "80fb62ec34c2ce290fc2cb5b4a358be103d110ad79fa7e5661e888fe47aa34c5"
+    },
+    "rfc53421_comments.json": {
+      "bytes": 269,
+      "sha256": "44d365c305d079dd0e96053deb44b4a35fdbfa179cf1bf05893d2aabc9d4640a"
+    },
+    "rfc57103.json": {
+      "bytes": 57932,
+      "sha256": "6be49debd00f694cc6b8368e637e13c83dc77dba160ea63f4f199b4bf2e009d5"
+    },
+    "rfc59708.json": {
+      "bytes": 19486,
+      "sha256": "6ca7de8c0497ca2bf1b80c5436f50b7ef8ed3a738d46769b9475622611fa96de"
+    },
+    "rfc59708_comments.json": {
+      "bytes": 12689,
+      "sha256": "377b6067dd735dfd3b62e355c90a6c761123b13dfd0c1be992fb4687b4468c6a"
+    },
+    "search_queries.json": {
+      "bytes": 105,
+      "sha256": "f2cc1daa542b68ee6648a75da74b067f466f1dc3b5347392360b764d61a6bc6b"
+    },
+    "search_results.json": {
+      "bytes": 1652,
+      "sha256": "bf841ede75682cbcfcc7e67f96f0c15c6d78049c062c89b4e32f596f5fe8a9b8"
+    }
+  },
+  "note": {
+    "path": "../../doc/kv_hints.md",
+    "sha256": "b54536bd58bb3987ea7b255db7d0b3832643f23fa45c95dd35083ef97f48227a"
+  },
+  "verified_local_links": 35,
+  "checks": {
+    "request_and_req_context_tests": "2 passed",
+    "kvcr_optional_test": "skipped: package not installed",
+    "http_field_probe": "undeclared extra accepted; no sampling/engine forwarding",
+    "python_engine_request_hint_plumbing": "present",
+    "builtin_lru_arc_hint_read": "absent"
+  }
+}

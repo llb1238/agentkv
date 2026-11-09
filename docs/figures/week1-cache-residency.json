@@ -1,0 +1,18 @@
+{
+  "gpu_source": "/home/llb/my_soft/vllm/benchmarks/results/two-turn-hello-small-cache-20261101-122132/results.json",
+  "cpu_source": "/home/llb/my_soft/vllm/benchmarks/results/two-turn-controls-http-20261101-222611/cpu/sessions.json",
+  "source_sha256": {
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-hello-small-cache-20261101-122132/results.json": "fff9892291f2c49933be373ee0e3f474c599aef230a71c661be877767d8d04d6",
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-controls-http-20261101-222611/cpu/sessions.json": "a7b09ab9a391f9d6c306650ea0460c10252257bf2fd37363e79cb7c39e4d5ff3",
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-controls-http-20261101-222611/summary.json": "d7f6dda379a50c37dcd1a9d5ccee5d30aee1d863c89c91d8387a05a6e86f9bde"
+  },
+  "gpu_scope": "0-2 measured in three matched diagnostic trials; 3-6 inferred zero because the session is not accessed before turn2",
+  "cpu_scope": "0-6 measured in three six-noise-request HTTP trials",
+  "block_scope": "GPU includes one generated block; CPU stores only 256 original prompt blocks",
+  "cpu_capacity_blocks": 1695,
+  "session_cpu_fraction": 0.15103244837758112,
+  "hint_line": "retention target only; no hint policy was run",
+  "cpu_kept_ttft_median_ms": 59.05019189231098,
+  "cpu_lost_ttft_median_ms": 121.21523800306022,
+  "latency_scope": "different measured controls; keeping 256 blocks under six-noise pressure remains a hypothesis to test"
+}

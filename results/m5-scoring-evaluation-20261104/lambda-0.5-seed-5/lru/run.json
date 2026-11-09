@@ -1,0 +1,36 @@
+{
+  "git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "status": "complete",
+  "label": "lru",
+  "tier": null,
+  "candidate": null,
+  "options": {},
+  "population_sha256": "f9b506da73104a07588bbdcfed855543f0f3af1ed3964839eb16f2529ce4cec7",
+  "schedule_gpu_sha256": "fb2720b67ab1816d58bbd5483f8392322ca4bc894f7d05c6ad70257fd8fbb4df",
+  "summary": {
+    "requests": 4792,
+    "window_requests": 3796,
+    "window_prompt_tokens": 26011021,
+    "source_tokens": {
+      "gpu_hit": 21157936,
+      "cpu_hit": 1639808,
+      "recomputed": 3213277
+    },
+    "source_fractions": {
+      "gpu_hit": 0.8134219721709501,
+      "cpu_hit": 0.06304281558190276,
+      "recomputed": 0.12353521224714709
+    },
+    "gpu_evictions": 374020,
+    "cpu_evictions": 244730,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 8,
+    "peak_gpu_tokens": 182880,
+    "kv_blocked_checks": 0,
+    "queued_requests": 2,
+    "unsent_queued": 0
+  },
+  "elapsed_wall_s": 2.1609447160735726,
+  "requests_sha256": "187a2a5463cee91fa022ef6d8bf67bf57364bea796aa3f308beb081b8d96d646",
+  "policy_stats": null
+}

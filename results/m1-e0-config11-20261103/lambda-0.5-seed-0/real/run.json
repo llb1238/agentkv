@@ -1,0 +1,574 @@
+{
+  "parameters": {
+    "output_dir": "/tmp/agentkv-e0-config11-20261103/lambda-0.5-seed-0/real",
+    "base_url": "http://127.0.0.1:8012",
+    "model": "Qwen/Qwen3-8B",
+    "run_id": "e0-lambda-0.5-seed-0",
+    "policy": "lru",
+    "hint_tier": "none",
+    "arrival_rate": 0.5,
+    "population_seed": 0,
+    "steady_state": true,
+    "duration": 2400.0,
+    "warmup": 600.0,
+    "cooldown": 0.0,
+    "max_inflight": 128,
+    "request_timeout": 180.0,
+    "drain_timeout": 120.0,
+    "metrics_interval": 1,
+    "allow_dirty": false,
+    "observation_dir": "/tmp/agentkv-e0-config11-20261103/lambda-0.5-seed-0/real/server-observations"
+  },
+  "git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+  "source": {
+    "workload_sha256": "a35eaf1eafcb9de245be86ac1f847de0314b7dcf806ecf4ebc5d079b6c5cffd2",
+    "schedule_sha256": "90823eab906f67d6bb5b37b17b49760a4616b91cb4805fb806cd0686624c6f20"
+  },
+  "started_at": "2026-11-03T11:24:17.598332+00:00",
+  "status": "complete",
+  "M0": 39,
+  "instances": [
+    {
+      "root_id": "5d7e313e1d6839e48cc1f27d00f3ce9bae96",
+      "instance_id": 1,
+      "tau_s": 319.79932284333137,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "d509a5b878d6623b66a7a9b3ca72c18d3f7a",
+      "instance_id": 3,
+      "tau_s": 513.3069568622509,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 5,
+      "tau_s": 45425.25159114037,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 7,
+      "tau_s": 57465.01589904152,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5d7e313e1d6839e48cc1f27d00f3ce9bae96",
+      "instance_id": 9,
+      "tau_s": 3235.857009241315,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "fc1b422d1b7a022e38072ff1e059e2eb718d",
+      "instance_id": 11,
+      "tau_s": 1783.8653560853156,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "fc1b422d1b7a022e38072ff1e059e2eb718d",
+      "instance_id": 13,
+      "tau_s": 8073.268923591831,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "785073384dac6cfe57bb3c8338f6c6b9a534",
+      "instance_id": 15,
+      "tau_s": 552.5279466535023,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "af6b2fe9201b7c425aefcc0bda69fd0ebf23",
+      "instance_id": 17,
+      "tau_s": 202.13735131683455,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "0b7f3ca692f15ae2651a310d9411d70794aa",
+      "instance_id": 19,
+      "tau_s": 3837.9326969544463,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "c46ba0cc37132f9a7885c7d222ef104b68cc",
+      "instance_id": 21,
+      "tau_s": 8410.602150351315,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "43d1f727aec4d8b3f2aec42f816e7fabe193",
+      "instance_id": 23,
+      "tau_s": 4735.618488293986,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "077ea9e6554f45bbad9c24a8462bae9a8512",
+      "instance_id": 25,
+      "tau_s": 652.0350371642327,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "939cd9c29484a21128e9fa58188cf85919dd",
+      "instance_id": 27,
+      "tau_s": 816.2771756761317,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "0b7f3ca692f15ae2651a310d9411d70794aa",
+      "instance_id": 29,
+      "tau_s": 4210.1890777767285,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "6a24d0277a28e652b9e10c05478a314fa2c2",
+      "instance_id": 31,
+      "tau_s": 2537.1243079484125,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "da7f35eb92538719bc0ea317a0b25bb25162",
+      "instance_id": 33,
+      "tau_s": 6881.739950718477,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "92e0638cb6f1c2438e8b9587408c5f9ed67b",
+      "instance_id": 35,
+      "tau_s": 178.80531662080892,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "f6186ae5ee058ff54beafb57cd5cd4a45bdc",
+      "instance_id": 37,
+      "tau_s": 4028.8452995614366,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 39,
+      "tau_s": 11948.913553762428,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "515e43cbf9a646bb3e6489bd78f1bf1b361a",
+      "instance_id": 41,
+      "tau_s": 48.937233888687224,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5ed3de2b572d237576f034af300c1a1f65d3",
+      "instance_id": 43,
+      "tau_s": 1751.323683666169,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "524727c36b5459a9c58418e4db0ce22c2661",
+      "instance_id": 45,
+      "tau_s": 197.16671226989476,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 47,
+      "tau_s": 25192.167975309017,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "557f96e1c557baa7724b7bdfd13c48cce434",
+      "instance_id": 49,
+      "tau_s": 899.7498816844203,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "00ca01c4aaeccee751ae6285beb54dea262f",
+      "instance_id": 51,
+      "tau_s": 15.56660839072107,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a1c8f806f868f22e423cd1016130ef83b740",
+      "instance_id": 53,
+      "tau_s": 763.6297192995136,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "f6186ae5ee058ff54beafb57cd5cd4a45bdc",
+      "instance_id": 55,
+      "tau_s": 1888.459975620151,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5d7e313e1d6839e48cc1f27d00f3ce9bae96",
+      "instance_id": 57,
+      "tau_s": 4555.157870779845,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "e094e1381d88f8aa6c9592279d51f97c5d87",
+      "instance_id": 59,
+      "tau_s": 2475.898631159644,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 61,
+      "tau_s": 39050.36233752784,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "6f1e16774e85dcceb24661f4767c28659a78",
+      "instance_id": 63,
+      "tau_s": 1370.0074650104782,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "38f9148d19708a1c29ed7c8505f1b82083aa",
+      "instance_id": 65,
+      "tau_s": 799.2621812524412,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "6a24d0277a28e652b9e10c05478a314fa2c2",
+      "instance_id": 67,
+      "tau_s": 2986.1988604053013,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "706c0abaae61a8e9c2b182672a4527222b02",
+      "instance_id": 69,
+      "tau_s": 704.2963685309977,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 71,
+      "tau_s": 22441.2197073435,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "b896573ed9362f3dfd75d294c797be57bce0",
+      "instance_id": 73,
+      "tau_s": 611.7551428007139,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "e094e1381d88f8aa6c9592279d51f97c5d87",
+      "instance_id": 75,
+      "tau_s": 490.0764911924068,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5fc8495d01a2ad301e8ca7879579f2529029",
+      "instance_id": 77,
+      "tau_s": 1914.1525872576535,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "31dd54e63bd3605ad9ab96003ab1ae8f39f3",
+      "instance_id": 0,
+      "tau_s": 0.0,
+      "start_s": 27.037063072329207,
+      "initial": false
+    },
+    {
+      "root_id": "58df1d60a757e733f6a572d720e17dabd505",
+      "instance_id": 2,
+      "tau_s": 0.0,
+      "start_s": 83.19430172513925,
+      "initial": false
+    },
+    {
+      "root_id": "846f3b1d41d0bc5a85253fe29e3a22a3f8e8",
+      "instance_id": 4,
+      "tau_s": 0.0,
+      "start_s": 545.9819804730353,
+      "initial": false
+    },
+    {
+      "root_id": "12bd4c7c82ae413b035253cb800fc5312111",
+      "instance_id": 6,
+      "tau_s": 0.0,
+      "start_s": 562.9667915892472,
+      "initial": false
+    },
+    {
+      "root_id": "b5814dfafe18de379ec922b7754a5d4daff3",
+      "instance_id": 8,
+      "tau_s": 0.0,
+      "start_s": 578.6668126607238,
+      "initial": false
+    },
+    {
+      "root_id": "ac8484a39348e8e6120d48d5143982d162a3",
+      "instance_id": 10,
+      "tau_s": 0.0,
+      "start_s": 692.3149619345428,
+      "initial": false
+    },
+    {
+      "root_id": "786fc2864e590a1a8f57c01636868c677919",
+      "instance_id": 12,
+      "tau_s": 0.0,
+      "start_s": 693.6565825226946,
+      "initial": false
+    },
+    {
+      "root_id": "6ec3296ff5a1f4f0ed4507093863aa53a4cc",
+      "instance_id": 14,
+      "tau_s": 0.0,
+      "start_s": 788.9682510021829,
+      "initial": false
+    },
+    {
+      "root_id": "846f3b1d41d0bc5a85253fe29e3a22a3f8e8",
+      "instance_id": 16,
+      "tau_s": 0.0,
+      "start_s": 1019.8423724972305,
+      "initial": false
+    },
+    {
+      "root_id": "524727c36b5459a9c58418e4db0ce22c2661",
+      "instance_id": 18,
+      "tau_s": 0.0,
+      "start_s": 1587.6858163800362,
+      "initial": false
+    },
+    {
+      "root_id": "528995cdde1ebf15ccf0b79aec42dba31ce2",
+      "instance_id": 20,
+      "tau_s": 0.0,
+      "start_s": 1599.2863500195367,
+      "initial": false
+    },
+    {
+      "root_id": "1007f04d2c64580308858bb42f292992929d",
+      "instance_id": 22,
+      "tau_s": 0.0,
+      "start_s": 1785.2989852050105,
+      "initial": false
+    },
+    {
+      "root_id": "063179eb93f4337a662e859c5a2c5638e03f",
+      "instance_id": 24,
+      "tau_s": 0.0,
+      "start_s": 1906.7010135769115,
+      "initial": false
+    },
+    {
+      "root_id": "9818ececb3adfe6094838a102661d831b228",
+      "instance_id": 26,
+      "tau_s": 0.0,
+      "start_s": 1953.7944025850443,
+      "initial": false
+    },
+    {
+      "root_id": "002001296e8a8c38ad9d7cc436d691afc602",
+      "instance_id": 28,
+      "tau_s": 0.0,
+      "start_s": 2276.1279311992816,
+      "initial": false
+    }
+  ],
+  "server": {
+    "vllm_commit": "60da6135b0349fac50a051e9dcec2bd5b4514400",
+    "agentkv_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+    "model": "Qwen/Qwen3-8B",
+    "gpu_index": 1,
+    "gpu_cache_tokens": 182880,
+    "cpu_cache_tokens": 274320,
+    "gpu_cache_bytes": 26966753280,
+    "cpu_bytes": 40450129920,
+    "block_size": 16,
+    "gpu_blocks": 11430,
+    "policy": "lru",
+    "hint_tier": "none",
+    "max_model_len": 16384,
+    "max_num_seqs": 8,
+    "max_num_batched_tokens": 8192,
+    "shared_gpu": true,
+    "command": [
+      "numactl",
+      "--cpunodebind=2",
+      "--preferred=2",
+      "/home/llb/my_soft/vllm/.venv/bin/vllm",
+      "serve",
+      "/data/models/Qwen3-8B",
+      "--served-model-name",
+      "Qwen/Qwen3-8B",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8012",
+      "--shutdown-timeout",
+      "30",
+      "--gpu-memory-utilization",
+      "0.38",
+      "--kv-cache-memory-bytes",
+      "26966753280",
+      "--num-gpu-blocks-override",
+      "11430",
+      "--block-size",
+      "16",
+      "--max-model-len",
+      "16384",
+      "--max-num-batched-tokens",
+      "8192",
+      "--max-num-seqs",
+      "8",
+      "--enable-prefix-caching",
+      "--kv-transfer-config",
+      "{\"kv_connector\":\"OffloadingConnector\",\"kv_role\":\"kv_both\",\"kv_connector_extra_config\":{\"cpu_bytes_to_use\":40450129920,\"offload_prompt_only\":true,\"eviction_policy\":\"lru\"}}"
+    ],
+    "clock_pair": {
+      "wall_time_s": 1793705007.6802888,
+      "monotonic_ns": 1590774896794647
+    },
+    "duration_s": 2400,
+    "warmup_s": 600,
+    "rate_per_minute": 0.5,
+    "population_seed": 0,
+    "gpu_before": "Tue Nov  3 19:23:27 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA H200 NVL                On  |   00000000:98:00.0 Off |                    0 |\n| N/A   40C    P0             97W /  600W |  133902MiB / 143771MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA H200 NVL                On  |   00000000:B8:00.0 Off |                    0 |\n| N/A   40C    P0             99W /  600W |   79043MiB / 143771MiB |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A         <redacted: other user's process> C 612MiB |\n|    0   N/A  N/A         <redacted: other user's process> C 13327... |\n|    1   N/A  N/A           <redacted: other user's process> C 43150MiB |\n|    1   N/A  N/A         <redacted: other user's process> C 35762MiB |\n+-----------------------------------------------------------------------------------------+\n"
+  },
+  "conventions": {
+    "prompt_token_ids": "original workload; sent token permutation recorded by seed and sha256",
+    "effective_cache_counts": "null unless observed; nominal external hits are CPU for CPU-only offload",
+    "http_retry": "none; failed requests block their dependent subtree"
+  },
+  "origin_ns": 1590827127744511,
+  "cutoff_ns": 1593227127744511,
+  "completed_at": "2026-11-03T12:04:27.023232+00:00",
+  "summary": {
+    "total_sent": 5215,
+    "window_sent": 3477,
+    "window_is_entry": 0,
+    "window_requests": 3477,
+    "window_success": 3477,
+    "window_failed": 0,
+    "ttft_ms": {
+      "n": 3477,
+      "p50": 47.067326,
+      "p99": 598.49284564,
+      "maximum": 1170.721042
+    },
+    "schedule_absolute_error_ms": {
+      "n": 3477,
+      "p50": 0.658048,
+      "p99": 3.820600239999983,
+      "maximum": 11.980264
+    },
+    "gap_absolute_error_ms": {
+      "n": 3265,
+      "p50": 0.6592419942954564,
+      "p99": 3.8651606829243024,
+      "maximum": 11.980263981722805
+    },
+    "safety_valve_queued": 0,
+    "safety_valve_triggered": false,
+    "queued_ms": {
+      "n": 0,
+      "p50": null,
+      "p99": null,
+      "maximum": null
+    },
+    "unsent_queued": [],
+    "peak_inflight": 12,
+    "dependency_blocked": 0,
+    "cache_source_requests": 3477,
+    "nominal_fraction_per_request": {
+      "gpu_hit": {
+        "n": 3477,
+        "p50": 0.990481900622049,
+        "p99": 0.9992184908395032,
+        "maximum": 0.9998569998569998
+      },
+      "cpu_hit": {
+        "n": 3477,
+        "p50": 0.0,
+        "p99": 0.9959287938163083,
+        "maximum": 1.0
+      },
+      "recomputed": {
+        "n": 3477,
+        "p50": 0.008707300736771601,
+        "p99": 1.0,
+        "maximum": 1.0
+      }
+    },
+    "nominal_token_weighted_fraction": {
+      "gpu_hit": 0.8027448772325315,
+      "cpu_hit": 0.03800624707136205,
+      "recomputed": 0.15924887569610643
+    },
+    "hint_sent": 0,
+    "hint_received": 0,
+    "hint_counts_match": true,
+    "observation_join": {
+      "prefills_joined": 5215,
+      "valid_hints_received": 0,
+      "observation_events": 15656
+    },
+    "body_build_ms": {
+      "n": 3477,
+      "p50": 2.419073,
+      "p99": 5.298056199999986,
+      "maximum": 8.55981
+    },
+    "body_prepare_wait_ms": {
+      "n": 3477,
+      "p50": 0.368911,
+      "p99": 2.127678199999996,
+      "maximum": 12.077355
+    },
+    "event_loop_lag_ms": {
+      "n": 179927,
+      "p50": 0.819824,
+      "p99": 5.066342739999998,
+      "maximum": 115.509707
+    },
+    "event_loop_missed_checks": 112
+  },
+  "requests_sha256": "e1681a68018a7b473704e0336e06151c3a7325968e4e86e16cabbf38d38e4f35",
+  "loop_lag_sha256": "6e9dbc857d3f33dc7a87ab8aff4b50af60f0dded588175a6b075c90f0433c123",
+  "token_store": {
+    "mode": "preloaded Arrow column before experiment clock",
+    "bytes": 796783060
+  }
+}

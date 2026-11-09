@@ -1,0 +1,10 @@
+{
+  "git_commit": "52ab4ded1c57b29ac1d0b68d71c32d057d64c84b",
+  "status": "complete",
+  "started_at": "2026-11-06T10:11:14.582464+00:00",
+  "server_pid": 3937894,
+  "dmon_pid": 3937893,
+  "replay_started_at": "2026-11-06T10:11:58.623733+00:00",
+  "client_pid": 3939104,
+  "completed_at": "2026-11-06T10:52:22.853234+00:00"
+}

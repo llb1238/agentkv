@@ -1,0 +1,27 @@
+{
+  "vllm_commit": "60da6135b0349fac50a051e9dcec2bd5b4514400",
+  "interface_sha256": {
+    "vllm/v1/kv_offload/cpu/policies/base.py": "db2d40b47abf08bfcedeb4a283cf7d8569dba83e94cf4425ff29784b36c40541",
+    "vllm/v1/kv_offload/cpu/policies/lru.py": "1c4ca6e743947795a00b76623e896b974550f1c5c15943dfe33ce8d1840b5a70",
+    "vllm/v1/kv_offload/cpu/manager.py": "94494fc4960c58071d724a1ede929132055f959b3ef2ccb2921b27a9b123a93a",
+    "vllm/v1/kv_offload/base.py": "8dea4e6cf774b15aa0fe0f9399f5ae53d32d976489f3251cf8d5620fe9e059dd",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py": "11c16279c3c5821d703d44fbc795ec437522b3af10b879a07e53c128b72735e8"
+  },
+  "locations": [
+    {
+      "path": "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+      "line": 1266,
+      "meaning": "chunk-level offload skips prefix-hit chunks"
+    },
+    {
+      "path": "vllm/v1/kv_offload/cpu/manager.py",
+      "line": 300,
+      "meaning": "ready existing and store candidates recorded before allocation early returns"
+    },
+    {
+      "path": "vllm/v1/kv_offload/cpu/manager.py",
+      "line": 411,
+      "meaning": "finished forwards only previously recorded request accesses"
+    }
+  ]
+}

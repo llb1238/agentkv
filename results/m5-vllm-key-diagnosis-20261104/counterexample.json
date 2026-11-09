@@ -1,0 +1,63 @@
+{
+  "witness": {
+    "waiting_request": "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:0/37",
+    "key": "b84754b41717bd232eb38a7ecefc448e789f9bd119e1e9c1bb709a22e0fafd4500000000",
+    "final_request": "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:5/0",
+    "all_observed_previous_chains_final": true
+  },
+  "scope": "minimal CPU counterexample with synthetic control chain; not full trace replay",
+  "final_hint": {
+    "protocol_version": 1,
+    "message_id": "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:5/0",
+    "actions": [
+      {
+        "action_id": "gap-0",
+        "action_type": "agentkv.tool_gap",
+        "action_version": 1,
+        "payload": {
+          "session_id": "d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:5",
+          "turn": 0,
+          "parent_session": "d509a5b878d6623b66a7a9b3ca72c18d3f7a#55",
+          "tool_name": null,
+          "expected_gap_ms": null,
+          "gap_p90_ms": null,
+          "final": true
+        }
+      }
+    ]
+  },
+  "waiting_hint": {
+    "protocol_version": 1,
+    "message_id": "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:0/37",
+    "actions": [
+      {
+        "action_id": "gap-0",
+        "action_type": "agentkv.tool_gap",
+        "action_version": 1,
+        "payload": {
+          "session_id": "d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:0",
+          "turn": 37,
+          "parent_session": "d509a5b878d6623b66a7a9b3ca72c18d3f7a#55",
+          "tool_name": null,
+          "expected_gap_ms": 11454.999999999927,
+          "gap_p90_ms": 22909.999999999854,
+          "final": false
+        }
+      }
+    ]
+  },
+  "decisions": {
+    "recorded_omission": {
+      "waiting_chain_mode": "waiting",
+      "deadline": 111.45499999999993,
+      "shared_registered_to_waiting_chain": false,
+      "victim": "shared"
+    },
+    "ownership_complete_control": {
+      "waiting_chain_mode": "waiting",
+      "deadline": 111.45499999999993,
+      "shared_registered_to_waiting_chain": true,
+      "victim": "control"
+    }
+  }
+}

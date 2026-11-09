@@ -1,0 +1,20 @@
+{
+  "scope": "verbatim subset of original LRU context events; NOT a complete callback replay fixture",
+  "events": 10,
+  "original_order_preserved": true,
+  "uncompressed_bytes": 201504,
+  "uncompressed_sha256": "5e35af425b63fa479e2af309b1fa4d22ca3cbb9a08a4d94cc00f15efbcecd2d6",
+  "message_ids": [
+    "m5-callback-probe-seed0/b4c638cc16e89d17c18da83951a87fbc44dd#13/b4c638cc16e89d17c18da83951a87fbc44dd::root::inferred:3/128",
+    "m5-callback-probe-seed0/b4c638cc16e89d17c18da83951a87fbc44dd#13/b4c638cc16e89d17c18da83951a87fbc44dd::root::inferred:6/0",
+    "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:0/37",
+    "m5-callback-probe-seed0/d509a5b878d6623b66a7a9b3ca72c18d3f7a#55/d509a5b878d6623b66a7a9b3ca72c18d3f7a::root::inferred:5/0"
+  ],
+  "missing_fields": [
+    "keys for scalar calls",
+    "ref_cnt transitions and protected sets",
+    "full hint envelope",
+    "keys for store_miss/touch"
+  ],
+  "counterexample_hint_source": "reconstructed from matching workload rows, not captured full envelopes"
+}

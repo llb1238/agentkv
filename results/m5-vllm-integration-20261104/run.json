@@ -1,0 +1,178 @@
+{
+  "git_commit": "11fc9d2f4ca8a289beaea9aa9fd8c7f317b1ebc4",
+  "trials": {
+    "probe": {
+      "measurement_git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+      "replay_git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+      "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+      "duration_s": 300,
+      "sent": 1284,
+      "statuses": {
+        "success": 1284
+      },
+      "hint_sent": 1284,
+      "hint_received": 1284,
+      "valid_policy_hints": 1284,
+      "prefix_checked": 1284,
+      "recorded_callbacks": 1216174,
+      "callback_counts": {
+        "get": 822292,
+        "on_store_miss": 1215,
+        "touch": 1215,
+        "insert": 116679,
+        "mark_evictable": 194520,
+        "on_request_finished": 1284,
+        "mark_non_evictable": 77841,
+        "evict": 1128
+      },
+      "replay_mode": "exact LRU replay + candidate decision replay on recorded LRU states",
+      "invariants": {
+        "no_unready_pinned_or_protected_victims": true,
+        "finished_chain_state": true,
+        "resident_prefix_membership_and_depth": true,
+        "ownership_measured_per_eviction": true,
+        "no_exceptions": true
+      },
+      "create_req_context_us": {
+        "count": 1284,
+        "p50": 241.058,
+        "p99": 1278.7330400000003,
+        "maximum": 1657.693
+      },
+      "core_evict_us": {
+        "count": 0
+      },
+      "adapter_evict_us": {
+        "count": 0
+      },
+      "ownership": {
+        "count": 1128,
+        "minimum": 1.0,
+        "p50": 1.0,
+        "p99": 1.0,
+        "maximum": 1.0
+      },
+      "unknown_block_observations": 0,
+      "source_sha256": {
+        "/tmp/agentkv-full-probe-20261104-v2/run.json": "9e09f1c4443b5a0acf7afd5b218c0dc000f333e366edab19631f1e539904be7d",
+        "/tmp/agentkv-full-probe-20261104-v2/trial-run.json": "4e87cfc8c4b357f78f3512742a8a24dda21d9db2b417d7409afabe327f3a08a4",
+        "/tmp/agentkv-full-probe-20261104-v2/request-metadata.parquet": "7daac6a082f427f7e8089852ee21b259b88cd116c2fba5930c8505bb4fdb1224",
+        "/tmp/agentkv-full-probe-replay-20261104-v2/run.json": "5269692f7ac158586be27da6f9db2dcb36f12dcd197a7e4bf00305370654114b",
+        "/tmp/agentkv-full-probe-replay-20261104-v2/ownership.parquet": "2fbfbc639a49fe9844292c326083897c5dc2eb7c5d7b81973a9226fafe9eb463"
+      },
+      "safety_valve_triggered": false,
+      "full_instrumented_evict_us": {
+        "count": 1128,
+        "minimum": 3443.061,
+        "p50": 5904.253000000001,
+        "p99": 10728.649360000001,
+        "maximum": 17121.663
+      },
+      "eviction_batch_blocks": {
+        "count": 1128,
+        "minimum": 1.0,
+        "p50": 4.0,
+        "p99": 512.0,
+        "maximum": 512.0
+      },
+      "manager_ref_transitions": {
+        "-1->0": 116679,
+        "0->1": 77841,
+        "1->0": 77841
+      },
+      "close_footers": 1
+    },
+    "smoke": {
+      "measurement_git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+      "replay_git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+      "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+      "duration_s": 600,
+      "sent": 2259,
+      "statuses": {
+        "success": 2259
+      },
+      "hint_sent": 2259,
+      "hint_received": 2259,
+      "valid_policy_hints": 2259,
+      "prefix_checked": 2259,
+      "recorded_callbacks": 2349756,
+      "callback_counts": {
+        "get": 1615984,
+        "on_store_miss": 2090,
+        "insert": 148401,
+        "mark_evictable": 363709,
+        "on_request_finished": 2259,
+        "mark_non_evictable": 215308,
+        "evict": 2005
+      },
+      "replay_mode": "exact HintAware call/clock replay",
+      "invariants": {
+        "no_unready_pinned_or_protected_victims": true,
+        "finished_chain_state": true,
+        "resident_prefix_membership_and_depth": true,
+        "ownership_measured_per_eviction": true,
+        "no_exceptions": true
+      },
+      "create_req_context_us": {
+        "count": 2259,
+        "p50": 297.407,
+        "p99": 1356.48366,
+        "maximum": 1545.43
+      },
+      "core_evict_us": {
+        "count": 2005,
+        "p50": 345.035,
+        "p99": 10105.074960000007,
+        "maximum": 26840.902
+      },
+      "adapter_evict_us": {
+        "count": 2005,
+        "p50": 2238.903,
+        "p99": 11802.65632,
+        "maximum": 28736.856
+      },
+      "ownership": {
+        "count": 2005,
+        "minimum": 1.0,
+        "p50": 1.0,
+        "p99": 1.0,
+        "maximum": 1.0
+      },
+      "unknown_block_observations": 0,
+      "source_sha256": {
+        "/tmp/agentkv-full-smoke-20261104/run.json": "28d054ecc4b0d0b7fe1e1cb9cd23db13ee4a2e898f41d1e734ac1bf415f46a29",
+        "/tmp/agentkv-full-smoke-20261104/trial-run.json": "6ebb9b7d63ffac81be0e0450ec6733eac0f9ebb159b73282a4eca4a94b521442",
+        "/tmp/agentkv-full-smoke-20261104/request-metadata.parquet": "2ebaaba5e91059e5e79e2c2ecd7c17ce024e71a8a4fbaaf0079ca6481eb02c2d",
+        "/tmp/agentkv-full-smoke-replay-20261104/run.json": "2b91d03534a06033b14bde9d41677bd7dffe6d40cefca22a08c906449a596ef1",
+        "/tmp/agentkv-full-smoke-replay-20261104/ownership.parquet": "5443264f9ae0632c8e658b346cc1acb5db8d3e5fb710033a7ec690ec1f0b3aed"
+      },
+      "safety_valve_triggered": false,
+      "full_instrumented_evict_us": {
+        "count": 2005,
+        "minimum": 5579.735,
+        "p50": 10252.331,
+        "p99": 21418.71792000001,
+        "maximum": 40655.395
+      },
+      "eviction_batch_blocks": {
+        "count": 2005,
+        "minimum": 1.0,
+        "p50": 3.0,
+        "p99": 512.0,
+        "maximum": 719.0
+      },
+      "manager_ref_transitions": {
+        "-1->0": 148401,
+        "0->1": 215308,
+        "1->0": 215308
+      },
+      "close_footers": 1
+    }
+  },
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "limits": [
+    "Instrumented shared-GPU functional runs, no paired uninstrumented performance baseline.",
+    "LRU stream candidate replay follows observed LRU membership; HintAware stream uses exact decisions and recorded clocks.",
+    "Standalone real-model integration module requires unavailable Llama weights; original unit suites passed separately."
+  ]
+}

@@ -1,0 +1,4 @@
+[
+  "repo:vllm-project/vllm is:issue \"kv_hints\"",
+  "repo:vllm-project/vllm is:issue \"agent_hint\""
+]

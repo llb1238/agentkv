@@ -1,0 +1,15 @@
+{
+  "git_commit": "ee94b657a570c102ec4092257e3b1e452d58dc2e",
+  "status": "complete",
+  "training_roots": 293,
+  "training_intervals": 62159,
+  "source": {
+    "remaining_table_sha256": "1f21d5cc6ddead4fc9756c38a4a7b443c3d465899be251b294dccdf4e1df3fa3",
+    "training_pairs_sha256": "fd245b4bc67e2f1d9e747ceb9ca8a7eee568a4fd818fff5ba3af7b9fed0cb6a9",
+    "calibration_run_sha256": "19068ddcd191d3ddb54537723a40364d38dfe2a04935d59094aac69f3ec182ab",
+    "audit_sha256": "f2b24b8ed5f8db012e96419ea1e9a8dff16cebeeb84d3638501ff45bd17679b9",
+    "manifest_sha256": "bb31ca90e4bee565310a5b73f5533907a376e92192810d01b515a029f27a9f3d",
+    "workload_sha256": "a35eaf1eafcb9de245be86ac1f847de0314b7dcf806ecf4ebc5d079b6c5cffd2"
+  },
+  "table_sha256": "9fdeae4cc828548869686c75d86e0f7a19f94e681f4a004aac1bab4da475f301"
+}

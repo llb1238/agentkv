@@ -1,0 +1,348 @@
+{
+  "git_commit": "7a22dcb4f04eb30f7e670c20d4e7755c4921fbc5",
+  "status": "complete",
+  "policy": "lru",
+  "population_sha256": "c287baf247e5cb1b4dc8071ac39284563b77be78f4b16d49147c44eccda203c9",
+  "instances": [
+    {
+      "root_id": "5fc8495d01a2ad301e8ca7879579f2529029",
+      "instance_id": 1,
+      "tau_s": 4141.68306051379,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "3e119fc3136975fe98cfc7fa73500d6574a0",
+      "instance_id": 3,
+      "tau_s": 2559.7391671021423,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5fc8495d01a2ad301e8ca7879579f2529029",
+      "instance_id": 5,
+      "tau_s": 7397.786231988284,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "873df670bb4cc874c04b79732390b76504b7",
+      "instance_id": 7,
+      "tau_s": 3329.3934769829,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 9,
+      "tau_s": 16943.971587164597,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5d7e313e1d6839e48cc1f27d00f3ce9bae96",
+      "instance_id": 11,
+      "tau_s": 4840.891307073973,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 13,
+      "tau_s": 36135.16542229475,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 15,
+      "tau_s": 29897.354726967023,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "785073384dac6cfe57bb3c8338f6c6b9a534",
+      "instance_id": 17,
+      "tau_s": 829.1890674852056,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "c46ba0cc37132f9a7885c7d222ef104b68cc",
+      "instance_id": 19,
+      "tau_s": 2330.663375182259,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 21,
+      "tau_s": 53082.841079254504,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "d8f4acab90f50271074b6c75029412205e14",
+      "instance_id": 23,
+      "tau_s": 492.12563879667186,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "cfad46925e9d22c6ffb3e0cc4bb925a8a5e3",
+      "instance_id": 25,
+      "tau_s": 931.7968339674447,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "43d1f727aec4d8b3f2aec42f816e7fabe193",
+      "instance_id": 27,
+      "tau_s": 1584.5081419561213,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 29,
+      "tau_s": 15674.741709114689,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 31,
+      "tau_s": 37706.25316725978,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 33,
+      "tau_s": 30671.327469712807,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 35,
+      "tau_s": 21297.44650544452,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 37,
+      "tau_s": 42044.746254154496,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 39,
+      "tau_s": 16566.86028660051,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "a8cb459ec5ff0572db2bbe7e1640f488d6ed",
+      "instance_id": 41,
+      "tau_s": 879.6916941573588,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 43,
+      "tau_s": 51259.207788185406,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "5b6e131844fbcb4a57f8cf516831dc679004",
+      "instance_id": 45,
+      "tau_s": 36630.64069588251,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 47,
+      "tau_s": 60755.930397657285,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 49,
+      "tau_s": 53999.708690460866,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "61c4d4d16f2ff84b31dc5970560c55d07dc7",
+      "instance_id": 51,
+      "tau_s": 41395.95984130333,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "43d1f727aec4d8b3f2aec42f816e7fabe193",
+      "instance_id": 53,
+      "tau_s": 6641.396060061715,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "ac8484a39348e8e6120d48d5143982d162a3",
+      "instance_id": 55,
+      "tau_s": 72.84496399976258,
+      "start_s": 0.0,
+      "initial": true
+    },
+    {
+      "root_id": "ec18ce9c5b6375a3d4eb5ceaf9bdc19eb13d",
+      "instance_id": 0,
+      "tau_s": 0.0,
+      "start_s": 19.020076751164254,
+      "initial": false
+    },
+    {
+      "root_id": "421c59c8640de974ad4d7644b9ea88738998",
+      "instance_id": 2,
+      "tau_s": 0.0,
+      "start_s": 39.63926357907124,
+      "initial": false
+    },
+    {
+      "root_id": "ec18ce9c5b6375a3d4eb5ceaf9bdc19eb13d",
+      "instance_id": 4,
+      "tau_s": 0.0,
+      "start_s": 207.9718082492468,
+      "initial": false
+    },
+    {
+      "root_id": "a1c8f806f868f22e423cd1016130ef83b740",
+      "instance_id": 6,
+      "tau_s": 0.0,
+      "start_s": 543.353705723416,
+      "initial": false
+    },
+    {
+      "root_id": "ecd3ea07309dd8a6b62b2f90fd8c60fa92b2",
+      "instance_id": 8,
+      "tau_s": 0.0,
+      "start_s": 543.9408597088469,
+      "initial": false
+    },
+    {
+      "root_id": "92e0638cb6f1c2438e8b9587408c5f9ed67b",
+      "instance_id": 10,
+      "tau_s": 0.0,
+      "start_s": 730.268793837329,
+      "initial": false
+    },
+    {
+      "root_id": "a91bf3c00614e5be181fe11b7b497c829b46",
+      "instance_id": 12,
+      "tau_s": 0.0,
+      "start_s": 902.6311436676991,
+      "initial": false
+    },
+    {
+      "root_id": "31dd54e63bd3605ad9ab96003ab1ae8f39f3",
+      "instance_id": 14,
+      "tau_s": 0.0,
+      "start_s": 1086.80037900913,
+      "initial": false
+    },
+    {
+      "root_id": "cee6b94f31cc73d642e0aa58c95529429860",
+      "instance_id": 16,
+      "tau_s": 0.0,
+      "start_s": 1157.6791492689838,
+      "initial": false
+    },
+    {
+      "root_id": "81fad784ca8c3f4136179dc73184409d21a2",
+      "instance_id": 18,
+      "tau_s": 0.0,
+      "start_s": 1219.9309252074047,
+      "initial": false
+    },
+    {
+      "root_id": "af6b2fe9201b7c425aefcc0bda69fd0ebf23",
+      "instance_id": 20,
+      "tau_s": 0.0,
+      "start_s": 1281.9740655675948,
+      "initial": false
+    },
+    {
+      "root_id": "ecd3ea07309dd8a6b62b2f90fd8c60fa92b2",
+      "instance_id": 22,
+      "tau_s": 0.0,
+      "start_s": 1341.4345061079352,
+      "initial": false
+    },
+    {
+      "root_id": "de50a2a6e5a31db20edcd547ad23543ddcf2",
+      "instance_id": 24,
+      "tau_s": 0.0,
+      "start_s": 1765.844940631982,
+      "initial": false
+    }
+  ],
+  "summary": {
+    "requests": 5093,
+    "window_requests": 3507,
+    "window_prompt_tokens": 26433459,
+    "source_tokens": {
+      "gpu_hit": 22281344,
+      "cpu_hit": 1057264,
+      "recomputed": 3094851
+    },
+    "source_fractions": {
+      "gpu_hit": 0.8429219951879926,
+      "cpu_hit": 0.03999718689861966,
+      "recomputed": 0.11708081791338773
+    },
+    "gpu_evictions": 357301,
+    "cpu_evictions": 260521,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 7,
+    "peak_gpu_tokens": 182880,
+    "kv_blocked_checks": 0,
+    "queued_requests": 0,
+    "unsent_queued": 0,
+    "gap_eviction_audit": {
+      "blocks": 164907,
+      "passed": 164907,
+      "consistency": 1.0,
+      "failures": []
+    }
+  },
+  "recomputation": {
+    "version": "e0-prefix-source-v1",
+    "requests": 3507,
+    "prompt_blocks_tokens": 26407248,
+    "source_tokens": {
+      "unavoidable": 389808,
+      "gap_eviction": 2638512,
+      "other_eviction": 40320
+    },
+    "source_fractions": {
+      "unavoidable": 0.01476140186966851,
+      "gap_eviction": 0.09991620482376656,
+      "other_eviction": 0.0015268535365745041
+    },
+    "recomputed_fraction": 0.11620446023000958,
+    "tail_tokens": 26211,
+    "hit_exceeds_history_anomalies": 0,
+    "gap_share_of_avoidable": 0.9849486641939472,
+    "gap_requests": 292,
+    "gap_queue_observed_requests": 292,
+    "gap_requests_mean_queued_s": 0.0
+  },
+  "requests_sha256": "a2d4124062b3584a46133ec195ce8e6b0913255d223dc26b3893d84503e068e6",
+  "recomputation_sha256": "ac36afdad29e5a5c4259e2aec81c5dbf28649da9cbd1cc1103e6cf4b0cfb720e"
+}

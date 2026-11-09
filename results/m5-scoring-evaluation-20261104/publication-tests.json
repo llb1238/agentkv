@@ -1,0 +1,8 @@
+{
+  "git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "command": "python -m pytest -q",
+  "passed": 173,
+  "implementation_sha256_matches_freeze": true,
+  "scope": "after results publication; frozen Python implementation unchanged",
+  "log": "publication-tests.log"
+}

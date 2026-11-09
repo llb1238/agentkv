@@ -1,0 +1,52 @@
+{
+  "created_at": "2026-11-01T23:39:05.294749+08:00",
+  "plot_environment": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.0",
+    "pillow": "13.0.0"
+  },
+  "serving_venv_modified": false,
+  "files_sha256": {
+    "README.md": "0274c84fe72a78a6d9941a453c6c45a712b981f551ce358b1858af0bbb3abcb1",
+    "doc/WEEK1.md": "bf7e48f3e919710d3d5f31133178f21df4040052c543b33ede8cdc1491b324fc",
+    "agentkv/analysis/plot_week1_cache_residency.py": "49b413c5c90e2dd88867f14382506efe2691551adbb69ee9554899d23f2d5f62",
+    "doc/figures/week1-cache-residency.csv": "a3110f89728360adf5fd439206a6a21f0e0c9a5a2905eb7d1de54eee92bd25be",
+    "doc/figures/week1-cache-residency.json": "94c8a7289dbb0d76d4f4ebb677e82c8ca31e6d618f761a80c7dcca81c2da6ed4",
+    "doc/figures/week1-cache-residency.parquet": "8b0e4191ba6b5789358fb292ef36deec695e4f1bb3c9140774631857e5b91b7f",
+    "doc/figures/week1-cache-residency.pdf": "3aafd6e07e9d7e5ae10ce2ef036ac340ba807a60113e685e3fd7a7ec5b98648f",
+    "doc/figures/week1-cache-residency.png": "34c33f45a5f72adc8556dff41a411af1122914d61f6c97eb23a0d795b36fc81e",
+    "doc/figures/week1-cache-residency.svg": "22efc4e1b351d7a10f88b39ca3a0d0c73432fba0f68a7a4dc442262279167abc"
+  },
+  "sources_sha256": {
+    "/home/llb/my_soft/vllm/benchmarks/results/five-step-baseline-20261101-105549/benchmark.json": "ae3e6924d91babbc3f1d05af45f1d7738374479132275d84a88fba0c79b3fc08",
+    "/home/llb/my_soft/vllm/benchmarks/results/five-step-baseline-20261101-105549/prefix-experiment.json": "1e9c5ad4989fbee48ba5bb4c76a338b00cf3b270ffed7ac356d6d15eae227421",
+    "/home/llb/my_soft/vllm/benchmarks/results/five-step-baseline-20261101-105549/metrics-catalog.md": "1f42f584a9b4af2e98f0613bf07a2343e28a4d7777336919c494cfad60779845",
+    "/home/llb/my_soft/vllm/benchmarks/results/five-step-baseline-20261101-105549/cache-capacity.json": "a9e67de0b465f7d42cb8127ed0aeba6f13a0973410d1612f821b9d8cfdcaa0ef",
+    "/home/llb/my_soft/vllm/benchmarks/results/cpu-tail-block-probe-20261101-112321/summary.json": "7141f548f0ba0c6dd623c35c495d8eb1c6c3cfd29529645bf87fe90731b8e235",
+    "/home/llb/my_soft/vllm/benchmarks/results/qwen3-8b-rate4-baseline-20261101-114437/result.json": "4b90badf3aa5f554b006e2f147a123c1e7fbafad68b1b7372e0a684f28c6f0dc",
+    "/home/llb/my_soft/vllm/benchmarks/results/qwen3-8b-rate4-baseline-20261101-114437/analysis.json": "e11d8f8fc5d95589800a217b8a1a95b542b21efc0dbd3a34b94f38101b8e36ea",
+    "/home/llb/my_soft/vllm/benchmarks/results/pinned-h2d-prefill-20261101-115642/bandwidth-summary.json": "0edd2e367688a2c572e9407f0c04d85b070fa516c00a1a59b197adb926c0fcba",
+    "/home/llb/my_soft/vllm/benchmarks/results/pinned-h2d-prefill-20261101-115642/prefill-summary.json": "a7b619e8d2213164fd54ad21b5ccf855f1896cca5280277f3a562dafbe7d1fc3",
+    "/home/llb/my_soft/vllm/benchmarks/results/pinned-h2d-prefill-20261101-115642/comparison.json": "180df146f159d7a1a50701d957a0055a756d8b55673b2e3fc0f6e3787be97835",
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-hello-small-cache-20261101-122132/results.json": "fff9892291f2c49933be373ee0e3f474c599aef230a71c661be877767d8d04d6",
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-controls-http-20261101-222611/summary.json": "d7f6dda379a50c37dcd1a9d5ccee5d30aee1d863c89c91d8387a05a6e86f9bde",
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-controls-http-20261101-222611/cpu/sessions.json": "a7b09ab9a391f9d6c306650ea0460c10252257bf2fd37363e79cb7c39e4d5ff3",
+    "/home/llb/my_soft/vllm/benchmarks/results/two-turn-controls-http-20261101-222611/no_cpu/sessions.json": "4ac479529bd400c8865bcf91e2823b295e1b1a029e11d254d28e443e489f14c9"
+  },
+  "validation": {
+    "local_links_checked": 26,
+    "figure_data_rows": 21,
+    "trials": 3,
+    "cpu_evictions_each_trial": 811,
+    "png_dimensions": [
+      2360,
+      1400
+    ],
+    "vector_files_parse": true,
+    "parquet_roundtrip": true,
+    "ruff_check": "passed",
+    "manual_png_visual_review": "passed",
+    "editorial_review": "Claims tied to local evidence; hypothetical retention and unmatched GPU observations labeled; JCT and policy gains not claimed."
+  }
+}

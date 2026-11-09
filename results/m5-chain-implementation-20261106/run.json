@@ -1,0 +1,112 @@
+{
+  "git_commit": "d64d30069a289d9b5ec773de1301349b4046875e",
+  "status": "cpu_and_gpu_qualified",
+  "cpu_online_wrapper_p99_us": {
+    "on_request_finished": 1079.0413400000002,
+    "evict": 1958.877789999999
+  },
+  "gpu_overhead_completed": 3,
+  "e1_v2_registered": false,
+  "files_sha256": {
+    "tests.log": "fa12ba7bc9b883dd581503fd83151a82b00463bb75da9edf2aaf755d94562c0a",
+    "cpu/chain-plugin-online-1/policy-config.json": "2b0b3d883d01e1bd84242863e67682eb8e365a433927dc660e1d6a7a3bbf2353",
+    "cpu/chain-plugin-online-1/run.json": "308e8b6188215a848e946efb50ee65bf77d5f28cc2cd20c27a3d28f0b2ab2f6a",
+    "cpu/chain-plugin-online-1/callbacks.parquet": "f7ff06d51e8d9e45a29058c8d68617be041ca2cb3d12d2691c342df23ff16367",
+    "cpu/chain-plugin-online-1/decisions.parquet": "f183493b06bb43f6786198250053c1e6cbfd203fb4af793f93fb7e139078b4cd",
+    "cpu/chain-online-4/run.json": "3acb790f5758b618c8e858bed427a228ac49e1ec0c7fd783f9ae05e5829317ed",
+    "cpu/chain-online-4/callbacks.parquet": "1c49f52f4556a4e27068fcad33c97463ce2b1ec26c1e44e8b2c92d7b4a333c9f",
+    "cpu/chain-online-4/decisions.parquet": "f183493b06bb43f6786198250053c1e6cbfd203fb4af793f93fb7e139078b4cd",
+    "cpu/chain-perfect-3/run.json": "9920761dc8b5d97b1b4bcd7f561c4de76b97127d226edee6b8c40db22a786ef7",
+    "cpu/chain-perfect-3/callbacks.parquet": "0d776453a030dee6ce4b4fd486fab65a8b8f4d6193293a5bf10220e0eacd2403",
+    "cpu/chain-perfect-3/decisions.parquet": "6dbb56899147fc6409f445822c4bca3ef65e1950c6636595a2d5e9e7e7685346",
+    "cpu/chain-plugin-perfect-1/policy-config.json": "3625c560950243e6c19c49769faf378e285ffba5873d14104f6d45566b8b0fe9",
+    "cpu/chain-plugin-perfect-1/run.json": "489ad6583d3bdd1083fb505edaedf0eca9545e6509c40c1324583e43e8c5dd25",
+    "cpu/chain-plugin-perfect-1/callbacks.parquet": "2e3ad1f95d7977e09e4dc929c16ac1a65eb2445e103b70b3db354ce533da87da",
+    "cpu/chain-plugin-perfect-1/decisions.parquet": "6dbb56899147fc6409f445822c4bca3ef65e1950c6636595a2d5e9e7e7685346",
+    "gpu/controller.log": "2fceed352af11c8f7cd07bd5f80f3b54094726f71ee0256efc02afeceb01fcca",
+    "gpu/lru-policy-config.json": "2b0b3d883d01e1bd84242863e67682eb8e365a433927dc660e1d6a7a3bbf2353",
+    "gpu/perfect-policy-config.json": "3625c560950243e6c19c49769faf378e285ffba5873d14104f6d45566b8b0fe9",
+    "gpu/run.json": "4a26992f20111ec511aa6e97acab6742d30066f8231fe7b06f7314e0f74ab128",
+    "gpu/online-policy-config.json": "2b0b3d883d01e1bd84242863e67682eb8e365a433927dc660e1d6a7a3bbf2353",
+    "gpu/perfect/pilot-status.json": "66d9d20adafb7b3d5c3497b6d3f1db77531bd81aa4ad49fc2bbb0944da0c40f2",
+    "gpu/perfect/server-manifest.json": "e1f0d2d33e4182a1ccf93500deb722cbd1e4bb1e02069fd7d192c26fefdca624",
+    "gpu/perfect/policy-config.json": "3625c560950243e6c19c49769faf378e285ffba5873d14104f6d45566b8b0fe9",
+    "gpu/perfect/metrics.jsonl": "6b1a4b5dd598792b980e23422f77630a80b992c9598f015e7aeec2c7e9aa66e8",
+    "gpu/perfect/server.log": "0a806732cc3a9937c5c494bdd66dd8d10d9ce9b7b1268e22ae74660ea3e65b3b",
+    "gpu/perfect/loop_lag.parquet": "eb87de8f1d320f0f1bbc11de829b33ea6e0bea763e831515d14b08a01484b335",
+    "gpu/perfect/overhead-run.json": "1d74ab0d3edc0e4e365c3dd5b87a763e54433f553eb57adc283bf0ac5ce4f9ed",
+    "gpu/perfect/run.json": "a07803a273d3a4e6f551d5cc591955d8fc959f6b83813a93c8ffe3d2bb7d848d",
+    "gpu/perfect/request-metadata.parquet": "4bb0c590c0c38d3d4d5eb0f3075e33b29056d820c7c55ee15b92be98cc52d0c2",
+    "gpu/perfect/experiment-clock.json": "c7459d26e48394a082f18ee88e516ca2bd20b54fe44ad61212a211496c410033",
+    "gpu/perfect/client-command.json": "109b8c5a771e00fc79a803ef992c3c8fdf86aa4d342b587a9c16bfa57993e1fd",
+    "gpu/perfect/client.log": "d89c4813ffe500c6b95de1e9f1641a5d25db08b4f70fff21cbf4b34121c185d1",
+    "gpu/perfect/dmon.log": "86a50e18a24bcd060f9ee6638aea145312b31baf7a6872250659f42e2e4ca8ec",
+    "gpu/lru/pilot-status.json": "2e0df298d1dc70f1d3e009c6fb86089fb4e9aff50d70b3b1842fe20763009fcd",
+    "gpu/lru/server-manifest.json": "5f43465c34ef9a6e088cd1ec21ad8bcc60bcb2ef0f272988ef0dd3ea4de91733",
+    "gpu/lru/policy-config.json": "2b0b3d883d01e1bd84242863e67682eb8e365a433927dc660e1d6a7a3bbf2353",
+    "gpu/lru/metrics.jsonl": "db134c472c869ff8c6af532436657ee7720094fc8868c4fdf3549654877d2499",
+    "gpu/lru/server.log": "4fdad3ad953f9892e75148bb40128fb4a1fb761c147ce7ac8b6e87465cef054c",
+    "gpu/lru/loop_lag.parquet": "1fc09e39119b8cb26ef120d5d956326dc72e3e8c340df7438972a2e4f649c44c",
+    "gpu/lru/overhead-run.json": "1a10c69da6aa4fdfebcd7bab30786df14e7e107b3f99e7e4df3231253d2fa37b",
+    "gpu/lru/run.json": "fc5a93ccbc811cfe993b651cfac2febc0b66b084265d40b92c0fcf95ea48c226",
+    "gpu/lru/request-metadata.parquet": "a69d1f98487b591d4f8d0ce5719031680c4d8a64818c90f1815632757ff0f136",
+    "gpu/lru/experiment-clock.json": "11ebd8523c97ccea07e198cb7903db40af6f1374e23e32819fa3332b3bf6c41f",
+    "gpu/lru/client-command.json": "2a0c218ed44032c5073c05773f54d05f1b334244c5cfbd825d926cb6e9242bab",
+    "gpu/lru/client.log": "a8d39846c49b5e17767d93c056948e8210aeedabaa6e1fe162aeedf4d9b3aed2",
+    "gpu/lru/dmon.log": "af332286510ef73840f4b2dcb72499fc5fc937356afaf769cf2aa253fa9ec1c8",
+    "gpu/online/pilot-status.json": "82a460d3d370869636eb501282669983ef63ad6da5658742734b6339ca371885",
+    "gpu/online/server-manifest.json": "a3ad18d647405897df5361b6538998d74b4575577fefb35d7221717487bd0f14",
+    "gpu/online/policy-config.json": "2b0b3d883d01e1bd84242863e67682eb8e365a433927dc660e1d6a7a3bbf2353",
+    "gpu/online/metrics.jsonl": "a1fbc2db152e0a5f9a25e2767ec58aa5f7d608f4ad92480106288b0df0cfa752",
+    "gpu/online/server.log": "46cbc93dae006c618826cafa0aac6237b8dea182056824a765d36a40d2649cee",
+    "gpu/online/loop_lag.parquet": "6f30db6d23e9517096a22fcf1ff5b4280d68061a1353b8c1902f4112dac51bdd",
+    "gpu/online/overhead-run.json": "31454f588840985f05b7d137b92557c0a75310f13ef57cf226a0661a99631e93",
+    "gpu/online/run.json": "c3e06a050619c5f6859505e54451504e4590db5749d781d96e15fa50a98cffa1",
+    "gpu/online/request-metadata.parquet": "957266639689c10f7a6a0e4f7480920bf7775fca29070f477a6168e837aef7ad",
+    "gpu/online/experiment-clock.json": "87aaf987c27dd1fed96829645bae37ae541d6229a1a3faecdf292227c92decc9",
+    "gpu/online/client-command.json": "69ef7a76f58ffa580d7e9a44f5454229f4b8d03dd4e00f1fe60c2a6449da4e43",
+    "gpu/online/client.log": "54493d83a0725205636025418250c8299bed4623295aec3586e902799704215f",
+    "gpu/online/dmon.log": "cd2f09b774a9b9082c7bcc43c463df0b0ec37641b8fe082623e2efd8449cd7f6",
+    "gpu/perfect/server-observations/light-3621075.json": "afc5d5a4080d9f11c51862101a06a028f275b6fa38ba30a3630b2bd0f9a3fd8a",
+    "gpu/perfect/server-observations/light-3620811.json": "dd23f31c9d999097a7e5d256fc9725493affba99af4851f132100ebc7500f767",
+    "gpu/lru/server-observations/light-3550419.json": "8b4f3555c75f7d38fe5328dacba6940b4c6ba6aa4e666e09e58753626e1d3a38",
+    "gpu/lru/server-observations/light-3550227.json": "14c6f1a9424e185762abbb2449bcc22d5c1ae54d8068200afd0f1c4660f7421c",
+    "gpu/online/server-observations/light-3583708.json": "a4c33efa9a822213182a6a70ea6482ec4b7cc726e1518d826309c693006b2dc6",
+    "gpu/online/server-observations/light-3583457.json": "d0f77357f3dc527a4852d7ae0c2f140d22beec9415ec4ae1a1462c628ee2a9ae",
+    "v2-runner-tests.log": "0b277856bf396fdb2db6491457e273d8d773ae46bfd4ba84864528dff07719a2"
+  },
+  "gpu_gate_source_commit": "415f4778699b11c5a6b520986b48d351e196af3a",
+  "gpu_comparisons": {
+    "lru": {
+      "schedule_p99_ns": [
+        7766016,
+        7798783
+      ],
+      "delta_upper_ms": 0.0,
+      "passed": true,
+      "ttft_p50_delta_ms": 0.0
+    },
+    "online": {
+      "schedule_p99_ns": [
+        9502720,
+        9568255
+      ],
+      "delta_upper_ms": 1.802239,
+      "passed": true,
+      "ttft_p50_delta_ms": 0.11661400000000555
+    },
+    "perfect": {
+      "schedule_p99_ns": [
+        9043968,
+        9109503
+      ],
+      "delta_upper_ms": 1.343487,
+      "passed": true,
+      "ttft_p50_delta_ms": 2.679101000000003
+    }
+  },
+  "v2_runtime_tests": {
+    "passed": 246,
+    "skipped_historical": 3
+  }
+}

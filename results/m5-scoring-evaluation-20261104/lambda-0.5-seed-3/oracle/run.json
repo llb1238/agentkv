@@ -1,0 +1,36 @@
+{
+  "git_commit": "2764ae0264f0bbab7a100f1968e184c7cfce400d",
+  "status": "complete",
+  "label": "oracle",
+  "tier": null,
+  "candidate": null,
+  "options": {},
+  "population_sha256": "33d339f7aa7b61651d4fe368dad1b397b2091361e8a8fcd5dd9720bf3b26fd6b",
+  "schedule_gpu_sha256": "957d1e098579b4cb8c1dc9d98438a9fb4c2013667ceaf32bd5892b0a215fe843",
+  "summary": {
+    "requests": 4410,
+    "window_requests": 3600,
+    "window_prompt_tokens": 23683393,
+    "source_tokens": {
+      "gpu_hit": 20246624,
+      "cpu_hit": 2857792,
+      "recomputed": 578977
+    },
+    "source_fractions": {
+      "gpu_hit": 0.8548869665761152,
+      "cpu_hit": 0.12066649402811498,
+      "recomputed": 0.024446539395769854
+    },
+    "gpu_evictions": 252613,
+    "cpu_evictions": 35958,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 8,
+    "peak_gpu_tokens": 182880,
+    "kv_blocked_checks": 0,
+    "queued_requests": 0,
+    "unsent_queued": 0
+  },
+  "elapsed_wall_s": 6.178655521944165,
+  "requests_sha256": "0366589e57dcf6d2733fe6b9b0c3506ba99fcb9c5f41f4cb5879cf6d95179ae3",
+  "policy_stats": null
+}

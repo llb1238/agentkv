@@ -1,0 +1,5 @@
+{
+  "recorded_at": "2026-11-03T08:29:21.047763+00:00",
+  "raw_csv": "index, name, memory.total [MiB], memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, NVIDIA H200 NVL, 143771 MiB, 133902 MiB, 9255 MiB, 0 %\n1, NVIDIA H200 NVL, 143771 MiB, 79043 MiB, 64113 MiB, 0 %\n",
+  "note": "read-only snapshot; no GPU experiment or process changes"
+}

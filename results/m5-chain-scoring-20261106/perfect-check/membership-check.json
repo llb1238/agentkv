@@ -1,0 +1,12 @@
+{
+  "git_commit": "acb954ff2094140d55a5051b58667c19aa8bc910",
+  "baseline_run_sha256": "7c975aa96f6df679e761472776241229867a7beb0f11338a6abb235b7e85bd69",
+  "trace_sha256": {
+    "callbacks-135943-123727931667376.jsonl.gz": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad"
+  },
+  "call": 355435,
+  "returned_keys": 509,
+  "selected_position": 418,
+  "deeper_also_returned": false,
+  "strict_depth_tail_changes_returned_set": true
+}

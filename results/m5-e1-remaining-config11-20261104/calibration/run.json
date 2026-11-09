@@ -1,0 +1,48 @@
+{
+  "git_commit": "b1f730df00a3823019eceab474c960478ef70269",
+  "status": "complete",
+  "training_roots": 293,
+  "training_intervals": 62159,
+  "workload_intervals": 26538,
+  "source": {
+    "audit_sha256": "f2b24b8ed5f8db012e96419ea1e9a8dff16cebeeb84d3638501ff45bd17679b9",
+    "manifest_sha256": "bb31ca90e4bee565310a5b73f5533907a376e92192810d01b515a029f27a9f3d",
+    "workload_sha256": "a35eaf1eafcb9de245be86ac1f847de0314b7dcf806ecf4ebc5d079b6c5cffd2"
+  },
+  "artifacts": {
+    "remaining_life_v1.json": "1f21d5cc6ddead4fc9756c38a4a7b443c3d465899be251b294dccdf4e1df3fa3",
+    "prediction_diagnostics.json": "552e981e68aeaa226ced32aa88b3796089e80bc08cc9c1e1c1b0456a935e1b24",
+    "training_pairs.parquet": "fd245b4bc67e2f1d9e747ceb9ca8a7eee568a4fd818fff5ba3af7b9fed0cb6a9",
+    "prediction_pairs.parquet": "4325d8a13868ff2ddd493d67b7c31af51c25a96ceced1d9349b92923cf3556f2"
+  },
+  "prediction_diagnostics": {
+    "online": {
+      "intervals": 26538,
+      "positive_actual_intervals": 26538,
+      "zero_actual_intervals": 0,
+      "zero_actual_predicted_zero": 0,
+      "quantiles": {
+        "p10": 0.3434583445696831,
+        "p50": 1.0817681977159157,
+        "p90": 8.310447132847779,
+        "p99": 35.112833240951105
+      },
+      "within_half_double_count": 15275,
+      "within_half_double_fraction": 0.5755897204009345
+    },
+    "noisy": {
+      "intervals": 26538,
+      "positive_actual_intervals": 26538,
+      "zero_actual_intervals": 0,
+      "zero_actual_predicted_zero": 0,
+      "quantiles": {
+        "p10": 0.5746390138915054,
+        "p50": 1.0080257677496782,
+        "p90": 1.7467421964618122,
+        "p99": 1.97263637169243
+      },
+      "within_half_double_count": 26538,
+      "within_half_double_fraction": 1.0
+    }
+  }
+}

@@ -1,0 +1,1178 @@
+diff --git a/.gitignore b/.gitignore
+index 57d0d54fc87b9af29c53fb1b90148f2d095dc4c1..95dbdb87c217234568d88816b5a65766b5310c39 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -251,3 +251,6 @@ vllm/grpc/vllm_engine_pb2.pyi
+ 
+ # Ignore generated cpu headers 
+ csrc/cpu/cpu_attn_dispatch_generated.h
++
++# Local AgentKV benchmark evidence is indexed in the adjacent agentkv repository.
++/benchmarks/results/
+diff --git a/benchmarks/kernels/benchmark_pinned_h2d.py b/benchmarks/kernels/benchmark_pinned_h2d.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1403312a1daab637a099f52b0641caf3b8cf7186
+--- /dev/null
++++ b/benchmarks/kernels/benchmark_pinned_h2d.py
+@@ -0,0 +1,187 @@
++# SPDX-License-Identifier: Apache-2.0
++# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++"""Measure pinned H2D copies using rotating buffers and CUDA events."""
++
++import argparse
++import gc
++import json
++import math
++import os
++import statistics
++import subprocess
++import time
++from pathlib import Path
++
++import torch
++
++BLOCK_BYTES = 2359296
++BLOCK_COUNTS = (1, 16, 32, 64, 128, 625)
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--output-dir", type=Path, required=True)
++    parser.add_argument("--rounds", type=int, default=3)
++    parser.add_argument("--repeats", type=int, default=20)
++    parser.add_argument("--warmup", type=int, default=5)
++    args = parser.parse_args()
++    args.output_dir.mkdir(parents=True, exist_ok=True)
++    torch.set_num_threads(4)
++    torch.accelerator.set_device_index(0)
++    device = torch.cuda.get_device_properties(0)
++    ring_bytes = 512 * 1024**2
++    cases = []
++    total_bytes = max(
++        n * BLOCK_BYTES * max(1, math.ceil(ring_bytes / (n * BLOCK_BYTES)))
++        for n in BLOCK_COUNTS
++    )
++    host = torch.empty(total_bytes, dtype=torch.uint8, pin_memory=True)
++    host.random_(0, 256, generator=torch.Generator().manual_seed(0))
++    gpu = torch.empty(total_bytes, dtype=torch.uint8, device="cuda")
++    assert host.is_pinned()
++    host_address = host.data_ptr()
++    mapping_start = None
++    for line in Path("/proc/self/maps").read_text().splitlines():
++        left, right = (int(x, 16) for x in line.split()[0].split("-"))
++        if left <= host_address < right:
++            mapping_start = left
++            break
++    numa_mapping = [
++        line
++        for line in Path("/proc/self/numa_maps").read_text().splitlines()
++        if mapping_start is not None and line.split()[0] == format(mapping_start, "x")
++    ]
++    metadata = {
++        "gpu": device.name,
++        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
++        "torch": torch.__version__,
++        "cpu_affinity": sorted(os.sched_getaffinity(0)),
++        "host_pinned": host.is_pinned(),
++        "host_pool_bytes": total_bytes,
++        "host_numa_mapping": numa_mapping,
++        "ring_target_bytes": ring_bytes,
++        "rounds": args.rounds,
++        "samples_per_round": args.repeats,
++        "warmup": args.warmup,
++        "timing": "CUDA events; CUPTI unavailable; allocation and correctness excluded",
++        "graph_method": "different host/device views per node; >=512 MiB footprint",
++        "nvidia_smi_before": subprocess.check_output(["nvidia-smi"], text=True),
++    }
++    (args.output_dir / "bandwidth-environment.json").write_text(
++        json.dumps(metadata, indent=2) + "\n"
++    )
++    stream = torch.cuda.Stream()
++    for blocks in BLOCK_COUNTS:
++        size = blocks * BLOCK_BYTES
++        slots = max(1, math.ceil(ring_bytes / size))
++        src = [host[i * size : (i + 1) * size] for i in range(slots)]
++        dst = [gpu[i * size : (i + 1) * size] for i in range(slots)]
++        with torch.cuda.stream(stream):
++            dst[0].copy_(src[0], non_blocking=True)
++        stream.synchronize()
++        for offset in range(0, size, 64 * 1024**2):
++            end = min(size, offset + 64 * 1024**2)
++            assert torch.equal(gpu[offset:end].cpu(), host[offset:end])
++        # Warm up before graph capture; all views and memory are preallocated.
++        with torch.cuda.stream(stream):
++            for a, z in zip(src, dst):
++                z.copy_(a, non_blocking=True)
++        stream.synchronize()
++        graph = torch.cuda.CUDAGraph()
++        with torch.cuda.graph(graph, stream=stream):
++            for a, z in zip(src, dst):
++                z.copy_(a, non_blocking=True)
++        for _ in range(args.warmup):
++            with torch.cuda.stream(stream):
++                graph.replay()
++        stream.synchronize()
++        cases.append(
++            {
++                "blocks": blocks,
++                "bytes": size,
++                "slots": slots,
++                "src": src,
++                "dst": dst,
++                "graph": graph,
++            }
++        )
++        print(f"CORRECT bytes={size} blocks={blocks} ring_slots={slots}", flush=True)
++    start = torch.cuda.Event(enable_timing=True)
++    end = torch.cuda.Event(enable_timing=True)
++    samples = []
++    for round_index in range(args.rounds):
++        order = cases[round_index:] + cases[:round_index]
++        if round_index % 2:
++            order = list(reversed(order))
++        for case in order:
++            for iteration in range(args.repeats):
++                slot = iteration % case["slots"]
++                methods = ("direct", "graph")
++                if (iteration + round_index) % 2:
++                    methods = tuple(reversed(methods))
++                for method in methods:
++                    stream.synchronize()
++                    wall_start = time.perf_counter()
++                    with torch.cuda.stream(stream):
++                        start.record(stream)
++                        if method == "direct":
++                            case["dst"][slot].copy_(
++                                case["src"][slot], non_blocking=True
++                            )
++                        else:
++                            case["graph"].replay()
++                        end.record(stream)
++                    end.synchronize()
++                    divisor = case["slots"] if method == "graph" else 1
++                    ms = start.elapsed_time(end) / divisor
++                    wall_ms = (time.perf_counter() - wall_start) * 1000 / divisor
++                    samples.append(
++                        {
++                            "round": round_index,
++                            "iteration": iteration,
++                            "method": method,
++                            "bytes": case["bytes"],
++                            "blocks": case["blocks"],
++                            "batch_copies": divisor,
++                            "cuda_ms": ms,
++                            "wall_ms": wall_ms,
++                            "gbps": case["bytes"] / (ms * 1e6),
++                        }
++                    )
++            print(f"ROUND {round_index + 1} bytes={case['bytes']} done", flush=True)
++    summary = []
++    for case in cases:
++        for method in ("direct", "graph"):
++            data = [
++                s
++                for s in samples
++                if s["bytes"] == case["bytes"] and s["method"] == method
++            ]
++            times = sorted(s["cuda_ms"] for s in data)
++            median_ms = statistics.median(times)
++            summary.append(
++                {
++                    "bytes": case["bytes"],
++                    "blocks": case["blocks"],
++                    "method": method,
++                    "samples": len(data),
++                    "median_cuda_ms": median_ms,
++                    "p10_cuda_ms": times[int(len(times) * 0.1)],
++                    "p90_cuda_ms": times[int(len(times) * 0.9)],
++                    "median_wall_ms": statistics.median(s["wall_ms"] for s in data),
++                    "gbps_from_median": case["bytes"] / (median_ms * 1e6),
++                }
++            )
++    (args.output_dir / "bandwidth-samples.json").write_text(
++        json.dumps(samples, indent=2) + "\n"
++    )
++    (args.output_dir / "bandwidth-summary.json").write_text(
++        json.dumps(summary, indent=2) + "\n"
++    )
++    print("BANDWIDTH_RESULT " + json.dumps(summary), flush=True)
++    del cases, gpu, host
++    gc.collect()
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py b/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py
+index e71c3dbf18d477eb70823a9a94940afd44a513a1..6156ad49df0e6e9c9589e8ecf3c6e299be412253 100644
+--- a/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py
++++ b/tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py
+@@ -248,6 +248,170 @@ def test_create_req_context_preserves_kv_hints():
+     assert _create_req_context(request).kv_hints is kv_hints
+ 
+ 
++@pytest.mark.parametrize("hashes_per_chunk", [1, 2])
++def test_context_creation_and_updates_have_identical_positions(hashes_per_chunk):
++    """GPU hits, incremental updates and decode preserve the same key depths."""
++    from vllm.distributed.kv_transfer.kv_connector.v1.offloading.scheduler import (
++        RequestGroupState,
++    )
++
++    group = SimpleNamespace(
++        group_idx=0,
++        hashes_per_chunk=hashes_per_chunk,
++        tokens_per_chunk=16 * hashes_per_chunk,
++    )
++    request = SimpleNamespace(
++        request_id="prefix",
++        num_prompt_tokens=64,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[bytes([i]) * 32 for i in range(4)],
++    )
++    context = _create_req_context(request, [group])
++    state = object.__new__(RequestOffloadState)
++    state.config = SimpleNamespace(kv_group_configs=[group])
++    state.req = request
++    state.req_context = context
++    state.group_states = (RequestGroupState(next_stored_chunk_idx=4),)
++    prompt_keys = context.get_offload_prefix_keys()
++    assert len(prompt_keys) == 4 // hashes_per_chunk
++    for i in range(4, 8):
++        state.update_offload_keys()
++        state.update_offload_keys()
++        request.block_hashes.append(bytes([i]) * 32)
++    state.update_offload_keys()
++    recreated = _create_req_context(request, [group])
++    assert context._offload_key_positions == recreated._offload_key_positions
++    assert context.get_offload_prefix_keys() == prompt_keys
++    assert len(context._offload_key_positions) == 8 // hashes_per_chunk
++    context.num_prompt_tokens = 128
++    assert len(context.get_offload_prefix_keys()) == 8 // hashes_per_chunk
++
++
++@pytest.mark.parametrize("hashes_per_chunk", [1, 2])
++def test_final_positions_match_unpatched_version(hashes_per_chunk):
++    """Compare the actual old function with patched creation and updates."""
++    import ast
++    import subprocess
++    from pathlib import Path
++
++    from vllm.distributed.kv_transfer.kv_connector.v1.offloading import scheduler
++
++    try:
++        source = subprocess.check_output(
++            [
++                "git",
++                "show",
++                "60da6135b0349fac50a051e9dcec2bd5b4514400:"
++                "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
++            ],
++            cwd=Path(__file__).parent,
++            text=True,
++            stderr=subprocess.PIPE,
++        )
++    except subprocess.CalledProcessError:
++        pytest.skip("Pinned unpatched commit is unavailable")
++    tree = ast.parse(source)
++    old_class = next(
++        n
++        for n in tree.body
++        if isinstance(n, ast.ClassDef) and n.name == "RequestOffloadState"
++    )
++    old_update = next(
++        n
++        for n in old_class.body
++        if isinstance(n, ast.FunctionDef) and n.name == "update_offload_keys"
++    )
++    namespace = dict(vars(scheduler))
++    exec(
++        compile(
++            ast.Module(body=[old_update], type_ignores=[]),
++            "<pinned-unpatched-update>",
++            "exec",
++        ),
++        namespace,
++    )
++    legacy_update = namespace["update_offload_keys"]
++    group = SimpleNamespace(
++        group_idx=0,
++        hashes_per_chunk=hashes_per_chunk,
++        tokens_per_chunk=16 * hashes_per_chunk,
++    )
++    request = SimpleNamespace(
++        request_id="compat",
++        num_prompt_tokens=64,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[bytes([i]) * 32 for i in range(4)],
++    )
++
++    def state(context):
++        result = object.__new__(RequestOffloadState)
++        result.config = SimpleNamespace(kv_group_configs=[group])
++        result.req = request
++        result.req_context = context
++        result.group_states = (scheduler.RequestGroupState(),)
++        return result
++
++    patched = state(_create_req_context(request, [group]))
++    legacy = state(ReqContext(request.request_id))
++    for i in range(4, 10):
++        patched.update_offload_keys()
++        legacy_update(legacy)
++        patched.update_offload_keys()
++        legacy_update(legacy)
++        assert patched.req_context._offload_key_positions == (
++            legacy.req_context._offload_key_positions
++        )
++        request.block_hashes.append(bytes([i]) * 32)
++    patched.update_offload_keys()
++    legacy_update(legacy)
++    assert patched.req_context._offload_key_positions == (
++        legacy.req_context._offload_key_positions
++    )
++    assert len(patched.req_context.get_offload_prefix_keys()) == 4 // hashes_per_chunk
++
++
++def test_untracked_finished_context_includes_gpu_prefix():
++    """Even without an offload state, finalization exposes all prompt keys."""
++    group = SimpleNamespace(group_idx=0, hashes_per_chunk=1, tokens_per_chunk=16)
++    request = SimpleNamespace(
++        request_id="untracked",
++        num_prompt_tokens=32,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[b"a" * 32, b"b" * 32, b"c" * 32],
++    )
++    manager = MagicMock()
++    scheduler = SimpleNamespace(
++        _req_status={},
++        manager=manager,
++        config=SimpleNamespace(kv_group_configs=[group]),
++    )
++    assert OffloadingConnectorScheduler.request_finished(scheduler, request) == (
++        False,
++        None,
++    )
++    context = manager.on_request_finished.call_args.args[0]
++    assert len(context.get_offload_prefix_keys()) == 2
++    assert len(context._offload_key_positions) == 3
++
++
++def test_prefix_context_short_prompt_and_missing_boundary():
++    """No full chunk is valid for a short prompt; legacy contexts fail closed."""
++    group = SimpleNamespace(group_idx=0, hashes_per_chunk=1, tokens_per_chunk=16)
++    request = SimpleNamespace(
++        request_id="short",
++        num_prompt_tokens=10,
++        kv_transfer_params=None,
++        kv_hints=None,
++        block_hashes=[],
++    )
++    assert _create_req_context(request, [group]).get_offload_prefix_keys() == ()
++    with pytest.raises(ValueError, match="Prompt boundary"):
++        ReqContext("legacy").get_offload_prefix_keys()
++
++
+ def _reduce_kv_connector_stats(runner):
+     reduced: dict[str, int | float] = {}
+     for payload in runner.kv_connector_stats:
+diff --git a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
+index 806267dcf3dd731aca8490478a6e4dd86854ea9d..5a92494c32c7a43d8237ebc9ff6a0232249ed5a6 100644
+--- a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
++++ b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py
+@@ -57,6 +57,7 @@ from vllm.v1.kv_offload.base import (
+     TierMatcher,
+     make_offload_key,
+ )
++from vllm.v1.kv_offload.trace import ENABLED, trace, trace_span
+ from vllm.v1.metrics.cache_hit_source import CacheHitSource
+ from vllm.v1.outputs import KVConnectorOutput
+ from vllm.v1.request import Request, RequestStatus
+@@ -344,6 +345,24 @@ class SchedulerOffloadConfig(NamedTuple):
+         )
+ 
+ 
++def _iter_offload_keys(
++    block_hashes: Sequence[bytes],
++    group: GroupOffloadConfig,
++    start_chunk: int = 0,
++) -> Iterable[tuple[OffloadKey, int]]:
++    hashes = islice(
++        block_hashes,
++        group.hashes_per_chunk * start_chunk + group.hashes_per_chunk - 1,
++        None,
++        group.hashes_per_chunk,
++    )
++    for index, block_hash in enumerate(hashes, start_chunk + 1):
++        yield (
++            make_offload_key(block_hash, group.group_idx),
++            index * group.tokens_per_chunk,
++        )
++
++
+ @dataclass
+ class RequestGroupState:
+     offload_keys: list[OffloadKey] = field(default_factory=list)
+@@ -418,23 +437,15 @@ class RequestOffloadState:
+             )
+ 
+     def update_offload_keys(self) -> None:
++        self.req_context.num_prompt_tokens = self.req.num_prompt_tokens
+         for group_config, group_state in zip(
+             self.config.kv_group_configs, self.group_states
+         ):
+-            for req_block_hash in islice(
+-                self.req.block_hashes,
+-                group_config.hashes_per_chunk * len(group_state.offload_keys)
+-                + group_config.hashes_per_chunk
+-                - 1,
+-                None,
+-                group_config.hashes_per_chunk,
++            for key, end_token in _iter_offload_keys(
++                self.req.block_hashes, group_config, len(group_state.offload_keys)
+             ):
+-                key = make_offload_key(req_block_hash, group_config.group_idx)
+                 group_state.offload_keys.append(key)
+-                self.req_context.set_offload_key_position(
+-                    key,
+-                    len(group_state.offload_keys) * group_config.tokens_per_chunk,
+-                )
++                self.req_context.set_offload_key_position(key, end_token)
+ 
+     def update_block_id_groups(
+         self, new_block_id_groups: tuple[list[int], ...] | None
+@@ -545,19 +556,28 @@ def _parse_tier_filter(raw: Any) -> TierFilter:
+     return TierFilter(matchers=tuple(matchers))
+ 
+ 
+-def _create_req_context(req: Request) -> ReqContext:
++def _create_req_context(
++    req: Request, group_configs: Sequence[GroupOffloadConfig] = ()
++) -> ReqContext:
+     params = req.kv_transfer_params
+     load_filter = TierFilter.ALL
+     if params:
+         raw = params.get(KV_LOAD_TIERS_KEY)
+         if raw is not None:
+             load_filter = _parse_tier_filter(raw)
+-    return ReqContext(
++    context = ReqContext(
+         req_id=req.request_id,
+         kv_transfer_params=params,
+         kv_hints=req.kv_hints,
+         load_tier_filter=load_filter,
++        num_prompt_tokens=req.num_prompt_tokens,
+     )
++    # Include GPU-hit prompt keys even if no offloading state was started.
++    # Only metadata is populated: no allocation, lookup, touch, or store.
++    for group in group_configs:
++        for key, end_token in _iter_offload_keys(req.block_hashes, group):
++            context.set_offload_key_position(key, end_token)
++    return context
+ 
+ 
+ class OffloadingConnectorScheduler:
+@@ -671,6 +691,7 @@ class OffloadingConnectorScheduler:
+             num = min(num, req_status.req.num_prompt_tokens)
+         return num
+ 
++    @trace_span("cpu_hash_scan")
+     def _maximal_prefix_lookup(
+         self,
+         keys: Iterable[OffloadKey],
+@@ -681,9 +702,11 @@ class OffloadingConnectorScheduler:
+     ) -> int | None:
+         """Return the number of consecutive offloaded chunks from the start,
+         or None if the backend deferred a lookup."""
++        lookup_count = 0
+         hit_count = 0
+         defer_lookup = False
+         for local_idx, key in enumerate(keys):
++            lookup_count += 1
+             result = self.manager.lookup(key, req_context)
+             match result:
+                 case LookupResult.HIT:
+@@ -703,6 +726,9 @@ class OffloadingConnectorScheduler:
+                     defer_lookup = True
+                 case LookupResult.MISS:
+                     break
++        trace(
++            "cpu_hash_scan_result", req.request_id, checked=lookup_count, hits=hit_count
++        )
+         return hit_count if not defer_lookup else None
+ 
+     def _sliding_window_lookup(
+@@ -1026,7 +1052,7 @@ class OffloadingConnectorScheduler:
+ 
+     def on_new_request(self, request: Request) -> None:
+         """Called when a new request is added to the scheduler."""
+-        req_context = _create_req_context(request)
++        req_context = _create_req_context(request, self.config.kv_group_configs)
+         offloading_context = self.manager.on_new_request(req_context)
+         req_status = RequestOffloadState(
+             config=self.config,
+@@ -1036,6 +1062,7 @@ class OffloadingConnectorScheduler:
+         )
+         self._req_status[request.request_id] = req_status
+ 
++    @trace_span("connector_lookup")
+     def get_num_new_matched_tokens(
+         self,
+         request: Request,
+@@ -1094,6 +1121,13 @@ class OffloadingConnectorScheduler:
+                 self._maybe_observe_lookup_async_delay(req_status)
+         req_status.update_num_hit_chunks(num_computed_tokens + (num_hit_tokens or 0))
+ 
++        trace(
++            "connector_match",
++            request.request_id,
++            matched_tokens=num_hit_tokens,
++            local_tokens=num_computed_tokens,
++            key_count=sum(len(g.offload_keys) for g in req_status.group_states),
++        )
+         return num_hit_tokens, bool(num_hit_tokens)
+ 
+     def get_external_cache_hit_sources(
+@@ -1143,6 +1177,7 @@ class OffloadingConnectorScheduler:
+             position = boundary
+         return sources
+ 
++    @trace_span("connector_alloc")
+     def update_state_after_alloc(
+         self, request: Request, blocks: KVCacheBlocks, num_external_tokens: int
+     ):
+@@ -1739,6 +1774,18 @@ class OffloadingConnectorScheduler:
+                 logger.warning("Request %s: cannot store chunks", req_id)
+                 continue
+ 
++            if ENABLED:
++                trace(
++                    "store_plan",
++                    req_id,
++                    keys=store_output.keys_to_store,
++                    evicted_keys=store_output.evicted_keys,
++                    computed_tokens=req.num_computed_tokens,
++                    scheduled_tokens=scheduler_output.num_scheduled_tokens.get(
++                        req_id, 0
++                    ),
++                    status=req.status.name,
++                )
+             if not store_output.keys_to_store:
+                 req_status.advance_stored_idx(num_offloadable_tokens)
+                 continue
+@@ -2002,6 +2049,7 @@ class OffloadingConnectorScheduler:
+ 
+         return stats
+ 
++    @trace_span("connector_finish")
+     def request_finished(
+         self,
+         request: Request,
+@@ -2021,7 +2069,7 @@ class OffloadingConnectorScheduler:
+         if req_status is None:
+             # Untracked request (offloading never started): no in-flight jobs,
+             # nothing was deferred, so finalize immediately.
+-            req_context = _create_req_context(request)
++            req_context = _create_req_context(request, self.config.kv_group_configs)
+             self.manager.on_new_request(req_context)
+             self.manager.on_request_finished(req_context)
+             return False, None
+diff --git a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py
+index 2bb00d88f0893785fc2c50ed418c1668fa7639cb..f463a768a42b379f368593d83d3629aaf2c7d1f6 100644
+--- a/vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py
++++ b/vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py
+@@ -34,6 +34,7 @@ from vllm.v1.kv_offload.base import (
+     OffloadingSpec,
+     OffloadingWorker,
+ )
++from vllm.v1.kv_offload.trace import bind_job, trace
+ 
+ logger = init_logger(__name__)
+ 
+@@ -251,6 +252,8 @@ class OffloadingConnectorWorker:
+         self._unsubmitted_store_jobs.clear()
+ 
+         for job_id, entry in metadata.load_jobs.items():
++            bind_job(job_id, entry.req_id)
++            trace("worker_load_submit", entry.req_id, job_id=job_id)
+             self._load_jobs[job_id] = entry.req_id
+             assert isinstance(entry.dst_spec, GPULoadStoreSpec)
+             success = self.worker.submit_load(job_id, entry.src_spec, entry.dst_spec)
+@@ -258,6 +261,8 @@ class OffloadingConnectorWorker:
+ 
+     def prepare_store_kv(self, metadata: OffloadingConnectorMetadata):
+         for job_id, entry in metadata.store_jobs.items():
++            bind_job(job_id, entry.req_id)
++            trace("worker_store_defer", entry.req_id, job_id=job_id)
+             if not self._is_store_writer:
+                 # Gate before queueing: no _unsubmitted_store_jobs entry.
+                 self._connector_worker_meta.mark_completed(job_id)
+@@ -303,6 +308,7 @@ class OffloadingConnectorWorker:
+             self._connector_worker_meta.mark_completed(job_id)
+             req_id = self._load_jobs.pop(job_id, None)
+             if req_id is not None:
++                trace("worker_recv_done", req_id, job_id=job_id)
+                 finished_recving.add(req_id)
+ 
+         return set(), finished_recving
+diff --git a/vllm/v1/core/block_pool.py b/vllm/v1/core/block_pool.py
+index 3b0102fe84aa005a708d04b1c77380132ab80904..42cae55533f02ca1150d64c7513795ac72d80352 100644
+--- a/vllm/v1/core/block_pool.py
++++ b/vllm/v1/core/block_pool.py
+@@ -27,6 +27,7 @@ from vllm.v1.core.kv_cache_utils import (
+     resolve_block_hashes,
+     to_event_extra_keys,
+ )
++from vllm.v1.kv_offload.trace import ENABLED, trace
+ from vllm.v1.request import Request
+ 
+ logger = init_logger(__name__)
+@@ -605,6 +606,13 @@ class BlockPool:
+                 is not None
+             ):
+                 removed_hashes.append(block_hash)
++        if removed_hashes and ENABLED:
++            trace(
++                "gpu_hash_remove",
++                block_id=block.block_id,
++                keys=removed_hashes,
++                ref_cnt=block.ref_cnt,
++            )
+         block.reset_hash()
+         return removed_hashes
+ 
+@@ -644,6 +652,12 @@ class BlockPool:
+                 block_hash_with_group_id
+             )
+         self.cached_block_hash_to_block.insert(block_hash_with_group_id, block)
++        trace(
++            "gpu_cache_insert",
++            block_id=block.block_id,
++            key=block_hash_with_group_id,
++            ref_cnt=block.ref_cnt,
++        )
+ 
+     def move_block_hashes(
+         self,
+@@ -790,6 +804,12 @@ class BlockPool:
+                 continue
+             block.ref_cnt -= 1
+             if block.ref_cnt == 0 and not block.is_null:
++                trace(
++                    "gpu_free_zero_ref",
++                    block_id=block.block_id,
++                    key=block.block_hash,
++                    ref_cnt=block.ref_cnt,
++                )
+                 if block.block_hash is None or not self.enable_caching:
+                     # LIFO reuse of non-cached blocks for better GPU locality.
+                     blocks_to_evict_first.append(block)
+diff --git a/vllm/v1/core/kv_cache_manager.py b/vllm/v1/core/kv_cache_manager.py
+index 4f472170a874814b539ae900d014efecc7327150..ac2917f51036f3dd7d985881f44fa615632f5119 100644
+--- a/vllm/v1/core/kv_cache_manager.py
++++ b/vllm/v1/core/kv_cache_manager.py
+@@ -25,6 +25,7 @@ from vllm.v1.kv_cache_interface import (
+     get_kv_cache_spec_kind,
+     get_kv_cache_spec_sliding_window,
+ )
++from vllm.v1.kv_offload.trace import trace_span
+ from vllm.v1.metrics.stats import PrefixCacheStats
+ from vllm.v1.request import Request, RequestStatus
+ 
+@@ -368,6 +369,7 @@ class KVCacheManager:
+         # Per-group lookups do not detect an uncached shared prefix (boundary 0).
+         return blocks, num_local, 0, min(per_group_hits) < num_local
+ 
++    @trace_span("allocate")
+     def allocate_slots(
+         self,
+         request: Request,
+@@ -617,6 +619,7 @@ class KVCacheManager:
+ 
+         return self.create_kv_cache_blocks(new_blocks)
+ 
++    @trace_span("request_free")
+     def free(self, request: Request) -> None:
+         """Free the blocks allocated for the request.
+         We free the blocks in reverse order so that the tail blocks are evicted
+@@ -779,6 +782,7 @@ class KVCacheManager:
+ 
+         return cached_tokens or 0
+ 
++    @trace_span("cache_commit")
+     def cache_blocks(self, request: Request, num_computed_tokens: int) -> None:
+         """Cache the blocks for the request, if enabled.
+ 
+diff --git a/vllm/v1/core/sched/scheduler.py b/vllm/v1/core/sched/scheduler.py
+index cec96d2a49235fdade2768c427f1cff7868c6026..0ad30895bb25d59efea1116708b68091fe42782b 100644
+--- a/vllm/v1/core/sched/scheduler.py
++++ b/vllm/v1/core/sched/scheduler.py
+@@ -60,6 +60,7 @@ from vllm.v1.kv_cache_interface import (
+     get_mamba_prefill_checkpoint_position,
+     is_mamba_prefill_checkpoint_valid,
+ )
++from vllm.v1.kv_offload.trace import ENABLED, flush_trace, trace, trace_span
+ from vllm.v1.metrics.perf import ModelMetrics, PerfStats
+ from vllm.v1.metrics.stats import (
+     KV_FETCH_COMPLETED_WAITING,
+@@ -555,6 +556,7 @@ class Scheduler(SchedulerInterface):
+         end = min((s for s in stops if start < s < end), default=end)
+         return max(end - start, 0)
+ 
++    @trace_span("gpu_lookup")
+     def _get_local_prefix_cache_hit(
+         self, request: Request
+     ) -> tuple[KVCacheBlocks, int, int, bool]:
+@@ -590,6 +592,7 @@ class Scheduler(SchedulerInterface):
+ 
+     def schedule(self, throttle_prefills: bool = False) -> SchedulerOutput:
+         self.current_step += 1
++        trace("schedule_begin", step=self.current_step)
+         # NOTE(woosuk) on the scheduling algorithm:
+         # There's no "decoding phase" nor "prefill phase" in the scheduler.
+         # Each request just has the num_computed_tokens and
+@@ -925,6 +928,12 @@ class Scheduler(SchedulerInterface):
+ 
+                 request = request_queue.peek_request()
+                 request_id = request.request_id
++                trace(
++                    "schedule_consider",
++                    request_id,
++                    step=self.current_step,
++                    status=request.status.name,
++                )
+ 
+                 ready_to_schedule = self._handle_blocked_waiting_request(request)
+                 if not ready_to_schedule:
+@@ -1321,6 +1330,12 @@ class Scheduler(SchedulerInterface):
+                     # If loading async, allocate memory and put request
+                     # into the WAITING_FOR_REMOTE_KV state.
+                     request.status = RequestStatus.WAITING_FOR_REMOTE_KVS
++                    trace(
++                        "load_wait",
++                        request_id,
++                        step=self.current_step,
++                        external_tokens=num_external_computed_tokens,
++                    )
+                     # Set num_computed_tokens even though KVs are not yet loaded.
+                     # request.num_computed_tokens will not be used anywhere until
+                     # the request finished the KV transfer.
+@@ -1553,6 +1568,12 @@ class Scheduler(SchedulerInterface):
+ 
+         with record_function_or_nullcontext("schedule: update_after_schedule"):
+             self._update_after_schedule(scheduler_output)
++        if ENABLED:
++            trace(
++                "schedule_end",
++                step=self.current_step,
++                tokens=scheduler_output.num_scheduled_tokens,
++            )
+         return scheduler_output
+ 
+     def _build_kv_connector_meta(
+@@ -2103,6 +2124,7 @@ class Scheduler(SchedulerInterface):
+                 continue
+ 
+             req_index = model_runner_output.req_id_to_index[req_id]
++            trace("scheduler_output", req_id, scheduled_tokens=num_tokens_scheduled)
+             generated_token_ids = (
+                 sampled_token_ids[req_index] if sampled_token_ids else []
+             )
+@@ -2614,6 +2636,7 @@ class Scheduler(SchedulerInterface):
+         return self.kv_cache_manager.usage
+ 
+     def add_request(self, request: Request) -> None:
++        trace("request_arrived", request.request_id)
+         existing = self.requests.get(request.request_id)
+         if existing is not None:
+             update = StreamingUpdate.from_request(request)
+@@ -2711,6 +2734,7 @@ class Scheduler(SchedulerInterface):
+ 
+         return valid_requests
+ 
++    @trace_span("request_finish")
+     def _free_request(
+         self, request: Request, delay_free_blocks: bool = False
+     ) -> tuple[dict[str, Any] | None, dict[str, Any] | None]:
+@@ -2978,6 +3002,7 @@ class Scheduler(SchedulerInterface):
+         return spec_decoding_stats
+ 
+     def shutdown(self) -> None:
++        flush_trace()
+         logger.debug_once("[shutdown] Scheduler: start")
+         if self.kv_event_publisher:
+             self.kv_event_publisher.shutdown()
+@@ -3180,7 +3205,9 @@ class Scheduler(SchedulerInterface):
+             request_id = request.request_id
+             if request_id not in self.finished_recving_kv_req_ids:
+                 logger.debug("%s is still in WAITING_FOR_REMOTE_KVS state.", request_id)
++                trace("load_blocked", request_id, step=self.current_step)
+                 return False
++            trace("load_resume", request_id, step=self.current_step)
+             # Promote request to waiting or preempted.
+             self._update_waiting_for_remote_kv(request)
+             if request.num_preemptions:
+@@ -3220,6 +3247,7 @@ class Scheduler(SchedulerInterface):
+ 
+         # KV Connector:: update recv and send status from last step.
+         for req_id in kv_connector_output.finished_recving or ():
++            trace("scheduler_recv_done", req_id, step=self.current_step)
+             logger.debug("Finished recving KV transfer for request %s", req_id)
+             assert req_id in self.requests
+             req = self.requests[req_id]
+diff --git a/vllm/v1/engine/output_processor.py b/vllm/v1/engine/output_processor.py
+index eb499f6cc78ba89b14fa862e4cb5801f0837323f..0727d1124ef033a081a3192f51aa8372f03d48ed 100644
+--- a/vllm/v1/engine/output_processor.py
++++ b/vllm/v1/engine/output_processor.py
+@@ -34,6 +34,7 @@ from vllm.v1.engine import EngineCoreOutput, EngineCoreRequest, FinishReason
+ from vllm.v1.engine.detokenizer import IncrementalDetokenizer
+ from vllm.v1.engine.logprobs import LogprobsProcessor
+ from vllm.v1.engine.parallel_sampling import ParentRequest
++from vllm.v1.kv_offload.trace import trace
+ from vllm.v1.metrics.stats import (
+     IterationStats,
+     LoRARequestStates,
+@@ -714,6 +715,9 @@ class OutputProcessor:
+                 # Ignore output for already-aborted request.
+                 continue
+ 
++            if req_state.is_prefilling and engine_core_output.new_token_ids:
++                trace("frontend_first_token", req_id)
++
+             # 1) Compute stats for this iteration.
+             self._update_stats_from_output(
+                 req_state, engine_core_output, engine_core_timestamp, iteration_stats
+diff --git a/vllm/v1/kv_offload/base.py b/vllm/v1/kv_offload/base.py
+index 398bc269e6f2c977d42f11ebbd8a6490496c0577..cd58e3bbcc5415d067251edd8f5075604ddb8e12 100644
+--- a/vllm/v1/kv_offload/base.py
++++ b/vllm/v1/kv_offload/base.py
+@@ -93,6 +93,8 @@ class ReqContext:
+     kv_transfer_params: dict[str, Any] | None = None
+     kv_hints: KvHintsEnvelope | None = None
+     load_tier_filter: TierFilter = TierFilter.ALL
++    # Prompt boundary for policies; None for legacy/manual contexts.
++    num_prompt_tokens: int | None = None
+     # Per-request scratch space keyed by value type, so a tier can parse
+     # kv_transfer_params and kv_hints once (in on_new_request) and read the
+     # result back on later calls for the same request.
+@@ -116,6 +118,21 @@ class ReqContext:
+     def get_offload_key_position(self, key: OffloadKey) -> int | None:
+         return self._offload_key_positions.get(key)
+ 
++    def get_offload_prefix_keys(self) -> tuple[OffloadKey, ...]:
++        """Registered prompt keys in depth order, excluding generated tokens.
++
++        This is ownership metadata, not a CPU hit or a resident-key list.
++        Partial-boundary keys and multiple groups retain their actual positions.
++        """
++        if self.num_prompt_tokens is None:
++            raise ValueError("Prompt boundary is unavailable in this ReqContext")
++        positions = self._offload_key_positions
++        return tuple(
++            key
++            for key in sorted(positions, key=lambda k: (positions[k], k))
++            if 0 < positions[key] <= self.num_prompt_tokens
++        )
++
+ 
+ class LookupResult(Enum):
+     """Result of OffloadingManager.lookup()."""
+diff --git a/vllm/v1/kv_offload/cpu/gpu_worker.py b/vllm/v1/kv_offload/cpu/gpu_worker.py
+index f6053480a7ab601634bb1b2f661197640fed52fa..53dc3433d262d1d00ec899a34b54043992dff8ab 100644
+--- a/vllm/v1/kv_offload/cpu/gpu_worker.py
++++ b/vllm/v1/kv_offload/cpu/gpu_worker.py
+@@ -32,6 +32,12 @@ from vllm.v1.kv_offload.cpu.swap_blocks_triton import (
+     THRESHOLD_BYTES,
+     swap_blocks_batch,
+ )
++from vllm.v1.kv_offload.trace import (
++    ENABLED,
++    forget_job,
++    job_request,
++    trace,
++)
+ 
+ logger = init_logger(__name__)
+ 
+@@ -537,6 +543,12 @@ class SingleDirectionOffloadingHandler:
+         assert isinstance(src_spec, BlockIDsLoadStoreSpec)
+         assert isinstance(dst_spec, BlockIDsLoadStoreSpec)
+ 
++        trace(
++            "copy_prepare",
++            job_request(job_id),
++            job_id=job_id,
++            direction="store" if self.gpu_to_cpu else "load",
++        )
+         src_blocks = src_spec.block_ids
+         dst_blocks = dst_spec.block_ids
+         assert src_blocks.ndim == 1
+@@ -675,6 +687,18 @@ class SingleDirectionOffloadingHandler:
+         # writing; we must keep STREAM ordering so source reads are gated
+         # by the transfer stream's wait_stream(compute) barrier.
+         is_src_access_order_any = not self.gpu_to_cpu
++        if ENABLED:
++            trace(
++                "copy_enqueue",
++                job_request(job_id),
++                job_id=job_id,
++                direction="store" if self.gpu_to_cpu else "load",
++                copy_ops=op_idx,
++                num_bytes=num_transfer_bytes,
++                src_blocks=num_src_blocks,
++                dst_blocks=num_dst_blocks,
++                copy_impl=str(self._swap_blocks_batch),
++            )
+         with current_platform.stream(stream):
+             start_event.record(stream)
+             if op_idx > 0:
+@@ -686,6 +710,12 @@ class SingleDirectionOffloadingHandler:
+                 )
+             end_event.record(stream)
+ 
++        trace(
++            "copy_enqueued",
++            job_request(job_id),
++            job_id=job_id,
++            direction="store" if self.gpu_to_cpu else "load",
++        )
+         self._transfer_events[job_id] = end_event
+         self._transfers.append(
+             Transfer(
+@@ -717,6 +747,15 @@ class SingleDirectionOffloadingHandler:
+                 transfer_time=transfer_time,
+             )
+ 
++            trace(
++                "copy_done",
++                job_request(transfer.job_id),
++                job_id=transfer.job_id,
++                direction="store" if self.gpu_to_cpu else "load",
++                cuda_ms=transfer_time * 1000,
++                num_bytes=transfer.num_bytes,
++            )
++            forget_job(transfer.job_id)
+             results.append(result)
+             self._stream_pool.append(transfer.stream)
+             self._event_pool.append(transfer.end_event)
+diff --git a/vllm/v1/kv_offload/cpu/manager.py b/vllm/v1/kv_offload/cpu/manager.py
+index 2c08ac897c6cf69855d7460b065ea1222a3f5607..47a1b579953fdf16815969a4030e1ba117b0c9f9 100644
+--- a/vllm/v1/kv_offload/cpu/manager.py
++++ b/vllm/v1/kv_offload/cpu/manager.py
+@@ -27,6 +27,7 @@ from vllm.v1.kv_offload.cpu.common import (
+ )
+ from vllm.v1.kv_offload.cpu.policies.base import CachePolicy, ChunkStatus
+ from vllm.v1.kv_offload.cpu.policies.factory import CachePolicyFactory
++from vllm.v1.kv_offload.trace import ENABLED, trace, trace_span
+ from vllm.v1.metrics.cache_hit_source import CacheHitSource
+ 
+ 
+@@ -201,6 +202,7 @@ class CPUOffloadingManager(OffloadingManager):
+         return CacheHitSource.HOST
+ 
+     @override
++    @trace_span("cpu_prepare_load")
+     def prepare_load(
+         self,
+         keys: Collection[OffloadKey],
+@@ -215,6 +217,8 @@ class CPUOffloadingManager(OffloadingManager):
+         *,
+         record_access: bool,
+     ) -> LoadStoreSpec:
++        if ENABLED:
++            trace("cpu_load_keys", req_context.req_id, keys=list(keys))
+         chunks = []
+         for key in keys:
+             chunk = self._policy.get(key)
+@@ -235,6 +239,7 @@ class CPUOffloadingManager(OffloadingManager):
+         self._policy.touch(keys, req_context)
+ 
+     @override
++    @trace_span("cpu_load_complete")
+     def complete_load(
+         self, keys: Collection[OffloadKey], req_context: ReqContext
+     ) -> None:
+@@ -248,6 +253,7 @@ class CPUOffloadingManager(OffloadingManager):
+                 self._policy.mark_evictable(key)
+ 
+     @override
++    @trace_span("cpu_prepare_store")
+     def prepare_store(
+         self,
+         keys: Collection[OffloadKey],
+@@ -322,6 +328,8 @@ class CPUOffloadingManager(OffloadingManager):
+             # a chunk that was already stored must remain in the cache after this call.
+             protected = set(keys)
+             evicted = self._policy.evict(num_chunks_to_evict, protected)
++            if ENABLED and evicted is not None:
++                trace("cpu_evict", req_context.req_id, keys=[key for key, _ in evicted])
+             if evicted is None:
+                 return None
+ 
+@@ -362,6 +370,7 @@ class CPUOffloadingManager(OffloadingManager):
+         )
+ 
+     @override
++    @trace_span("cpu_store_ready")
+     def complete_store(
+         self,
+         keys: Collection[OffloadKey],
+@@ -387,6 +396,8 @@ class CPUOffloadingManager(OffloadingManager):
+                     self._policy.remove(key)
+                     self._free_chunk(chunk)
+ 
++        if ENABLED and stored_keys:
++            trace("cpu_keys_ready", req_context.req_id, keys=stored_keys)
+         if stored_keys and self.events is not None:
+             self.events.append(
+                 OffloadingEvent(
+diff --git a/vllm/v1/kv_offload/trace.py b/vllm/v1/kv_offload/trace.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..4ae14ec302a8387d7d8a9972e77172768f489d20
+--- /dev/null
++++ b/vllm/v1/kv_offload/trace.py
+@@ -0,0 +1,113 @@
++# SPDX-License-Identifier: Apache-2.0
++# SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++"""Opt-in, process-local M0 lifecycle traces (no device synchronization)."""
++
++import atexit
++import contextvars
++import functools
++import json
++import os
++import time
++from pathlib import Path
++
++ENABLED = os.environ.get("AGENTKV_TRACE") == "1"
++_request: contextvars.ContextVar[str | None] = contextvars.ContextVar(
++    "agentkv_request", default=None
++)
++_buffer: list[dict] = []
++_buffer_pid: int | None = None
++_jobs: dict[int, str] = {}
++
++
++def _json_default(value):
++    if isinstance(value, bytes):
++        return value.hex()
++    raise TypeError(type(value).__name__)
++
++
++def flush_trace() -> None:
++    """Serialize buffered events outside the measured request path."""
++    if not _buffer:
++        return
++    directory = Path(os.environ.get("AGENTKV_TRACE_DIR", "/tmp/agentkv-trace"))
++    directory.mkdir(parents=True, exist_ok=True)
++    with (directory / f"trace-{os.getpid()}.jsonl").open("a") as sink:
++        for event in _buffer:
++            sink.write(json.dumps(event, default=_json_default) + "\n")
++    _buffer.clear()
++
++
++def trace(event: str, request_id: str | None = None, **fields) -> None:
++    """Buffer a monotonic timestamp without device synchronization or JSON I/O."""
++    if not ENABLED:
++        return
++    stamp = time.monotonic_ns()
++    global _buffer_pid
++    pid = os.getpid()
++    if _buffer_pid != pid:
++        _buffer.clear()
++        _buffer_pid = pid
++        atexit.register(flush_trace)
++    # Bound memory for long debug runs; M0 stays below this threshold.
++    if len(_buffer) >= 65536:
++        flush_trace()
++    _buffer.append(
++        dict(
++            ns=stamp,
++            pid=pid,
++            event=event,
++            request_id=request_id or _request.get(),
++            **fields,
++        )
++    )
++
++
++def bind_job(job_id: int, request_id: str) -> None:
++    if ENABLED:
++        _jobs[job_id] = request_id
++
++
++def job_request(job_id: int) -> str | None:
++    return _jobs.get(job_id)
++
++
++def forget_job(job_id: int) -> None:
++    _jobs.pop(job_id, None)
++
++
++def trace_span(event: str):
++    """Time a scheduler operation and propagate its request to block events."""
++
++    def decorate(fn):
++        if not ENABLED:
++            return fn
++
++        @functools.wraps(fn)
++        def wrapped(*args, **kwargs):
++            req_id = None
++            for arg in (*args[1:], *kwargs.values()):
++                req_id = getattr(arg, "request_id", None) or getattr(
++                    arg, "req_id", None
++                )
++                if req_id:
++                    break
++            token = _request.set(req_id or _request.get())
++            try:
++                trace(event + "_begin")
++                result = fn(*args, **kwargs)
++                scalar_result: int | str | list[int | str | None] | None = None
++                if isinstance(result, (int, bool, str)):
++                    scalar_result = result
++                elif isinstance(result, tuple):
++                    scalar_result = [
++                        x if isinstance(x, (int, bool, str)) or x is None else None
++                        for x in result
++                    ]
++                trace(event + "_end", result=scalar_result)
++                return result
++            finally:
++                _request.reset(token)
++
++        return wrapped
++
++    return decorate
+diff --git a/vllm/v1/worker/gpu_worker.py b/vllm/v1/worker/gpu_worker.py
+index 04feb5da025a6072f100eaba485baefe74247aaa..c61a1928d14685ed53b08fac1c91dd2ec747f5de 100644
+--- a/vllm/v1/worker/gpu_worker.py
++++ b/vllm/v1/worker/gpu_worker.py
+@@ -92,6 +92,7 @@ from vllm.utils.torch_utils import set_random_seed, set_torch_threads_for_runtim
+ from vllm.v1.attention.backends.utils import record_kv_cache_layout
+ from vllm.v1.core.sched.output import GrammarOutput, SchedulerOutput
+ from vllm.v1.kv_cache_interface import KVCacheConfig, KVCacheSpec
++from vllm.v1.kv_offload.trace import ENABLED, flush_trace, trace
+ from vllm.v1.outputs import (
+     AsyncModelRunnerOutput,
+     DraftTokenIds,
+@@ -1302,6 +1303,9 @@ class Worker(WorkerBase):
+     def execute_model(
+         self, scheduler_output: "SchedulerOutput"
+     ) -> ModelRunnerOutput | AsyncModelRunnerOutput | None:
++        if ENABLED:
++            for req_id, count in scheduler_output.num_scheduled_tokens.items():
++                trace("worker_execute", req_id, num_tokens=count)
+         # Wait for the previous step's sends so this forward pass cannot
+         # overwrite buffers they are still reading.
+         if self._pp_send_work:
+@@ -1604,6 +1608,7 @@ class Worker(WorkerBase):
+             self.model_runner.reset_lora_state()
+ 
+     def shutdown(self) -> None:
++        flush_trace()
+         gc.unfreeze()
+ 
+         # has_kv_transfer_group can be None during interpreter shutdown.

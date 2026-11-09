@@ -1,0 +1,432 @@
+{
+  "git_commit": "daeb439b160a1d598495eda1ed2fea0c732f19b5",
+  "status": "complete",
+  "rows": [
+    {
+      "id": "lambda-1.2-seed-3/lru",
+      "rate": 1.2,
+      "seed": 3,
+      "policy": "lru",
+      "status": "complete",
+      "predicted": 0.23602998500160366,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.26508203658274754,
+      "ttft_p50_ms": 130.17002300000001,
+      "ttft_p99_ms": 1976.33305773,
+      "completed": 10397,
+      "completed_non_entry": 10397,
+      "prediction_gap_pp": 2.905205158114388,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-3/online",
+      "rate": 1.2,
+      "seed": 3,
+      "policy": "online",
+      "status": "complete",
+      "predicted": 0.23383052862967074,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.24923870678431836,
+      "ttft_p50_ms": 129.8333915,
+      "ttft_p99_ms": 1747.9262069500003,
+      "completed": 10396,
+      "completed_non_entry": 10396,
+      "prediction_gap_pp": 1.5408178154647623,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-3/perfect",
+      "rate": 1.2,
+      "seed": 3,
+      "policy": "perfect",
+      "status": "complete",
+      "predicted": 0.15917305014911193,
+      "complete": true,
+      "stable": true,
+      "effective_recompute": 0.16557382503127294,
+      "ttft_p50_ms": 89.326109,
+      "ttft_p99_ms": 1073.7382826400003,
+      "completed": 10436,
+      "completed_non_entry": 10436,
+      "prediction_gap_pp": 0.6400774882161009,
+      "stability": "stable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-4/perfect",
+      "rate": 1.2,
+      "seed": 4,
+      "policy": "perfect",
+      "status": "complete",
+      "predicted": 0.14907125516549155,
+      "complete": true,
+      "stable": true,
+      "effective_recompute": 0.15889196515043216,
+      "ttft_p50_ms": 112.02418850000001,
+      "ttft_p99_ms": 1123.3836200299997,
+      "completed": 9693,
+      "completed_non_entry": 9693,
+      "prediction_gap_pp": 0.9820709984940612,
+      "stability": "stable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-4/lru",
+      "rate": 1.2,
+      "seed": 4,
+      "policy": "lru",
+      "status": "complete",
+      "predicted": 0.23352464130529074,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.8736815269763097,
+      "ttft_p50_ms": 10992.578314,
+      "ttft_p99_ms": 16558.33516108,
+      "completed": 7523,
+      "completed_non_entry": 7523,
+      "prediction_gap_pp": 64.0156885671019,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-4/online",
+      "rate": 1.2,
+      "seed": 4,
+      "policy": "online",
+      "status": "complete",
+      "predicted": 0.21756298210256247,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.9242091619053239,
+      "ttft_p50_ms": 10855.689728,
+      "ttft_p99_ms": 17028.24410832,
+      "completed": 7107,
+      "completed_non_entry": 7107,
+      "prediction_gap_pp": 70.66461798027615,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-5/perfect",
+      "rate": 1.2,
+      "seed": 5,
+      "policy": "perfect",
+      "status": "complete",
+      "predicted": 0.19444723360651478,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.20140727920299534,
+      "ttft_p50_ms": 114.510123,
+      "ttft_p99_ms": 1803.7426511599954,
+      "completed": 11511,
+      "completed_non_entry": 11511,
+      "prediction_gap_pp": 0.6960045596480557,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-5/online",
+      "rate": 1.2,
+      "seed": 5,
+      "policy": "online",
+      "status": "complete",
+      "predicted": 0.2807046858079831,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.39490177367311174,
+      "ttft_p50_ms": 327.7803775,
+      "ttft_p99_ms": 13326.9575175,
+      "completed": 10845,
+      "completed_non_entry": 10845,
+      "prediction_gap_pp": 11.419708786512867,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    },
+    {
+      "id": "lambda-1.2-seed-5/lru",
+      "rate": 1.2,
+      "seed": 5,
+      "policy": "lru",
+      "status": "complete",
+      "predicted": 0.29174640028803184,
+      "complete": true,
+      "stable": false,
+      "effective_recompute": 0.4674616799997162,
+      "ttft_p50_ms": 461.7124795,
+      "ttft_p99_ms": 16584.328432249997,
+      "completed": 10318,
+      "completed_non_entry": 10318,
+      "prediction_gap_pp": 17.57152797116844,
+      "stability": "unstable",
+      "attempts": 1,
+      "paired_eligible": false,
+      "paired_recompute_pp": null,
+      "paired_ttft_p50_ms": null,
+      "paired_ttft_p99_ms": null
+    }
+  ],
+  "aggregates": [
+    {
+      "rate": 1.2,
+      "policy": "lru",
+      "attempted": 3,
+      "stable_count": 0,
+      "effective_recompute": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "ttft_p50_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "ttft_p99_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_recompute_pp": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_ttft_p50_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_ttft_p99_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "prediction_gap_all_pp": {
+        "n": 3,
+        "mean": 28.164140565461576,
+        "minimum": 2.905205158114388,
+        "maximum": 64.0156885671019
+      },
+      "completed_all": {
+        "n": 3,
+        "mean": 9412.666666666666,
+        "minimum": 7523,
+        "maximum": 10397
+      },
+      "completed_non_entry": {
+        "n": 3,
+        "mean": 9412.666666666666,
+        "minimum": 7523,
+        "maximum": 10397
+      }
+    },
+    {
+      "rate": 1.2,
+      "policy": "online",
+      "attempted": 3,
+      "stable_count": 0,
+      "effective_recompute": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "ttft_p50_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "ttft_p99_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_recompute_pp": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_ttft_p50_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_ttft_p99_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "prediction_gap_all_pp": {
+        "n": 3,
+        "mean": 27.875048194084595,
+        "minimum": 1.5408178154647623,
+        "maximum": 70.66461798027615
+      },
+      "completed_all": {
+        "n": 3,
+        "mean": 9449.333333333334,
+        "minimum": 7107,
+        "maximum": 10845
+      },
+      "completed_non_entry": {
+        "n": 3,
+        "mean": 9449.333333333334,
+        "minimum": 7107,
+        "maximum": 10845
+      }
+    },
+    {
+      "rate": 1.2,
+      "policy": "perfect",
+      "attempted": 3,
+      "stable_count": 2,
+      "effective_recompute": {
+        "n": 2,
+        "mean": 0.16223289509085254,
+        "minimum": 0.15889196515043216,
+        "maximum": 0.16557382503127294
+      },
+      "ttft_p50_ms": {
+        "n": 2,
+        "mean": 100.67514875,
+        "minimum": 89.326109,
+        "maximum": 112.02418850000001
+      },
+      "ttft_p99_ms": {
+        "n": 2,
+        "mean": 1098.560951335,
+        "minimum": 1073.7382826400003,
+        "maximum": 1123.3836200299997
+      },
+      "paired_recompute_pp": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_ttft_p50_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "paired_ttft_p99_ms": {
+        "n": 0,
+        "mean": null,
+        "minimum": null,
+        "maximum": null
+      },
+      "prediction_gap_all_pp": {
+        "n": 3,
+        "mean": 0.772717682119406,
+        "minimum": 0.6400774882161009,
+        "maximum": 0.9820709984940612
+      },
+      "completed_all": {
+        "n": 3,
+        "mean": 10546.666666666666,
+        "minimum": 9693,
+        "maximum": 11511
+      },
+      "completed_non_entry": {
+        "n": 3,
+        "mean": 10546.666666666666,
+        "minimum": 9693,
+        "maximum": 11511
+      }
+    }
+  ],
+  "preregistration_commit": "daeb439b160a1d598495eda1ed2fea0c732f19b5",
+  "protocol_sha256": "923221687d9539aa55fe62beeca0465e414e0a01fcb05d7b18b3a6c73842e468",
+  "common_token_checks": [
+    {
+      "group": "lambda-1.2-seed-3",
+      "left": "previous_completed_policies",
+      "right": "online",
+      "requests": 14171,
+      "identical": true
+    },
+    {
+      "group": "lambda-1.2-seed-3",
+      "left": "previous_completed_policies",
+      "right": "perfect",
+      "requests": 14187,
+      "identical": true
+    },
+    {
+      "group": "lambda-1.2-seed-4",
+      "left": "previous_completed_policies",
+      "right": "lru",
+      "requests": 10126,
+      "identical": true
+    },
+    {
+      "group": "lambda-1.2-seed-4",
+      "left": "previous_completed_policies",
+      "right": "online",
+      "requests": 9803,
+      "identical": true
+    },
+    {
+      "group": "lambda-1.2-seed-5",
+      "left": "previous_completed_policies",
+      "right": "online",
+      "requests": 13555,
+      "identical": true
+    },
+    {
+      "group": "lambda-1.2-seed-5",
+      "left": "previous_completed_policies",
+      "right": "lru",
+      "requests": 13033,
+      "identical": true
+    }
+  ]
+}

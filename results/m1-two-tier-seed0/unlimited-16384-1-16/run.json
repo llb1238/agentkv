@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "requests": 10823,
+    "window_requests": 8610,
+    "window_prompt_tokens": 60997361,
+    "source_tokens": {
+      "gpu_hit": 59651232,
+      "cpu_hit": 0,
+      "recomputed": 1346129
+    },
+    "source_fractions": {
+      "gpu_hit": 0.9779313567352529,
+      "cpu_hit": 0.0,
+      "recomputed": 0.022068643264747143
+    },
+    "gpu_evictions": 0,
+    "cpu_evictions": 0,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 11,
+    "peak_gpu_tokens": 2210656,
+    "kv_blocked_checks": 0,
+    "queued_requests": 0,
+    "unsent_queued": 0
+  },
+  "requests_sha256": "9ea59d3e41746c66ef641665e22b734af3f1ac6364b2f4905b5964cb337e37dd"
+}

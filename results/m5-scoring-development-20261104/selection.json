@@ -1,0 +1,36 @@
+{
+  "winner": "remaining",
+  "candidates": [
+    {
+      "candidate": "deadline",
+      "eligible": false,
+      "failed_populations": [
+        "lambda-1-seed-0",
+        "lambda-1-seed-1",
+        "lambda-1.4-seed-0",
+        "lambda-1.4-seed-1",
+        "lambda-1.4-seed-2"
+      ],
+      "mean_oracle_capture": 0.22986872147319826,
+      "defined": 12,
+      "undefined": 0
+    },
+    {
+      "candidate": "remaining",
+      "eligible": true,
+      "failed_populations": [],
+      "mean_oracle_capture": 0.3935231159868721,
+      "defined": 12,
+      "undefined": 0
+    },
+    {
+      "candidate": "horizon",
+      "eligible": true,
+      "failed_populations": [],
+      "mean_oracle_capture": 0.2641309432325492,
+      "defined": 12,
+      "undefined": 0
+    }
+  ],
+  "rule": "integer noninferiority at all 12 populations, then mean paired Oracle capture; fixed order breaks exact ties"
+}

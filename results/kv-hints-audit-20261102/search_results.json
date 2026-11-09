@@ -1,0 +1,46 @@
+{
+  "search_kv_hints": [
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/57103",
+      "title": "[RFC]: Programmable KV Cache: Composable Policies for Agentic Serving",
+      "issue_number": 57103
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/59708",
+      "title": "[RFC]: Modular and Extensible APIs & Execution Surface for Orchestrator-Driven KV Hint Policies",
+      "issue_number": 59708
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/53421",
+      "title": "[RFC]: First-Class, Orchestrator-Agnostic KV Hint Envelope for Agentic Workloads",
+      "issue_number": 53421
+    }
+  ],
+  "search_agent_hint": [
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/52113",
+      "title": "[RFC]: Session-Aware KV Cache Hints for Agentic Workloads",
+      "issue_number": 52113
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/57103",
+      "title": "[RFC]: Programmable KV Cache: Composable Policies for Agentic Serving",
+      "issue_number": 57103
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/51428",
+      "title": "[RFC]: Programmatic Session-Aware KV Cache Management",
+      "issue_number": 51428
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/58537",
+      "title": "[RFC]: KV Context Editing — Relaxed Prefix Alignment for KV Allocation and Reuse",
+      "issue_number": 58537
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm/issues/53421",
+      "title": "[RFC]: First-Class, Orchestrator-Agnostic KV Hint Envelope for Agentic Workloads",
+      "issue_number": 53421
+    }
+  ]
+}

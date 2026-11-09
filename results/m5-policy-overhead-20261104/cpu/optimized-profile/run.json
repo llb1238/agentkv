@@ -1,0 +1,97 @@
+{
+  "git_commit": "0ffd5d9dcf2230af56e05cc979ef4391769a0929",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "implementation": "vllm",
+  "mask_hints": false,
+  "cprofile": true,
+  "profile_calls": null,
+  "summary": {
+    "counts": {
+      "get": 1615984,
+      "on_store_miss": 2090,
+      "insert": 148401,
+      "mark_evictable": 363709,
+      "on_request_finished": 2259,
+      "mark_non_evictable": 215308,
+      "evict": 2005
+    },
+    "eviction_fingerprint": "09fc5af2fb5f632f3f98cf3ade5a9d6c70c09c27cdf256f2aa48222416216746",
+    "prefix_enumerations": 2259,
+    "prefix_cache_entries": 0,
+    "evict": {
+      "count": 2005,
+      "p50_us": 127.247,
+      "p99_us": 4003.54332,
+      "maximum_us": 5648.108
+    },
+    "profile_functions": [
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/hint_aware.py",
+        "line": 189,
+        "name": "_observe",
+        "calls": 8698,
+        "self_s": 4.034987925,
+        "cumulative_s": 47.514754629
+      },
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/vllm_plugin.py",
+        "line": 73,
+        "name": "evict",
+        "calls": 2005,
+        "self_s": 0.0052137880000000004,
+        "cumulative_s": 1.1422021900000001
+      },
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/optimized_policy.py",
+        "line": 103,
+        "name": "_compact",
+        "calls": 159104,
+        "self_s": 0.181334392,
+        "cumulative_s": 0.416915266
+      },
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/optimized_policy.py",
+        "line": 23,
+        "name": "_refresh",
+        "calls": 5610260,
+        "self_s": 15.640108808,
+        "cumulative_s": 58.282493861000006
+      },
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/optimized_policy.py",
+        "line": 71,
+        "name": "_advance",
+        "calls": 738121,
+        "self_s": 1.220937669,
+        "cumulative_s": 3.625248017
+      },
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/optimized_policy.py",
+        "line": 123,
+        "name": "evict",
+        "calls": 2005,
+        "self_s": 0.179066536,
+        "cumulative_s": 1.0808873940000001
+      },
+      {
+        "file": "/home/llb/my_soft/vllm/vllm/v1/kv_offload/base.py",
+        "line": 121,
+        "name": "get_offload_prefix_keys",
+        "calls": 2259,
+        "self_s": 0.08864311400000001,
+        "cumulative_s": 0.46668242200000004
+      },
+      {
+        "file": "/home/llb/my_soft/agentkv/agentkv/policy/prefix_adapter.py",
+        "line": 109,
+        "name": "evict",
+        "calls": 2005,
+        "self_s": 0.026635521000000002,
+        "cumulative_s": 1.109820523
+      }
+    ]
+  },
+  "trace_sha256": {
+    "callbacks-135943-123727931667376.jsonl.gz": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad"
+  }
+}

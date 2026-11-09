@@ -1,0 +1,86 @@
+{
+  "candidate": {
+    "context_budget": 32512,
+    "rate_per_minute": 1.0,
+    "max_num_seqs": 8,
+    "gpu_tokens": 362720,
+    "cpu_tokens": 634768,
+    "cpu_gpu_ratio": 1.7500220555800619,
+    "gpu_kv_gib": 49.81201171875,
+    "cpu_kv_gib": 87.172119140625,
+    "scheduled_kv_p90": 69152.0,
+    "saturated_kv_p90": 145088.0,
+    "sizing_kv_p90": 145088.0,
+    "working_set_p50": 1516675.5,
+    "working_set_p90": 1651105.3,
+    "working_set_gib": 208.28368377685547,
+    "working_set_method": "stationary population; live-chain latest-prompt prefix union, no cross-instance sharing, no output KV; s=.5, 10s samples in [600,2400), P50 used for constraint",
+    "half_upper_prefill_tps": 33563.907,
+    "raw_prefill_tps": 65872.723,
+    "upper_hit_rate": 0.9809467266139886,
+    "constraints": {
+      "gpu_safety": true,
+      "gpu_lt_cpu": true,
+      "cpu_le_80pct_working_set": true,
+      "cpu_gpu_ratio_min": true,
+      "cpu_gpu_ratio_max": true,
+      "gpu_fits": true,
+      "cpu_fits": true
+    },
+    "violations_tokens": {},
+    "limits": {
+      "gpu_safety_min": 362720.0,
+      "cpu_working_set_max": 1213340.4000000001,
+      "cpu_ratio_min": 544080.0,
+      "cpu_ratio_max": 725440,
+      "gpu_memory_max": 803918.2222222222,
+      "cpu_memory_max": 1499127.173611111
+    },
+    "constraint_distance": 0
+  },
+  "summary": {
+    "requests": 10823,
+    "window_requests": 8610,
+    "window_prompt_tokens": 121045948,
+    "source_tokens": {
+      "gpu_hit": 68404864,
+      "cpu_hit": 24196736,
+      "recomputed": 28444348
+    },
+    "source_fractions": {
+      "gpu_hit": 0.5651148603503853,
+      "cpu_hit": 0.19989711675437496,
+      "recomputed": 0.23498802289523973
+    },
+    "gpu_evictions": 4148024,
+    "cpu_evictions": 2208527,
+    "cpu_store_skipped_requests": 0,
+    "peak_running": 8,
+    "peak_gpu_tokens": 362720,
+    "kv_blocked_checks": 0,
+    "queued_requests": 29,
+    "unsent_queued": 0
+  },
+  "total_hit_fraction": 0.7650119771047602,
+  "upper_hit_rate": 0.9809467266139886,
+  "upper_minus_lru": 0.21593474950922842,
+  "prefill_tokens_per_second": 15479.300940495785,
+  "same_window_theoretical_upper": 0.9791713143508116,
+  "unlimited_control": "unlimited-32512-1-8",
+  "unlimited_control_hit": 0.9784281915822577,
+  "unlimited_minus_lru": 0.21341621447749748,
+  "control_window_matches": true,
+  "utilization_22k": 0.7036045882043539,
+  "utilization_34k": 0.45527355707340544,
+  "measured_window_prefill_tps": 15802.415555555555,
+  "recommendation_checks": {
+    "capacity": true,
+    "eviction_gap": true,
+    "controlled_eviction_gap": true,
+    "compute_22k_70pct": false,
+    "nonempty": true,
+    "all_offered_requests_sent": true
+  },
+  "recommend_for_gpu_pilot": false,
+  "requests_sha256": "a03522b92a426cc37e8b8f33a3f68c3ffdb7a693b28a4da912823b6a8c327c2f"
+}

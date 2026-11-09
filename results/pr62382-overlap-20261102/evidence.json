@@ -1,0 +1,239 @@
+{
+  "checked_date": "2026-11-02",
+  "pr": {
+    "url": "https://github.com/vllm-project/vllm/pull/62382",
+    "number": 62382,
+    "state": "open",
+    "merged": false,
+    "mergeable": false,
+    "draft": true,
+    "body": "## Purpose\n\nThis is our **draft reference implementation of [RFC #57103: Programmable KV Cache](https://github.com/vllm-project/vllm/issues/57103)**, shared for design discussion and implementation review. It does not close the RFC or claim complete acceptance.\n\nAgentic sessions span multiple inference requests, tool pauses, and branches. The RFC lets an application express lifecycle and cache intent through the existing `KvHintsEnvelope`, while the engine resolves targets, approves resources, executes operations, and reports actual completion.\n\n### How this implementation maps to the RFC\n\n- **Common control and logical state:** request-attached hints and independent Python/HTTP control share the envelope, dispatcher, and engine approval path. Hash/session/continuation/range selectors resolve logical content separately from physical residency. Results are correlated by message/action IDs, with bounded replay, queries, ACK, cancellation, and engine epochs. Existing backend-owned KVCR payloads retain opaque forwarding.\n- **Execution through existing cache infrastructure:** `SET_PRIORITY`, `COPY_TO`, and `MOVE_TO` use `KVCacheManager`/`BlockPool` and CPU/Mooncake Store adapters. GPU-source operations run at successful request completion before references are released; accepted transfers can outlive the request. COPY publishes reusable GPU content only after all participating ranks finish. MOVE stores first and reclaims eligible source copies afterward. Shared loads share reservations and transfer holds; a resume can wait for an existing load.\n- **Optional policies and rollout integration:** retention, tool-wait movement, and quota/prefix-reuse scheduling consume engine observations and submit proposals through the same approval boundary. Explicit commands keep their meaning. Startup configuration controls policy registration. The benchmark harness connects real verl `ToolAgentLoop` calls, tools, token logprobs, response masks, and rewards; weight-update checks exercise draining, invalidation, and cache namespace isolation.\n\nImplementation contracts: [native primitives and lifecycle](https://github.com/zhhangBian/vllm-note/blob/rfc-hint/vllm/v1/kv_hints/README.md). Reproduction: [benchmark commands](https://github.com/zhhangBian/vllm-note/blob/rfc-hint/benchmarks/programmable_kv_cache/README.md).\n\n### Current conclusions\n\nRecorded local experiments use Qwen3.8-27B BF16, two A100 80GB GPUs, TP=2, concurrency 16, and 32 rollouts from 8 GSM8K questions. Each fixed-work replay has 113 model calls and 8,121 output tokens. The principal comparisons use three runs per configuration and report median throughput relative to native APC at the **same GPU KV budget**; movement additionally uses a host Store.\n\n| GPU KV per GPU          | Configuration                 | Native / reference elapsed | Throughput change |\n| ----------------------- | ----------------------------- | -------------------------: | ----------------: |\n| 2 GiB, constrained      | Quota/prefix-reuse scheduling |          449.06 / 219.63 s |           +104.5% |\n| 2 GiB, constrained      | Retention + movement + quota  |          449.06 / 247.60 s |            +81.4% |\n| 8 GiB, working set fits | Retention + movement + quota  |            54.09 / 56.13 s |             -3.6% |\n\nThese measurements support executable lifecycle/resource contracts and a scheduling benefit under constrained KV capacity. They do **not** establish an additional benefit from movement/composition over quota alone, or a general serving speedup. The 2 GiB setting is an artificial pressure diagnostic. When the working set fits, both arms have zero preemptions and equal cache hits; control overhead produces a regression.\n\nSeparate live tool runs took 452.37 / 288.73 / 214.34 s for native/full-policy/quota, each scoring 32/32 rewards. These are single runs with different generated trajectories and only 8 independent questions. Fixed replay reruns model generation but does not rerun tools or evaluate rewards.\n\nThe [experiment report](https://github.com/zhhangBian/vllm-note/blob/rfc-hint/docs/programmable-kvc/rollout-report-2026-10-12.md) records variability, tail-latency regressions, missing Store objects, methodology, and unfinished acceptance. Raw traces/logs remain local and are not included in this PR.\n\n### Related work and remaining scope\n\nDuplicate checks covered #57103's discussion, open PRs referencing it, and KV-hint/programmable-cache searches. [#58198](https://github.com/vllm-project/vllm/pull/58198) supplies a minimal request-free CPU-to-GPU primitive; [#59714](https://github.com/vllm-project/vllm/pull/59714) and [#38514](https://github.com/vllm-project/vllm/pull/38514) cover retention priority. This reference has a broader purpose: a runnable control/lifecycle/resource/execution path plus policy and rollout experiments. Its overlapping primitive, dispatcher, and priority code needs consolidation with those contributions before upstream merge. The experimental COPY/MOVE schema follows the direction discussed in #59708 and remains open to revision.\n\nThis draft preserves development baseline `30f5c01d4ebb5c493ed86195db24d0ec5b3ce3d7` and currently has conflicts with upstream `main`. Rebase and validation against current `main` remain open. Other gaps include the full prediction/fairness/outage/restart matrix, a fresh final 128-question evaluation, other models/layouts, Dynamo/llm-d integration, and full RL trainer/optimizer performance. CPU control requires one block per chunk; native Mooncake movement requires PCP=DCP=1. Cold-tier retention/deletion and mixed native/backend envelopes are unsupported.\n\n## Validation\n\n```bash\nCUDA_VISIBLE_DEVICES=0,3 OMP_NUM_THREADS=1 .venv/bin/python -m pytest \\\n  tests/v1/test_kv_hint_control.py \\\n  tests/v1/test_kv_hint_state.py \\\n  tests/v1/engine/test_kv_control.py \\\n  tests/entrypoints/serve/kv_control/test_api.py \\\n  tests/v1/core/test_prefix_caching.py \\\n  tests/v1/core/test_scheduler.py \\\n  tests/v1/kv_connector/unit/test_mooncake_store_scheduler.py -q\n.venv/bin/pre-commit run --from-ref 30f5c01d4ebb5c493ed86195db24d0ec5b3ce3d7 --to-ref rfc-hint --show-diff-on-failure\n.venv/bin/pre-commit run mypy-3.12 --hook-stage manual --from-ref 30f5c01d4ebb5c493ed86195db24d0ec5b3ce3d7 --to-ref rfc-hint\nopenspec validate programmable-kv-cache --strict\n```\n\nThe recorded regression result is **680 passed**, with 14 PyTorch deprecation warnings. The implementation files tested are identical to those in this branch; the subsequent history edit changes attribution trailers only. The full branch pre-commit checks passed. Python 3.12 type checks and OpenSpec strict validation passed on the same implementation. The model and rollout measurements above are earlier experimental results, not newly rerun evaluations.\n\nAI assistance was used for implementation, tests, documentation, and PR preparation. The human submitter has confirmed reviewing every changed line and personally running the relevant tests.\n",
+    "title": "[RFC][KV Cache] Implementation of programmable KV cache (#57103)",
+    "base": "main",
+    "base_sha": "82b7dad5e315040219ec657398d6197010121d15",
+    "head": "rfc-hint",
+    "head_sha": "7b01911392a707e5f9be8ebe97902fc92529dfa7",
+    "head_repo_id": 909584624,
+    "head_repo_full_name": "zhhangBian/vllm-note",
+    "merge_commit_sha": null,
+    "user": {
+      "login": "zhhangBian",
+      "name": "zhhangBian",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/125418034?v=4",
+      "id": 125418034
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-19T03:12:10Z",
+    "updated_at": "2026-10-29T19:57:52Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 65,
+    "changed_files": 80,
+    "additions": 18589,
+    "deletions": 34,
+    "display_url": "https://github.com/vllm-project/vllm/pull/62382",
+    "display_title": "[RFC][KV Cache] Implementation of programmable KV cache (#57103)"
+  },
+  "changed_files": [
+    ".buildkite/test_areas/disaggregated_mooncake.yaml",
+    ".buildkite/test_areas/misc.yaml",
+    ".gitignore",
+    "benchmarks/programmable_kv_cache/README.md",
+    "benchmarks/programmable_kv_cache/analyze_rollout.py",
+    "benchmarks/programmable_kv_cache/client.py",
+    "benchmarks/programmable_kv_cache/control_overhead.py",
+    "benchmarks/programmable_kv_cache/evaluate.py",
+    "benchmarks/programmable_kv_cache/http_control.py",
+    "benchmarks/programmable_kv_cache/lifecycle.py",
+    "benchmarks/programmable_kv_cache/profile_bootstrap/sitecustomize.py",
+    "benchmarks/programmable_kv_cache/rollout.py",
+    "benchmarks/programmable_kv_cache/run_recovery.py",
+    "benchmarks/programmable_kv_cache/run_rollout_matrix.py",
+    "benchmarks/programmable_kv_cache/verl_rollout.py",
+    "benchmarks/programmable_kv_cache/weight_update.py",
+    "tests/entrypoints/serve/kv_control/test_api.py",
+    "tests/v1/core/test_prefix_caching.py",
+    "tests/v1/core/test_scheduler.py",
+    "tests/v1/engine/test_engine_args.py",
+    "tests/v1/engine/test_kv_control.py",
+    "tests/v1/kv_connector/mooncake_integration/test_store_buffers.py",
+    "tests/v1/kv_connector/unit/offloading_connector/test_scheduler.py",
+    "tests/v1/kv_connector/unit/offloading_connector/test_worker.py",
+    "tests/v1/kv_connector/unit/test_mooncake_store_scheduler.py",
+    "tests/v1/kv_connector/unit/test_mooncake_store_worker.py",
+    "tests/v1/kv_offload/cpu/test_manager.py",
+    "tests/v1/kv_offload/tiering/test_kvcr_tier.py",
+    "tests/v1/test_kv_hint_control.py",
+    "tests/v1/test_kv_hint_state.py",
+    "vllm/config/__init__.py",
+    "vllm/config/kv_control.py",
+    "vllm/config/vllm.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/control.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/mooncake/store/connector.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/mooncake/store/control.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/mooncake/store/data.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/mooncake/store/scheduler.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/mooncake/store/worker.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/common.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/control.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/scheduler.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading/worker.py",
+    "vllm/distributed/kv_transfer/kv_connector/v1/offloading_connector.py",
+    "vllm/engine/arg_utils.py",
+    "vllm/engine/protocol.py",
+    "vllm/entrypoints/generate/base/protocol.py",
+    "vllm/entrypoints/llm.py",
+    "vllm/entrypoints/openai/chat_completion/protocol.py",
+    "vllm/entrypoints/openai/chat_completion/serving.py",
+    "vllm/entrypoints/openai/completion/protocol.py",
+    "vllm/entrypoints/openai/completion/serving.py",
+    "vllm/entrypoints/serve/__init__.py",
+    "vllm/entrypoints/serve/kv_control/__init__.py",
+    "vllm/entrypoints/serve/kv_control/api_router.py",
+    "vllm/v1/core/block_pool.py",
+    "vllm/v1/core/kv_cache_manager.py",
+    "vllm/v1/core/kv_cache_priority.py",
+    "vllm/v1/core/kv_cache_retention.py",
+    "vllm/v1/core/kv_cache_transfer.py",
+    "vllm/v1/core/sched/scheduler.py",
+    "vllm/v1/engine/async_llm.py",
+    "vllm/v1/engine/core.py",
+    "vllm/v1/engine/core_client.py",
+    "vllm/v1/kv_hints/README.md",
+    "vllm/v1/kv_hints/actions.py",
+    "vllm/v1/kv_hints/api.py",
+    "vllm/v1/kv_hints/control.py",
+    "vllm/v1/kv_hints/controller.py",
+    "vllm/v1/kv_hints/dispatch.py",
+    "vllm/v1/kv_hints/engine.py",
+    "vllm/v1/kv_hints/native.py",
+    "vllm/v1/kv_hints/policy.py",
+    "vllm/v1/kv_hints/policy_runtime.py",
+    "vllm/v1/kv_hints/request_observer.py",
+    "vllm/v1/kv_hints/resources.py",
+    "vllm/v1/kv_hints/retention.py",
+    "vllm/v1/kv_hints/state.py",
+    "vllm/v1/kv_hints/transfers.py"
+  ],
+  "scope": "Static source verification of policy overlap, not a full PR review or runtime reproduction.",
+  "sources": {
+    "vllm/v1/kv_hints/policy.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/vllm/v1/kv_hints/policy.py",
+      "github_blob_sha": "a349939bde770b0e57136dc3d2cc6b83d245c438",
+      "excerpts": [
+        {
+          "start_line": 154,
+          "end_line": 193,
+          "content": "class RetentionPolicy(KVPolicy):\n    consumed_signals = frozenset({\"importance\", \"resume\"})\n\n    def needs_request_observation(self, payload: SignalPayload) -> bool:\n        return False\n\n    def __init__(self, priority: int = 50, ttl_seconds: float = 30.0):\n        if type(priority) is not int or not 0 <= priority <= 100:\n            raise ValueError(\"Retention priority must be between 0 and 100\")\n        _positive(ttl_seconds, \"ttl_seconds\")\n        self.priority = priority\n        self.ttl_seconds = ttl_seconds\n        self._revision = 0\n\n    def on_signal(\n        self, signal: PolicySignal, view: CacheObservation\n    ) -> PolicyDecision | None:\n        payload = signal.payload\n        if payload.signal not in (\"importance\", \"resume\"):\n            return None\n        priority = (\n            payload.importance if payload.importance is not None else self.priority\n        )\n        self._revision += 1\n        return PolicyDecision(\n            (\n                PolicyProposal(\n                    SetPriority(\n                        signal.target,\n                        \"local_g1\",\n                        signal.owner_id,\n                        self._revision,\n                        priority,\n                        self.ttl_seconds,\n                    ),\n                    skip_if_running=payload.signal == \"resume\",\n                ),\n            )\n        )\n"
+        },
+        {
+          "start_line": 195,
+          "end_line": 223,
+          "content": "class ToolWaitPolicy(KVPolicy):\n    consumed_signals = frozenset({\"tool_wait\", \"resume\", \"resume_prediction\"})\n    signal_updates_guidance = False\n\n    def __init__(\n        self,\n        tier: Literal[\"cpu\", \"mooncake\"] = \"mooncake\",\n        lead_seconds: float = 0.1,\n        min_pressure: float = 0.0,\n        max_stored_blocks: int = 16384,\n        min_pause_seconds: float = 0.5,\n        prefetch_on_admission: bool = False,\n        consider_pause_duration: bool = True,\n    ):\n        if tier not in (\"cpu\", \"mooncake\"):\n            raise ValueError(\"Movement policy requires CPU or Mooncake\")\n        if not math.isfinite(lead_seconds) or lead_seconds < 0:\n            raise ValueError(\"lead_seconds must be nonnegative and finite\")\n        if not math.isfinite(min_pressure) or not 0 <= min_pressure <= 1:\n            raise ValueError(\"min_pressure must be between zero and one\")\n        self.tier = tier\n        self.lead_seconds = lead_seconds\n        self.min_pressure = min_pressure\n        if not math.isfinite(min_pause_seconds) or min_pause_seconds < 0:\n            raise ValueError(\"min_pause_seconds must be nonnegative and finite\")\n        self.min_pause_seconds = min_pause_seconds\n        self.prefetch_on_admission = prefetch_on_admission\n        self.uses_scheduler_guidance = prefetch_on_admission\n        self.consider_pause_duration = consider_pause_duration"
+        },
+        {
+          "start_line": 237,
+          "end_line": 269,
+          "content": "    def _worth_moving(\n        self, pause: float | None, view: CacheObservation | None = None\n    ) -> bool:\n        if (\n            view is not None\n            and self.consider_pause_duration\n            and view.referenced_blocks < self.min_pressure * view.total_blocks\n        ):\n            return False\n        minimum_window = max(\n            self.min_pause_seconds, self._store_seconds + self._load_seconds\n        )\n        return (\n            not self.consider_pause_duration\n            or pause is None\n            or pause > minimum_window\n            or (\n                view is not None\n                and self._has_admission_pressure(view)\n                and any(\n                    r.waiting and r.waiting_seconds > minimum_window\n                    for r in view.requests\n                )\n            )\n        )\n\n    def _has_admission_pressure(self, view: CacheObservation) -> bool:\n        return (\n            self.prefetch_on_admission\n            and view.referenced_blocks > 0\n            and view.referenced_blocks >= self.min_pressure * view.total_blocks\n        )\n"
+        },
+        {
+          "start_line": 371,
+          "end_line": 437,
+          "content": "    def on_signal(\n        self, signal: PolicySignal, view: CacheObservation\n    ) -> PolicyDecision | None:\n        payload = signal.payload\n        if payload.signal == \"tool_wait\":\n            projected = view.referenced_blocks + sum(\n                max(0, r.estimated_blocks - r.held_blocks) for r in view.requests\n            )\n            worthwhile = self._worth_moving(payload.resume_after_seconds, view)\n            if not worthwhile or projected < self.min_pressure * view.total_blocks:\n                self._kept[signal.owner_id] = signal.owners\n                self._kept.move_to_end(signal.owner_id)\n                while len(self._kept) > self.max_stored_blocks:\n                    self._kept.popitem(last=False)\n                return PolicyDecision()\n            self._kept.pop(signal.owner_id, None)\n            return PolicyDecision(\n                (\n                    PolicyProposal(\n                        MoveTo(\n                            signal.target,\n                            CacheLocation(\"gpu\"),\n                            CacheLocation(self.tier),\n                        )\n                    ),\n                )\n            )\n        if signal.owner_id in self._kept:\n            return PolicyDecision()\n        stored = self._stored.get(signal.owner_id)\n        load_target = signal.target if stored is None else stored[0]\n        lead = self.lead_seconds\n        if stored is not None and self._copy_seconds_per_byte is not None:\n            lead = max(lead, stored[2] * self._copy_seconds_per_byte)\n        if payload.signal == \"resume\":\n            return PolicyDecision(\n                (\n                    PolicyProposal(\n                        CopyTo(\n                            load_target,\n                            CacheLocation(self.tier),\n                            CacheLocation(\"gpu\"),\n                        ),\n                        wait_for_admission=self.prefetch_on_admission,\n                        skip_if_running=self.prefetch_on_admission,\n                    ),\n                )\n            )\n        if (\n            payload.signal == \"resume_prediction\"\n            and payload.resume_after_seconds is not None\n        ):\n            return PolicyDecision(\n                (\n                    PolicyProposal(\n                        CopyTo(\n                            load_target,\n                            CacheLocation(self.tier),\n                            CacheLocation(\"gpu\"),\n                        ),\n                        view.now + max(0.0, payload.resume_after_seconds - lead),\n                        wait_for_admission=self.prefetch_on_admission,\n                        skip_if_running=self.prefetch_on_admission,\n                    ),\n                )\n            )\n        return None"
+        }
+      ]
+    },
+    "vllm/v1/kv_hints/native.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/vllm/v1/kv_hints/native.py",
+      "github_blob_sha": "462102734cb86a0f4c6000f1bd3e9523387a6cc5",
+      "excerpts": [
+        {
+          "start_line": 44,
+          "end_line": 94,
+          "content": "class SessionTarget(  # type: ignore[call-arg]\n    msgspec.Struct,\n    tag=\"session\",\n    tag_field=\"kind\",\n    frozen=True,\n    forbid_unknown_fields=True,\n):\n    session_id: Identifier\n    continuation_id: Identifier | None = None\n    start_token: TokenPosition = 0\n    end_token: TokenPosition | None = None\n\n\nclass RequestTarget(  # type: ignore[call-arg]\n    msgspec.Struct,\n    tag=\"request\",\n    tag_field=\"kind\",\n    frozen=True,\n    forbid_unknown_fields=True,\n):\n    request_id: Identifier\n    start_token: TokenPosition = 0\n    end_token: TokenPosition | None = None\n\n\nTarget: TypeAlias = HashTarget | SessionTarget | RequestTarget\n\n\nclass RetainPayload(msgspec.Struct, frozen=True, forbid_unknown_fields=True):  # type: ignore[call-arg]\n    target: Target\n    owner_id: Identifier\n    declaration_id: Identifier\n    priority: Annotated[int, msgspec.Meta(ge=0, le=100)] = 0\n    ttl_seconds: PositiveSeconds | None = None\n    tier: Tier = \"gpu\"\n    scope: Literal[\"snapshot\", \"follow_growth\"] = \"snapshot\"\n\n\nclass ReleasePayload(msgspec.Struct, frozen=True, forbid_unknown_fields=True):  # type: ignore[call-arg]\n    owner_id: Identifier\n    declaration_id: Identifier\n\n\nclass EvictPayload(msgspec.Struct, frozen=True, forbid_unknown_fields=True):  # type: ignore[call-arg]\n    target: Target\n    tier: Tier = \"gpu\"\n\n\nclass DemotePayload(msgspec.Struct, frozen=True, forbid_unknown_fields=True):  # type: ignore[call-arg]\n    target: Target\n    destination: Literal[\"cpu\", \"mooncake\"]"
+        }
+      ]
+    },
+    "vllm/v1/kv_hints/retention.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/vllm/v1/kv_hints/retention.py",
+      "github_blob_sha": "2e55fbb8f49237d969c0795739f179f93e7e3efc",
+      "excerpts": [
+        {
+          "start_line": 74,
+          "end_line": 94,
+          "content": "\n    def retain(\n        self,\n        payload: RetainPayload,\n        *,\n        policy_name: str | None = None,\n        resolution: LogicalResolution | None = None,\n    ) -> RetainDeclaration:\n        \"\"\"Create/update a declaration after native validation and deduplication.\"\"\"\n        if payload.tier != \"gpu\":\n            raise ControlError(\n                \"unsupported\", \"Local declarations only bias GPU eviction\"\n            )\n        if not isinstance(payload.target, (HashTarget, SessionTarget)):\n            raise ControlError(\n                \"unresolved_target\", \"Resolve active requests before retaining\"\n            )\n        follows = payload.scope == \"follow_growth\"\n        if follows and not (\n            isinstance(payload.target, SessionTarget)\n            and payload.target.continuation_id is not None"
+        },
+        {
+          "start_line": 173,
+          "end_line": 195,
+          "content": "        if declaration is None:\n            raise ControlError(\"missing\", \"Retention declaration is unknown or expired\")\n        if declaration.follows_growth:\n            self._check_continuation(declaration)\n            return self.index.resolve(declaration.target)\n        return declaration.snapshot\n\n    def priority(self, group_id: int, block_hash: str) -> int:\n        self.expire()\n        priority = max(\n            self._by_content.get((group_id, block_hash), {}).values(), default=0\n        )\n        for continuation, spans in self.index.content_associations(\n            group_id, block_hash\n        ):\n            for key in self._following.get(continuation, ()):\n                declaration = self._declarations[key]\n                target = declaration.target\n                state = self.index.get(*continuation)\n                if state.incarnation != declaration.continuation_incarnation:\n                    continue\n                if any(\n                    b.start_token >= target.start_token"
+        }
+      ]
+    },
+    "vllm/v1/core/kv_cache_retention.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/vllm/v1/core/kv_cache_retention.py",
+      "github_blob_sha": "a171cff1dd3709339bdf7dd2bf6ef76b556c9bb0",
+      "excerpts": [
+        {
+          "start_line": 45,
+          "end_line": 66,
+          "content": "    def popleft(self) -> KVCacheBlock:\n        return self.popleft_n(1)[0]\n\n    def popleft_n(self, n: int) -> list[KVCacheBlock]:\n        if n < 0 or n > self.num_free_blocks:\n            raise ValueError(\"Not enough free blocks\")\n        self.last_displaced_cached_blocks = 0\n        if n == 0:\n            return []\n        self._synchronize()\n        selected: list[KVCacheBlock] = []\n        while len(selected) < n:\n            priority, order, block_id = heapq.heappop(self._heap)\n            if self._keys.get(block_id) != (priority, order):\n                continue\n            block = self._all_blocks[block_id]\n            super().remove(block)\n            del self._keys[block_id]\n            self.last_displaced_cached_blocks += block.block_hash is not None\n            selected.append(block)\n        self._compact()\n        return selected"
+        }
+      ]
+    },
+    "vllm/v1/kv_hints/resources.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/vllm/v1/kv_hints/resources.py",
+      "github_blob_sha": "c84a8ac267bdd33e3cafb5589634aa14ffa0e1d9",
+      "excerpts": [
+        {
+          "start_line": 387,
+          "end_line": 416,
+          "content": "        if not isinstance(payload, EvictPayload) or payload.tier != \"gpu\":\n            raise ControlError(\n                \"unsupported\", \"No transfer adapter is configured for this operation\"\n            )\n        selected = {\n            make_block_hash_with_group_id(\n                BlockHash(bytes.fromhex(block.block_hash)), block.group_id\n            )\n            for prefix in target.prefixes\n            for block in prefix.blocks\n        }\n        partial_keys = {\n            make_block_hash_with_group_id(\n                BlockHash(bytes.fromhex(block.block_hash)), block.group_id\n            )\n            for prefix in target.prefixes\n            for block in prefix.partial_blocks\n        }\n        gaps = sum(len(prefix.missing_ranges) for prefix in target.prefixes)\n        partial = bool(partial_keys or gaps)\n        outcome = self.pool.evict_unreferenced(selected)\n        if outcome.evicted:\n            status = (\n                OperationStatus.PARTIAL\n                if outcome.blocked or outcome.missing or partial\n                else OperationStatus.COMPLETED\n            )\n        elif outcome.blocked:\n            status = OperationStatus.DEFERRED\n        elif outcome.missing:"
+        }
+      ]
+    },
+    "tests/v1/test_kv_hint_state.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/tests/v1/test_kv_hint_state.py",
+      "github_blob_sha": "b93f049b01d3d899c9f59ea32f4f61309b7a57df",
+      "excerpts": [
+        {
+          "start_line": 337,
+          "end_line": 366,
+          "content": "def test_high_priority_expiry_does_not_extend_or_delete_another_owner(\n    index, declarations, now\n):\n    shared = span(1)\n    associate(index, \"a\", (shared,))\n    associate(index, \"b\", (shared,))\n    retain(declarations, \"a\", 90, 5)\n    low = retain(declarations, \"b\", 20, 20)\n    assert declarations.priority(0, shared.block_hash) == 90\n    now[0] += 5\n    assert declarations.priority(0, shared.block_hash) == 20\n    assert declarations.get(\"a\", \"keep\") is None\n    assert declarations.get(\"b\", \"keep\") == low\n    now[0] += 15\n    assert declarations.priority(0, shared.block_hash) == 0\n\n\ndef test_cache_hits_and_following_growth_do_not_renew_ttl(index, declarations, now):\n    initial = associate(index, \"a\", (span(1),))\n    retained = retain(declarations, \"a\", 70, 5, follow=True)\n    now[0] += 4\n    associate(index, \"hit\", (span(1),))\n    index.associate(\n        \"a\", \"main\", (span(1), span(2, 16, 32)), expected_revision=initial.revision\n    )\n    assert declarations.get(\"a\", \"keep\") == retained\n    assert declarations.priority(0, span(2).block_hash) == 70\n    now[0] += 1\n    assert declarations.priority(0, span(1).block_hash) == 0\n    assert declarations.priority(0, span(2).block_hash) == 0"
+        }
+      ]
+    },
+    "tests/v1/engine/test_kv_control.py": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/tests/v1/engine/test_kv_control.py",
+      "github_blob_sha": "ce783b2e03992c3aca9d7256a2082760072f978d",
+      "excerpts": [
+        {
+          "start_line": 756,
+          "end_line": 809,
+          "content": "def test_attached_priority_ttl_starts_at_completion_and_duplicate_does_not_renew():\n    from vllm.v1.outputs import ModelRunnerOutput\n\n    engine, controller, _ = primitive_scheduler()\n    now = [0.0]\n    copies = controller.executor.retention_priority.copies\n    copies.clock = lambda: now[0]\n    request = token_request(\"priority\", [1] * 32)\n    request.sampling_params.max_tokens = request.max_tokens = 1\n    hint = primitive_envelope(\n        \"retain\",\n        \"vllm.set_priority\",\n        {\n            \"target\": \"request_cached\",\n            \"location\": \"local_g1\",\n            \"claim_id\": \"router/task\",\n            \"revision\": 1,\n            \"value\": -10,\n            \"ttl_seconds\": 5,\n        },\n    )\n    request.kv_hints = hint\n    engine.add_request(request)\n    scheduled = engine.scheduler.schedule()\n    blocks = list(\n        engine.scheduler.kv_cache_manager.get_blocks(request.request_id).blocks[0]\n    )\n    assert all(copies.priority(b) is None for b in blocks)\n    now[0] = 100\n    engine.scheduler.update_from_output(\n        scheduled,\n        ModelRunnerOutput(\n            req_ids=[request.request_id],\n            req_id_to_index={request.request_id: 0},\n            sampled_token_ids=[[0]],\n            logprobs=None,\n            prompt_logprobs_dict={},\n            pooler_output=[],\n        ),\n    )\n    assert controller.registry.get(\"retain\", \"action\").status == \"completed\"\n    assert all(copies.priority(b) == -10 for b in blocks)\n    now[0] = 104\n    registry = controller.registry\n    replay = controller.submit(\n        hint,\n        ControlContext(registry.engine_id, registry.engine_epoch, \"native\"),\n        request_id=request.request_id,\n    )\n    assert replay.replayed\n    now[0] = 105\n    copies.expire()\n    assert all(copies.priority(b) is None for b in blocks)\n"
+        }
+      ]
+    },
+    "vllm/v1/kv_hints/README.md": {
+      "url": "https://github.com/zhhangBian/vllm-note/blob/7b01911392a707e5f9be8ebe97902fc92529dfa7/vllm/v1/kv_hints/README.md",
+      "github_blob_sha": "334326e49148a32aacfdfcc744db224b905decaa",
+      "excerpts": [
+        {
+          "start_line": 110,
+          "end_line": 140,
+          "content": "## SET_PRIORITY\n\nThe #59714-compatible payload is:\n\n```json\n{\n  \"target\": \"request_cached\",\n  \"location\": \"local_g1\",\n  \"claim_id\": \"router/task-1\",\n  \"revision\": 1,\n  \"value\": 10,\n  \"ttl_seconds\": 60\n}\n```\n\nA signed integer value sets the eviction priority of a physical cache copy.\nA finite positive TTL starts when the priority takes effect.\nCopies with higher effective priority are evicted later; normal free-list/LRU ordering breaks ties.\n`value: null`, no TTL and a higher revision clear only this claim.\nEqual/older revisions do not renew TTL; conflicting payloads at an equal revision reject the operation before changing any selected claim.\nAn explicit claim ends when a higher revision clears it with null, its TTL expires, or its physical copy is invalidated.\nAn arbitrary claim ID does not associate the claim with a logical task, so task completion cannot infer that ownership.\nTask cleanup also removes the associated local-policy claims.\nThe controller retains the latest revision for each claim ID, including cleared claims, until the copy is invalidated, reused or reset.\nThis retained revision prevents stale updates from recreating a cleared claim; each copy supports at most 16 claim IDs.\nReconstructed copies do not inherit these claims.\n\nLogical selectors are an extension selecting currently resident copies.\nLegacy Retain/Release declarations retain their independent logical-content lifetimes and can follow newly appended content when configured.\nBoth declaration families feed **one** `RetentionFreeBlockQueue`, using the maximum valid priority; the default 0 applies only when no declaration exists.\nPriority never pins memory, allocates blocks, or changes active references."
+        },
+        {
+          "start_line": 185,
+          "end_line": 218,
+          "content": "\nLegacy action version `1` remains supported (`retain`, `release`, `evict`, `demote`, `prefetch`, `share`, state commands and signals).\nExplicit eviction has no implicit mapping to clearing priority.\nOptional retention/tool-wait policies now produce version-1.0 primitives through the same execution boundary.\nA SET_PRIORITY proposal waits for overlapping GPU COPY proposals from the same signal before application; its TTL starts after the copy is ready, and failed copies yield explicit missing or partial priority outcomes.\nWaiting proposals do not consume the execution budget, so a one-action-per-step limit cannot starve their prerequisites.\nThere is no automatic tool-call detector.\nRequest-free control and local policy production are explicit extensions to the initial request-attached RFC profile.\n\nPolicies may declare `consumed_signals` as an immutable set of signal names.\nSignals with no configured consumer return `unconsumed` without building a request observation or invalidating scheduler guidance.\nThe default `None` preserves delivery of every signal to existing third-party policies.\nSubclasses must explicitly redeclare the filter to opt in, so an overridden handler does not silently inherit a narrower signal set.\n\nThe built-in tool-wait policy accepts `resume_after_seconds` on the initial\n`tool_wait` signal. It skips a speculative round trip when that estimate does\nnot exceed `min_pause_seconds` (default 0.5) or its observed store-plus-load time.\n`consider_pause_duration=false` selects the pressure-only ablation. Missing\nestimates keep pressure-based demotion. Skipped movement history is bounded and\ncleaned with its logical owners; explicit movement commands are unaffected.\nThis heuristic does not estimate GPU recomputation cost or guarantee residency.\nIn admission-coupled mode a short tool can also use a sustained GPU backlog:\ncurrent referenced occupancy must reach `min_pressure`, and an observed waiting\nrequest must have waited longer than the minimum window or measured store/load\nround trip, whichever is larger. With low current occupancy a short pause keeps\nG1 content even when projected demand is high. Observed queue age is a heuristic\nfor this decision, not a prediction of the target request's remaining wait.\n\n`prefetch_on_admission=true` enables scheduler coordination for the movement\npolicy. Under queued demand, a matching session's GPU COPY waits until that\nsession is selected for admission. The scheduler starts preparation before cache\nlookup and waits for terminal publication; failure permits ordinary recomputation.\nWithout queued demand the predicted preparation may execute early. Cancellation\nand task cleanup release queued scope without acquiring transfer buffers."
+        }
+      ]
+    }
+  }
+}

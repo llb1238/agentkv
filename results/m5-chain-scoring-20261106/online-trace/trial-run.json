@@ -1,0 +1,18 @@
+{
+  "git_commit": "cc77bda3f65745b3c1d79be279107369f85e07ea",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "status": "complete",
+  "hint_tier": "online",
+  "duration_s": 300,
+  "warmup_s": 0,
+  "arrival_rate": 1.0,
+  "population_seed": 3,
+  "trace_calls": 875811,
+  "valid_hint_requests_finished": 779,
+  "trace_sha256": {
+    "callbacks-3394629-125947076632096.jsonl.gz": "bec1b3a4e8aa8aa57fd02af28e00b40557db863b62cc355d596bf840f9d4bc11"
+  },
+  "source_run_sha256": "aee3fda21eb89ed76334401bcfbaa27877b76581c350fa94d0e74b4f75a3855b",
+  "request_metadata_sha256": "9a0ab447bb3404176424fc1760a2588aeb1f1efabc094a5e58bd817eac29a6cc",
+  "policy_config_sha256": "9c52bc388ab2939b0b7e88b9a002fb0d58490daf9922748b22c005f4d1a812cc"
+}

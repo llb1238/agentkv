@@ -1,0 +1,46 @@
+{
+  "format": "agentkv.external_payloads.v1",
+  "source_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+  "files": [
+    {
+      "path": "results/archive/m5-vllm-full-probe-20261104-unclosed/callback-traces/callbacks-62287-130417778237104.jsonl.gz",
+      "size_bytes": 42302596,
+      "sha256": "85a6a5e2a5c1ef12e3b967e6df3042a292670dca9d943cea3c27896b2164db31",
+      "git_blob": "bc5ecd677d4e8bf67d85c9ee9a50f95c3ccc12d5",
+      "source_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "retention": "Original bytes retained locally at the same ignored path"
+    },
+    {
+      "path": "results/m5-chain-scoring-20261106/online-trace/callback-traces/callbacks-3394629-125947076632096.jsonl.gz",
+      "size_bytes": 33925384,
+      "sha256": "bec1b3a4e8aa8aa57fd02af28e00b40557db863b62cc355d596bf840f9d4bc11",
+      "git_blob": "8ca59415bcd80d06f3a5d459e7e798cce9cda61f",
+      "source_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "retention": "Original bytes retained locally at the same ignored path"
+    },
+    {
+      "path": "results/m5-vllm-callback-probe-20261104/policy-observations/policy-3699443-126242030712784.jsonl.gz",
+      "size_bytes": 23178554,
+      "sha256": "e8a91a636548eccd2c44fd3c4334459b877c7bf2275a0039fb5b533a9b82c4b8",
+      "git_blob": "73e9eaa9264834acd48b53ff07ef432b21fdec58",
+      "source_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "retention": "Original bytes retained locally at the same ignored path"
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/probe/callback-traces/callbacks-104291-133189492484976.jsonl.gz",
+      "size_bytes": 42282488,
+      "sha256": "ad601e1a340010c03d2177c648923bc364ed2d45c04d1b06a3d022ecc139fbec",
+      "git_blob": "e81c127a810e319e0a920af981513066bbeecd02",
+      "source_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "retention": "Original bytes retained locally at the same ignored path"
+    },
+    {
+      "path": "results/m5-vllm-integration-20261104/smoke/callback-traces/callbacks-135943-123727931667376.jsonl.gz",
+      "size_bytes": 85847542,
+      "sha256": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad",
+      "git_blob": "e3235d60657f4f35962e931993c3832c7957b33c",
+      "source_commit": "f59d0026ac9c2d9942d58bed84d90f5dbc1dc580",
+      "retention": "Original bytes retained locally at the same ignored path"
+    }
+  ]
+}

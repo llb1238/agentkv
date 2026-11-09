@@ -1,0 +1,46 @@
+{
+  "git_commit": "a736e2b59409e7c0fd355f392bf2fc0740c33225",
+  "vllm_commit": "4749dd5961841243596559b10ba0a22c48980c45",
+  "kind": "smoke",
+  "configuration": {
+    "format": "agentkv.vllm_hint_policy.v1",
+    "hint_tier": "perfect",
+    "freeze_sha256": "41f6699fb5693450b22898c4fe62ac6280d2d2b1b66798943b914163936f005d"
+  },
+  "policy_config_sha256": "b250fb8b993e76b50d0b89fbdf1d4753c2454df68e032f9ab26537c25051bde2",
+  "duration_s": 600,
+  "create_req_context_us": {
+    "count": 2259,
+    "p50": 297.407,
+    "p99": 1356.48366,
+    "maximum": 1545.43
+  },
+  "evictions": 2005,
+  "core_evict_us": {
+    "count": 2005,
+    "p50": 345.035,
+    "p99": 10105.074960000007,
+    "maximum": 26840.902
+  },
+  "adapter_evict_us": {
+    "count": 2005,
+    "p50": 2238.903,
+    "p99": 11802.65632,
+    "maximum": 28736.856
+  },
+  "ownership": {
+    "count": 2005,
+    "p50": 1.0,
+    "p99": 1.0,
+    "maximum": 1.0
+  },
+  "valid_hint_counts": {
+    "valid_any": 2259,
+    "valid_finished": 2259
+  },
+  "trace_sha256": {
+    "callbacks-135943-123727931667376.jsonl.gz": "327c984bdfd35818a56bb210dc26a7bc8652b3789f3ce0e63fcf5310f8c236ad"
+  },
+  "source_run_sha256": "28d054ecc4b0d0b7fe1e1cb9cd23db13ee4a2e898f41d1e734ac1bf415f46a29",
+  "status": "complete"
+}

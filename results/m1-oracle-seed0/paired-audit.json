@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "paired_configurations": 14,
+  "requests_checked": 290528,
+  "target_reduction_pp": 8.943626266060923,
+  "largest": "config-13",
+  "largest_reduction_pp": 9.290106829375782
+}
